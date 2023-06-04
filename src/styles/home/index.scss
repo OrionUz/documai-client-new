@@ -1,0 +1,76 @@
+.home {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 160px;
+
+  .container {
+    position: relative;
+    top: 0;
+    z-index: 10;
+  }
+  &-subtitle {
+    @extend .title_l;
+    margin: 120px 0 60px;
+    text-align: center;
+  }
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    &-left {
+      width: 678px;
+      h1 {
+        @extend #{".title_xl", ".gradient_text"};
+        line-height: 120%;
+        margin-bottom: 20px;
+      }
+      p {
+        @extend .text_l;
+        width: 523px;
+        line-height: 130%;
+        margin-bottom: 68px;
+      }
+    }
+    &-right {
+      @extend #{".display_center", ".title"};
+      width: 615px;
+      height: 346px;
+      background: linear-gradient(67.61deg, #6664f8 0.74%, #ff86a4 100%);
+    }
+  }
+  &-introcards {
+    display: flex;
+    justify-content: center;
+    gap: 37px;
+    margin-top: 120px;
+  }
+  &-usage {
+    display: flex;
+    gap: 142px;
+    justify-content: center;
+    &-card {
+      flex-grow: 1;
+      p {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 130%;
+        color: $white;
+      }
+    }
+  }
+  &-about {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &-pricing {
+    display: flex;
+    gap: 36px;
+    justify-content: center;
+  }
+}
+
+@import "introcard.scss";
+@import "aboutcard.scss";
+@import "pricingcard.scss";
+@import "newscard.scss";

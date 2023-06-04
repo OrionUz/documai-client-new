@@ -1,0 +1,43 @@
+.introcard {
+  flex-grow: 1;
+  min-height: 271px;
+  padding: 21px 32px;
+
+  border: 1px solid #fce4ef40;
+  background-color: rgba(0, 0, 0, 0.24);
+  border-radius: 16px;
+  position: relative;
+
+  &-content {
+    width: 248px;
+    h2 {
+      @extend .title;
+      line-height: 140%;
+      margin-bottom: 16px;
+    }
+    p {
+      @extend .text;
+      line-height: 140%;
+    }
+  }
+
+  &-icon {
+    position: absolute;
+    top: 101px;
+    right: -14px;
+
+    transform: translatey(0px);
+    animation: movement_in_air 6s ease-in-out infinite;
+  }
+  &:nth-child(2) {
+    .introcard-icon {
+      top: 120px;
+    }
+  }
+  &:nth-child(3) {
+    .introcard-icon {
+      top: 108px;
+    }
+  }
+}
+

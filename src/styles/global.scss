@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import "./variables.scss";
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../assets/fonts/SF-Pro-Display-Regular.eot");
+  src: url("../assets/fonts/SF-Pro-Display-Regular.woff") format("woff"),
+    url("../assets/fonts/SF-Pro-Display-Regular.otf") format("opentype");
+}
+
+// @font-face {
+//   font-family: "SF Pro Display";
+//   src: url("https://docum.ai/css/fonts/SF-Pro-Display-Regular.eot");
+//   src: url("https://docum.ai/css/fonts/SF-Pro-Display-Regular.woff")
+//       format("woff"),
+//     url("https://docum.ai/css/fonts/SF-Pro-Display-Regular.otf")
+//       format("opentype");
+// }
+
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+html,
+body {
+  // font-family: "Poppins", sans-serif !important;
+  font-family: "SF Pro Display";
+  scroll-behavior: smooth;
+}
+
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.root {
+  background-color: $bg_main;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.container {
+  width: 1394px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@import "./notfound/";
+@import "./common/";
+@import "./package/";
+
+//Pages
+@import "./layout/";
+@import "./home/";

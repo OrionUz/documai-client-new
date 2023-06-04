@@ -1,0 +1,29 @@
+.custom-slider {
+  width: calc(100% + 36px);
+  .slick {
+    &-arrow {
+      width: 64px;
+      height: 64px;
+      z-index: 20;
+      top: 161px;
+    }
+    &-prev {
+      left: -40px;
+    }
+    &-next {
+      right: -5px;
+    }
+    &-slide {
+      &:focus {
+        border: none;
+        outline: none;
+      }
+      & > div {
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }
+}

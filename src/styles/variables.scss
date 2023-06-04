@@ -1,0 +1,146 @@
+//Background
+$bg_main: #0e1621;
+$bg_dark: #212a37;
+$bg_form: #3e4754;
+$gradient_text: linear-gradient(90deg, #a770ef 0%, #cf8bf3 50%, #fdb99b 100%);
+$gradient_button: linear-gradient(88.69deg, #c216ff 0.65%, #1677ff 151.38%);
+$gradient_button_disabled: linear-gradient(
+  88.69deg,
+  rgba(194, 22, 255, 0.6) 0.65%,
+  rgba(22, 119, 255, 0.6) 151.38%
+);
+.gradient_text {
+  background: $gradient_text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+//Color
+$primary: #007fff;
+$secondary: #343d4a;
+$secondary_disabled: #3e4754;
+$stroke: #6e6976;
+$stroke_disabled: #797481;
+$success: #3ea972;
+$text: #eaeaea;
+$text2: #a6aaaf;
+$black: #000000;
+$white: #ffffff;
+$white_disable: rgba(255, 255, 255, 0.6);
+
+//Size
+$border_radius: 12px;
+
+//Blur
+.blur_purple {
+  width: 670px;
+  height: 670px;
+
+  position: absolute;
+  left: -284px;
+  top: 452px;
+
+  background: linear-gradient(90deg, #282e7b 0%, #5e43d6 100%, #5e43d6 100%);
+  filter: blur(225px);
+}
+.blur_blue {
+  width: 973px;
+  height: 658px;
+
+  position: absolute;
+  left: 1228px;
+  top: 372.88px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 82, 212, 0.5) 0%,
+    rgba(67, 100, 247, 0.5) 50%,
+    rgba(111, 177, 252, 0.5) 100%
+  );
+  filter: blur(205px);
+  transform: rotate(-22.98deg);
+}
+
+//Text
+.text_xs {
+  font-weight: 400;
+  font-size: 14px;
+  color: $white;
+}
+.text_s {
+  font-weight: 400;
+  font-size: 16px;
+  color: $white;
+}
+.text {
+  font-weight: 500;
+  font-size: 18px;
+  color: $white;
+}
+.text_l {
+  font-weight: 500;
+  font-size: 20px;
+  color: $white;
+}
+.title_sm {
+  font-weight: 600;
+  font-size: 24px;
+  color: $white;
+}
+.title {
+  font-weight: 600;
+  font-size: 32px;
+  color: $white;
+}
+.title_l {
+  font-weight: 600;
+  font-size: 40px;
+  color: $white;
+}
+.title_xl {
+  font-weight: 700;
+  font-size: 64px;
+  color: $white;
+}
+
+//Position
+.display_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//Text decoration
+.line_clamp1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.line_clamp2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.line_clamp3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+//Animation
+@keyframes movement_in_air {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}

@@ -1,0 +1,54 @@
+.button {
+  outline: none;
+  border: none;
+  border-radius: $border_radius;
+  cursor: pointer;
+
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  color: $white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  &-light {
+    padding: 17px 32px;
+    background: $gradient_button;
+    &-disabled {
+      pointer-events: none;
+      background: $gradient_button_disabled;
+      color: $white_disable;
+    }
+    &-bordered {
+      border: 1px solid $white;
+    }
+  }
+
+  &-dark {
+    padding: 15px 24px;
+    background: $secondary;
+    box-sizing: border-box;
+    &-disabled {
+      pointer-events: none;
+      background: $secondary_disabled;
+      border: 1px solid $stroke_disabled;
+    }
+  }
+
+  &-white {
+    padding: 17px 32px;
+    background: $white;
+    color: $black;
+    &-disabled {
+      pointer-events: none;
+      background: $white_disable;
+      color: $white_disable;
+    }
+    &-bordered {
+      border: 1px solid $white;
+    }
+  }
+}

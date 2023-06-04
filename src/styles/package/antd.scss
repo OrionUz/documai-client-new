@@ -1,0 +1,19 @@
+//Select
+.ant-select {
+  background-color: #717493 !important;
+  font-family: "SF Pro Display" !important;
+  &-selector {
+    height: 50px !important;
+  }
+  &-selection {
+    &-item {
+      font-size: 18px !important;
+    }
+    &-search {
+      // top: 5px !important;
+      &-input {
+        height: 48px !important;
+      }
+    }
+  }
+}

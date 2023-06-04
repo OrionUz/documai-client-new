@@ -1,0 +1,91 @@
+.pricingcard {
+  flex-grow: 1;
+  height: 575px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 24px;
+
+  background-color: $bg_dark;
+  border: 1px solid #666471;
+  border-radius: 12px;
+
+  &-type {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: $white;
+    margin-bottom: 30px;
+  }
+
+  &-price {
+    @extend .title_xl;
+    line-height: 76px;
+    margin-bottom: 4px;
+
+    display: flex;
+    align-items: flex-end;
+    span {
+      font-size: 16px;
+      line-height: 40px;
+      color: #ffffff60;
+      font-weight: 400;
+    }
+  }
+
+  &-description {
+    width: 248px;
+    margin-bottom: 37px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: $text2;
+  }
+
+  &-requirement {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 56px;
+    span {
+      color: #0151ed;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  &-include {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+
+    @extend .text_s;
+  }
+
+  &-main {
+    background-color: $white;
+
+    .pricingcard {
+      &-type {
+        color: $black;
+        margin-bottom: 15px;
+      }
+      &-price {
+        color: $black;
+        span {
+          color: $text2;
+        }
+      }
+      &-requirement {
+        color: rgba(0, 0, 0, 0.8);
+        margin-bottom: 71px;
+      }
+      &-include {
+        color: $black;
+      }
+    }
+  }
+}

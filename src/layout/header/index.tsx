@@ -1,0 +1,32 @@
+import { Select } from "antd";
+import { Link } from "react-router-dom";
+import { languageOptions } from "./const";
+import CustomButton from "src/components/common/button";
+
+function Header() {
+  return (
+    <div className="header">
+      <div className="header-content container">
+        <div className="header-logo">Docum.ai</div>
+        <div className="header-menu">
+          <Link to="/">Homepage</Link>
+          <Link to="/">About us</Link>
+          <Link to="/">Blog-News</Link>
+          <Link to="/">Pricing</Link>
+        </div>
+        <div className="header-right">
+          <Select
+            defaultValue="en"
+            style={{ width: 120 }}
+            size="large"
+            //   onChange={handleChange}
+            options={languageOptions}
+          />
+          <CustomButton color="dark">Try Docum.ai</CustomButton>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Header;

@@ -1,0 +1,64 @@
+.aboutcard {
+  background: $bg_dark;
+  border: 1px solid #6e6b7a;
+  border-radius: 24px;
+  padding: 40px 32px;
+
+  display: flex;
+  gap: 97px;
+
+  &-left {
+    p {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: $text2;
+    }
+    img {
+      margin: 19px 0 -53px -62px;
+    }
+    button {
+      margin-top: 101px;
+    }
+    svg {
+      margin-top: 49px;
+    }
+  }
+
+  &-full {
+    padding: 40px 72px 36px 32px;
+    .aboutcard {
+      &-left {
+        width: 693px;
+        h2 {
+          @extend .title_l;
+          width: 650px;
+          line-height: 130%;
+          margin-bottom: 16px;
+        }
+      }
+      &-right {
+        svg {
+          margin: -59px 0 -76px 0;
+        }
+      }
+    }
+  }
+
+  &-half {
+    width: calc(50% - 18px);
+    .aboutcard {
+      &-left {
+        h2 {
+          @extend .title;
+          width: 400px;
+          line-height: 120%;
+          margin-bottom: 24px;
+        }
+        p {
+          width: 527px;
+        }
+      }
+    }
+  }
+}
