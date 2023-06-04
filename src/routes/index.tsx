@@ -3,7 +3,7 @@ import DashboardLayout from "src/layout/dashboard";
 import MainLayout from "src/layout/main";
 import Custom404 from "src/pages/404";
 import AboutPage from "src/pages/about";
-import DashboardPage from "src/pages/dashboard";
+import DocumentsPage from "src/pages/documents";
 import HomePage from "src/pages/home";
 
 function RoutElements() {
@@ -19,8 +19,8 @@ function RoutElements() {
           <Route path="about" element={<AboutPage />} />
 
           <Route path="dashboard" element={<DashboardLayout />}>
-            <Route index element={<DashboardPage />} />
-            <Route path="about" element={<AboutPage />} />
+            <Route index element={<DocumentsPage />} />
+            <Route path="bot/:botId" element={<DocumentsPage />} />
           </Route>
         </Route>
 

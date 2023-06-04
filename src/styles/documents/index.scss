@@ -1,0 +1,25 @@
+.documents {
+  &-header {
+    @extend .title;
+    margin-bottom: 40px;
+  }
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+
+    &-right {
+      display: flex;
+      gap: 16px;
+      margin-top: 54px;
+    }
+  }
+}
+
+@import "documcard.scss";
