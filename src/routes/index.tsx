@@ -1,15 +1,29 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import DashboardLayout from "src/layout/dashboard";
+import MainLayout from "src/layout/main";
 import Custom404 from "src/pages/404";
+import AboutPage from "src/pages/about";
+import DashboardPage from "src/pages/dashboard";
 import HomePage from "src/pages/home";
 
 function RoutElements() {
+  const { pathname } = useLocation();
+  const path = pathname.split("/")[1];
+  console.log(path);
+
   return (
     <div className="root">
       <Routes>
-        {/* KHadmin login */}
-        <Route index element={<HomePage />} />
+        <Route path="/" element={path !== "dashboard" ? <MainLayout /> : null}>
+          <Route index element={<HomePage />} />
+          <Route path="about" element={<AboutPage />} />
 
-        {/* <Route path="/chat" element={<ChatPage />} /> */}
+          <Route path="dashboard" element={<DashboardLayout />}>
+            <Route index element={<DashboardPage />} />
+            <Route path="about" element={<AboutPage />} />
+          </Route>
+        </Route>
+
         <Route path="*" element={<Custom404 />} />
       </Routes>
     </div>

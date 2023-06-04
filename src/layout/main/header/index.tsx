@@ -7,10 +7,12 @@ function Header() {
   return (
     <div className="header">
       <div className="header-content container">
-        <div className="header-logo">Docum.ai</div>
+        <div className="header-logo">
+          <Link to="/">Docum.ai</Link>
+        </div>
         <div className="header-menu">
           <Link to="/">Homepage</Link>
-          <Link to="/">About us</Link>
+          <Link to="/about">About us</Link>
           <Link to="/">Blog-News</Link>
           <Link to="/">Pricing</Link>
         </div>

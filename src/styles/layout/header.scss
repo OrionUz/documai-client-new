@@ -11,7 +11,7 @@
     padding: 6px 0;
   }
 
-  &-logo {
+  &-logo a {
     @extend .title;
     line-height: 38px;
   }

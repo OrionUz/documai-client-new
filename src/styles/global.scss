@@ -49,6 +49,7 @@ a {
 }
 
 .root {
+  min-height: 100vh;
   background-color: $bg_main;
   overflow-x: hidden;
   position: relative;
@@ -72,3 +73,4 @@ a {
 //Pages
 @import "./layout/";
 @import "./home/";
+@import "./dashboard/";
