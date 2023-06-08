@@ -1,0 +1,54 @@
+.documcard {
+  width: 400px;
+  background-color: $bg_dark;
+  border: 1px solid $stroke;
+  border-radius: 16px;
+
+  &-content {
+    padding: 21px 21px 32px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border-bottom: 1px solid $stroke;
+
+    &-icon {
+      width: 93px;
+      height: 93px;
+      background: $gradient_angular;
+      border-radius: 12px;
+      @extend .display_center;
+    }
+
+    &-info {
+      h3 {
+        @extend .title;
+        line-height: 100%;
+        margin-bottom: 6px;
+      }
+      p {
+        @extend .text_xs;
+        color: $text2;
+        line-height: 100%;
+      }
+    }
+
+    &-delete {
+      flex-grow: 1;
+      text-align: end;
+      svg {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-footer {
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: $white;
+  }
+}

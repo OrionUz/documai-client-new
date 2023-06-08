@@ -1,0 +1,116 @@
+.dashboard {
+  display: flex;
+  &-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    border-right: 1px solid $stroke;
+    height: 100vh;
+    padding-bottom: 43px;
+    background-color: #141d27;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-top {
+      padding: 40px;
+      border-bottom: 1px solid $stroke;
+      a {
+        @extend .title;
+        font-weight: 700;
+        font-style: italic;
+      }
+    }
+
+    &-content {
+      padding: 12px 40px;
+
+      h3 {
+        @extend .text_s;
+        color: #a6aaae;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-bot {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: $transition;
+
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 100%;
+      color: $text2;
+      svg {
+        stroke: $text2;
+        transition: $transition;
+      }
+
+      &-active {
+        color: $white;
+        svg {
+          stroke: $white;
+        }
+      }
+    }
+
+    &-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    &-footer {
+      padding: 0 26px;
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  &-right {
+    flex-grow: 1;
+  }
+
+  &-header {
+    height: 119px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    padding: 0 40px;
+
+    img {
+      width: 50px;
+      object-fit: cover;
+    }
+  }
+
+  &-content {
+    height: calc(100vh - 119px);
+    overflow-y: auto;
+    padding: 15px 32px 43px;
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 7px;
+      border-radius: 20px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $bg_form;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $bg_form;
+    }
+  }
+}

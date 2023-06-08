@@ -17,14 +17,16 @@ function Header() {
           <Link to="/">Pricing</Link>
         </div>
         <div className="header-right">
-          <Select
+          {/* <Select
             defaultValue="en"
             style={{ width: 120 }}
             size="large"
             //   onChange={handleChange}
             options={languageOptions}
-          />
-          <CustomButton color="dark">Try Docum.ai</CustomButton>
+          /> */}
+          <Link to="/dashboard">
+            <CustomButton color="dark">Try Docum.ai</CustomButton>
+          </Link>
         </div>
       </div>
     </div>
