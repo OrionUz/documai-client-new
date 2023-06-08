@@ -1,0 +1,22 @@
+.memberscard {
+  width: calc(100% - 36px);
+  &-photo {
+    border-radius: 24px;
+    width: 261px;
+    height: 347px;
+    object-fit: cover;
+    background-position: center;
+  }
+
+  &-title {
+    @extend #{".title_sm", ".line_clamp2"};
+    line-height: 100%;
+    margin: 16px 0 8px;
+  }
+
+  p {
+    @extend #{".text_s", ".line_clamp2"};
+    color: #cfd0d3;
+    line-height: 100%;
+  }
+}
