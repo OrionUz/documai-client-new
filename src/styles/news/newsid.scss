@@ -1,0 +1,42 @@
+.newsid {
+  padding-top: 120px;
+  &-content {
+    width: 918px;
+    margin: 0 auto;
+
+    position: relative;
+    top: 1;
+    z-index: 20;
+
+    &-slider {
+      margin-top: 24px;
+      width: 925px;
+      height: 516px;
+    }
+
+    &-photo {
+      @extend .display_center;
+    }
+
+    &-subtitle {
+      @extend .title;
+      margin: 24px 0 20px;
+      text-align: center;
+    }
+
+    &-text {
+      margin-top: 20px;
+      @extend .text;
+    }
+  }
+
+  &-all {
+    margin-top: 140px;
+
+    &-title {
+      @extend .title_sm;
+      line-height: 140%;
+      margin-bottom: 24px;
+    }
+  }
+}
