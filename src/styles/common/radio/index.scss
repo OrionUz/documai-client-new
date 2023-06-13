@@ -1,0 +1,22 @@
+.radio {
+  &-button {
+    padding: 4px;
+    background-color: $bg_dark;
+    border-radius: 8px;
+    display: inline-block;
+    .ant-radio-group-large .ant-radio-button {
+      &-checked {
+        background-color: $bg_form;
+        border-radius: 4px;
+      }
+      &-wrapper {
+        min-width: 103px;
+        // font-weight: 400;
+        text-align: center;
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}

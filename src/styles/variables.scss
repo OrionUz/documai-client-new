@@ -1,7 +1,7 @@
 //Background
 $bg_main: #0e1621;
 $bg_dark: #212a37;
-$bg_form: #3e4754;
+$bg_form: #353e4b;
 $gradient_text: linear-gradient(90deg, #a770ef 0%, #cf8bf3 50%, #fdb99b 100%);
 $gradient_button: linear-gradient(88.69deg, #c216ff 0.65%, #1677ff 151.38%);
 $gradient_button_disabled: linear-gradient(
@@ -35,6 +35,9 @@ $text: #eaeaea;
 $text2: #a6aaaf;
 $black: #000000;
 $white: #ffffff;
+$white_05: #ffffff50;
+$white_06: #ffffff60;
+$white_07: #ffffff70;
 $white_disable: rgba(255, 255, 255, 0.6);
 
 //Size
@@ -71,6 +74,17 @@ $transition: 0.3s;
   );
   filter: blur(205px);
   transform: rotate(-22.98deg);
+}
+.blur_red {
+  width: 670px;
+  height: 670px;
+
+  position: absolute;
+  left: 712px;
+  top: 424px;
+
+  background: linear-gradient(90deg, #973939 0%, #5e43d6 100%, #4e2aef 100%);
+  filter: blur(225px);
 }
 
 //Text
@@ -139,7 +153,13 @@ $transition: 0.3s;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
+}
+.line_clamp4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 }
 
 //Animation
@@ -152,5 +172,38 @@ $transition: 0.3s;
   }
   100% {
     transform: translatey(0px);
+  }
+}
+
+//Scroll
+.scroll {
+  /* width */
+  &::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 20px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: $bg_dark;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $bg_form;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $bg_form;
+  }
+}
+
+.scroll_7 {
+  @extend .scroll;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 7px;
   }
 }

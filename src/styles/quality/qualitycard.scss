@@ -1,0 +1,58 @@
+.qualitycard {
+  width: 378px;
+  padding: 14px 16px 12px 20px;
+  border: 1px solid $stroke;
+  background-color: $bg_dark;
+  border-radius: 20px;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    &-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      div {
+        width: 32px;
+        height: 32px;
+        background-color: $bg_form;
+        border-radius: 50%;
+        @extend .display_center;
+      }
+
+      p {
+        @extend .text_xs;
+        line-height: 140%;
+      }
+    }
+  }
+
+  &-content {
+    p {
+      @extend #{".text", ".line_clamp4"};
+      font-weight: 500;
+      line-height: 140%;
+      margin-bottom: 4px;
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 100%;
+      color: #fff;
+      opacity: 0.5;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -7px;
+
+    button {
+      padding: 10px 28px;
+      font-size: 16px;
+    }
+  }
+}

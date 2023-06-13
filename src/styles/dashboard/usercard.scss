@@ -1,0 +1,33 @@
+.usercard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px 8px 8px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  cursor: pointer;
+
+  &-active {
+    background-color: $bg_dark;
+  }
+
+  div {
+    @extend .display_center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $bg_form;
+  }
+
+  p {
+    @extend #{".text_s", ".line_clamp1"};
+    flex-grow: 1;
+  }
+
+  span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $success;
+  }
+}

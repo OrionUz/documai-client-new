@@ -4,7 +4,7 @@
   border-radius: $border_radius;
   cursor: pointer;
 
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
   line-height: 100%;
   color: $white;
@@ -14,9 +14,14 @@
   align-items: center;
   gap: 10px;
 
+  padding: 17px 32px;
+  background-color: transparent;
+  border: 1px solid #77727d;
+
   &-light {
     padding: 17px 32px;
     background: $gradient_button;
+    border: none;
     &-disabled {
       pointer-events: none;
       background: $gradient_button_disabled;
@@ -32,6 +37,7 @@
     padding: 15px 24px;
     background: $secondary;
     box-sizing: border-box;
+    border: none;
     &-disabled {
       pointer-events: none;
       background: $secondary_disabled;
@@ -47,6 +53,7 @@
     padding: 17px 32px;
     background: $white;
     color: $black;
+    border: none;
     &-disabled {
       pointer-events: none;
       background: $white_disable;

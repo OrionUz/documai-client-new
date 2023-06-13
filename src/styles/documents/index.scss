@@ -1,9 +1,9 @@
 .documents {
-  &-header {
-    @extend .title;
-    margin-bottom: 40px;
-  }
-
+  min-height: calc(100% - 88px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 54px;
   &-content {
     display: flex;
     flex-wrap: wrap;
@@ -12,12 +12,44 @@
 
   &-footer {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+
+    &-left {
+      @extend .display_center;
+    }
 
     &-right {
       display: flex;
       gap: 16px;
-      margin-top: 54px;
+    }
+  }
+
+  &-add {
+    padding: 32px;
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 50px;
+      margin-bottom: 12px;
+      p {
+        @extend .title_sm;
+      }
+      button {
+        height: 50px;
+        svg {
+          width: 18px;
+          height: 18px;
+          stroke: $white;
+        }
+      }
+    }
+    &-footer {
+      margin-top: 24px;
+      button {
+        margin-left: auto;
+      }
     }
   }
 }
