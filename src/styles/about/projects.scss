@@ -1,0 +1,43 @@
+.about {
+  &-buttom {
+    &-title {
+      @extend .title_l;
+      @extend .display_center;
+    }
+    &-parts {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+      gap: 34px;
+
+      &-part {
+        display: flex;
+        flex-grow: 1;
+        padding: 50px 32px;
+        border-radius: 24px;
+        padding-right: 50px;
+        justify-content: space-between;
+        background-color: $bg_dark;
+        border: 1px solid #6e6b7a;
+        &-img {
+          img {
+            width: 221px;
+            object-fit: cover;
+          }
+        }
+
+        &-box {
+          &-title {
+            width: 370px;
+            height: 76px;
+            @extend .title;
+          }
+          &-text {
+            padding-top: 16px;
+            @extend .text_s;
+          }
+        }
+      }
+    }
+  }
+}

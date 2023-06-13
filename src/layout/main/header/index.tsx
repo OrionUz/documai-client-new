@@ -13,7 +13,7 @@ function Header() {
         <div className="header-menu">
           <Link to="/">Homepage</Link>
           <Link to="/about">About us</Link>
-          <Link to="/">Blog-News</Link>
+          <Link to="/news">Blog-News</Link>
           <Link to="/">Pricing</Link>
         </div>
         <div className="header-right">

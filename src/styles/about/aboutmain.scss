@@ -1,0 +1,127 @@
+.about {
+  width: 100%;
+  padding-top: 144px;
+
+  .container {
+    position: relative;
+    top: 0;
+    z-index: 15;
+  }
+
+  &-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: space-between;
+    @extend #{".display_center"};
+
+    &-left {
+      padding-top: 180px;
+      h1 {
+        @extend .title_xl;
+        @extend .gradient_text;
+      }
+      p {
+        width: 538px;
+        padding-top: 20px;
+        @extend .text_l;
+      }
+    }
+  }
+
+  //middle
+
+  &-middle {
+    &-top {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+      &-box {
+        display: flex;
+        justify-content: space-between;
+
+        &-element {
+          margin: 49px 0 0 49px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          &-heading {
+            @extend #{".display_center"};
+            @extend #{".title_l"};
+          }
+
+          &-paragraph {
+            margin-top: 16px;
+            @extend #{".display_center"};
+            @extend #{".text_l"};
+          }
+
+          &-stat {
+            display: flex;
+            justify-content: space-between;
+            margin-right: 20px;
+
+            &-pack {
+              &-year {
+                @extend #{".title_l"};
+              }
+              &-p {
+                @extend #{".text_s"};
+              }
+            }
+          }
+        }
+      }
+    }
+    // &-top {
+    //   display: flex;
+    //   gap: 70px;
+    //   @extend #{".display_center"};
+    //   margin-top: 20px;
+    //   flex-wrap: wrap;
+    //   flex-direction: row;
+
+    //   & > div {
+    //     display: flex;
+    //     //flex-basis: calc(50% - 40px);
+    //     justify-content: space-between;
+    //     flex-direction: column;
+    //   }
+
+    //   &-img {
+    //     height: 391px;
+    //     width: 596px;
+    //   }
+
+    //   &-box {
+    //     &-add {
+    //       display: flex;
+    //       flex-direction: column;
+    //       flex: 1;
+    //       justify-content: space-between;
+    //     }
+    //   }
+
+    //   &-box {
+    //     margin-top: -150px;
+    //     width: 600px;
+    //     &-paragraph {
+    //       vertical-align: top;
+    //       margin-top: 16px;
+    //       color: #d9d9d9 !important;
+    //       flex: 1;
+    //     }
+    //   }
+
+    //   //bottom
+
+    //   &-bottom {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     @extend #{".display_center"};
+    //     flex: none;
+    //   }
+    // }
+  }
+}
