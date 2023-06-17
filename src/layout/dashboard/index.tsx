@@ -1,5 +1,11 @@
 import { useEffect } from "react";
-import { Link, Outlet, useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 import { useGetProjectsQuery } from "src/app/services/projects";
 import { saveProjects } from "src/app/slices/projectSlice";
 import { useAppDispatch } from "src/app/store";
@@ -39,6 +45,7 @@ function DashboardLayout() {
   const { data } = useGetProjectsQuery();
   useEffect(() => {
     if (data) dispatch(saveProjects(data.projects));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   if (data)
@@ -74,7 +81,10 @@ function DashboardLayout() {
                         handleMakeParams("projectId", String(item.id));
                         handleMakeParams("userId", "");
                       }}
-                      className={`dashboard-sidebar-bot ${activeProject === item.id && "dashboard-sidebar-bot-active"}`}
+                      className={`dashboard-sidebar-bot ${
+                        activeProject === item.id &&
+                        "dashboard-sidebar-bot-active"
+                      }`}
                       key={item.id}
                     >
                       <BotSvg /> {item.displayName || `Bot-${item.id}`}

@@ -24,14 +24,17 @@ function RoutElements() {
   return (
     <div className="root">
       <Routes>
-        <Route path="/" element={!acceptMainLayout.includes(path) ? <MainLayout /> : null}>
+        <Route
+          path="/"
+          element={!acceptMainLayout.includes(path) ? <MainLayout /> : null}
+        >
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="auth" element={<AuthPage />}>
             <Route path="signin" element={<AuthSignin />} />
             <Route path="signup" element={<AuthSignUp />} />
           </Route>
-          /** news page */
+          {/** news page */}
           <Route path="news">
             <Route index element={<NewsPage />} />
             <Route path=":newsId" element={<NewsIdPage />} />

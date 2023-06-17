@@ -11,7 +11,7 @@ function ChatPage() {
 
   const endingRef = useRef<HTMLInputElement>(null);
 
-  const [trigger, result, lastPromise] = useLazyGetProjetUserMessagesQuery();
+  const [trigger, result] = useLazyGetProjetUserMessagesQuery();
 
   const { data } = result;
 
@@ -20,10 +20,14 @@ function ChatPage() {
 
   useEffect(() => {
     userId && botId && trigger({ userId, botId }, false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
   return (
-    <div className={`chat ${!userId ? "display_center" : ""}`} style={!userId ? { justifyContent: "center" } : {}}>
+    <div
+      className={`chat ${!userId ? "display_center" : ""}`}
+      style={!userId ? { justifyContent: "center" } : {}}
+    >
       {userId ? (
         <>
           <div className="chat-content">
@@ -31,7 +35,9 @@ function ChatPage() {
               return (
                 <div key={index + "message"} className="chat-message">
                   {item.question && <ChatMessage text={item.question} isUser />}
-                  {item.response && <ChatMessage text={item.response} isUser={false} />}
+                  {item.response && (
+                    <ChatMessage text={item.response} isUser={false} />
+                  )}
                 </div>
               );
             })}

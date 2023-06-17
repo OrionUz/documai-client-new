@@ -1,4 +1,4 @@
-import { AboutTopSvg, AboutUpSvg } from "src/assets/svg/freepik/about";
+import { AboutTopSvg } from "src/assets/svg/freepik/about";
 
 export const memberpicData = [
   {

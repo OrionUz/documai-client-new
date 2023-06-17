@@ -17,12 +17,14 @@ function ProjectUsers() {
 
   useEffect(() => {
     botId && trigger(botId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [botId, projectId]);
 
   const [users, setUsers] = useState<IProjectUser[]>([]);
   useEffect(() => {
     if (data && botId) setUsers(data.botUsers);
     else setUsers([]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectId, data]);
 
   return (

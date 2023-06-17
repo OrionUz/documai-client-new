@@ -35,6 +35,7 @@ function DocumentsPage() {
         handleMakeParams("projectId", String(projects[0].id));
       }
     } else setDocuments([]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectId, projects]);
 
   //Upload new documents
@@ -71,7 +72,9 @@ function DocumentsPage() {
           })}
       </div>
       <div className="documents-footer">
-        <div className="documents-footer-left">{/* <CustomPagination total={50} /> */}</div>
+        <div className="documents-footer-left">
+          {/* <CustomPagination total={50} /> */}
+        </div>
         <div className="documents-footer-right">
           <Link to={`train?projectId=${projectId}`}>
             <CustomButton color="dark" bordered>
@@ -92,10 +95,18 @@ function DocumentsPage() {
               View instruction
             </CustomButton>
           </div>
-          <CustomUpload maxSize={20} disabled={isLoading} onChange={(info) => setNewFileList(info.fileList)} />
+          <CustomUpload
+            maxSize={20}
+            disabled={isLoading}
+            onChange={(info) => setNewFileList(info.fileList)}
+          />
           {newFileList ? (
             <div className="documents-add-footer">
-              <CustomButton color="light" onClick={handleUpload} loading={isLoading}>
+              <CustomButton
+                color="light"
+                onClick={handleUpload}
+                loading={isLoading}
+              >
                 Upload
               </CustomButton>
             </div>
