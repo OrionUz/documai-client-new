@@ -11,11 +11,7 @@ function PricingCard({ item }: PricingCardProps) {
           {item.price}
           {item.price_duration ? <span>{item.price_duration}</span> : ""}
         </div>
-        {item.description ? (
-          <div className="pricingcard-description">{item.description}</div>
-        ) : (
-          ""
-        )}
+        {item.description ? <div className="pricingcard-description">{item.description}</div> : ""}
         {item.requirement ? (
           <div className="pricingcard-requirement">
             {item.requirement} <span>Learn more</span>
@@ -23,11 +19,10 @@ function PricingCard({ item }: PricingCardProps) {
         ) : (
           ""
         )}
-        {item.includes.map((include) => {
+        {item.includes.map((include, index) => {
           return (
-            <div className="pricingcard-include">
-              {item.main ? <CorrectActiveSvg /> : <CorrectInActiveSvg />}{" "}
-              {include}
+            <div className="pricingcard-include" key={include + index}>
+              {item.main ? <CorrectActiveSvg /> : <CorrectInActiveSvg />} {include}
             </div>
           );
         })}

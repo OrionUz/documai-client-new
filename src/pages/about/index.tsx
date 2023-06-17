@@ -1,16 +1,9 @@
-import React from "react";
-import { AboutTopSvg } from "src/assets/svg/freepik/about";
 import CustomSlider from "src/components/common/slider";
-import {
-  IntroPartData,
-  ProjectsPartData,
-  aboutProData,
-  memberpicData,
-} from "./const";
-import MembersPic from "./components/MembersPart";
 import AboutPart from "./components/AboutPart";
 import IntroPart from "./components/IntroPart";
+import MembersPic from "./components/MembersPart";
 import ProjectsPart from "./components/ProjectsPart";
+import { IntroPartData, ProjectsPartData, aboutProData, memberpicData } from "./const";
 
 function AboutPage() {
   return (
@@ -18,15 +11,15 @@ function AboutPage() {
       <div className="blur_purple" />
       <div className="blur_blue" />
       <div className="container">
-        {IntroPartData.map((item) => {
-          return <IntroPart item={item}></IntroPart>;
+        {IntroPartData.map((item, index) => {
+          return <IntroPart item={item} key={item.title + index}></IntroPart>;
         })}
 
         <section className="about-middle">
           <h3 className="home-subtitle">About project</h3>
           <div className="about-middle-top">
             {aboutProData.map((item, index) => {
-              return <AboutPart item={item} index={index}></AboutPart>;
+              return <AboutPart item={item} index={index} key={item.text + index}></AboutPart>;
             })}
           </div>
         </section>
@@ -35,8 +28,8 @@ function AboutPage() {
           <div className="home-subtitle">About Us</div>
           <div className="home-news">
             <CustomSlider counts={5}>
-              {[...memberpicData, ...memberpicData].map((item) => {
-                return <MembersPic item={item} />;
+              {[...memberpicData, ...memberpicData].map((item, index) => {
+                return <MembersPic item={item} key={item.description + index} />;
               })}
             </CustomSlider>
           </div>
@@ -45,8 +38,8 @@ function AboutPage() {
         <div className="home-subtitle">Our projects</div>
         <section className="about-buttom">
           <div className="about-buttom-parts">
-            {ProjectsPartData.map((item) => {
-              return <ProjectsPart item={item}></ProjectsPart>;
+            {ProjectsPartData.map((item, index) => {
+              return <ProjectsPart item={item} key={item.title + index}></ProjectsPart>;
             })}
           </div>
         </section>

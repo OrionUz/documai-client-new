@@ -1,7 +1,7 @@
-import { newscardData } from "src/pages/home/const";
-import { photoData } from "./const";
 import CustomSlider from "src/components/common/slider";
 import NewsCard from "src/pages/home/components/NewsCard";
+import { newscardData } from "src/pages/home/const";
+import { photoData } from "./const";
 
 function NewsIdPage() {
   return (
@@ -9,28 +9,12 @@ function NewsIdPage() {
       <div className="blur_purple" />
       <div className="blur_blue" />
 
-      {/* <Breadcrumb
-        items={[
-          {
-            title: "Home",
-          },
-          {
-            title: <a href="">Application Center</a>,
-          },
-          {
-            title: <a href="">Application List</a>,
-          },
-          {
-            title: "An Application",
-          },
-        ]}
-      /> */}
       <div className="newsid-content">
         <div className="newsid-content-slider">
           <CustomSlider counts={1}>
-            {photoData.map((item) => {
+            {photoData.map((item, index) => {
               return (
-                <div className="newsid-content-photo">
+                <div className="newsid-content-photo" key={"dsfs" + index}>
                   <img src={item.img} alt="error img" />
                 </div>
               );
@@ -66,8 +50,8 @@ function NewsIdPage() {
         <div className="newsid-all-title">Похожые новости</div>
         <div className="home-news">
           <CustomSlider>
-            {[...newscardData, ...newscardData].map((item) => {
-              return <NewsCard item={item} />;
+            {[...newscardData, ...newscardData].map((item, index) => {
+              return <NewsCard item={item} key={"sdfsdf" + index} />;
             })}
           </CustomSlider>
         </div>

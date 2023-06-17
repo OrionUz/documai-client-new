@@ -36,7 +36,7 @@ function HomePage() {
         {/* Infocards */}
         <div className="home-introcards">
           {introcardData.map((item) => {
-            return <IntroCard item={item} />;
+            return <IntroCard item={item} key={item.description} />;
           })}
         </div>
 
@@ -46,7 +46,7 @@ function HomePage() {
           <div className="home-usage">
             {usagecardData.map((item) => {
               return (
-                <div className="home-usage-card">
+                <div className="home-usage-card" key={item.info}>
                   {item.icon}
                   <p>{item.info}</p>
                 </div>
@@ -60,7 +60,7 @@ function HomePage() {
           <div className="home-subtitle">About</div>
           <div className="home-about">
             {aboutcardData.map((item) => {
-              return <AboutCard item={item} />;
+              return <AboutCard item={item} key={item.title} />;
             })}
           </div>
         </section>
@@ -71,7 +71,7 @@ function HomePage() {
           <div className="home-pricing">
             <CustomSlider counts={3}>
               {pricingCardData.map((item) => {
-                return <PricingCard item={item} />;
+                return <PricingCard item={item} key={item.price} />;
               })}
             </CustomSlider>
           </div>
@@ -82,8 +82,8 @@ function HomePage() {
           <div className="home-subtitle">News & Blogs</div>
           <div className="home-news">
             <CustomSlider>
-              {[...newscardData, ...newscardData].map((item) => {
-                return <NewsCard item={item} />;
+              {[...newscardData, ...newscardData].map((item, index) => {
+                return <NewsCard item={item} key={item.description + index} />;
               })}
             </CustomSlider>
           </div>

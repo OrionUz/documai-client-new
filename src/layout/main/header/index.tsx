@@ -73,7 +73,7 @@ function Header() {
           </div>
           <div className="home-pricing">
             {pricingCardData.map((item) => {
-              return <PricingCard item={item} />;
+              return <PricingCard item={item} key={item.price} />;
             })}
           </div>
         </section>
