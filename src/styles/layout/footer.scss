@@ -59,12 +59,14 @@
         margin-bottom: 12px;
       }
       p {
+        display: block;
         @extend .text;
         color: $text2;
         margin-bottom: 40px;
       }
       ul {
         display: flex;
+        flex-flow: row wrap;
         gap: 24px;
         li {
           font-size: 18px;
@@ -107,6 +109,37 @@
         gap: 20px;
         p {
           cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+//MEDIA QUERY
+
+@media screen and (max-width: 1050px) {
+  .footer {
+    &-content {
+      padding: 24px 15px 51px;
+      &-main {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      &-right {
+        width: 100%;
+        gap: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .footer {
+    &-content {
+      &-header {
+        h2 {
+          font-size: 20px;
         }
       }
     }

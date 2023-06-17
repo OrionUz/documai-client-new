@@ -20,6 +20,7 @@
       width: 678px;
       h1 {
         @extend #{".title_xl", ".gradient_text"};
+        display: block;
         line-height: 120%;
         margin-bottom: 20px;
       }
@@ -47,6 +48,7 @@
     display: flex;
     gap: 142px;
     justify-content: center;
+    align-items: center;
     &-card {
       flex-grow: 1;
       p {
@@ -58,6 +60,7 @@
     }
   }
   &-about {
+    width: 100%;
     display: flex;
     gap: 36px;
     flex-wrap: wrap;
@@ -67,6 +70,7 @@
     display: flex;
     gap: 36px;
     justify-content: center;
+    align-items: center;
   }
 }
 
@@ -74,3 +78,80 @@
 @import "aboutcard.scss";
 @import "pricingcard.scss";
 @import "newscard.scss";
+
+//MEDIA QUERY
+
+@media screen and (max-width: 1450px) {
+  .home {
+    &-top {
+      &-left h1 {
+        width: 550px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .home {
+    &-top {
+      flex-direction: column;
+      gap: 44px;
+    }
+
+    &-introcards {
+      flex-direction: column;
+    }
+
+    &-usage {
+      flex-direction: column;
+      &-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .home {
+    &-top {
+      &-right {
+        margin: 0;
+        width: 410px;
+        height: 280px;
+      }
+      &-left {
+        h1 {
+          width: 420px;
+        }
+
+        p {
+          width: 420px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .home {
+    &-top {
+      &-right {
+        margin: 0;
+        width: 335px;
+        height: 192px;
+      }
+      &-left {
+        h1 {
+          width: 320px;
+        }
+
+        p {
+          width: 320px;
+        }
+      }
+    }
+  }
+}

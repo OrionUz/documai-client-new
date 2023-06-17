@@ -1,5 +1,4 @@
 .about {
-  width: 100%;
   padding-top: 144px;
 
   .container {
@@ -9,20 +8,18 @@
   }
 
   &-top {
-    display: flex;
-    align-items: flex-start;
     gap: 20px;
-    justify-content: space-between;
     @extend #{".display_center"};
 
     &-left {
-      padding-top: 180px;
+      @extend #{".display_center"};
+      flex-direction: column;
       h1 {
         @extend .title_xl;
         @extend .gradient_text;
       }
       p {
-        width: 538px;
+        //width: 538px;
         padding-top: 20px;
         @extend .text_l;
       }
@@ -39,12 +36,14 @@
       &-box {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         &-element {
           margin: 49px 0 0 49px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          margin-right: 30px;
 
           &-heading {
             @extend #{".display_center"};
@@ -60,7 +59,7 @@
           &-stat {
             display: flex;
             justify-content: space-between;
-            margin-right: 20px;
+            margin: 100px 20px 0;
 
             &-pack {
               &-year {
@@ -74,54 +73,117 @@
         }
       }
     }
-    // &-top {
-    //   display: flex;
-    //   gap: 70px;
-    //   @extend #{".display_center"};
-    //   margin-top: 20px;
-    //   flex-wrap: wrap;
-    //   flex-direction: row;
+  }
+}
 
-    //   & > div {
-    //     display: flex;
-    //     //flex-basis: calc(50% - 40px);
-    //     justify-content: space-between;
-    //     flex-direction: column;
-    //   }
+//MEDIA QUERY
 
-    //   &-img {
-    //     height: 391px;
-    //     width: 596px;
-    //   }
+@media screen and (max-width: 1450px) {
+  .about {
+    &-top {
+      &-right svg {
+        width: 550px;
+      }
+    }
 
-    //   &-box {
-    //     &-add {
-    //       display: flex;
-    //       flex-direction: column;
-    //       flex: 1;
-    //       justify-content: space-between;
-    //     }
-    //   }
+    &-middle {
+      &-top {
+        &-box {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
 
-    //   &-box {
-    //     margin-top: -150px;
-    //     width: 600px;
-    //     &-paragraph {
-    //       vertical-align: top;
-    //       margin-top: 16px;
-    //       color: #d9d9d9 !important;
-    //       flex: 1;
-    //     }
-    //   }
+          &-element {
+            :last-child {
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
-    //   //bottom
+@media screen and (max-width: 1200px) {
+  .about {
+    &-top {
+      &-right svg {
+        width: 450px;
+      }
 
-    //   &-bottom {
-    //     display: flex;
-    //     justify-content: space-between;
-    //     @extend #{".display_center"};
-    //     flex: none;
-    //   }
-    // }
+      &-left {
+        h1 {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .about {
+    &-top {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: -60px;
+
+      &-right svg {
+        height: 450px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .about {
+    &-top {
+      &-left {
+        h1 {
+          width: 330px;
+          font-size: 25px;
+        }
+
+        p {
+          width: 330px;
+        }
+      }
+      &-right svg {
+        height: 350px;
+      }
+    }
+
+    &-middle {
+      &-top {
+        &-box img {
+          width: 335px;
+          height: 225px;
+        }
+
+        &-box {
+          &-element {
+            margin: 16px 0 0;
+
+            &-stat {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: flex-start;
+              margin: 40px auto;
+              &-pack {
+                width: 50%;
+                &-year {
+                  font-size: 24px;
+                }
+
+                p {
+                  padding-top: 6px;
+                  font-size: 13px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

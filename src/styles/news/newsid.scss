@@ -1,7 +1,7 @@
 .newsid {
   padding-top: 120px;
   &-content {
-    width: 918px;
+    //width: 918px;
     margin: 0 auto;
 
     position: relative;
@@ -10,7 +10,7 @@
 
     &-slider {
       margin-top: 24px;
-      width: 925px;
+      //width: 925px;
       height: 516px;
     }
 
@@ -19,6 +19,7 @@
     }
 
     &-subtitle {
+      display: block;
       @extend .title;
       margin: 24px 0 20px;
       text-align: center;
@@ -37,6 +38,19 @@
       @extend .title_sm;
       line-height: 140%;
       margin-bottom: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .newsid {
+    &-content {
+      &subtitle {
+        font-size: 24px;
+      }
+      &-text {
+        font-size: 16px;
+      }
     }
   }
 }

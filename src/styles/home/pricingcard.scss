@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 28px 24px;
+  max-width: 100%;
 
   background-color: $bg_dark;
   border: 1px solid #666471;
@@ -87,5 +88,12 @@
         color: $black;
       }
     }
+  }
+}
+
+//MEDIA QUERY
+
+@media screen and (max-width: 450px) {
+  .pricingcard {
   }
 }

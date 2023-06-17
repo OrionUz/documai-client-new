@@ -26,13 +26,14 @@
   }
 
   &-full {
+    display: flex;
     padding: 40px 72px 36px 32px;
     .aboutcard {
       &-left {
         width: 693px;
         h2 {
           @extend .title_l;
-          width: 650px;
+          //width: 650px;
           line-height: 130%;
           margin-bottom: 16px;
         }
@@ -51,12 +52,92 @@
       &-left {
         h2 {
           @extend .title;
-          width: 400px;
           line-height: 120%;
           margin-bottom: 24px;
         }
         p {
-          width: 527px;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+//MEDIA QUERY
+
+@media screen and (max-width: 1450px) {
+  .aboutcard {
+    &-full {
+      width: 90%;
+      .aboutcard {
+        &-left {
+          h2 {
+            font-size: 30px;
+          }
+        }
+
+        &-right svg {
+          width: 350px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .aboutcard {
+    &-right svg {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .aboutcard {
+    &-right {
+      display: none;
+    }
+
+    &-half {
+      width: auto;
+    }
+
+    &-full {
+      .aboutcard {
+        &-left {
+          h2 {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+}
+
+@media screen and (max-width: 450px) {
+  .aboutcard {
+    &-full {
+      .aboutcard {
+        &-left {
+          h2 {
+            font-size: 24px;
+          }
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    &-half {
+      .aboutcard {
+        &-left {
+          img {
+            width: 330px;
+          }
         }
       }
     }

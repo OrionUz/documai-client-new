@@ -9,12 +9,8 @@ function AboutPart({ item, index }: AboutProProps) {
         alt="error about img"
       />
       <div className="about-middle-top-box-element">
-        <div>
-          <div className="about-middle-top-box-element-heading .text_s">
-            {item.title}
-          </div>
-          <p className="about-middle-top-box-element-paragraph">{item.text}</p>
-        </div>
+        <h1 className="about-middle-top-box-element-heading">{item.title}</h1>
+        <p className="about-middle-top-box-element-paragraph">{item.text}</p>
 
         <div className="about-middle-top-box-element-stat ">
           {item.stat

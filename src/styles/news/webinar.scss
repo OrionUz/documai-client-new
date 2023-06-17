@@ -14,7 +14,7 @@
   }
 
   &-box {
-    display: flex;
+    @extend .display_center;
     justify-content: space-between;
     gap: 36px;
     z-index: 20;
@@ -39,6 +39,44 @@
         @extend .text_s;
         @extend .line_clamp3;
         width: 480px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .webinar {
+    &-box a {
+      img {
+        width: 600px;
+      }
+    }
+
+    &-box {
+      &-left {
+        &-title {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .webinar {
+    &-box a {
+      img {
+        width: 550px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .webinar {
+    &-box a {
+      img {
+        width: 450px;
       }
     }
   }

@@ -42,8 +42,8 @@ function AboutPage() {
           </div>
         </section>
 
+        <div className="home-subtitle">Our projects</div>
         <section className="about-buttom">
-          <div className="home-subtitle">Our projects</div>
           <div className="about-buttom-parts">
             {ProjectsPartData.map((item) => {
               return <ProjectsPart item={item}></ProjectsPart>;

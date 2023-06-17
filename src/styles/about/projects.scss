@@ -1,5 +1,6 @@
 .about {
   &-buttom {
+    @extend .display_center;
     &-title {
       @extend .title_l;
       @extend .display_center;
@@ -19,6 +20,7 @@
         justify-content: space-between;
         background-color: $bg_dark;
         border: 1px solid #6e6b7a;
+        gap: 30px;
         &-img {
           img {
             width: 221px;
@@ -28,14 +30,76 @@
 
         &-box {
           &-title {
-            width: 370px;
-            height: 76px;
+            width: 330px;
             @extend .title;
           }
           &-text {
             padding-top: 16px;
             @extend .text_s;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .about {
+    &-buttom {
+      &-parts {
+        flex-direction: column;
+        align-items: center;
+        width: 1000px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .about {
+    &-buttom {
+      &-parts {
+        &-part {
+          padding-right: 20px;
+          width: 330px;
+          &-img {
+            width: 120px;
+
+            img {
+              width: 120px;
+              object-fit: cover;
+            }
+          }
+          &-box {
+            &-title {
+              width: 187px;
+              font-size: 16px;
+            }
+            &-text {
+              font-size: 13px;
+              width: 181px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .about {
+    &-buttom {
+      &-parts {
+        &-part {
+          padding: 20px 20px;
+          &-img {
+            width: 86px;
+            height: 86px;
+          }
+        }
+        img {
+          width: 86px;
+          height: 86px;
         }
       }
     }

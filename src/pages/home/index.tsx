@@ -69,9 +69,11 @@ function HomePage() {
         <section>
           <div className="home-subtitle">Pricing</div>
           <div className="home-pricing">
-            {pricingCardData.map((item) => {
-              return <PricingCard item={item} />;
-            })}
+            <CustomSlider counts={3}>
+              {pricingCardData.map((item) => {
+                return <PricingCard item={item} />;
+              })}
+            </CustomSlider>
           </div>
         </section>
 

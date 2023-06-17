@@ -154,3 +154,35 @@ $transition: 0.3s;
     transform: translatey(0px);
   }
 }
+
+//MEDIA QUIRY
+
+@media screen and (max-width: 680px) {
+  .title_l {
+    font-size: 30px;
+  }
+
+  .title_xl {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .title_l {
+    font-size: 30px;
+  }
+
+  .title_xl {
+    font-size: 25px;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 24px;
+    color: $white;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}
