@@ -5,13 +5,14 @@
   border-radius: 16px;
 
   &-content {
-    padding: 12px 12px 24px;
+    padding: 12px;
     display: flex;
     align-items: center;
     gap: 18px;
-    border-bottom: 1px solid $stroke;
+    // border-bottom: 1px solid $stroke;
 
     &-icon {
+      flex-shrink: 0;
       width: 68px;
       height: 68px;
       background: $gradient_angular;
@@ -20,8 +21,10 @@
     }
 
     &-info {
+      flex-shrink: 0;
+      width: 245px;
       h3 {
-        @extend .text;
+        @extend #{".text", ".line_clamp1"};
         line-height: 100%;
         margin-bottom: 9.6px;
       }
@@ -34,8 +37,6 @@
     }
 
     &-delete {
-      flex-grow: 1;
-      text-align: end;
       svg {
         cursor: pointer;
       }

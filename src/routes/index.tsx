@@ -15,6 +15,7 @@ import QualityIdPage from "src/pages/quality/[id]";
 import AuthSignUp from "src/pages/auth/signup";
 import NewsPage from "src/pages/news";
 import NewsIdPage from "src/pages/news/[id]";
+import DocumentsTrainPage from "src/pages/documents/train";
 
 function RoutElements() {
   const { pathname } = useLocation();
@@ -23,10 +24,7 @@ function RoutElements() {
   return (
     <div className="root">
       <Routes>
-        <Route
-          path="/"
-          element={!acceptMainLayout.includes(path) ? <MainLayout /> : null}
-        >
+        <Route path="/" element={!acceptMainLayout.includes(path) ? <MainLayout /> : null}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="auth" element={<AuthPage />}>
@@ -40,7 +38,10 @@ function RoutElements() {
           </Route>
           <Route path="dashboard" element={<DashboardLayout />}>
             <Route index element={<DocumentsPage />} />
-            <Route path="document" element={<DocumentsPage />} />
+            <Route path="document">
+              <Route index element={<DocumentsPage />} />
+              <Route path="train" element={<DocumentsTrainPage />} />
+            </Route>
             <Route path="quality">
               <Route index element={<QualityPage />} />
               <Route path=":qualityId" element={<QualityIdPage />} />

@@ -1,5 +1,4 @@
 .documents {
-  min-height: calc(100% - 88px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,6 +20,7 @@
 
     &-right {
       display: flex;
+      align-items: center;
       gap: 16px;
     }
   }

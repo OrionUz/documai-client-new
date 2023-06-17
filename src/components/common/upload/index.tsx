@@ -4,11 +4,7 @@ import { documentTypes } from "./const";
 import { DropSvg } from "src/assets/svg";
 import { CustomUploadProps } from "./type";
 
-function CustomUpload({
-  accept = documentTypes,
-  onChange,
-  maxSize,
-}: CustomUploadProps) {
+function CustomUpload({ accept = documentTypes, onChange, maxSize, disabled }: CustomUploadProps) {
   const { Dragger } = Upload;
 
   const props: UploadProps = {
@@ -31,7 +27,7 @@ function CustomUpload({
         },
       }}
     >
-      <Dragger {...props}>
+      <Dragger {...props} disabled={disabled}>
         <div className="custom-upload">
           <div className="custom-upload-content">
             <DropSvg />

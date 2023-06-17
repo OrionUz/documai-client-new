@@ -4,17 +4,8 @@ $bg_dark: #212a37;
 $bg_form: #353e4b;
 $gradient_text: linear-gradient(90deg, #a770ef 0%, #cf8bf3 50%, #fdb99b 100%);
 $gradient_button: linear-gradient(88.69deg, #c216ff 0.65%, #1677ff 151.38%);
-$gradient_button_disabled: linear-gradient(
-  88.69deg,
-  rgba(194, 22, 255, 0.6) 0.65%,
-  rgba(22, 119, 255, 0.6) 151.38%
-);
-$gradient_angular: conic-gradient(
-  from 180deg at 50% 50%,
-  #006afb 0deg,
-  #5ca1fe 360deg,
-  #5ca1fe 360deg
-);
+$gradient_button_disabled: linear-gradient(88.69deg, rgba(194, 22, 255, 0.6) 0.65%, rgba(22, 119, 255, 0.6) 151.38%);
+$gradient_angular: conic-gradient(from 180deg at 50% 50%, #006afb 0deg, #5ca1fe 360deg, #5ca1fe 360deg);
 .gradient_text {
   background: $gradient_text;
   -webkit-background-clip: text;
@@ -38,6 +29,7 @@ $white: #ffffff;
 $white_05: #ffffff50;
 $white_06: #ffffff60;
 $white_07: #ffffff70;
+$white_09: #ffffff90;
 $white_disable: rgba(255, 255, 255, 0.6);
 
 //Size
@@ -191,6 +183,7 @@ $transition: 0.3s;
   /* Handle */
   &::-webkit-scrollbar-thumb {
     background: $bg_form;
+    border-radius: 100px;
   }
 
   /* Handle on hover */
@@ -205,5 +198,14 @@ $transition: 0.3s;
   /* width */
   &::-webkit-scrollbar {
     width: 7px;
+  }
+}
+
+.scroll_10 {
+  @extend .scroll;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 10px;
   }
 }

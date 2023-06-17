@@ -11,18 +11,19 @@ function RadioButton({ defaultValue, onChange, buttons }: RadioButtonProps) {
               fontSize: 16,
               paddingContentHorizontal: 35,
               colorBorder: "none",
+              colorTextDisabled: "#ffffff70",
               borderRadius: 4,
             },
           },
         }}
       >
-        <Radio.Group
-          size="large"
-          defaultValue={defaultValue}
-          onChange={(ev) => onChange?.(ev.target.value)}
-        >
+        <Radio.Group size="large" defaultValue={defaultValue}>
           {buttons.map((item) => {
-            return <Radio.Button value={item.value}>{item.title}</Radio.Button>;
+            return (
+              <Radio.Button value={item.value} disabled={item.disabled} onClick={() => onChange?.(item.value)}>
+                {item.title}
+              </Radio.Button>
+            );
           })}
         </Radio.Group>
       </ConfigProvider>

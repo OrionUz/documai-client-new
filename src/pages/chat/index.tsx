@@ -1,26 +1,42 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
-import { chatMessages } from "./const";
+import { useLazyGetProjetUserMessagesQuery } from "src/app/services/projects";
 import ChatMessage from "./components/ChatMessage";
+import { useTypedSelector } from "src/app/store";
 
 function ChatPage() {
   const [searchParams] = useSearchParams();
   const userId = searchParams.get("userId");
+  const projectId = searchParams.get("projectId");
 
   const endingRef = useRef<HTMLInputElement>(null);
 
+  const [trigger, result, lastPromise] = useLazyGetProjetUserMessagesQuery();
+
+  const { data } = result;
+
+  const projects = useTypedSelector((state) => state.project.projects);
+  const botId = projects.find((el) => String(el.id) === projectId)?.chatbotId;
+
+  useEffect(() => {
+    userId && botId && trigger({ userId, botId }, false);
+  }, [userId]);
+
   return (
-    <div className={`chat ${!userId ? "display_center" : ""}`}>
+    <div className={`chat ${!userId ? "display_center" : ""}`} style={!userId ? { justifyContent: "center" } : {}}>
       {userId ? (
         <>
-          {chatMessages.map((item, index) => {
-            return (
-              <div key={index + "message"} className="chat-message">
-                <ChatMessage text={item.text} isUser={item.isUser} />
-              </div>
-            );
-          })}
-          <input ref={endingRef} className="chat-message-ref" />
+          <div className="chat-content">
+            {data?.chats.map((item, index) => {
+              return (
+                <div key={index + "message"} className="chat-message">
+                  {item.question && <ChatMessage text={item.question} isUser />}
+                  {item.response && <ChatMessage text={item.response} isUser={false} />}
+                </div>
+              );
+            })}
+            <input ref={endingRef} className="chat-message-ref" />
+          </div>
         </>
       ) : (
         <div className="chat-nodata">

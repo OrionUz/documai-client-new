@@ -18,6 +18,13 @@
   background-color: transparent;
   border: 1px solid #77727d;
 
+  transition: $transition;
+
+  &:hover {
+    background-color: $secondary_disabled;
+    border-color: $white_disable;
+  }
+
   &-light {
     padding: 17px 32px;
     background: $gradient_button;
@@ -33,8 +40,8 @@
     }
 
     &:hover {
-      filter: brightness(80%);
-      //transform: scale(0.9);
+      background: $gradient_button_disabled;
+      border-color: $white_disable;
     }
   }
 
@@ -52,6 +59,10 @@
       padding: 14px 24px;
       border: 1px solid $stroke;
     }
+
+    &:hover {
+      background-color: $secondary_disabled;
+    }
   }
 
   &-white {
@@ -66,6 +77,9 @@
     }
     &-bordered {
       border: 1px solid $white;
+    }
+    &:hover {
+      background: $white_09;
     }
   }
 }

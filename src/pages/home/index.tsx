@@ -1,16 +1,11 @@
-import {
-  aboutcardData,
-  introcardData,
-  newscardData,
-  pricingCardData,
-  usagecardData,
-} from "./const";
+import { aboutcardData, introcardData, newscardData, pricingCardData, usagecardData } from "./const";
 import CustomButton from "src/components/common/button";
 import IntroCard from "./components/IntroCard";
 import AboutCard from "./components/AboutCard";
 import PricingCard from "./components/PricingCard";
 import NewsCard from "./components/NewsCard";
 import CustomSlider from "src/components/common/slider";
+import ReactPlayer from "react-player";
 
 function HomePage() {
   return (
@@ -22,15 +17,20 @@ function HomePage() {
         <div className="home-top">
           <div className="home-top-left">
             <h1>Create an AI customer service assistant</h1>
-            <p>
-              With Docum.ai you can boost your business 5 times without.
-              Docum.ai works to any languages
-            </p>
+            <p>With Docum.ai you can boost your business 5 times without. Docum.ai works to any languages</p>
             <CustomButton color="light" bordered>
               Book demo version
             </CustomButton>
           </div>
-          <div className="home-top-right">Docum.ai is platform</div>
+          <div className="home-top-right">
+            <ReactPlayer
+              width={640}
+              url="https://www.youtube.com/watch?v=F4o2Zs0pjwU"
+              playing={false}
+              controls={true}
+              light={<img src={require("src/assets/img/home/video_bg.png")} alt="Thumbnail" style={{ width: 640 }} />}
+            />
+          </div>
         </div>
 
         {/* Infocards */}
@@ -66,7 +66,7 @@ function HomePage() {
         </section>
 
         {/* Pricing */}
-        <section>
+        <section id="pricing">
           <div className="home-subtitle">Pricing</div>
           <div className="home-pricing">
             {pricingCardData.map((item) => {

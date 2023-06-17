@@ -1,4 +1,6 @@
+import { IProjectUser } from "src/app/services/projects/type";
+
 export interface UserCardProps {
-  item: number;
+  data: IProjectUser;
   active?: boolean;
 }

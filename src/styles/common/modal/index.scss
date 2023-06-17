@@ -1,0 +1,55 @@
+.custom-modal {
+  &-header {
+    padding: 32px 32px 16px;
+    border-bottom: 1px solid $stroke;
+
+    h2,
+    p {
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      @extend .text_l;
+      line-height: 130%;
+    }
+
+    p {
+      @extend .text_s;
+      line-height: 130%;
+      color: $white_06;
+    }
+  }
+
+  &-content {
+    padding: 24px 32px 32px;
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+
+    button {
+      height: 52px;
+      width: 150px;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 0;
+
+      @extend .display_center;
+      svg {
+        width: 18px;
+        height: 18px;
+        stroke: $white;
+      }
+    }
+  }
+
+  &-form {
+    &-project {
+      max-width: 427px;
+      margin-bottom: 80px;
+    }
+  }
+}

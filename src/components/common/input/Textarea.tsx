@@ -1,7 +1,7 @@
 import { ConfigProvider, Input } from "antd";
 import { CustomTextAreaProps } from "./type";
 
-function CustomTextArea({ rows, placeholder }: CustomTextAreaProps) {
+function CustomTextArea({ ...rest }: CustomTextAreaProps) {
   const { TextArea } = Input;
   return (
     <ConfigProvider
@@ -16,7 +16,7 @@ function CustomTextArea({ rows, placeholder }: CustomTextAreaProps) {
         },
       }}
     >
-      <TextArea rows={rows} placeholder={placeholder} />
+      <TextArea {...rest} />
     </ConfigProvider>
   );
 }
