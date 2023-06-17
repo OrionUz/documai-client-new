@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useLazyGetChatQuery, useSendChatQueryMutation } from "src/app/services/chat";
+import {
+  useLazyGetChatQuery,
+  useSendChatQueryMutation,
+} from "src/app/services/chat";
 import { IMessage } from "src/app/services/chat/type";
 import { MessageSendSvg } from "src/assets/svg";
 import CustomInput from "src/components/common/input";
@@ -23,6 +26,7 @@ function DocumentsTrainPage() {
 
   useEffect(() => {
     projectId && trigger(projectId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectId]);
 
   useEffect(() => {
@@ -35,7 +39,8 @@ function DocumentsTrainPage() {
   //Send chat queries
   const [value, setValue] = useState<string | undefined>();
   const [activeTypist, setActiveTypist] = useState(false);
-  const [sendChatQuery, { isLoading, isSuccess, isError, data: queryRes }] = useSendChatQueryMutation();
+  const [sendChatQuery, { isLoading, isSuccess, isError, data: queryRes }] =
+    useSendChatQueryMutation();
 
   useEffect(() => {
     let arr = messages;
@@ -48,6 +53,7 @@ function DocumentsTrainPage() {
       setMessages([...arr]);
       setActiveTypist(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSuccess, isError, queryRes]);
 
   const handleKeypress = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -77,9 +83,14 @@ function DocumentsTrainPage() {
             <div key={index + "message"} className="chat-message">
               {item.question && <ChatMessage text={item.question} isUser />}
               {item.response && (
-                <ChatMessage text={item.response} typist={messages.length === index + 1 && activeTypist} />
+                <ChatMessage
+                  text={item.response}
+                  typist={messages.length === index + 1 && activeTypist}
+                />
               )}
-              {messages.length === index + 1 && !item.response && isLoading && <ChatMessage text="" loading />}
+              {messages.length === index + 1 && !item.response && isLoading && (
+                <ChatMessage text="" loading />
+              )}
             </div>
           );
         })}

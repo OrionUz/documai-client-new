@@ -17,12 +17,14 @@ function ProjectUsers() {
 
   useEffect(() => {
     botId && trigger(botId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [botId, projectId]);
 
   const [users, setUsers] = useState<IProjectUser[]>([]);
   useEffect(() => {
     if (data && botId) setUsers(data.botUsers);
     else setUsers([]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectId, data]);
 
   return (
@@ -33,7 +35,12 @@ function ProjectUsers() {
         </div>
         <div className="dashboard-users-content">
           {users.map((item) => {
-            return <UserCard data={item} active={userId && +userId === item.id ? true : false} />;
+            return (
+              <UserCard
+                data={item}
+                active={userId && +userId === item.id ? true : false}
+              />
+            );
           })}
         </div>
       </div>

@@ -22,6 +22,7 @@ function AddProject() {
 
   useEffect(() => {
     isSuccess && closeModal();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSuccess]);
 
   return (
@@ -36,11 +37,20 @@ function AddProject() {
             <p>We automatically bill on the 1st of each month.</p>
           </div>
           <div className="custom-modal-content">
-            <Form form={form} name="add_project" layout="vertical" onFinish={(data: IAddProjec) => addProject(data)}>
+            <Form
+              form={form}
+              name="add_project"
+              layout="vertical"
+              onFinish={(data: IAddProjec) => addProject(data)}
+            >
               <div className="custom-modal-form-project">
                 {addProjectFormItems.map((item) => {
                   return (
-                    <Form.Item label={item.label} name={item.name} rules={[{ required: true, message: item.message }]}>
+                    <Form.Item
+                      label={item.label}
+                      name={item.name}
+                      rules={[{ required: true, message: item.message }]}
+                    >
                       <CustomInput size="large" placeholder={item.message} />
                     </Form.Item>
                   );

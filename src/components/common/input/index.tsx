@@ -2,7 +2,6 @@ import { ConfigProvider, Input } from "antd";
 import { CustomInputProps } from "./type";
 
 function CustomInput({ size, ...rest }: CustomInputProps) {
-  const { TextArea } = Input;
   return (
     <ConfigProvider
       theme={{
