@@ -118,6 +118,7 @@ function DashboardLayout() {
         </div>
       </div>
     );
+  else return <div></div>;
 }
 
 export default DashboardLayout;

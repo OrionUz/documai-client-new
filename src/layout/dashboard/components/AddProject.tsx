@@ -40,7 +40,12 @@ function AddProject() {
               <div className="custom-modal-form-project">
                 {addProjectFormItems.map((item) => {
                   return (
-                    <Form.Item label={item.label} name={item.name} rules={[{ required: true, message: item.message }]}>
+                    <Form.Item
+                      key={item.name}
+                      label={item.label}
+                      name={item.name}
+                      rules={[{ required: true, message: item.message }]}
+                    >
                       <CustomInput size="large" placeholder={item.message} />
                     </Form.Item>
                   );

@@ -20,7 +20,12 @@ function RadioButton({ defaultValue, onChange, buttons }: RadioButtonProps) {
         <Radio.Group size="large" defaultValue={defaultValue}>
           {buttons.map((item) => {
             return (
-              <Radio.Button value={item.value} disabled={item.disabled} onClick={() => onChange?.(item.value)}>
+              <Radio.Button
+                key={item.value}
+                value={item.value}
+                disabled={item.disabled}
+                onClick={() => onChange?.(item.value)}
+              >
                 {item.title}
               </Radio.Button>
             );

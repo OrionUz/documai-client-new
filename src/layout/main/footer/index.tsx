@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   CopyRightSvg,
   DiscordSvg,
@@ -53,10 +52,7 @@ function Footer() {
           <div className="footer-content-main">
             <div className="footer-content-left">
               <h1>Docum.ai</h1>
-              <p>
-                Docum.ai - is an artificial intelligence that automates your
-                business
-              </p>
+              <p>Docum.ai - is an artificial intelligence that automates your business</p>
               <ul>
                 <li>Overview</li>
                 <li>Features</li>

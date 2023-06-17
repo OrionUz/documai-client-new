@@ -33,7 +33,7 @@ function ProjectUsers() {
         </div>
         <div className="dashboard-users-content">
           {users.map((item) => {
-            return <UserCard data={item} active={userId && +userId === item.id ? true : false} />;
+            return <UserCard key={item.id} data={item} active={userId && +userId === item.id ? true : false} />;
           })}
         </div>
       </div>

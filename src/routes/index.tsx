@@ -1,7 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { acceptMainLayout } from "./const";
 
-import DashboardLayout from "src/layout/dashboard";
 import MainLayout from "src/layout/main";
 import Custom404 from "src/pages/404";
 import AboutPage from "src/pages/about";
@@ -16,6 +15,7 @@ import AuthSignUp from "src/pages/auth/signup";
 import NewsPage from "src/pages/news";
 import NewsIdPage from "src/pages/news/[id]";
 import DocumentsTrainPage from "src/pages/documents/train";
+import DashboardLayout from "src/layout/dashboard";
 
 function RoutElements() {
   const { pathname } = useLocation();

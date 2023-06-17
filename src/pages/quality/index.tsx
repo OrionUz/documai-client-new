@@ -7,7 +7,7 @@ function QualityPage() {
     <div className="documents">
       <div className="documents-content">
         {[1, 2, 3, 4, 5].map((item) => {
-          return <QualityCard />;
+          return <QualityCard key={item} />;
         })}
       </div>
       <div className="documents-footer">
