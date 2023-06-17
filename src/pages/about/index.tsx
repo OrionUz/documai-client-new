@@ -1,16 +1,14 @@
-import React from "react";
-import { AboutTopSvg } from "src/assets/svg/freepik/about";
 import CustomSlider from "src/components/common/slider";
+import AboutPart from "./components/AboutPart";
+import IntroPart from "./components/IntroPart";
+import MembersPic from "./components/MembersPart";
+import ProjectsPart from "./components/ProjectsPart";
 import {
   IntroPartData,
   ProjectsPartData,
   aboutProData,
   memberpicData,
 } from "./const";
-import MembersPic from "./components/MembersPart";
-import AboutPart from "./components/AboutPart";
-import IntroPart from "./components/IntroPart";
-import ProjectsPart from "./components/ProjectsPart";
 
 function AboutPage() {
   return (
