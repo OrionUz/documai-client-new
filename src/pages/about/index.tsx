@@ -3,16 +3,7 @@ import AboutPart from "./components/AboutPart";
 import IntroPart from "./components/IntroPart";
 import MembersPic from "./components/MembersPart";
 import ProjectsPart from "./components/ProjectsPart";
-<<<<<<< HEAD
 import { IntroPartData, ProjectsPartData, aboutProData, memberpicData } from "./const";
-=======
-import {
-  IntroPartData,
-  ProjectsPartData,
-  aboutProData,
-  memberpicData,
-} from "./const";
->>>>>>> f9db9efec1d06d2adb59cccfa723f5eb13fad205
 
 function AboutPage() {
   return (
