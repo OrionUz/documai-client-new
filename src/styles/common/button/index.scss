@@ -4,7 +4,7 @@
   border-radius: $border_radius;
   cursor: pointer;
 
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
   line-height: 100%;
   color: $white;
@@ -14,9 +14,21 @@
   align-items: center;
   gap: 10px;
 
+  padding: 17px 32px;
+  background-color: transparent;
+  border: 1px solid #77727d;
+
+  transition: $transition;
+
+  &:hover {
+    background-color: $secondary_disabled;
+    border-color: $white_disable;
+  }
+
   &-light {
     padding: 17px 32px;
     background: $gradient_button;
+    border: none;
     &-disabled {
       pointer-events: none;
       background: $gradient_button_disabled;
@@ -28,8 +40,8 @@
     }
 
     &:hover {
-      filter: brightness(80%);
-      //transform: scale(0.9);
+      background: $gradient_button_disabled;
+      border-color: $white_disable;
     }
   }
 
@@ -37,6 +49,7 @@
     padding: 15px 24px;
     background: $secondary;
     box-sizing: border-box;
+    border: none;
     &-disabled {
       pointer-events: none;
       background: $secondary_disabled;
@@ -46,12 +59,17 @@
       padding: 14px 24px;
       border: 1px solid $stroke;
     }
+
+    &:hover {
+      background-color: $secondary_disabled;
+    }
   }
 
   &-white {
     padding: 17px 32px;
     background: $white;
     color: $black;
+    border: none;
     &-disabled {
       pointer-events: none;
       background: $white_disable;
@@ -59,6 +77,9 @@
     }
     &-bordered {
       border: 1px solid $white;
+    }
+    &:hover {
+      background: $white_09;
     }
   }
 }

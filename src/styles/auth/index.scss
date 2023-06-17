@@ -1,0 +1,96 @@
+.auth {
+  height: 100vh;
+  padding-top: 10vh;
+  overflow: hidden;
+  position: relative;
+  &-content {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  &-left {
+    width: 50%;
+    padding-right: 160px;
+    &-content {
+      width: 503px;
+      // height: 80vh;
+      padding: 35px 37px 45px;
+      background-color: $bg_dark;
+      border-radius: 24px;
+      margin-left: auto;
+    }
+  }
+
+  &-right {
+    width: 50%;
+    padding-top: 60px;
+
+    h3 {
+      @extend .title;
+      color: $white_06;
+      line-height: 100%;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      @extend .title_l;
+      width: 617px;
+      line-height: 140%;
+      margin-bottom: 58px;
+    }
+
+    &-img {
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-form {
+    &-title {
+      @extend .text_l;
+      width: 280px;
+      color: $white_06;
+      line-height: 130%;
+      margin-bottom: 40px;
+
+      a {
+        color: $white;
+        margin-left: 5px;
+        white-space: nowrap;
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+
+      button {
+        font-weight: 600;
+        height: 46px;
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+
+    &-option {
+      display: flex;
+      align-items: center;
+      div {
+        flex-grow: 1;
+      }
+      p {
+        padding: 0 8px;
+      }
+    }
+  }
+}

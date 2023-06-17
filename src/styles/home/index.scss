@@ -31,12 +31,6 @@
         margin-bottom: 68px;
       }
     }
-    &-right {
-      @extend #{".display_center", ".title"};
-      width: 615px;
-      height: 346px;
-      background: linear-gradient(67.61deg, #6664f8 0.74%, #ff86a4 100%);
-    }
   }
   &-introcards {
     display: flex;

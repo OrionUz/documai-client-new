@@ -1,0 +1,27 @@
+.custom-upload {
+  width: 100%;
+  background: #343d4a;
+  border-radius: 24px;
+  padding: 16px;
+  &-content {
+    padding: 36px;
+    border-radius: 20px;
+    border: 1px dashed #666471;
+    transition: $transition;
+
+    &:hover {
+      border-color: $white_07;
+    }
+    h2 {
+      @extend .text;
+      font-weight: 600;
+      line-height: 100%;
+      margin: 8px auto 16px;
+    }
+
+    p {
+      @extend .text_s;
+      color: $white_07;
+    }
+  }
+}

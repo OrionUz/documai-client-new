@@ -5,36 +5,38 @@
   border-radius: 16px;
 
   &-content {
-    padding: 21px 21px 32px;
+    padding: 12px;
     display: flex;
     align-items: center;
     gap: 18px;
-    border-bottom: 1px solid $stroke;
+    // border-bottom: 1px solid $stroke;
 
     &-icon {
-      width: 93px;
-      height: 93px;
+      flex-shrink: 0;
+      width: 68px;
+      height: 68px;
       background: $gradient_angular;
       border-radius: 12px;
       @extend .display_center;
     }
 
     &-info {
+      flex-shrink: 0;
+      width: 245px;
       h3 {
-        @extend .title;
+        @extend #{".text", ".line_clamp1"};
         line-height: 100%;
-        margin-bottom: 6px;
+        margin-bottom: 9.6px;
       }
       p {
-        @extend .text_xs;
-        color: $text2;
+        font-weight: 400;
+        font-size: 13px;
         line-height: 100%;
+        color: $text2;
       }
     }
 
     &-delete {
-      flex-grow: 1;
-      text-align: end;
       svg {
         cursor: pointer;
       }
@@ -46,7 +48,7 @@
     text-align: center;
     cursor: pointer;
 
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
     line-height: 100%;
     color: $white;
