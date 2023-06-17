@@ -33,34 +33,20 @@ function Header() {
         <div className="header-menu">{menu}</div>
 
         <div className="header-navigation">
-          <label
-            htmlFor="navi-label"
-            onClick={changeNavigationBar}
-            className="header-navigation-label"
-          >
-            <span
-              className={`header-navigation-icon ${
-                navigation ? "header-navigation-icon-active" : ""
-              }`}
-            >
+          <label htmlFor="navi-label" onClick={changeNavigationBar} className="header-navigation-label">
+            <span className={`header-navigation-icon ${navigation ? "header-navigation-icon-active" : ""}`}>
               &nbsp;
             </span>
           </label>
-          <div
-            className={`header-navigation-background ${
-              navigation ? "header-navigation-background-active" : ""
-            }`}
-          >
+          <div className={`header-navigation-background ${navigation ? "header-navigation-background-active" : ""}`}>
             &nbsp;
           </div>
         </div>
 
-        <nav
-          className={`header-navigation-nav ${
-            navigation ? "header-navigation-nav-active" : ""
-          }`}
-        >
-          <ul className="header-navigation-list">{menu}</ul>
+        <nav className={`header-navigation-nav ${navigation ? "header-navigation-nav-active" : ""}`}>
+          <ul className="header-navigation-list" onClick={changeNavigationBar}>
+            {menu}
+          </ul>
         </nav>
 
         <div className="header-right">
