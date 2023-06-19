@@ -8,15 +8,6 @@
     url("../assets/fonts/SF-Pro-Display-Regular.otf") format("opentype");
 }
 
-// @font-face {
-//   font-family: "SF Pro Display";
-//   src: url("https://docum.ai/css/fonts/SF-Pro-Display-Regular.eot");
-//   src: url("https://docum.ai/css/fonts/SF-Pro-Display-Regular.woff")
-//       format("woff"),
-//     url("https://docum.ai/css/fonts/SF-Pro-Display-Regular.otf")
-//       format("opentype");
-// }
-
 *,
 :after,
 :before {
@@ -28,7 +19,6 @@
 
 html,
 body {
-  // font-family: "Poppins", sans-serif !important;
   font-family: "SF Pro Display";
   scroll-behavior: smooth;
 }

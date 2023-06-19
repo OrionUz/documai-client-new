@@ -1,4 +1,4 @@
-import type { UploadProps } from "antd";
+import { Form, UploadProps } from "antd";
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useTrainProjectMutation } from "src/app/services/projects";
@@ -9,9 +9,11 @@ import CustomButton from "src/components/common/button";
 import CustomModal from "src/components/common/modal";
 import CustomUpload from "src/components/common/upload";
 import DocumCard from "./components/DocumCard";
+import CustomSwitch from "src/components/common/switch";
 
 function DocumentsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [switched, setSwitched] = useState(false);
   const handleMakeParams = (key: string, value: string) => {
     if (value) {
       if (searchParams.has(key)) searchParams.set(key, value);
@@ -40,7 +42,10 @@ function DocumentsPage() {
 
   //Upload new documents
   const [visible, setVisible] = useState(false);
-  const openDocumentModal = () => setVisible(true);
+  const openDocumentModal = () => {
+    setVisible(true);
+    setNewFileList([]);
+  };
   const closeDocumentModal = () => {
     setVisible(false);
     setNewFileList([]);
@@ -55,6 +60,7 @@ function DocumentsPage() {
       newFileList?.forEach((item) => {
         item.originFileObj && formData.append("files", item.originFileObj);
       });
+      formData.append("skipTranslation", String(!switched));
       trainProject({ id: +projectId, formData: formData });
     }
   };
@@ -72,9 +78,7 @@ function DocumentsPage() {
           })}
       </div>
       <div className="documents-footer">
-        <div className="documents-footer-left">
-          {/* <CustomPagination total={50} /> */}
-        </div>
+        <div className="documents-footer-left">{/* <CustomPagination total={50} /> */}</div>
         <div className="documents-footer-right">
           <Link to={`train?projectId=${projectId}`}>
             <CustomButton color="dark" bordered>
@@ -91,22 +95,23 @@ function DocumentsPage() {
         <div className="documents-add">
           <div className="documents-add-header">
             <p>Please upload your documents</p>
+
             <CustomButton icon={<PlaySvg />} left_icon>
               View instruction
             </CustomButton>
           </div>
-          <CustomUpload
-            maxSize={20}
-            disabled={isLoading}
-            onChange={(info) => setNewFileList(info.fileList)}
-          />
+          <CustomUpload maxSize={20} disabled={isLoading} onChange={(info) => setNewFileList(info.fileList)} />
           {newFileList ? (
             <div className="documents-add-footer">
-              <CustomButton
-                color="light"
-                onClick={handleUpload}
-                loading={isLoading}
-              >
+              <div>
+                <Form.Item
+                  label="Use translation"
+                  tooltip="Use this for non-English documents to translate and train to obtain the best results"
+                >
+                  <CustomSwitch checked={switched} onChange={() => setSwitched(!switched)} />
+                </Form.Item>
+              </div>
+              <CustomButton color="light" onClick={handleUpload} loading={isLoading}>
                 Upload
               </CustomButton>
             </div>

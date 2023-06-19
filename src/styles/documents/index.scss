@@ -36,7 +36,7 @@
       p {
         @extend .title_sm;
       }
-      button {
+      .button {
         height: 50px;
         svg {
           width: 18px;
@@ -47,8 +47,28 @@
     }
     &-footer {
       margin-top: 24px;
-      button {
-        margin-left: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .ant-form-item {
+        margin-bottom: 0;
+        &-row {
+          flex-direction: row-reverse;
+          gap: 15px;
+        }
+        &-label {
+          label {
+            font-size: 18px;
+            &:after {
+              display: none;
+            }
+            svg {
+              color: $white;
+            }
+          }
+        }
       }
     }
   }

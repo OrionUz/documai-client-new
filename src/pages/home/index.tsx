@@ -28,7 +28,6 @@ function HomePage() {
               url="https://www.youtube.com/watch?v=F4o2Zs0pjwU"
               playing={false}
               controls={true}
-              light={<img src={require("src/assets/img/home/video_bg.png")} alt="Thumbnail" style={{ width: 640 }} />}
             />
           </div>
         </div>
