@@ -8,6 +8,7 @@ import CustomSlider from "src/components/common/slider";
 import ReactPlayer from "react-player";
 
 function HomePage() {
+  
   return (
     <div className="home">
       <div className="blur_purple" />

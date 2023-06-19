@@ -46,10 +46,7 @@ function DocumentsPage() {
     setVisible(true);
     setNewFileList([]);
   };
-  const closeDocumentModal = () => {
-    setVisible(false);
-    setNewFileList([]);
-  };
+  const closeDocumentModal = () => setVisible(false);
 
   const [newFileList, setNewFileList] = useState<UploadProps["fileList"]>();
 
@@ -100,7 +97,12 @@ function DocumentsPage() {
               View instruction
             </CustomButton>
           </div>
-          <CustomUpload maxSize={20} disabled={isLoading} onChange={(info) => setNewFileList(info.fileList)} />
+          <CustomUpload
+            fileList={newFileList}
+            maxSize={20}
+            disabled={isLoading}
+            onChange={(info) => setNewFileList(info.fileList)}
+          />
           {newFileList ? (
             <div className="documents-add-footer">
               <div>

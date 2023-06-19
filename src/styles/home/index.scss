@@ -16,8 +16,9 @@
   &-top {
     display: flex;
     justify-content: space-between;
+    gap: 100px;
     &-left {
-      width: 678px;
+      flex-grow: 1;
       h1 {
         @extend #{".title_xl", ".gradient_text"};
         display: block;
