@@ -29,7 +29,7 @@
         @extend .text_l;
         width: 523px;
         line-height: 130%;
-        margin-bottom: 68px;
+        margin-bottom: 42px;
       }
     }
   }
@@ -75,13 +75,27 @@
 @import "newscard.scss";
 
 //MEDIA QUERY
-
 @media screen and (max-width: 1450px) {
   .home {
     &-top {
-      &-left h1 {
-        width: 550px;
+      gap: 70px;
+      &-left p {
+        width: 100%;
       }
+      &-right {
+        & > div {
+          width: 530px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .home {
+    &-top {
+      flex-direction: column;
+      gap: 44px;
     }
   }
 }
