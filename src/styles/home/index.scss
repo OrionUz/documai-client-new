@@ -125,21 +125,27 @@
 
 @media screen and (max-width: 680px) {
   .home {
+    padding-top: 83px;
     &-top {
-      &-right {
-        margin: 0;
-        width: 410px;
-        height: 280px;
-      }
       &-left {
         h1 {
-          width: 420px;
+          margin-bottom: 16px;
         }
-
         p {
-          width: 420px;
+          margin-bottom: 38px;
         }
       }
+      &-right {
+        & > div {
+          width: 100% !important;
+          height: 250px !important;
+        }
+      }
+    }
+
+    &-introcards {
+      margin-top: 80px;
+      gap: 60px;
     }
   }
 }
@@ -147,18 +153,17 @@
 @media screen and (max-width: 450px) {
   .home {
     &-top {
-      &-right {
-        margin: 0;
-        width: 335px;
-        height: 192px;
-      }
       &-left {
         h1 {
-          width: 320px;
+          font-size: 40px;
         }
-
         p {
-          width: 320px;
+          font-size: 16px;
+        }
+      }
+      &-right {
+        & > div {
+          height: 200px !important;
         }
       }
     }

@@ -56,6 +56,13 @@ a {
   }
 }
 
+@media screen and (max-width: 450px) {
+  .container {
+    width: 100%;
+    padding: 0 16px;
+  }
+}
+
 @import "./notfound/";
 @import "./common/";
 @import "./package/";
