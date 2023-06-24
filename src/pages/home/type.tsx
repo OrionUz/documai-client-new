@@ -9,11 +9,11 @@ export interface IntroCardProps {
 export interface AboutCardProps {
   item: {
     title: string;
-    description: string;
+    description: string[];
     width?: string;
     img?: string;
     icon?: JSX.Element;
-    button?: boolean;
+    button?: string;
   };
 }
 

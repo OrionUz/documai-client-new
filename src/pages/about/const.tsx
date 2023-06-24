@@ -31,35 +31,13 @@ export const memberpicData = [
 export const aboutProData = [
   {
     title: "The Mission of Docum.ai",
-    text: "Beyond the individual level, who we are extends to our shared humanity. We are social beings, interconnected and interdependent. Our collective identity emerges from the bonds we create, the communities we belong to, and the values we hold in common. It encompasses our roles as family members, friends, citizens, and members of various social, cultural.",
-    img: require("src/assets/img/about/aboutPerson.png"),
+    text: "Currently we have only text based customer service tool but as AI is developing day by day, we will start voice and video based services as well. This is not all, upcoming 2 months we plan to program ai to take an action as well, which means many possibilities to your business. You just build your brand and our AI tool helps your customers to understand and use your service or product. ",
+    img: require("src/assets/img/about/aboutRobot.png"),
   },
   {
-    title: "The Mission of Docum.ai",
-    text: "Beyond the individual level, who we are extends to our shared humanity. We are social beings, interconnected and interdependent. Our collective identity emerges from the bonds we create, the communities we belong to, and the values we hold in common. It encompasses our roles as family members, friends, citizens, and members of various social, cultural.",
+    title: "The some facts about Docum.ai",
+    text: "We are a new company located in Uzbekistan and established in early 2023. Our current team is consisted of 20 people who are eager to see the whole world.  We are open to understand our customers need and would like to make necessary changes, in the end we should make what our customers want not what we want.",
     img: require("src/assets/img/about/aboutPerson.png"),
-    stat: [
-      {
-        count: "150mln+",
-        title: "Users for 2 years",
-      },
-      {
-        count: "400+",
-        title: "More than employees",
-      },
-      {
-        count: "200+",
-        title: "More than Partner",
-      },
-    ],
-  },
-];
-
-export const IntroPartData = [
-  {
-    title: "We built AI which make people life easier",
-    text: "To be the company our customers want us to be, it takes an electric group of passionate operators. Get to know the people leading the way at Docum.",
-    icon1: <AboutTopSvg />,
   },
 ];
 

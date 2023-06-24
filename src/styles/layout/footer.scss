@@ -9,6 +9,12 @@
 
   &-companies {
     margin-bottom: 140px;
+    &-image {
+      @extend .display_center;
+      display: flex !important;
+      background-color: $bg_dark;
+      border-radius: 8px;
+    }
     h3 {
       font-weight: 600;
       font-size: 18px;
@@ -18,7 +24,7 @@
       text-align: center;
     }
     img {
-      width: calc(100% - 36px);
+      height: 136px;
     }
   }
 
@@ -67,7 +73,8 @@
       ul {
         display: flex;
         flex-flow: row wrap;
-        gap: 24px;
+        column-gap: 24px;
+        row-gap: 16px;
         li {
           font-size: 18px;
           line-height: 27px;
@@ -120,7 +127,7 @@
 @media screen and (max-width: 1050px) {
   .footer {
     &-content {
-      padding: 24px 15px 51px;
+      padding: 24px 16px 51px;
       &-main {
         flex-direction: column;
         gap: 40px;
@@ -136,10 +143,50 @@
 
 @media screen and (max-width: 450px) {
   .footer {
+    &-container {
+      max-width: 100%;
+    }
+    &-companies {
+      padding: 0 16px;
+      margin-bottom: 100px;
+    }
     &-content {
       &-header {
+        &-bottom {
+          padding-bottom: 40px;
+        }
         h2 {
+          width: 235px;
+          margin: 0 auto 24px;
           font-size: 20px;
+          line-height: 100%;
+          letter-spacing: 1px;
+          font-weight: 600;
+        }
+        p {
+          display: none;
+        }
+        button {
+          padding: 16px 20px;
+        }
+      }
+      &-main {
+        padding-bottom: 50px;
+      }
+      &-left {
+        h1 {
+          margin-bottom: 8px;
+        }
+        p {
+          margin-bottom: 32px;
+        }
+      }
+      &-personal {
+        div p {
+          &:nth-child(1),
+          &:nth-child(3) {
+            display: none;
+          }
         }
       }
     }

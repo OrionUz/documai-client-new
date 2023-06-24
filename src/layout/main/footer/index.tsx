@@ -9,6 +9,7 @@ import {
 } from "src/assets/svg";
 import CustomButton from "src/components/common/button";
 import CustomSlider from "src/components/common/slider";
+import { companies } from "./const";
 
 function Footer() {
   return (
@@ -17,22 +18,14 @@ function Footer() {
         {/* Companies */}
         <div className="footer-companies">
           <h3>We are trusted by 1000+ of companies</h3>
-          <CustomSlider counts={4} arrows={false} autoplay>
-            <div>
-              <img src={require("src/assets/img/company.png")} alt="company" />
-            </div>
-            <div>
-              <img src={require("src/assets/img/company.png")} alt="company" />
-            </div>
-            <div>
-              <img src={require("src/assets/img/company.png")} alt="company" />
-            </div>
-            <div>
-              <img src={require("src/assets/img/company.png")} alt="company" />
-            </div>
-            <div>
-              <img src={require("src/assets/img/company.png")} alt="company" />
-            </div>
+          <CustomSlider counts={5} arrows={false} autoplay dots>
+            {companies.map((item) => {
+              return (
+                <div className="footer-companies-image">
+                  <img src={require(`src/assets/img/companies/${item}.png`)} alt={item} />
+                </div>
+              );
+            })}
           </CustomSlider>
         </div>
 
@@ -57,7 +50,7 @@ function Footer() {
                 <li>Overview</li>
                 <li>Features</li>
                 <li>Pricing</li>
-                <li>Blog & News</li>
+                {/* <li>Blog & News</li> */}
                 <li>Help</li>
                 <li>Demo</li>
               </ul>

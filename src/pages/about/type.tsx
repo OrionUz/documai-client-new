@@ -1,11 +1,3 @@
-export interface IntroPartProps {
-  item: {
-    title: string;
-    text: string;
-    icon1: JSX.Element;
-  };
-}
-
 export interface MemberPicProps {
   item: {
     title: string;

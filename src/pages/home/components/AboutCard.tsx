@@ -6,10 +6,13 @@ function AboutCard({ item }: AboutCardProps) {
     <div className={`aboutcard aboutcard-${item.width}`}>
       <div className="aboutcard-left">
         <h2>{item.title}</h2>
-        <p>{item.description}</p>
+        {item.description.map((p) => {
+          return <p>{p}</p>;
+        })}
+
         {item.button ? (
           <CustomButton color="light" bordered>
-            Book demo version
+            {item.button}
           </CustomButton>
         ) : item.img ? (
           <img src={item.img} alt={item.title + "error"} />

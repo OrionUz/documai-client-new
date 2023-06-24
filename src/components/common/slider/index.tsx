@@ -5,17 +5,21 @@ import { CustomSliderProps } from "./type";
 function CustomSlider({
   counts = 3,
   arrows = true,
+  dots = false,
   autoplay = false,
-
+  initialSlide = 0,
   children,
 }: CustomSliderProps) {
+  console.log(dots);
+
   const settings = {
     speed: 500,
     arrows: arrows,
+    dots: dots,
     infinite: true,
     autoplay: autoplay,
     slidesToShow: counts,
-    initialSlide: 0,
+    initialSlide: initialSlide,
     centerPadding: "0",
 
     responsive: [

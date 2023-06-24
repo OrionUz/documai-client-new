@@ -1,27 +1,20 @@
 import { AboutCardSvg1, AboutCardSvg2 } from "src/assets/svg/freepik/about";
-import {
-  UsageCardSvg1,
-  UsageCardSvg2,
-  UsageCardSvg3,
-} from "src/assets/svg/freepik/usage";
+import { UsageCardSvg1, UsageCardSvg2, UsageCardSvg3 } from "src/assets/svg/freepik/usage";
 
 export const introcardData = [
   {
     title: "Quick answer!",
-    description:
-      "Docum.ai can answer your customers immediately  when they contact your custom bot.",
+    description: "Docum.ai can answer your customers immediately  when they contact your custom bot.",
     img: require("src/assets/img/home/introcard1.png"),
   },
   {
     title: "Custom AI",
-    description:
-      "Docum.ai can serve 24/7 and talk to unlimited customers with custom knowledge",
+    description: "Docum.ai can serve 24/7 and talk to unlimited customers with custom knowledge",
     img: require("src/assets/img/home/introcard2.png"),
   },
   {
-    title: "Cheaper price!",
-    description:
-      "Docum.ai cost you 5 times cheaper than human customer service employee ",
+    title: "Affordable",
+    description: "Docum.ai cost you 4 times cheaper than human customer service employee",
     img: require("src/assets/img/home/introcard3.png"),
   },
 ];
@@ -44,23 +37,27 @@ export const usagecardData = [
 export const aboutcardData = [
   {
     title: "Docum.ai is a platform to create customer service AI",
-    description:
-      "Whether you're an entrepreneur, a customer support professional, or a content creator, our platform enables you to harness the power of AI and deliver exceptional user experiences. Empower your business with an intelligent assistant that is available 24/7, capable of handling multiple queries simultaneously, and always ready to provide accurate information.",
-    button: true,
+    description: [
+      "Whether you're an entrepreneur, a customer support professional, or a content creator, our platform enables you to harness the power of AI and deliver exceptional user experiences.",
+      "Human customer service employees cost you 12$ per day and they serve 100 customers and each customer may have 10 questions.  You can create a bot which can do this job for 3$!",
+    ],
+    button: "Get started",
     icon: <AboutCardSvg1 />,
     width: "full",
   },
   {
     title: "You can test your data real time and edit it",
-    description:
+    description: [
       "Once you upload document, you can connect it to Telegram bot. If you do not like the bot answers, you can edit the document you uploaded or delete it or add more document.",
+    ],
     img: require("src/assets/img/home/aboutcard2.png"),
     width: "half",
   },
   {
     title: "You can upload any type of file",
-    description:
+    description: [
       "We can train AI model with your data. You can upload any type of file. Be sure that data quality is up to you. As long as data is good, Ai can do better job",
+    ],
     icon: <AboutCardSvg2 />,
     width: "half",
   },
@@ -72,16 +69,12 @@ export const pricingCardData = [
     type: "Basic",
     price: "Free",
     description: "You could test the AI model with your custom data",
-    includes: [
-      "Upload one document (2 mb max)",
-      "Chat with AI  custom knowledge based",
-      "20 questions",
-    ],
+    includes: ["Upload one document (2 mb max)", "Chat with AI  custom knowledge based", "20 questions"],
   },
   {
     main: true,
-    type: "Enterprise",
-    price: "30$",
+    type: "Premium",
+    price: "29$",
     price_duration: "/ month",
     requirement: "+ Also you have to pay AI Fee.",
     includes: [
@@ -94,13 +87,13 @@ export const pricingCardData = [
   },
   {
     type: "Enterprise",
-    price: "100$",
+    price: "299$",
     price_duration: "/ month",
     requirement: "+ Also you have to pay AI Fee.",
     includes: [
       "Unlimited document",
       "10 Telegram bots",
-      "Permium-level support",
+      "Data analytics support",
       "Real time checking the data",
       "Edit documents",
     ],
@@ -117,8 +110,7 @@ export const newscardData = [
   {
     date: "May 23, 2023",
     title: "The U.S. is a country of 50",
-    description:
-      "DC. Midwestern metropolis Chicago is known for and on the west coast, Los Angeles'",
+    description: "DC. Midwestern metropolis Chicago is known for and on the west coast, Los Angeles'",
     img: require("src/assets/img/home/newscard2.png"),
   },
   {

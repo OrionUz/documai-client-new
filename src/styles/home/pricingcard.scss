@@ -95,5 +95,22 @@
 
 @media screen and (max-width: 450px) {
   .pricingcard {
+    padding: 20px 16px;
+    height: 482px;
+    &-type {
+      margin-bottom: 12px;
+    }
+    &-price {
+      line-height: 100%;
+      margin-bottom: 8px;
+      font-size: 40px;
+      span {
+        font-size: 14px;
+        line-height: 100%;
+      }
+    }
+    &-requirement {
+      margin-bottom: 24px !important;
+    }
   }
 }

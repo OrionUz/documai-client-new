@@ -13,6 +13,10 @@
       font-size: 16px;
       line-height: 150%;
       color: $text2;
+
+      &:nth-child(3) {
+        margin-top: 30px;
+      }
     }
     img {
       margin: 19px 0 -53px -62px;
@@ -30,10 +34,9 @@
     padding: 40px 72px 36px 32px;
     .aboutcard {
       &-left {
-        width: 693px;
+        flex-grow: 1;
         h2 {
           @extend .title_l;
-          //width: 650px;
           line-height: 130%;
           margin-bottom: 16px;
         }
@@ -68,7 +71,6 @@
 @media screen and (max-width: 1450px) {
   .aboutcard {
     &-full {
-      width: 90%;
       .aboutcard {
         &-left {
           h2 {
@@ -119,24 +121,44 @@
 
 @media screen and (max-width: 450px) {
   .aboutcard {
+    padding: 20px 16px 25px;
+    &-left {
+      img {
+        width: 100%;
+        margin: 23px 0 -30px;
+      }
+    }
     &-full {
       .aboutcard {
         &-left {
           h2 {
             font-size: 24px;
+            margin-bottom: 11px;
           }
           p {
             font-size: 16px;
+            &:nth-child(3) {
+              margin-top: 15px;
+            }
+          }
+          button {
+            margin-top: 32px;
           }
         }
       }
     }
-
     &-half {
       .aboutcard {
         &-left {
-          img {
-            width: 330px;
+          h2 {
+            font-size: 20px;
+            margin-bottom: 11px;
+          }
+          p {
+            font-size: 16px;
+          }
+          svg {
+            margin-top: 32px;
           }
         }
       }

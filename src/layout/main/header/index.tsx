@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { getRootState } from "src/app/store";
-import { pricingCardData } from "src/pages/home/const";
+import { PricingSlider } from "src/pages/home";
 import CustomButton from "src/components/common/button";
 import CustomModal from "src/components/common/modal";
-import PricingCard from "src/pages/home/components/PricingCard";
 
 function Header() {
   const [navigation, setNavigation] = useState(false);
@@ -20,7 +19,7 @@ function Header() {
     <>
       <Link to="/">Homepage</Link>
       <Link to="/about">About us</Link>
-      <Link to="/news">Blog-News</Link>
+      {/* <Link to="/news">Blog-News</Link> */}
       <p onClick={openModal}>Pricing</p>
     </>
   );
@@ -72,9 +71,7 @@ function Header() {
             Сhoose a tariff for yourself or companies!
           </div>
           <div className="home-pricing">
-            {pricingCardData.map((item) => {
-              return <PricingCard item={item} key={item.price} />;
-            })}
+            <PricingSlider />
           </div>
         </section>
       </CustomModal>

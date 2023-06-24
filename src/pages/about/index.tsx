@@ -1,9 +1,13 @@
 import CustomSlider from "src/components/common/slider";
 import AboutPart from "./components/AboutPart";
-import IntroPart from "./components/IntroPart";
 import MembersPic from "./components/MembersPart";
 import ProjectsPart from "./components/ProjectsPart";
-import { IntroPartData, ProjectsPartData, aboutProData, memberpicData } from "./const";
+import { ProjectsPartData, aboutProData, memberpicData } from "./const";
+import { AboutTopSvg } from "src/assets/svg/freepik/about";
+
+export function NewsSlider() {
+  return <div>NewsSlider</div>;
+}
 
 function AboutPage() {
   return (
@@ -11,9 +15,18 @@ function AboutPage() {
       <div className="blur_purple" />
       <div className="blur_blue" />
       <div className="container">
-        {IntroPartData.map((item, index) => {
-          return <IntroPart item={item} key={item.title + index}></IntroPart>;
-        })}
+        <div className="about-top">
+          <div className="about-top-left">
+            <h1>We built AI tool which makes people’s life easier</h1>
+            <p>
+              To be the company our customers want us to be, it takes an electric group of passionate people. Get to
+              know the people leading the way at Docum.ai.
+            </p>
+          </div>
+          <div className="about-top-right">
+            <AboutTopSvg />
+          </div>
+        </div>
 
         <section className="about-middle">
           <h3 className="home-subtitle">About project</h3>

@@ -7,8 +7,17 @@ import NewsCard from "./components/NewsCard";
 import CustomSlider from "src/components/common/slider";
 import ReactPlayer from "react-player";
 
+export function PricingSlider() {
+  return (
+    <CustomSlider counts={3} arrows={false} dots initialSlide={0}>
+      {pricingCardData.map((item) => {
+        return <PricingCard item={item} key={item.price} />;
+      })}
+    </CustomSlider>
+  );
+}
+
 function HomePage() {
-  
   return (
     <div className="home">
       <div className="blur_purple" />
@@ -18,7 +27,10 @@ function HomePage() {
         <div className="home-top">
           <div className="home-top-left">
             <h1>Create an AI customer service assistant</h1>
-            <p>With Docum.ai you can boost your business 5 times without. Docum.ai works to any languages</p>
+            <p>
+              We will help you create AI customer service employee which has custom knowledge you provided. You can
+              teach it anything you want and it can answer questions from customers.
+            </p>
             <CustomButton color="light" bordered>
               Book demo version
             </CustomButton>
@@ -69,11 +81,7 @@ function HomePage() {
         <section id="pricing">
           <div className="home-subtitle">Pricing</div>
           <div className="home-pricing">
-            <CustomSlider counts={3}>
-              {pricingCardData.map((item) => {
-                return <PricingCard item={item} key={item.price} />;
-              })}
-            </CustomSlider>
+            <PricingSlider />
           </div>
         </section>
 

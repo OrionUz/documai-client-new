@@ -40,3 +40,44 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  .introcard {
+    padding: 16px;
+    min-height: 211px;
+    h2 {
+      line-height: 24px;
+      margin-bottom: 12px;
+    }
+
+    &-icon {
+      top: 81px;
+      right: -11px;
+
+      img {
+        width: 171px;
+        object-fit: cover;
+      }
+    }
+    &:nth-child(2) {
+      .introcard-icon {
+        top: 97px;
+        right: 0;
+
+        img {
+          width: 148px;
+        }
+      }
+    }
+    &:nth-child(3) {
+      .introcard-icon {
+        top: 85px;
+        right: 0;
+
+        img {
+          width: 155px;
+        }
+      }
+    }
+  }
+}

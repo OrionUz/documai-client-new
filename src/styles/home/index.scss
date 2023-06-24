@@ -62,10 +62,7 @@
     justify-content: center;
   }
   &-pricing {
-    display: flex;
-    gap: 36px;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
   }
 }
 
@@ -91,11 +88,31 @@
   }
 }
 
+@media screen and (max-width: 1400px) {
+  .home {
+    &-usage {
+      gap: 60px;
+    }
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .home {
     &-top {
       flex-direction: column;
       gap: 44px;
+    }
+    &-usage {
+      gap: 60px;
+      overflow-x: scroll;
+      justify-content: flex-start;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+      &-card {
+        width: 365px;
+        flex-shrink: 0;
+      }
     }
   }
 }
@@ -109,16 +126,6 @@
 
     &-introcards {
       flex-direction: column;
-    }
-
-    &-usage {
-      flex-direction: column;
-      &-card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
     }
   }
 }
@@ -166,6 +173,27 @@
           height: 200px !important;
         }
       }
+    }
+    &-subtitle {
+      margin: 90px 0 40px;
+    }
+    &-usage {
+      gap: 24px;
+      align-items: flex-start;
+      &-card {
+        width: 270px;
+        svg {
+          height: 220px;
+          width: 270px;
+        }
+        p {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+    &-about {
+      gap: 60px;
     }
   }
 }
