@@ -1,9 +1,8 @@
-import { aboutcardData, introcardData, newscardData, pricingCardData, usagecardData } from "./const";
+import { aboutcardData, introcardData, pricingCardData, usagecardData } from "./const";
 import CustomButton from "src/components/common/button";
 import IntroCard from "./components/IntroCard";
 import AboutCard from "./components/AboutCard";
 import PricingCard from "./components/PricingCard";
-import NewsCard from "./components/NewsCard";
 import CustomSlider from "src/components/common/slider";
 import ReactPlayer from "react-player";
 
