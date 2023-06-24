@@ -7,7 +7,7 @@ function AboutCard({ item }: AboutCardProps) {
       <div className="aboutcard-left">
         <h2>{item.title}</h2>
         {item.description.map((p) => {
-          return <p>{p}</p>;
+          return <p key={p}>{p}</p>;
         })}
 
         {item.button ? (

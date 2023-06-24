@@ -1,5 +1,3 @@
-import { AboutTopSvg } from "src/assets/svg/freepik/about";
-
 export const memberpicData = [
   {
     title: "Samandar. T.",

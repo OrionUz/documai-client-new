@@ -21,7 +21,7 @@ function Footer() {
           <CustomSlider counts={5} arrows={false} autoplay dots>
             {companies.map((item) => {
               return (
-                <div className="footer-companies-image">
+                <div className="footer-companies-image" key={item}>
                   <img src={require(`src/assets/img/companies/${item}.png`)} alt={item} />
                 </div>
               );
