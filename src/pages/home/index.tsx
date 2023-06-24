@@ -86,7 +86,7 @@ function HomePage() {
         </section>
 
         {/* News and blogs */}
-        <section>
+        {/* <section>
           <div className="home-subtitle">News & Blogs</div>
           <div className="home-news">
             <CustomSlider>
@@ -95,7 +95,7 @@ function HomePage() {
               })}
             </CustomSlider>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );
