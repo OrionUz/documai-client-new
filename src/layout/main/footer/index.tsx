@@ -17,7 +17,7 @@ function Footer() {
       <div className="footer-container">
         {/* Companies */}
         <div className="footer-companies">
-          <h3>We are trusted by 1000+ of companies</h3>
+          <h3>We are trusted by 10+ of companies</h3>
           <CustomSlider counts={5} arrows={false} autoplay dots>
             {companies.map((item) => {
               return (

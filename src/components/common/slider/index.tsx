@@ -20,28 +20,32 @@ function CustomSlider({
     autoplay: autoplay,
     slidesToShow: counts,
     initialSlide: initialSlide,
+    // slidesToScroll: 1,
     centerPadding: "0",
 
     responsive: [
       {
+        breakpoint: 1750,
+        settings: {
+          slidesToShow: counts === 5 ? 4 : counts,
+        },
+      },
+      {
         breakpoint: 1400,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
         },
       },
       {
         breakpoint: 1080,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 720,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
           centerMode: true,
         },
       },
