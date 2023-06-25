@@ -12,6 +12,7 @@ export function NewsSlider() {
 function AboutPage() {
   return (
     <div className="about">
+      <div className="blur_red_top" />
       <div className="blur_purple" />
       <div className="blur_blue" />
       <div className="container">

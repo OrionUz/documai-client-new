@@ -78,6 +78,11 @@ $transition: 0.3s;
   background: linear-gradient(90deg, #973939 0%, #5e43d6 100%, #4e2aef 100%);
   filter: blur(225px);
 }
+.blur_red_top {
+  @extend .blur_red;
+  left: 205px;
+  top: -433px;
+}
 
 //Text
 .text_xs {
