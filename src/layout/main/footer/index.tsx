@@ -22,7 +22,10 @@ function Footer() {
             {companies.map((item) => {
               return (
                 <div className="footer-companies-image" key={item}>
-                  <img src={require(`src/assets/img/companies/${item}.png`)} alt={item} />
+                  <img
+                    src={require(`src/assets/img/companies/${item}.png`)}
+                    alt={item}
+                  />
                 </div>
               );
             })}
@@ -45,7 +48,13 @@ function Footer() {
           <div className="footer-content-main">
             <div className="footer-content-left">
               <h1>Docum.ai</h1>
-              <p>Docum.ai - is an artificial intelligence that automates your business</p>
+              <p>
+                Docum.ai is an artificial intelligence platform that offers
+                automation solutions for your business. By harnessing the power
+                of AI, Docum.ai enables you to streamline and automate various
+                processes, increasing efficiency and productivity within your
+                organization.
+              </p>
               <ul>
                 <li>Overview</li>
                 <li>Features</li>

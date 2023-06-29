@@ -27,8 +27,10 @@ function HomePage() {
           <div className="home-top-left">
             <h1>Create an AI customer service assistant</h1>
             <p>
-              We will help you create AI customer service employee which has custom knowledge you provided. You can
-              teach it anything you want and it can answer questions from customers.
+              We will help you create an AI customer service employee with
+              customized knowledge based on the information you provide. You can
+              teach it anything you want, and it will be able to answer
+              questions from customers.
             </p>
             <CustomButton color="light" bordered>
               Book demo version

@@ -4,17 +4,20 @@ import { UsageCardSvg1, UsageCardSvg2, UsageCardSvg3 } from "src/assets/svg/free
 export const introcardData = [
   {
     title: "Quick answer!",
-    description: "Docum.ai can answer your customers immediately  when they contact your custom bot.",
+    description:
+      "Docum.ai can provide immediate responses to an unlimited number of customers when they contact your custom bot.",
     img: require("src/assets/img/home/introcard1.png"),
   },
   {
     title: "Custom AI",
-    description: "Docum.ai can serve 24/7 and talk to unlimited customers with custom knowledge",
+    description:
+      "Docum.ai offers 24/7 service and can handle unlimited customers with custom knowledge.",
     img: require("src/assets/img/home/introcard2.png"),
   },
   {
     title: "Affordable",
-    description: "Docum.ai cost you 4 times cheaper than human customer service employee",
+    description:
+      "Docum.ai costs four times less than hiring a human customer service employee.",
     img: require("src/assets/img/home/introcard3.png"),
   },
 ];
@@ -22,15 +25,15 @@ export const introcardData = [
 export const usagecardData = [
   {
     icon: <UsageCardSvg1 />,
-    info: "You should collect data about your business. Think about what customers ask  and what answers should be given. You should write all of them into one file. If you need help, you can always contact our team",
+    info: "It is important for your business to collect data regarding customer inquiries and corresponding answers. This information should be consolidated into a single file. If you require assistance, our team is always available to help.",
   },
   {
     icon: <UsageCardSvg2 />,
-    info: "Upload it to Docum.ai. We will ask you to give us a bot username and token. After that we will integrate ai model which knows about your business into the bot.",
+    info: "To proceed with the integration of the AI model into the bot on Docum.ai, please provide us with a bot username and token. Once we receive the necessary information, we will incorporate the AI model that is knowledgeable about your business.",
   },
   {
     icon: <UsageCardSvg3 />,
-    info: "You should enter the chat bot which you provided and ask questions about your business. You should take notes which question it could not answer and update the document you uploaded",
+    info: "After the integration is complete, I will engage with the chat bot you provided and ask questions specific to your business. I will carefully note down any questions it cannot answer and ensure that the uploaded document is updated accordingly.",
   },
 ];
 
@@ -38,8 +41,8 @@ export const aboutcardData = [
   {
     title: "Docum.ai is a platform to create customer service AI",
     description: [
-      "Whether you're an entrepreneur, a customer support professional, or a content creator, our platform enables you to harness the power of AI and deliver exceptional user experiences.",
-      "Human customer service employees cost you 12$ per day and they serve 100 customers and each customer may have 10 questions.  You can create a bot which can do this job for 3$!",
+      "Docum.ai is a platform designed to help you create AI-powered customer service solutions. Whether you're an entrepreneur, a customer support professional, or a content creator, our platform empowers you to leverage AI and provide outstanding user experiences.",
+      "Instead of relying on human customer service employees who cost $12 per day to serve 100 customers, each with approximately 10 questions, you can create a bot on our platform to handle this workload for just $3!",
     ],
     button: "Get started",
     icon: <AboutCardSvg1 />,
@@ -48,7 +51,7 @@ export const aboutcardData = [
   {
     title: "You can test your data real time and edit it",
     description: [
-      "Once you upload document, you can connect it to Telegram bot. If you do not like the bot answers, you can edit the document you uploaded or delete it or add more document.",
+      "With Docum.ai, you have the ability to test and edit your data in real time. After uploading your document, you can connect it to a Telegram bot. If you're unsatisfied with the bot's answers, you can easily make edits to the uploaded document, delete it, or add more documents as needed. This flexibility allows you to refine and improve the performance of your AI-powered customer service bot.",
     ],
     img: require("src/assets/img/home/aboutcard2.png"),
     width: "half",
@@ -56,7 +59,7 @@ export const aboutcardData = [
   {
     title: "You can upload any type of file",
     description: [
-      "We can train AI model with your data. You can upload any type of file. Be sure that data quality is up to you. As long as data is good, Ai can do better job",
+      "You have the flexibility to upload any type of file for training your AI model. Whether it's text documents, spreadsheets, images, or other formats, you can utilize your data to train the AI model. It's important to note that the quality of the data directly impacts the performance of the AI. Therefore, ensuring the data is of good quality will enable the AI to do a better job in serving your specific needs.",
     ],
     icon: <AboutCardSvg2 />,
     width: "half",
