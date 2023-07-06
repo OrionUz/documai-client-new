@@ -1,7 +1,7 @@
 import { ConfigProvider, Input } from "antd";
 import { CustomInputProps } from "./type";
 
-function CustomInput({ size, ...rest }: CustomInputProps) {
+function CustomInput({ ...rest }: CustomInputProps) {
   return (
     <ConfigProvider
       theme={{
@@ -15,7 +15,7 @@ function CustomInput({ size, ...rest }: CustomInputProps) {
         },
       }}
     >
-      <Input {...rest} size={size} />
+      <Input {...rest} />
     </ConfigProvider>
   );
 }

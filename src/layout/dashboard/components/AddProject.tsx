@@ -1,5 +1,6 @@
 import { Form } from "antd";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useAddProjectMutation } from "src/app/services/projects";
 import { IAddProjec } from "src/app/services/projects/type";
 import { PlaySvg } from "src/assets/svg";
@@ -7,7 +8,6 @@ import { addProjectFormItems } from "../const";
 import CustomButton from "src/components/common/button";
 import CustomInput from "src/components/common/input";
 import CustomModal from "src/components/common/modal";
-import { useSearchParams } from "react-router-dom";
 
 function AddProject() {
   const [addProject, { isSuccess }] = useAddProjectMutation();

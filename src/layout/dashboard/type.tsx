@@ -7,5 +7,16 @@ export interface UserCardProps {
 
 export interface ProjectInfoProps {
   projectInfo?: IProject;
-  setProjectInfo: React.Dispatch<React.SetStateAction<IProject | undefined>>;
+  infoVisible: boolean;
+  setInfoVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface DeleteProjectProps {
+  projectId: number;
+  closeModal: () => void;
+}
+
+export interface EditProjectProps {
+  projectInfo: IProject;
+  setInfoVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }

@@ -5,15 +5,11 @@ function CustomPopconfirm({ children, ...rest }: CustomPopconfirmProps) {
   return (
     <ConfigProvider
       theme={{
-        components: {
-          Select: {
-            // fontSize: 16,
-            // colorBgBase: "transparent",
-            // colorIcon: "#ffffff",
-            // colorBgContainer: "#353e4b",
-            colorBgTextActive: "black",
-            borderRadius: 8,
-          },
+        token: {
+          colorPrimary: "#212a37",
+          colorText: "#000",
+          colorBgBase: "#fff",
+          colorBorder: "#717493",
         },
       }}
     >

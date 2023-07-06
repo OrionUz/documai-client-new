@@ -2,6 +2,7 @@ import { MoreOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { useGetProjectsQuery } from "src/app/services/projects";
+import { IProject } from "src/app/services/projects/type";
 import { saveProjects } from "src/app/slices/projectSlice";
 import { useAppDispatch } from "src/app/store";
 import { HomeSvg, QuestionSvg } from "src/assets/svg";
@@ -12,7 +13,6 @@ import AddProject from "./components/AddProject";
 import ProjectInfo from "./components/ProjectInfo";
 import ProjectUsers from "./components/ProjectUsers";
 import { dashboardHeaderButtons } from "./const";
-import { IProject } from "src/app/services/projects/type";
 
 function DashboardLayout() {
   const navigate = useNavigate();
@@ -53,10 +53,14 @@ function DashboardLayout() {
 
   //See project detail
   const [projectInfo, setProjectInfo] = useState<IProject | undefined>();
+  const [infoVisible, setInfoVisible] = useState(false);
 
   const openProjectInfo = (id: number) => {
     const obj = data?.projects.find((el) => el.id === id);
-    if (obj) setProjectInfo(obj);
+    if (obj) {
+      setProjectInfo(obj);
+      setInfoVisible(true);
+    }
   };
 
   return (
@@ -134,7 +138,7 @@ function DashboardLayout() {
         </div>
       </div>
 
-      <ProjectInfo projectInfo={projectInfo} setProjectInfo={setProjectInfo} />
+      <ProjectInfo projectInfo={projectInfo} infoVisible={infoVisible} setInfoVisible={setInfoVisible} />
     </div>
   );
 }

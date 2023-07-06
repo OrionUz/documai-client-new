@@ -22,6 +22,10 @@
 
   &-content {
     padding: 24px 32px 32px;
+
+    :where(.css-dev-only-do-not-override-1dzmizh).ant-input-lg {
+      padding: 10px 11px;
+    }
   }
 
   &-buttons {
