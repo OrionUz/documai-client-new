@@ -1,14 +1,7 @@
 import { ConfigProvider, Modal } from "antd";
 import { CustomModalProps } from "./type";
 
-function CustomModal({
-  open,
-  title,
-  onOk,
-  onCancel,
-  width,
-  children,
-}: CustomModalProps) {
+function CustomModal({ children, ...rest }: CustomModalProps) {
   return (
     <ConfigProvider
       theme={{
@@ -21,14 +14,7 @@ function CustomModal({
         },
       }}
     >
-      <Modal
-        title={title}
-        open={open}
-        width={width}
-        onOk={onOk}
-        onCancel={onCancel}
-        footer={null}
-      >
+      <Modal footer={null} {...rest}>
         {children}
       </Modal>
     </ConfigProvider>

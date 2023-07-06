@@ -4,6 +4,8 @@ import { getRootState } from "src/app/store";
 import { PricingSlider } from "src/pages/home";
 import CustomButton from "src/components/common/button";
 import CustomModal from "src/components/common/modal";
+import CustomSelect from "src/components/common/select";
+import { languageOptions } from "./const";
 
 function Header() {
   const [navigation, setNavigation] = useState(false);
@@ -49,13 +51,13 @@ function Header() {
         </nav>
 
         <div className="header-right">
-          {/* <Select
+          <CustomSelect
             defaultValue="en"
-            style={{ width: 120 }}
             size="large"
+            // style={{ width: 120 }}
             //   onChange={handleChange}
             options={languageOptions}
-          /> */}
+          />
           <Link to={isAuthenticated ? "/dashboard/document" : "/auth/signin"}>
             <CustomButton color="dark" bordered>
               Try Docum.ai

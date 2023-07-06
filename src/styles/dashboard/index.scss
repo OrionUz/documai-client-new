@@ -1,4 +1,5 @@
 @import "usercard.scss";
+@import "projectinfo.scss";
 
 .dashboard {
   display: flex;
@@ -49,13 +50,14 @@
       h3 {
         @extend .text_s;
         color: #a6aaae;
-        margin-bottom: 20px;
+        margin-bottom: 32px;
       }
     }
 
     &-bot {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 8px;
       transition: $transition;
       cursor: pointer;
@@ -80,7 +82,7 @@
     &-menu {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 28px;
     }
 
     &-footer {

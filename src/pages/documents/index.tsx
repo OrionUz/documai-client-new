@@ -71,7 +71,7 @@ function DocumentsPage() {
       <div className="documents-content">
         {documents &&
           documents.map((item) => {
-            return <DocumCard data={item} />;
+            return <DocumCard data={item} key={item.id} />;
           })}
       </div>
       <div className="documents-footer">

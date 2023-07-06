@@ -1,14 +1,18 @@
-import { useEffect } from "react";
+import { MoreOutlined } from "@ant-design/icons";
+import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { useGetProjectsQuery } from "src/app/services/projects";
 import { saveProjects } from "src/app/slices/projectSlice";
 import { useAppDispatch } from "src/app/store";
-import { BotSvg, HomeSvg, QuestionSvg } from "src/assets/svg";
-import { dashboardHeaderButtons } from "./const";
+import { HomeSvg, QuestionSvg } from "src/assets/svg";
 import CustomButton from "src/components/common/button";
+import CustomPopover from "src/components/common/popover";
 import RadioButton from "src/components/common/radio/RadioButton";
 import AddProject from "./components/AddProject";
+import ProjectInfo from "./components/ProjectInfo";
 import ProjectUsers from "./components/ProjectUsers";
+import { dashboardHeaderButtons } from "./const";
+import { IProject } from "src/app/services/projects/type";
 
 function DashboardLayout() {
   const navigate = useNavigate();
@@ -35,12 +39,25 @@ function DashboardLayout() {
     navigate(`/dashboard/${val}?projectId=${projectId}`);
   };
 
+  const handleChangeMenu = (id: number) => {
+    handleMakeParams("projectId", String(id));
+    handleMakeParams("userId", "");
+  };
+
   //Get projects
   const { data } = useGetProjectsQuery();
   useEffect(() => {
     if (data) dispatch(saveProjects(data.projects));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
+
+  //See project detail
+  const [projectInfo, setProjectInfo] = useState<IProject | undefined>();
+
+  const openProjectInfo = (id: number) => {
+    const obj = data?.projects.find((el) => el.id === id);
+    if (obj) setProjectInfo(obj);
+  };
 
   return (
     <div className="dashboard">
@@ -70,14 +87,12 @@ function DashboardLayout() {
               {data?.projects?.map((item) => {
                 return (
                   <div
-                    onClick={() => {
-                      handleMakeParams("projectId", String(item.id));
-                      handleMakeParams("userId", "");
-                    }}
+                    onClick={() => handleChangeMenu(item.id)}
                     className={`dashboard-sidebar-bot ${activeProject === item.id && "dashboard-sidebar-bot-active"}`}
                     key={item.id}
                   >
-                    <BotSvg /> {item.displayName || `Bot-${item.id}`}
+                    {item.displayName || `Bot-${item.id}`}{" "}
+                    {activeProject === item.id && <MoreOutlined onClick={() => openProjectInfo(item.id)} />}
                   </div>
                 );
               })}
@@ -108,7 +123,9 @@ function DashboardLayout() {
           <CustomButton color="dark" bordered>
             Balance: 25, 000
           </CustomButton>
-          <img src={require("src/assets/img/user.png")} alt="user" />
+          <CustomPopover>
+            <img src={require("src/assets/img/user.png")} alt="user" />
+          </CustomPopover>
         </div>
 
         {/* Content of dashboard */}
@@ -116,6 +133,8 @@ function DashboardLayout() {
           <Outlet />
         </div>
       </div>
+
+      <ProjectInfo projectInfo={projectInfo} setProjectInfo={setProjectInfo} />
     </div>
   );
 }
