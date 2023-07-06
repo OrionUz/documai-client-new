@@ -1,4 +1,4 @@
-import { ConfigProvider, Popover, Select } from "antd";
+import { ConfigProvider, Popover } from "antd";
 import { CustomPopoverProps } from "./type";
 
 function CustomPopover({ children, ...rest }: CustomPopoverProps) {
