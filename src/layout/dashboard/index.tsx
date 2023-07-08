@@ -4,7 +4,7 @@ import { Link, Outlet, useLocation, useNavigate, useSearchParams } from "react-r
 import { useGetProjectsQuery } from "src/app/services/projects";
 import { saveProjects } from "src/app/slices/projectSlice";
 import { useAppDispatch } from "src/app/store";
-import { ArrowRightSvg, CloseSvg, HamburgerSvg, HomeSvg, LogoutSvg, QuestionSvg } from "src/assets/svg";
+import { ArrowRightSvg, CloseSvg, HamburgerSvg, HomeSvg, QuestionSvg } from "src/assets/svg";
 import CustomButton from "src/components/common/button";
 import CustomDrawer from "src/components/common/drawer";
 import RadioButton from "src/components/common/radio/RadioButton";

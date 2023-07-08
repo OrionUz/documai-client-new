@@ -16,13 +16,10 @@ import NewsPage from "src/pages/news";
 import NewsIdPage from "src/pages/news/[id]";
 import DocumentsTrainPage from "src/pages/documents/train";
 import DashboardLayout from "src/layout/dashboard";
-import { useState } from "react";
 
 function RoutElements() {
   const { pathname } = useLocation();
   const path = pathname.split("/")[1];
-
-  const [navigation, setNavigation] = useState(false);
 
   return (
     <div className="root">
