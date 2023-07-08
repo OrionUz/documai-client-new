@@ -4,13 +4,15 @@ import { api } from "./services/api";
 import { rtkQueryErrorLogger } from "./services/api/middlewares";
 import auth from "src/app/slices/authSlice";
 import project from "src/app/slices/projectSlice";
+import header from "src/app/slices/headerSlice";
 
 export const createStore = (options?: ConfigureStoreOptions["preloadedState"] | undefined) =>
   configureStore({
     reducer: {
       [api.reducerPath]: api.reducer,
       auth,
-        project,
+      project,
+      header,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware, rtkQueryErrorLogger),
     ...options,

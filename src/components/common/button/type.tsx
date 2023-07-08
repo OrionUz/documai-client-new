@@ -8,6 +8,7 @@ export type CustomButtonProps = {
   bordered?: boolean;
   left_icon?: boolean;
   icon?: JSX.Element;
+  className?: string;
 } & Omit<React.ComponentProps<"button">, "children">;
 
 export type ButtonProps = Omit<React.ComponentProps<"button">, "children">;

@@ -1,15 +1,19 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { getRootState } from "src/app/store";
+import { useDispatch } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
+import { changeNavigation } from "src/app/slices/headerSlice";
+import { getRootState, useTypedSelector } from "src/app/store";
 import { PricingSlider } from "src/pages/home";
 import CustomButton from "src/components/common/button";
 import CustomModal from "src/components/common/modal";
-import CustomSelect from "src/components/common/select";
-import { languageOptions } from "./const";
+import Language from "../language";
+import Logo from "./Logo";
 
 function Header() {
-  const [navigation, setNavigation] = useState(false);
-  const changeNavigationBar = () => setNavigation(!navigation);
+  const dispatch = useDispatch();
+  const navigation = useTypedSelector((state) => state.header.navigation);
+  const location = useLocation();
+  const changeNavigationBar = () => dispatch(changeNavigation());
 
   const { isAuthenticated } = getRootState().auth;
 
@@ -19,8 +23,12 @@ function Header() {
 
   const menu = (
     <>
-      <Link to="/">Homepage</Link>
-      <Link to="/about">About us</Link>
+      <Link to="/" className={location.pathname === "/" ? "active" : ""}>
+        Homepage
+      </Link>
+      <Link to="/about" className={location.pathname === "/about" ? "active" : ""}>
+        About us
+      </Link>
       {/* <Link to="/news">Blog-News</Link> */}
       <p onClick={openModal}>Pricing</p>
     </>
@@ -28,9 +36,8 @@ function Header() {
   return (
     <div className="header">
       <div className="header-content container">
-        <div className="header-logo">
-          <Link to="/">Docum.ai</Link>
-        </div>
+        <Logo />
+
         <div className="header-menu">{menu}</div>
 
         <div className="header-navigation">
@@ -45,19 +52,14 @@ function Header() {
         </div>
 
         <nav className={`header-navigation-nav ${navigation ? "header-navigation-nav-active" : ""}`}>
+          <Language />
           <ul className="header-navigation-list" onClick={changeNavigationBar}>
             {menu}
           </ul>
         </nav>
 
         <div className="header-right">
-          <CustomSelect
-            defaultValue="en"
-            size="large"
-            // style={{ width: 120 }}
-            //   onChange={handleChange}
-            options={languageOptions}
-          />
+          <Language />
           <Link to={isAuthenticated ? "/dashboard/document" : "/auth/signin"}>
             <CustomButton color="dark" bordered>
               Try Docum.ai
@@ -68,7 +70,7 @@ function Header() {
 
       <CustomModal open={visible} onCancel={closeModal} width={1480}>
         {/* Pricing */}
-        <section id="pricing" style={{ padding: 50 }}>
+        <section id="pricing" className="header-pricing-modal">
           <div className="title_sm" style={{ marginBottom: 24 }}>
             Сhoose a tariff for yourself or companies!
           </div>

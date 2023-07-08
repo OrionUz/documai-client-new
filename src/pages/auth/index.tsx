@@ -1,4 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
+import Header from "src/layout/main/header";
 
 function AuthPage() {
   const location = useLocation();
@@ -6,6 +7,7 @@ function AuthPage() {
 
   return (
     <div className="auth">
+      <Header />
       <div className="blur_purple" />
       <div className="blur_red" />
       <div className="blur_blue" />
@@ -18,15 +20,10 @@ function AuthPage() {
         <div className="auth-right">
           <div className="auth-right-header">
             <h3>{path === "signin" ? "Sign in" : "Sign up"}</h3>
-            <h2>
-              Integrating AI into your business unlocks a world of possibilities
-            </h2>
+            <h2>Integrating AI into your business unlocks a world of possibilities</h2>
           </div>
           <div className="auth-right-img">
-            <img
-              src={require("src/assets/img/home/home.png")}
-              alt="error home"
-            />
+            <img src={require("src/assets/img/home/home.png")} alt="error home" />
           </div>
         </div>
       </div>

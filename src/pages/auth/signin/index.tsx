@@ -1,6 +1,7 @@
 import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "src/app/services/auth";
+import { isMobile } from "src/static/const";
 
 function AuthSignin() {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ function AuthSignin() {
             console.log("Login Failed");
           }}
           size="large"
-          width="429px"
+          width={isMobile ? "300px" : "429px"}
           locale="en"
           auto_select={false}
         />

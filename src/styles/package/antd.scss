@@ -1,22 +1,19 @@
 //Select
-// .ant-select {
-//   background-color: #717493 !important;
-//   font-family: "SF Pro Display" !important;
-//   &-selector {
-//     height: 50px !important;
-//   }
-//   &-selection {
-//     &-item {
-//       font-size: 18px !important;
-//     }
-//     &-search {
-//       // top: 5px !important;
-//       &-input {
-//         height: 48px !important;
-//       }
-//     }
-//   }
-// }
+.ant-select-open .ant-select-selection-item {
+  color: white !important;
+}
+:where(.css-dev-only-do-not-override-1qvbt7g).ant-select .ant-select-arrow {
+  color: white;
+}
+:where(.css-dev-only-do-not-override-1qvbt7g).ant-select-dropdown
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  color: #fff;
+  font-weight: 600;
+  background-color: $white_05;
+}
+.ant-select-selector {
+  box-shadow: none !important;
+}
 
 //Pagination
 .ant-pagination-item-active {
@@ -75,4 +72,14 @@
 
 input {
   outline: 1px !important;
+}
+
+@media screen and (max-width: 600px) {
+  .ant-modal {
+    max-width: 100%;
+    &-close {
+      top: 16px !important;
+      right: 16px !important;
+    }
+  }
 }

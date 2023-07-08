@@ -16,7 +16,7 @@ function ChatPage() {
   const { data } = result;
 
   const projects = useTypedSelector((state) => state.project.projects);
-  const botId = projects.find((el) => String(el.id) === projectId)?.chatbotId;
+  const botId = projects?.find((el) => String(el.id) === projectId)?.chatbotId;
 
   useEffect(() => {
     userId && botId && trigger({ userId, botId }, false);

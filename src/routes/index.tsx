@@ -16,18 +16,18 @@ import NewsPage from "src/pages/news";
 import NewsIdPage from "src/pages/news/[id]";
 import DocumentsTrainPage from "src/pages/documents/train";
 import DashboardLayout from "src/layout/dashboard";
+import { useState } from "react";
 
 function RoutElements() {
   const { pathname } = useLocation();
   const path = pathname.split("/")[1];
 
+  const [navigation, setNavigation] = useState(false);
+
   return (
     <div className="root">
       <Routes>
-        <Route
-          path="/"
-          element={!acceptMainLayout.includes(path) ? <MainLayout /> : null}
-        >
+        <Route path="/" element={!acceptMainLayout.includes(path) ? <MainLayout /> : null}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="auth" element={<AuthPage />}>

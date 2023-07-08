@@ -1,7 +1,7 @@
 import { ConfigProvider, Radio } from "antd";
 import { RadioButtonProps } from "./type";
 
-function RadioButton({ defaultValue, onChange, buttons }: RadioButtonProps) {
+function RadioButton({ defaultValue, onChange, buttons, size }: RadioButtonProps) {
   return (
     <div className="radio-button">
       <ConfigProvider
@@ -17,7 +17,7 @@ function RadioButton({ defaultValue, onChange, buttons }: RadioButtonProps) {
           },
         }}
       >
-        <Radio.Group size="large" defaultValue={defaultValue}>
+        <Radio.Group defaultValue={defaultValue} size={size}>
           {buttons.map((item) => {
             return (
               <Radio.Button

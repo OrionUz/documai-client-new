@@ -9,13 +9,14 @@ function CustomButton({
   disabled,
   left_icon,
   icon,
+  className,
   ...rest
 }: CustomButtonProps) {
   return (
     <button
-      className={`button button-${color} ${
-        (disabled || loading) && `button-${color}-disabled`
-      } ${bordered && `button-${color}-bordered`}`}
+      className={`button button-${color} ${(disabled || loading) && `button-${color}-disabled`} ${
+        bordered && `button-${color}-bordered`
+      } ${className}`}
       {...rest}
     >
       {left_icon && icon && (loading ? <LoadingOutlined /> : icon)}

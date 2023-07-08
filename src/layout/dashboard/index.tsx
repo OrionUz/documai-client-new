@@ -1,36 +1,32 @@
-import { MoreOutlined } from "@ant-design/icons";
+import { SizeType } from "antd/es/config-provider/SizeContext";
 import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { useGetProjectsQuery } from "src/app/services/projects";
-import { IProject } from "src/app/services/projects/type";
 import { saveProjects } from "src/app/slices/projectSlice";
 import { useAppDispatch } from "src/app/store";
-import { HomeSvg, QuestionSvg } from "src/assets/svg";
+import { ArrowRightSvg, CloseSvg, HamburgerSvg, HomeSvg, LogoutSvg, QuestionSvg } from "src/assets/svg";
 import CustomButton from "src/components/common/button";
-import CustomPopover from "src/components/common/popover";
+import CustomDrawer from "src/components/common/drawer";
 import RadioButton from "src/components/common/radio/RadioButton";
+import { isMobile } from "src/static/const";
+import Logo from "../main/header/Logo";
+import Language from "../main/language";
+import ActivatedBots from "./components/ActivatedBots";
 import AddProject from "./components/AddProject";
-import ProjectInfo from "./components/ProjectInfo";
 import ProjectUsers from "./components/ProjectUsers";
+import UserProfile, { ProfileInfo } from "./components/UserProfile";
 import { dashboardHeaderButtons } from "./const";
+import Logout from "./components/Logout";
 
 function DashboardLayout() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   //Use search params
-  const [searchParams, setSearchParams] = useSearchParams();
-  const handleMakeParams = (key: string, value: string) => {
-    if (value) {
-      if (searchParams.has(key)) searchParams.set(key, value);
-      else searchParams.append(key, value);
-    } else searchParams.delete(key);
-    setSearchParams(searchParams);
-  };
+  const [searchParams] = useSearchParams();
 
   //Menu
   const projectId = searchParams.get("projectId");
-  const activeProject = projectId ? +projectId : 1;
 
   const location = useLocation();
   const type = location.pathname.split("/")[2];
@@ -39,10 +35,28 @@ function DashboardLayout() {
     navigate(`/dashboard/${val}?projectId=${projectId}`);
   };
 
-  const handleChangeMenu = (id: number) => {
-    handleMakeParams("projectId", String(id));
-    handleMakeParams("userId", "");
-  };
+  const SidebarMenu = () => (
+    <div className="dashboard-sidebar-top-menu">
+      <Link to="/">
+        <HomeSvg /> <span>Home</span>
+      </Link>
+      <p>
+        <QuestionSvg /> <span>Help</span>
+      </p>
+      {isMobile && <Logout />}
+    </div>
+  );
+
+  const HeaderMenu = ({ size }: { size: SizeType }) => (
+    <div className="dashboard-header-menu">
+      <RadioButton
+        onChange={handleChangeHeader}
+        defaultValue={type || "document"}
+        buttons={dashboardHeaderButtons}
+        size={size}
+      />
+    </div>
+  );
 
   //Get projects
   const { data } = useGetProjectsQuery();
@@ -51,60 +65,33 @@ function DashboardLayout() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
-  //See project detail
-  const [projectInfo, setProjectInfo] = useState<IProject | undefined>();
-  const [infoVisible, setInfoVisible] = useState(false);
+  //Drawer settings
+  const [botsVisible, setBotsVisible] = useState(false);
+  const [usersVisible, setUsersVisible] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
 
-  const openProjectInfo = (id: number) => {
-    const obj = data?.projects.find((el) => el.id === id);
-    if (obj) {
-      setProjectInfo(obj);
-      setInfoVisible(true);
-    }
-  };
+  const changeBotsVisible = () => setBotsVisible(!botsVisible);
+  const changeUsersVisible = () => setUsersVisible(!usersVisible);
+  const changeMenuVisible = () => setMenuVisible(!menuVisible);
 
   return (
     <div className="dashboard">
       <div className={"dashboard-sidebar"}>
-        <div>
+        <div className="dashboard-sidebar-wrap">
           {/* Sidebar top */}
           <div className="dashboard-sidebar-top">
-            <div className="dashboard-sidebar-top-title">
-              <Link to="/"> Docum.ai</Link>
-            </div>
-
-            <div className="dashboard-sidebar-top-menu">
-              <Link to="/">
-                <HomeSvg /> <span>Home</span>
-              </Link>
-              <p>
-                <QuestionSvg /> <span>Help</span>
-              </p>
-            </div>
+            <Logo />
+            <SidebarMenu />
           </div>
 
           {/* List of bots */}
           <div className="dashboard-sidebar-content">
             <h3>Activated bots</h3>
-
-            <div className="dashboard-sidebar-menu">
-              {data?.projects?.map((item) => {
-                return (
-                  <div
-                    onClick={() => handleChangeMenu(item.id)}
-                    className={`dashboard-sidebar-bot ${activeProject === item.id && "dashboard-sidebar-bot-active"}`}
-                    key={item.id}
-                  >
-                    {item.displayName || `Bot-${item.id}`}{" "}
-                    {activeProject === item.id && <MoreOutlined onClick={() => openProjectInfo(item.id)} />}
-                  </div>
-                );
-              })}
-            </div>
+            <ActivatedBots />
           </div>
         </div>
 
-        {/* Button for create new bot */}
+        {/* Add Project */}
         <div className="dashboard-sidebar-footer">
           <AddProject />
         </div>
@@ -117,19 +104,27 @@ function DashboardLayout() {
       <div className="dashboard-right">
         {/* Header of dashboard */}
         <div className="dashboard-header">
-          <div className="dashboard-header-menu">
-            <RadioButton
-              onChange={handleChangeHeader}
-              defaultValue={type || "document"}
-              buttons={dashboardHeaderButtons}
-            />
+          <div className="dashboard-header-logo">
+            <Logo />
           </div>
-          <CustomButton color="dark" bordered>
-            Balance: 25, 000
+          <HeaderMenu size="large" />
+          <Language />
+          <CustomButton color="dark" bordered className="dashboard-header-payment">
+            Balance: 0.000
           </CustomButton>
-          <CustomPopover>
-            <img src={require("src/assets/img/user.png")} alt="user" />
-          </CustomPopover>
+          <UserProfile />
+          <HamburgerSvg onClick={changeMenuVisible} />
+        </div>
+        <div className="dashboard-header-mobile">
+          <HeaderMenu size="middle" />
+          <div className="dashboard-header-mobile-right">
+            <CustomButton onClick={changeBotsVisible} color="dark" icon={<ArrowRightSvg />}>
+              Bots
+            </CustomButton>
+            <CustomButton onClick={changeUsersVisible} color="dark" icon={<ArrowRightSvg />}>
+              Users
+            </CustomButton>
+          </div>
         </div>
 
         {/* Content of dashboard */}
@@ -138,7 +133,60 @@ function DashboardLayout() {
         </div>
       </div>
 
-      <ProjectInfo projectInfo={projectInfo} infoVisible={infoVisible} setInfoVisible={setInfoVisible} />
+      {/* Bots drawer */}
+      <CustomDrawer
+        open={botsVisible}
+        width={300}
+        placement="left"
+        title={null}
+        onClose={changeBotsVisible}
+        className="dashboard-drawer"
+      >
+        <div className="dashboard-drawer-header">
+          <CloseSvg onClick={changeBotsVisible} />
+        </div>
+        <div className="dashboard-drawer-title">Your bots</div>
+        <ActivatedBots onChangeMenu={changeBotsVisible} />
+        <AddProject />
+      </CustomDrawer>
+
+      {/* Users drawer */}
+      <CustomDrawer
+        open={usersVisible}
+        width={300}
+        placement="left"
+        title={null}
+        onClose={changeUsersVisible}
+        className="dashboard-drawer"
+      >
+        <div className="dashboard-drawer-header">
+          <CloseSvg onClick={changeUsersVisible} />
+        </div>
+        <ProjectUsers onChangeUser={changeUsersVisible} />
+      </CustomDrawer>
+
+      {/* Menu drawer */}
+      <CustomDrawer
+        open={menuVisible}
+        width={360}
+        placement="right"
+        title={null}
+        onClose={changeMenuVisible}
+        className="dashboard-drawer"
+      >
+        <div className="dashboard-drawer-menu">
+          <div>
+            <div className="dashboard-drawer-menu-header">
+              <ProfileInfo />
+              <CloseSvg onClick={changeMenuVisible} />
+            </div>
+            <SidebarMenu />
+          </div>
+          <CustomButton color="dark" bordered>
+            Balance: 25, 000
+          </CustomButton>
+        </div>
+      </CustomDrawer>
     </div>
   );
 }

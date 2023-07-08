@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useLazyGetProjetUsersQuery } from "src/app/services/projects";
 import { useTypedSelector } from "src/app/store";
-import UserCard from "./UserCard";
 import { IProjectUser } from "src/app/services/projects/type";
+import UserCard from "./UserCard";
+import { ProjectUserProps } from "../type";
 
-function ProjectUsers() {
+function ProjectUsers({ onChangeUser }: ProjectUserProps) {
   const [searchParams] = useSearchParams();
   const userId = searchParams.get("userId");
   const projectId = searchParams.get("projectId");
 
   const projects = useTypedSelector((state) => state.project.projects);
-  const botId = projects.find((el) => String(el.id) === projectId)?.chatbotId;
+  const botId = projects?.find((el) => String(el.id) === projectId)?.chatbotId;
 
   const [trigger, { data }] = useLazyGetProjetUsersQuery();
 
@@ -28,16 +29,21 @@ function ProjectUsers() {
   }, [projectId, data]);
 
   return (
-    <div>
-      <div className="dashboard-users">
-        <div className="dashboard-users-header">
-          <h2>{users.length} Users</h2>
-        </div>
-        <div className="dashboard-users-content">
-          {users.map((item) => {
-            return <UserCard key={item.id} data={item} active={userId && +userId === item.id ? true : false} />;
-          })}
-        </div>
+    <div className="dashboard-users">
+      <div className="dashboard-users-header">
+        <h2>{users.length} Users</h2>
+      </div>
+      <div className="dashboard-users-content">
+        {users.map((item) => {
+          return (
+            <UserCard
+              key={item.id}
+              data={item}
+              active={userId && +userId === item.id ? true : false}
+              onClick={onChangeUser}
+            />
+          );
+        })}
       </div>
     </div>
   );

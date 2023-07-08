@@ -12,11 +12,6 @@
     padding: 6px 0;
   }
 
-  &-logo a {
-    @extend .title;
-    line-height: 38px;
-  }
-
   &-photo {
     width: 80px;
     transform: translateY(10px) translateX(10px);
@@ -31,6 +26,11 @@
     p {
       @extend .text;
       cursor: pointer;
+    }
+
+    transition: $transition;
+    .active {
+      color: #409ed3;
     }
   }
 
@@ -87,6 +87,12 @@
         z-index: 1100;
         transition: all 0.6s;
         opacity: 0;
+      }
+
+      .language {
+        position: absolute;
+        top: 54px;
+        left: 16px;
       }
     }
 
@@ -159,6 +165,10 @@
       }
     }
   }
+
+  &-pricing-modal {
+    padding: 50px;
+  }
 }
 
 //MEDIA QUERY
@@ -170,18 +180,19 @@
     &-right {
       padding-right: 40px;
 
-      button {
-        padding: 10px 12px;
-        font-size: 14px;
+      .language {
+        display: none;
       }
     }
     &-navigation {
       &-label {
         opacity: 1;
+        top: 28px;
       }
       &-nav {
         &-active {
           opacity: 1;
+          pointer-events: initial;
 
           a {
             &:nth-child(1) {
@@ -215,19 +226,36 @@
 @media screen and (max-width: 680px) {
   .header {
     top: 18px;
-    &-logo {
-      a {
-        font-size: 20px;
+
+    .logo {
+      width: 148px;
+    }
+
+    &-right {
+      padding-right: 35px;
+      button {
+        padding: 10px 12px;
+        font-size: 14px;
       }
+    }
+    &-navigation {
+      &-label {
+        top: 14px;
+      }
+      &-nav {
+        .language {
+          top: 30px;
+        }
+      }
+    }
+    &-pricing-modal {
+      padding: 30px 16px;
     }
   }
 }
 
 @media screen and (max-width: 450px) {
   .header {
-    &-logo a {
-      font-size: 20px;
-    }
     &-content {
       padding: 6px 16px;
     }

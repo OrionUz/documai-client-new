@@ -2,11 +2,11 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { IProject } from "../services/projects/type";
 
 export interface IAuthState {
-  projects: IProject[];
+  projects?: IProject[];
 }
 
 const initialState: IAuthState = {
-  projects: [],
+  projects: undefined,
 };
 
 const projectSlice = createSlice({
@@ -19,6 +19,6 @@ const projectSlice = createSlice({
   },
 });
 
-export const { saveProjects } = projectSlice.actions;
+export const { saveProjects,  } = projectSlice.actions;
 
 export default projectSlice.reducer;

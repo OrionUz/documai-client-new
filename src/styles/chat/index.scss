@@ -116,3 +116,43 @@ $dark_bold: #ced4da;
     background-color: rgba(152, 128, 255, 0.2);
   }
 }
+
+@media screen and (max-width: 860px) {
+  .chat {
+    &-message {
+      width: 100%;
+      &-box {
+        max-width: calc(100% - 30px);
+      }
+    }
+    &-input {
+      position: fixed;
+      right: 32px;
+      bottom: 43px;
+      width: calc(100% - 64px);
+      .ant-input-affix-wrapper {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .chat {
+    &-message {
+      &-ref {
+        height: 70px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .chat {
+    &-input {
+      right: 16px;
+      bottom: 30px;
+      width: calc(100% - 32px);
+    }
+  }
+}

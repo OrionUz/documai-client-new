@@ -1,6 +1,6 @@
 .auth {
   height: 100vh;
-  padding-top: 10vh;
+  padding-top: 150px;
   overflow: hidden;
   position: relative;
   &-content {
@@ -9,14 +9,14 @@
     top: 0;
     left: 0;
     z-index: 10;
+    gap: 80px;
   }
 
   &-left {
-    width: 50%;
-    padding-right: 160px;
+    flex-grow: 1;
+    padding-left: 80px;
     &-content {
-      width: 503px;
-      // height: 80vh;
+      max-width: 503px;
       padding: 35px 37px 45px;
       background-color: $bg_dark;
       border-radius: 24px;
@@ -26,7 +26,6 @@
 
   &-right {
     width: 50%;
-    padding-top: 60px;
 
     h3 {
       @extend .title;
@@ -90,6 +89,39 @@
       }
       p {
         padding: 0 8px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .auth {
+    &-content {
+      justify-content: center;
+      align-items: center;
+    }
+    &-left {
+      flex-grow: 0;
+      padding: 80px 0 0 0;
+      &-content {
+        width: 500px;
+        margin-left: 0;
+      }
+    }
+    &-right {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .auth {
+    padding: 16px;
+    &-left {
+      padding-top: 120px;
+      &-content {
+        width: 100%;
+        padding: 30px 16px;
       }
     }
   }

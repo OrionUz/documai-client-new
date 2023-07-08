@@ -29,3 +29,16 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .projectinfo {
+    &-informs {
+      div {
+        gap: 16px;
+        p {
+          width: calc(100% - 40px);
+        }
+      }
+    }
+  }
+}
