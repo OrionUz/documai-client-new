@@ -8,7 +8,24 @@ import { ConfigProvider } from "antd";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import languageRu from "./static/language/ru.json";
+import languageUz from "./static/language/uz.json";
+import languageEn from "./static/language/en.json";
+import { language } from "./layout/main/language/const";
+
 function App() {
+  i18n.use(initReactI18next).init({
+    resources: {
+      uz: { translation: languageUz },
+      ru: { translation: languageRu },
+      en: { translation: languageEn },
+    },
+    fallbackLng: language || "uz",
+    interpolation: { escapeValue: false },
+  });
+
   return (
     <Provider store={store}>
       <Router>

@@ -8,12 +8,14 @@ import CustomButton from "src/components/common/button";
 import CustomModal from "src/components/common/modal";
 import Language from "../language";
 import Logo from "./Logo";
+import { useTranslation } from "react-i18next";
 
 function Header() {
   const dispatch = useDispatch();
   const navigation = useTypedSelector((state) => state.header.navigation);
   const location = useLocation();
   const changeNavigationBar = () => dispatch(changeNavigation());
+  const { t } = useTranslation();
 
   const { isAuthenticated } = getRootState().auth;
 
@@ -24,7 +26,7 @@ function Header() {
   const menu = (
     <>
       <Link to="/" className={location.pathname === "/" ? "active" : ""}>
-        Homepage
+        {t("header.home")}
       </Link>
       <Link to="/about" className={location.pathname === "/about" ? "active" : ""}>
         About us

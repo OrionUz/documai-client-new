@@ -10,14 +10,12 @@ export const introcardData = [
   },
   {
     title: "Custom AI",
-    description:
-      "Docum.ai offers 24/7 service and can handle unlimited customers with custom knowledge.",
+    description: "Docum.ai offers 24/7 service and can handle unlimited customers with custom knowledge.",
     img: require("src/assets/img/home/introcard2.png"),
   },
   {
     title: "Affordable",
-    description:
-      "Docum.ai costs four times less than hiring a human customer service employee.",
+    description: "Docum.ai costs four times less than hiring a human customer service employee.",
     img: require("src/assets/img/home/introcard3.png"),
   },
 ];
@@ -77,7 +75,7 @@ export const pricingCardData = [
   {
     main: true,
     type: "Premium",
-    price: "29$",
+    price: "19$",
     price_duration: "/ month",
     requirement: "+ Also you have to pay AI Fee.",
     includes: [
@@ -93,13 +91,7 @@ export const pricingCardData = [
     price: "299$",
     price_duration: "/ month",
     requirement: "+ Also you have to pay AI Fee.",
-    includes: [
-      "Unlimited document",
-      "10 Telegram bots",
-      "Data analytics support",
-      "Real time checking the data",
-      "Edit documents",
-    ],
+    includes: ["Unlimited document", "10 Telegram bots", "Data analytics support", "Real time checking the data"],
   },
 ];
 
