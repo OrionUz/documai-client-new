@@ -8,7 +8,6 @@ import { addProjectFormItems } from "../const";
 import CustomButton from "src/components/common/button";
 import CustomInput from "src/components/common/input";
 import CustomModal from "src/components/common/modal";
-import { t } from "i18next";
 import { useTranslation } from "react-i18next";
 
 function AddProject() {
