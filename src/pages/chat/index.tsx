@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { useLazyGetProjetUserMessagesQuery } from "src/app/services/projects";
 import ChatMessage from "./components/ChatMessage";
 import { useTypedSelector } from "src/app/store";
+import { useTranslation } from "react-i18next";
 
 function ChatPage() {
   const [searchParams] = useSearchParams();
@@ -22,6 +23,8 @@ function ChatPage() {
     userId && botId && trigger({ userId, botId }, false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
+
+  const {t} = useTranslation();
 
   return (
     <div
@@ -46,7 +49,7 @@ function ChatPage() {
         </>
       ) : (
         <div className="chat-nodata">
-          <p>Select a user to see messaging</p>
+          <p>{t("dashboard.selection")}</p>
         </div>
       )}
     </div>

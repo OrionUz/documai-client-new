@@ -10,14 +10,16 @@ import {
 import CustomButton from "src/components/common/button";
 import CustomSlider from "src/components/common/slider";
 import { companies } from "./const";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { t } = useTranslation();
   return (
     <div className="footer">
       <div className="footer-container">
         {/* Companies */}
         <div className="footer-companies">
-          <h3>We are trusted by 10+ of companies</h3>
+          <h3>{t("home.footer.title")}</h3>
           <CustomSlider counts={5} arrows={false} autoplay dots>
             {companies.map((item) => {
               return (
@@ -35,33 +37,29 @@ function Footer() {
         {/* Main content */}
         <div className="footer-content">
           <div className="footer-content-header">
-            <h2>No long-term contracts. No catches. Simple.</h2>
-            <p>Start your 30-day free trial. Cancel anytime</p>
+            <h2>{t("home.footer.description")}</h2>
+            <p>{t("home.footer.text")}</p>
             <div className="footer-content-buttons">
               <CustomButton color="white" icon={<PlaySvg />} left_icon>
-                View demo
+                {t("home.footer.demo")}
               </CustomButton>
-              <CustomButton color="light">Get started</CustomButton>
+              <CustomButton color="light">
+                {t("home.footer.start")}
+              </CustomButton>
             </div>
           </div>
 
           <div className="footer-content-main">
             <div className="footer-content-left">
-              <h1>Docum.ai</h1>
-              <p>
-                Docum.ai is an artificial intelligence platform that offers
-                automation solutions for your business. By harnessing the power
-                of AI, Docum.ai enables you to streamline and automate various
-                processes, increasing efficiency and productivity within your
-                organization.
-              </p>
+              <h1>{t("home.footer.docum")}</h1>
+              <p>{t("home.footer.text-down")}</p>
               <ul>
-                <li>Overview</li>
-                <li>Features</li>
-                <li>Pricing</li>
+                <li>{t("home.footer.overview")}</li>
+                <li>{t("home.footer.features")}</li>
+                <li>{t("home.footer.pricing-down")}</li>
                 {/* <li>Blog & News</li> */}
-                <li>Help</li>
-                <li>Demo</li>
+                <li>{t("home.footer.help")}</li>
+                <li>{t("home.footer.demo-down")}</li>
               </ul>
             </div>
 

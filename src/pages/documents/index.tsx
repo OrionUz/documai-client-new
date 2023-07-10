@@ -5,6 +5,7 @@ import { useTypedSelector } from "src/app/store";
 import CustomButton from "src/components/common/button";
 import AddDocuments from "./components/AddDocuments";
 import DocumCard from "./components/DocumCard";
+import { useTranslation } from "react-i18next";
 
 function DocumentsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -18,6 +19,7 @@ function DocumentsPage() {
   };
 
   const projectId = searchParams.get("projectId");
+  const {t} = useTranslation();
 
   const projects = useTypedSelector((state) => state.project.projects);
 
@@ -48,7 +50,7 @@ function DocumentsPage() {
         <div className="documents-footer-right">
           <Link to={`train?projectId=${projectId}`}>
             <CustomButton color="dark" bordered>
-              Try this data
+              {t("dashboard.tryData")}
             </CustomButton>
           </Link>
           <AddDocuments />

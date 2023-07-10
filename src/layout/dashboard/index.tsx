@@ -17,10 +17,12 @@ import ProjectUsers from "./components/ProjectUsers";
 import UserProfile, { ProfileInfo } from "./components/UserProfile";
 import { dashboardHeaderButtons } from "./const";
 import Logout from "./components/Logout";
+import { useTranslation } from "react-i18next";
 
 function DashboardLayout() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const {t} = useTranslation();
 
   //Use search params
   const [searchParams] = useSearchParams();
@@ -38,10 +40,10 @@ function DashboardLayout() {
   const SidebarMenu = () => (
     <div className="dashboard-sidebar-top-menu">
       <Link to="/">
-        <HomeSvg /> <span>Home</span>
+        <HomeSvg /> <span>{t("dashboard.home")}</span>
       </Link>
       <p>
-        <QuestionSvg /> <span>Help</span>
+        <QuestionSvg /> <span>{t("dashboard.help")}</span>
       </p>
       {isMobile && <Logout />}
     </div>
@@ -86,7 +88,7 @@ function DashboardLayout() {
 
           {/* List of bots */}
           <div className="dashboard-sidebar-content">
-            <h3>Activated bots</h3>
+            <h3>{t("dashboard.activation")}</h3>
             <ActivatedBots />
           </div>
         </div>
@@ -110,7 +112,7 @@ function DashboardLayout() {
           <HeaderMenu size="large" />
           <Language />
           <CustomButton color="dark" bordered className="dashboard-header-payment">
-            Balance: 0.000
+            {t("dashboard.balance")}
           </CustomButton>
           <UserProfile />
           <HamburgerSvg onClick={changeMenuVisible} />
@@ -119,10 +121,10 @@ function DashboardLayout() {
           <HeaderMenu size="middle" />
           <div className="dashboard-header-mobile-right">
             <CustomButton onClick={changeBotsVisible} color="dark" icon={<ArrowRightSvg />}>
-              Bots
+              {t("dashboard.bot")}
             </CustomButton>
             <CustomButton onClick={changeUsersVisible} color="dark" icon={<ArrowRightSvg />}>
-              Users
+              {t("dashboard.users")}
             </CustomButton>
           </div>
         </div>
@@ -145,7 +147,7 @@ function DashboardLayout() {
         <div className="dashboard-drawer-header">
           <CloseSvg onClick={changeBotsVisible} />
         </div>
-        <div className="dashboard-drawer-title">Your bots</div>
+        <div className="dashboard-drawer-title">{t("dashboard.yourBots")}</div>
         <ActivatedBots onChangeMenu={changeBotsVisible} />
         <AddProject />
       </CustomDrawer>
@@ -183,7 +185,7 @@ function DashboardLayout() {
             <SidebarMenu />
           </div>
           <CustomButton color="dark" bordered>
-            Balance: 25, 000
+            {t("dashboard.balance1")}
           </CustomButton>
         </div>
       </CustomDrawer>

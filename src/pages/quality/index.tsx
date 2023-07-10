@@ -1,8 +1,11 @@
 import CustomButton from "src/components/common/button";
 import CustomPagination from "src/components/common/pagination";
 import QualityCard from "./components/QualityCard";
+import { useTranslation } from "react-i18next";
 
 function QualityPage() {
+
+  const {t} = useTranslation();
   return (
     <div className="documents">
       <div className="documents-content">
@@ -15,8 +18,8 @@ function QualityPage() {
           <CustomPagination total={50} />
         </div>
         <div className="documents-footer-right">
-          <CustomButton color="dark">Try this data</CustomButton>
-          <CustomButton color="light">Add new document</CustomButton>
+          <CustomButton color="dark">{t("dashboard.tryData")}</CustomButton>
+          <CustomButton color="light">{t("dashboard.addDoc")}</CustomButton>
         </div>
       </div>
     </div>

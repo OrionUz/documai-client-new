@@ -28,11 +28,14 @@ function Header() {
       <Link to="/" className={location.pathname === "/" ? "active" : ""}>
         {t("header.home")}
       </Link>
-      <Link to="/about" className={location.pathname === "/about" ? "active" : ""}>
-        About us
+      <Link
+        to="/about"
+        className={location.pathname === "/about" ? "active" : ""}
+      >
+        {t("header.about")}
       </Link>
       {/* <Link to="/news">Blog-News</Link> */}
-      <p onClick={openModal}>Pricing</p>
+      <p onClick={openModal}>{t("header.pricing")}</p>
     </>
   );
   return (
@@ -64,7 +67,7 @@ function Header() {
           <Language />
           <Link to={isAuthenticated ? "/dashboard/document" : "/auth/signin"}>
             <CustomButton color="dark" bordered>
-              Try Docum.ai
+              { t("header.try_docum")}
             </CustomButton>
           </Link>
         </div>

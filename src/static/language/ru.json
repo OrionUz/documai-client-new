@@ -1,6 +1,13 @@
 {
   "header": {
-    "home": "Дом"
-
+    "about": "Biz haqimizda ru",
+    "home": "Дом",
+    "pricing": "Narxlar",
+    "try_docum": "Docum.ia dan foydalanish"
+  },
+  "home": {
+    "header": "Create an AI customer service assistant",
+    "text": "Мы поможем вам создать сотрудника службы поддержки клиентов с искусственным интеллектом с индивидуальными знаниями на основе предоставленной вами информации. Вы можете научить его чему угодно, и он сможет отвечать на вопросы клиентов.",
+    "btn-text": "Book demo version"
   }
 }

@@ -8,6 +8,8 @@ import { addProjectFormItems } from "../const";
 import CustomButton from "src/components/common/button";
 import CustomInput from "src/components/common/input";
 import CustomModal from "src/components/common/modal";
+import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 function AddProject() {
   const [form] = Form.useForm();
@@ -15,6 +17,7 @@ function AddProject() {
   const projects = useTypedSelector((state) => state.project.projects);
 
   const [visible, setVisible] = useState(false);
+  const {t} = useTranslation();
   const openModal = () => setVisible(true);
   const closeModal = () => {
     setVisible(false);
@@ -29,7 +32,7 @@ function AddProject() {
   return (
     <>
       <CustomButton className="add-bot" color="dark" bordered onClick={openModal}>
-        Create new bot
+        {t("dashboard.create")}
       </CustomButton>
       <CustomModal
         open={visible}
@@ -38,8 +41,8 @@ function AddProject() {
       >
         <div className="custom-modal">
           <div className="custom-modal-header">
-            <h2>Create your chat bot</h2>
-            <p>We automatically bill on the 1st of each month.</p>
+            <h2>{t("dashboard.create1")}</h2>
+            <p>{t("dashboard.text")}</p>
           </div>
           <div className="custom-modal-content">
             <Form
@@ -52,12 +55,12 @@ function AddProject() {
                 {addProjectFormItems.map((item) => {
                   return (
                     <Form.Item
-                      key={item.name}
-                      label={item.label}
-                      name={item.name}
-                      rules={[{ required: true, message: item.message }]}
+                      key={t(item.name)}
+                      label={t(item.label)}
+                      name={t(item.name)}
+                      rules={[{ required: true, message: t(item.message) }]}
                     >
-                      <CustomInput size="large" placeholder={item.message} />
+                      <CustomInput size="large" placeholder={t(item.message)} />
                     </Form.Item>
                   );
                 })}
@@ -65,10 +68,10 @@ function AddProject() {
 
               <div className="custom-modal-buttons">
                 <CustomButton icon={<PlaySvg />} left_icon>
-                  Video guide
+                  {t("dashboard.guide")}
                 </CustomButton>
                 <CustomButton color="light" bordered type="submit">
-                  Next
+                  {t("dashboard.next")}
                 </CustomButton>
               </div>
             </Form>

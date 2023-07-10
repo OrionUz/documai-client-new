@@ -1,7 +1,10 @@
 import { ConfigProvider, Radio } from "antd";
 import { RadioButtonProps } from "./type";
+import { useTranslation } from "react-i18next";
 
 function RadioButton({ defaultValue, onChange, buttons, size }: RadioButtonProps) {
+
+  const {t} = useTranslation();
   return (
     <div className="radio-button">
       <ConfigProvider
@@ -26,7 +29,7 @@ function RadioButton({ defaultValue, onChange, buttons, size }: RadioButtonProps
                 disabled={item.disabled}
                 onClick={() => onChange?.(item.value)}
               >
-                {item.title}
+                {t(item.title)}
               </Radio.Button>
             );
           })}

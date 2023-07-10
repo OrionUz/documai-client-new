@@ -5,6 +5,7 @@ import { useTypedSelector } from "src/app/store";
 import { IProjectUser } from "src/app/services/projects/type";
 import UserCard from "./UserCard";
 import { ProjectUserProps } from "../type";
+import { useTranslation } from "react-i18next";
 
 function ProjectUsers({ onChangeUser }: ProjectUserProps) {
   const [searchParams] = useSearchParams();
@@ -15,6 +16,8 @@ function ProjectUsers({ onChangeUser }: ProjectUserProps) {
   const botId = projects?.find((el) => String(el.id) === projectId)?.chatbotId;
 
   const [trigger, { data }] = useLazyGetProjetUsersQuery();
+
+  const {t} = useTranslation();
 
   useEffect(() => {
     botId && trigger(botId);
@@ -31,7 +34,7 @@ function ProjectUsers({ onChangeUser }: ProjectUserProps) {
   return (
     <div className="dashboard-users">
       <div className="dashboard-users-header">
-        <h2>{users.length} Users</h2>
+        <h2>{users.length} {t("dashboard.user")}</h2>
       </div>
       <div className="dashboard-users-content">
         {users.map((item) => {

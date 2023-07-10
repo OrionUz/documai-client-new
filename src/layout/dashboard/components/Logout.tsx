@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "src/app/slices/authSlice";
@@ -11,6 +12,7 @@ function Logout() {
     dispatch(logout());
     navigate("/");
   };
+  const {t} = useTranslation();
   return (
     <CustomPopconfirm
       title="Are you sure to log out from this platform?"
@@ -21,7 +23,7 @@ function Logout() {
     >
       <div className="profile-content-menu">
         <LogoutSvg />
-        <h2>Log out</h2>
+        <h2>{t("dashboard.logout")}</h2>
       </div>
     </CustomPopconfirm>
   );

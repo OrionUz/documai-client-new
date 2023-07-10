@@ -1,5 +1,6 @@
 import { Form, UploadProps } from "antd";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 import { useTrainProjectMutation } from "src/app/services/projects";
 import { PlaySvg } from "src/assets/svg";
@@ -25,6 +26,7 @@ function AddDocuments() {
   const [newFileList, setNewFileList] = useState<UploadProps["fileList"]>();
 
   const [trainProject, { isLoading }] = useTrainProjectMutation();
+  const {t} = useTranslation();
   const handleUpload = () => {
     if (projectId) {
       const formData = new FormData();
@@ -40,15 +42,15 @@ function AddDocuments() {
   return (
     <>
       <CustomButton color="light" onClick={openDocumentModal}>
-        Add new documents
+        {t("dashboard.addDoc")}
       </CustomButton>
       <CustomModal open={visible} width={800} onCancel={closeDocumentModal}>
         <div className="documents-add">
           <div className="documents-add-header">
-            <p>Please upload your documents</p>
+            <p>{t("dashboard.upload")}</p>
 
             <CustomButton icon={<PlaySvg />} left_icon>
-              View instruction
+              {t("dashboard.instraction")}
             </CustomButton>
           </div>
           <CustomUpload
@@ -61,14 +63,21 @@ function AddDocuments() {
             <div className="documents-add-footer">
               <div>
                 <Form.Item
-                  label="Use translation"
-                  tooltip="Use this for non-English documents to translate and train to obtain the best results"
+                  label={t("dashboard.useTranslation")}
+                  tooltip={t("dashboard.hovertranslation")}
                 >
-                  <CustomSwitch checked={switched} onChange={() => setSwitched(!switched)} />
+                  <CustomSwitch
+                    checked={switched}
+                    onChange={() => setSwitched(!switched)}
+                  />
                 </Form.Item>
               </div>
-              <CustomButton color="light" onClick={handleUpload} loading={isLoading}>
-                Upload
+              <CustomButton
+                color="light"
+                onClick={handleUpload}
+                loading={isLoading}
+              >
+                {t("dashboard.uploadBtn")}
               </CustomButton>
             </div>
           ) : (

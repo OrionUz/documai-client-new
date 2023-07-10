@@ -5,6 +5,7 @@ import AboutCard from "./components/AboutCard";
 import PricingCard from "./components/PricingCard";
 import CustomSlider from "src/components/common/slider";
 import ReactPlayer from "react-player";
+import { useTranslation } from "react-i18next";
 
 export function PricingSlider() {
   return (
@@ -17,6 +18,7 @@ export function PricingSlider() {
 }
 
 function HomePage() {
+  const { t } = useTranslation();
   return (
     <div className="home">
       <div className="blur_purple" />
@@ -25,15 +27,12 @@ function HomePage() {
         {/* Home top */}
         <div className="home-top">
           <div className="home-top-left">
-            <h1>Create an AI customer service assistant</h1>
+            <h1>{t("home.header")}</h1>
             <p>
-              We will help you create an AI customer service employee with
-              customized knowledge based on the information you provide. You can
-              teach it anything you want, and it will be able to answer
-              questions from customers.
+              {t("home.text")}
             </p>
             <CustomButton color="light" bordered>
-              Book demo version
+              {t("home.btn-text")}
             </CustomButton>
           </div>
           <div className="home-top-right">
@@ -55,13 +54,13 @@ function HomePage() {
 
         {/* Usage */}
         <section>
-          <div className="home-subtitle">How it works</div>
+          <div className="home-subtitle">{t("home.work")}</div>
           <div className="home-usage">
             {usagecardData.map((item) => {
               return (
                 <div className="home-usage-card" key={item.info}>
                   {item.icon}
-                  <p>{item.info}</p>
+                  <p>{t(item.info)}</p>
                 </div>
               );
             })}
@@ -70,7 +69,7 @@ function HomePage() {
 
         {/* About */}
         <section>
-          <div className="home-subtitle">About</div>
+          <div className="home-subtitle">{t("home.about")}</div>
           <div className="home-about">
             {aboutcardData.map((item) => {
               return <AboutCard item={item} key={item.title} />;
@@ -80,7 +79,7 @@ function HomePage() {
 
         {/* Pricing */}
         <section id="pricing">
-          <div className="home-subtitle">Pricing</div>
+          <div className="home-subtitle">{t("home.pricing")}</div>
           <div className="home-pricing">
             <PricingSlider />
           </div>

@@ -3,19 +3,18 @@ import { UsageCardSvg1, UsageCardSvg2, UsageCardSvg3 } from "src/assets/svg/free
 
 export const introcardData = [
   {
-    title: "Quick answer!",
-    description:
-      "Docum.ai can provide immediate responses to an unlimited number of customers when they contact your custom bot.",
+    title: "home.intro.title1",
+    description: "home.intro.text1",
     img: require("src/assets/img/home/introcard1.png"),
   },
   {
-    title: "Custom AI",
-    description: "Docum.ai offers 24/7 service and can handle unlimited customers with custom knowledge.",
+    title: "home.intro.title2",
+    description: "home.intro.text2",
     img: require("src/assets/img/home/introcard2.png"),
   },
   {
-    title: "Affordable",
-    description: "Docum.ai costs four times less than hiring a human customer service employee.",
+    title: "home.intro.title3",
+    description: "home.intro.text3",
     img: require("src/assets/img/home/introcard3.png"),
   },
 ];
@@ -23,42 +22,35 @@ export const introcardData = [
 export const usagecardData = [
   {
     icon: <UsageCardSvg1 />,
-    info: "It is important for your business to collect data regarding customer inquiries and corresponding answers. This information should be consolidated into a single file. If you require assistance, our team is always available to help.",
+    info: "home.usage.info1",
   },
   {
     icon: <UsageCardSvg2 />,
-    info: "To proceed with the integration of the AI model into the bot on Docum.ai, please provide us with a bot username and token. Once we receive the necessary information, we will incorporate the AI model that is knowledgeable about your business.",
+    info: "home.usage.info2",
   },
   {
     icon: <UsageCardSvg3 />,
-    info: "After the integration is complete, I will engage with the chat bot you provided and ask questions specific to your business. I will carefully note down any questions it cannot answer and ensure that the uploaded document is updated accordingly.",
+    info: "home.usage.info3",
   },
 ];
 
 export const aboutcardData = [
   {
-    title: "Docum.ai is a platform to create customer service AI",
-    description: [
-      "Docum.ai is a platform designed to help you create AI-powered customer service solutions. Whether you're an entrepreneur, a customer support professional, or a content creator, our platform empowers you to leverage AI and provide outstanding user experiences.",
-      "Instead of relying on human customer service employees who cost $12 per day to serve 100 customers, each with approximately 10 questions, you can create a bot on our platform to handle this workload for just $3!",
-    ],
-    button: "Get started",
+    title: "home.aboutPart.title1",
+    description: ["home.aboutPart.text1"],
+    button: "home.aboutPart.btn",
     icon: <AboutCardSvg1 />,
     width: "full",
   },
   {
-    title: "You can test your data real time and edit it",
-    description: [
-      "With Docum.ai, you have the ability to test and edit your data in real time. After uploading your document, you can connect it to a Telegram bot. If you're unsatisfied with the bot's answers, you can easily make edits to the uploaded document, delete it, or add more documents as needed. This flexibility allows you to refine and improve the performance of your AI-powered customer service bot.",
-    ],
+    title: "home.aboutPart.title2",
+    description: ["home.aboutPart.text1"],
     img: require("src/assets/img/home/aboutcard2.png"),
     width: "half",
   },
   {
-    title: "You can upload any type of file",
-    description: [
-      "You have the flexibility to upload any type of file for training your AI model. Whether it's text documents, spreadsheets, images, or other formats, you can utilize your data to train the AI model. It's important to note that the quality of the data directly impacts the performance of the AI. Therefore, ensuring the data is of good quality will enable the AI to do a better job in serving your specific needs.",
-    ],
+    title: "home.aboutPart.title3",
+    description: ["home.aboutPart.text3"],
     icon: <AboutCardSvg2 />,
     width: "half",
   },
@@ -67,31 +59,40 @@ export const aboutcardData = [
 export const pricingCardData = [
   {
     current: true,
-    type: "Basic",
-    price: "Free",
-    description: "You could test the AI model with your custom data",
-    includes: ["Upload one document (2 mb max)", "Chat with AI  custom knowledge based", "20 questions"],
-  },
-  {
-    main: true,
-    type: "Premium",
-    price: "19$",
-    price_duration: "/ month",
-    requirement: "+ Also you have to pay AI Fee.",
+    type: "home.pricingPart.type1",
+    price: "home.pricingPart.price1",
+    description: "home.pricingPart.text1",
     includes: [
-      "Upload 10 documents (10 mb max )",
-      "Edit document",
-      "One Telegram bot integrated",
-      "Customer support",
-      "Real time checking the data",
+      "home.pricingPart.includes1.line1",
+      "home.pricingPart.includes1.line2",
+      "home.pricingPart.includes1.line3",
     ],
   },
   {
-    type: "Enterprise",
+    main: true,
+    type: "home.pricingPart.type2",
+    price: "19$",
+    price_duration: "home.pricingPart.price_duration2",
+    requirement: "home.pricingPart.text2",
+    includes: [
+      "home.pricingPart.includes2.line1",
+      "home.pricingPart.includes2.line2",
+      "home.pricingPart.includes2.line3",
+      "home.pricingPart.includes2.line4",
+      "home.pricingPart.includes2.line5",
+    ],
+  },
+  {
+    type: "home.pricingPart.type3",
     price: "299$",
-    price_duration: "/ month",
-    requirement: "+ Also you have to pay AI Fee.",
-    includes: ["Unlimited document", "10 Telegram bots", "Data analytics support", "Real time checking the data"],
+    price_duration: "home.pricingPart.price_duration3",
+    requirement: "home.pricingPart.text3",
+    includes: [
+      "home.pricingPart.includes3.line1",
+      "home.pricingPart.includes3.line2",
+      "home.pricingPart.includes3.line3",
+      "home.pricingPart.includes3.line4",
+    ],
   },
 ];
 

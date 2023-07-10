@@ -8,6 +8,7 @@ import { addProjectFormItems } from "../const";
 import CustomButton from "src/components/common/button";
 import CustomInput from "src/components/common/input";
 import CustomModal from "src/components/common/modal";
+import { useTranslation } from "react-i18next";
 
 function EditProject({ projectInfo, setInfoVisible }: EditProjectProps) {
   const [editProject] = useEditProjectMutation();
@@ -31,10 +32,13 @@ function EditProject({ projectInfo, setInfoVisible }: EditProjectProps) {
     });
   };
 
+  const {t} = useTranslation();
+
   useEffect(() => {
     form.setFieldsValue({ name: projectInfo.displayName });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
 
   return (
     <>
@@ -42,7 +46,7 @@ function EditProject({ projectInfo, setInfoVisible }: EditProjectProps) {
       <CustomModal open={visible} width={500} onCancel={handleClose}>
         <div className="custom-modal">
           <div className="custom-modal-header">
-            <h2>Edit your bot!</h2>
+            <h2>{t("dashboard.edit")}</h2>
           </div>
           <div className="custom-modal-content">
             <Form form={form} name="add_project" layout="vertical" onFinish={handleSubmit}>
@@ -56,7 +60,7 @@ function EditProject({ projectInfo, setInfoVisible }: EditProjectProps) {
 
               <div className="custom-modal-buttons">
                 <CustomButton color="light" bordered type="submit">
-                  Save
+                  {t("dashboard.save")}
                 </CustomButton>
               </div>
             </Form>

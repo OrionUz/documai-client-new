@@ -1,5 +1,167 @@
 {
   "header": {
-    "home": "Bosh sahifa"
+    "about": "Biz haqimizda",
+    "home": "Bosh sahifa",
+    "pricing": "Narxlar",
+    "try_docum": "Docum.ia dan foydalanish"
+  },
+
+  "home": {
+    "header": "Mijozlarga xizmat ko'rsata oladigan AI yordamchisini yarating",
+    "text": "Biz sizga taqdim etgan ma'lumotlarga asoslanib moslashtirilgan bilimga ega bo'lgan AI mijozlarga xizmat ko'rsatish xodimini yaratishda yordam beramiz. Siz unga xohlagan narsani o'rgatishingiz mumkin va u mijozlarning savollariga javob bera oladi.",
+    "btn-text": "Demo versiyasiga ulaning",
+    "work": "Qanday ishlaydi",
+    "about": "Haqida",
+    "pricing": "Narxlar",
+    "intro": {
+      "title1": "Tezkor javoblar!",
+      "text1": "Docum.ai cheksiz miqdordagi mijozlarga sizning shaxsiy botingiz bilan bog'langanda darhol javob berishi mumkin.",
+      "title2": "Maxsus AI!",
+      "text2": "Docum.ai 24/7 xizmatini taklif qiladi va cheksiz mijozlarni maxsus bilimga ega bo'lishi mumkin.",
+      "title3": "Hamyonbop!",
+      "text3": "Docum.ai xarajati mijozlarga xizmat ko‘rsatish xodimini yollashdan to‘rt baravar arzon."
+    },
+    "usage": {
+      "info1": "Sizning biznesingiz uchun mijozlar so'rovlari va tegishli javoblarga oid ma'lumotlarni to'plash muhimdir. Ushbu ma'lumotlar bitta faylga birlashtirilishi kerak. Agar sizga yordam kerak bo'lsa, bizning jamoamiz doimo yordam berishga tayyor.",
+      "info2": "AI modelini Docum.ai’dagi botga integratsiya qilishni davom ettirish uchun bizga bot foydalanuvchi nomi va tokenini taqdim eting. Kerakli ma'lumotni olganimizdan so'ng, biz sizning biznesingiz haqida ma'lumotga ega bo'lgan AI modelini o'z ichiga olamiz.",
+      "info3": "Integratsiya tugallangandan so'ng, men siz taqdim etgan chat bot bilan bog'lanib, biznesingizga tegishli savollarni beraman. Men javob bera olmaydigan barcha savollarni diqqat bilan qayd etaman va yuklangan hujjat mos ravishda yangilanishiga ishonch hosil qilaman."
+    },
+    "aboutPart": {
+      "title1": "Docum.ai - bu mijozlarga xizmat ko'rsatish AI yaratish platformasi",
+
+      "text1": "Docum.ai - bu sun'iy intellekt asosidagi mijozlarga xizmat ko'rsatish yechimlarini yaratishda yordam berish uchun mo'ljallangan platforma. Tadbirkor, mijozlarni qo‘llab-quvvatlash bo‘yicha mutaxassis yoki kontent yaratuvchisi bo‘lasizmi, platformamiz sizga sun’iy intellektdan foydalanish va ajoyib foydalanuvchi tajribasini taqdim etish imkonini beradi. \n Har birida taxminan 10 ta savolga ega boʻlgan 100 ta mijozga xizmat koʻrsatish uchun kuniga 12 dollar turadigan mijozlarga xizmat koʻrsatish xodimlariga ishonish oʻrniga, atigi $3 evaziga ushbu ish yukini hal qilish uchun platformamizda bot yaratishingiz mumkin!",
+      "btn": "Boshlash",
+
+      "title2": "Maʼlumotlaringizni real vaqtda sinab koʻrishingiz va tahrirlashingiz mumkin",
+
+      "text2": "Docum.ai yordamida siz real vaqtda ma'lumotlaringizni sinab ko'rish va tahrirlash imkoniyatiga egasiz. Hujjatingizni yuklaganingizdan so'ng uni Telegram botiga ulashingiz mumkin. Agar siz botning javoblaridan qoniqmasangiz, yuklangan hujjatga osongina tahrir qilishingiz, uni o‘chirishingiz yoki kerak bo‘lganda boshqa hujjatlarni qo‘shishingiz mumkin. Ushbu moslashuvchanlik sizga sun'iy intellektga asoslangan mijozlarga xizmat ko'rsatish botini yaxshilash va ish faoliyatini yaxshilash imkonini beradi.",
+
+      "title3": "Siz har qanday turdagi faylni yuklashingiz mumkin",
+
+      "text3": "AI modelingizni o'rgatish uchun istalgan turdagi faylni yuklash imkoniyati mavjud. Matnli hujjatlar, elektron jadvallar, tasvirlar yoki boshqa formatlar boʻladimi, siz oʻz maʼlumotlaringizdan AI modelini oʻrgatish uchun foydalanishingiz mumkin. Shuni ta'kidlash kerakki, ma'lumotlarning sifati AI ishlashiga bevosita ta'sir qiladi. Shu sababli, ma'lumotlarning sifatli bo'lishini ta'minlash AIga sizning maxsus ehtiyojlaringizni qondirishda yaxshiroq ish qilish imkonini beradi."
+    },
+    "pricingPart": {
+      "type1": "Boshlang'ich",
+      "price1": "Tekin",
+      "text1": "Siz o'zingizning shaxsiy ma'lumotlaringiz bilan AI modelini sinab ko'rishingiz mumkin",
+      "includes1": {
+        "line1": "Bitta hujjatni yuklash (maksimal 2 mb)",
+        "line2": "AI maxsus bilimlari asosida suhbatlashing",
+        "line3": "20 ta savollar"
+      },
+      "type2": "Premium",
+      "price2": "19$",
+      "price_duration2": "/ oy",
+      "text2": "+ Shuningdek, siz AI to'lovini to'lashingiz kerak.",
+      "includes2": {
+        "line1": "10 ta hujjatni yuklang (maksimal 10 mb)",
+        "line2": "Hujjatni tahrirlash",
+        "line3": "Bitta Telegram botni integratsiyalangan",
+        "line4": "Mijozlarni qo'llab-quvvatlash",
+        "line5": "Haqiqiy vaqtda ma'lumotlarni tekshirish"
+      },
+      "type3": "Korxona",
+      "price3": "19$",
+      "price_duration3": "/ oy",
+      "text3": "+ Shuningdek, siz AI to'lovini to'lashingiz kerak",
+      "includes3": {
+        "line1": "Cheksiz hujjat",
+        "line2": "10 ta Telegram botlari",
+        "line3": "Ma'lumotlar tahlilini qo'llab-quvvatlash",
+        "line4": "Haqiqiy vaqtda ma'lumotlarni tekshirish"
+      }
+    },
+    "footer": {
+      "title": "Bizga 10 dan ortiq kompaniya ishonadi",
+      "description": "Uzoq muddatli shartnomalar yo'q. Hech qanday tutilish yo'q. Oddiy.",
+      "text": "30 kunlik bepul sinovni boshlang. Istalgan vaqtda bekor qiling",
+      "demo": "Demoni ko'rish",
+      "start": "Boshlash",
+      "docum": "Docum.ai",
+      "text-down": "Docum.ai - bu sizning biznesingiz uchun avtomatlashtirish echimlarini taklif qiluvchi sun'iy intellekt platformasi. Sun'iy intellekt kuchidan foydalangan holda, Docum.ai sizga turli jarayonlarni soddalashtirish va avtomatlashtirish, tashkilotingizdagi samaradorlik va samaradorlikni oshirish imkonini beradi.",
+      "overview": "Umumiy koʻrinish",
+      "features": "Xususiyatlari",
+      "pricing-down": "Narxlar",
+      "help": "Yordam",
+      "demo-down": "Demo"
+    }
+  },
+
+  "about": {
+    "title": "Biz odamlarning hayotini osonlashtiradigan AI tizimini yaratdik",
+    "text": "Mijozlarimiz bizni xohlagan kompaniya bo'lish uchun ehtirosli odamlarning elektr guruhi kerak. Docum.ai saytida yetakchi odamlar bilan tanishing.",
+    "about": "Loyiha haqida",
+
+    "aboutPart": {
+      "title1": "Docum.ai maqsadi",
+      "text1": "Hozirda bizda faqat matnga asoslangan mijozlarga xizmat ko'rsatish vositasi mavjud, ammo sun'iy intellekt kundan-kunga rivojlanib borayotganligi sababli biz ovozli va videoga asoslangan xizmatlarni ham ishga tushiramiz. Bu hammasi emas, yaqin 2 oy ichida biz ham chora ko'rish uchun dasturlashni rejalashtirmoqdamiz, bu sizning biznesingiz uchun ko'p imkoniyatlarni bildiradi. Siz shunchaki o'z brendingizni yaratasiz va bizning AI vositamiz mijozlaringizga xizmat yoki mahsulotingizni tushunish va undan foydalanishga yordam beradi.",
+      "title2": "Docum.ai haqidagi ba'zi faktlar",
+      "text2": "Biz Oʻzbekistonda joylashgan va 2023-yil boshida tashkil etilgan yangi kompaniyamiz. Hozirgi jamoamiz butun dunyoni koʻrishga ishtiyoqmand 20 kishidan iborat. Biz mijozlarimizning ehtiyojlarini tushunishga ochiqmiz va kerakli o'zgarishlarni amalga oshirishni xohlaymiz, oxirida biz mijozlarimiz xohlagan narsani qilishimiz kerak."
+    },
+
+    "aboutUs": "Biz haqimizda",
+    "names": {
+      "name1": "Samandar. T.",
+      "who1": "CEO",
+      "name2": "Shohruxmirzo. T.",
+      "who2": "CTO",
+      "name3": "Asror. N",
+      "who3": "Dasturchi",
+      "name4": "Mirsaid. B",
+      "who4": "UX/UI",
+      "name5": "Vosilxo'ja. N",
+      "who5": "SMM manager"
+    },
+
+    "projects": "Bizning loyihalarimiz",
+    "project": {
+      "title1": "Simyog’och",
+      "text1": "Siyog'och - bu ish izlovchilarga ham, ish beruvchilarga ham imkon beruvchi eng yaxshi ilova va veb-sayt. Foydalanuvchi uchun qulay interfeys bilan mukammal ishni topish yoki ideal nomzodni yollash hech qachon oson bo'lmagan.",
+      "title2": "Qunduzbobo",
+      "text2": "Qunduzbobo - bu shaxsiyatni hayotga olib keladigan sun'iy intellektga asoslangan yangi veb-sayt va ilova. Dinamik suhbatlarda qatnashing, kodlash, yozish, ilm-fan va tasvir yaratish kabi ijodiy izlanishlarni bir joyda o‘rganing."
+    }
+  },
+  "dashboard": {
+    "home": "Bosh sahifa",
+    "help": "Yordam",
+    "document": "Dokument",
+    "quality": "Sifat",
+    "chat": "Chat",
+    "label1": "Bot nomi*",
+    "name1": "Bot nomi*",
+    "message1": "Iltimos, bot nomini kiritish",
+    "label2": "Bot token*",
+    "name2": "botToken",
+    "message2": "Iltimos, bot token ini kiriting",
+    "label3": "Chatbot nomi*",
+    "name3": "Nom",
+    "message3": "Iltimos, chatbot nomini kiriting*",
+    "create": "Yangi bot yarating",
+    "create1": "O'z chat botingizni yarating",
+    "text": "Biz har oyning 1-kunida avtomatik ravishda hisob-kitob qilamiz.",
+    "guide": "Video qo'llanma",
+    "next": "Keyingisi",
+    "save": "Saqlash",
+    "edit": "Botingizni tahrirlang!",
+    "logout": "Chiqish",
+    "name4": "Bot nomi:",
+    "user": "Foydalanuvchilar",
+    "activation": "Faollashtirilgan botlar",
+    "balance": "Hisob: 000",
+    "balance1": "Hisob: 25, 000",
+    "bot": "Botlar",
+    "users": "Foydalanuvchilar",
+    "yourBots": "Sizning botlaringiz",
+    "tryData": "Bu maʼlumotlarni sinab koʻring",
+    "addDoc": "Yangi hujjat qo'shing",
+    "upload": "Hujjatlaringizni yuklang",
+    "instraction": "Yo'riqnomani ko'rish",
+    "uploadBtn": "Yuklash",
+    "uploadContent": "Yuklash uchun hujjatni ushbu hududga bosing yoki torting",
+    "maxFile": "Maksimal fayl hajmi",
+    "mb": "MB!",
+    "useTranslation": "Tarjimadan foydalaning",
+    "hovertranslation": "Ingliz tilidan tashqari hujjatlarni tarjima qilish va eng yaxshi natijalarga erishish uchun mashq qilish uchun undan foydalaning",
+    "selection": "Xabarlarni ko'rish uchun foydalanuvchini tanlang"
   }
 }
