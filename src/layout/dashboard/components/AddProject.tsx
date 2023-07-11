@@ -12,11 +12,11 @@ import { useTranslation } from "react-i18next";
 
 function AddProject() {
   const [form] = Form.useForm();
-  const [addProject] = useAddProjectMutation();
+  const [addProject, { isLoading }] = useAddProjectMutation();
   const projects = useTypedSelector((state) => state.project.projects);
 
   const [visible, setVisible] = useState(false);
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const openModal = () => setVisible(true);
   const closeModal = () => {
     setVisible(false);
@@ -54,9 +54,9 @@ function AddProject() {
                 {addProjectFormItems.map((item) => {
                   return (
                     <Form.Item
+                      name={item.name}
                       key={t(item.name)}
                       label={t(item.label)}
-                      name={t(item.name)}
                       rules={[{ required: true, message: t(item.message) }]}
                     >
                       <CustomInput size="large" placeholder={t(item.message)} />
@@ -69,7 +69,7 @@ function AddProject() {
                 <CustomButton icon={<PlaySvg />} left_icon>
                   {t("dashboard.guide")}
                 </CustomButton>
-                <CustomButton color="light" bordered type="submit">
+                <CustomButton color="light" bordered type="submit" loading={isLoading}>
                   {t("dashboard.next")}
                 </CustomButton>
               </div>

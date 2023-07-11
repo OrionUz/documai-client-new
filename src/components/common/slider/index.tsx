@@ -10,7 +10,6 @@ function CustomSlider({
   initialSlide = 0,
   children,
 }: CustomSliderProps) {
-  console.log(dots);
 
   const settings = {
     speed: 500,
