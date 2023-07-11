@@ -17,17 +17,17 @@ export const dashboardHeaderButtons = [
 export const addProjectFormItems = [
   {
     label: "dashboard.label1",
-    name: "dashboard.name1",
+    name: "username",
     message: "dashboard.message1",
   },
   {
     label: "dashboard.label2",
-    name: "dashboard.name2",
+    name: "botToken",
     message: "dashboard.message2",
   },
   {
     label: "dashboard.label3",
-    name: "dashboard.name3",
+    name: "displayName",
     message: "dashboard.message3",
   },
 ];
