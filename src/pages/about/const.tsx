@@ -48,8 +48,8 @@ export const ProjectsPartData = [
   },
   {
     link: "https://qunduzbobo.uz/login",
-    title: "about.project.title1",
-    text: "about.project.text1",
+    title: "about.project.title2",
+    text: "about.project.text2",
     img: require("src/assets/img/about/qunduzbobo.png"),
   },
 ];
