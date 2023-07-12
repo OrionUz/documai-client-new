@@ -7,6 +7,7 @@
   },
   "home": {
     "header": "Create an AI customer service assistant",
+    "video": "https://youtu.be/F4o2Zs0pjwU",
     "text": "We will help you create an AI customer service employee with customized knowledge based on the information you provide. You can teach it anything you want, and it will be able to answer questions from customers.",
     "btn-text": "Book demo version",
     "work": "How it works",
@@ -23,7 +24,7 @@
     "usage": {
       "info1": "It is important for your business to collect data regarding customer inquiries and corresponding answers. This information should be consolidated into a single file. If you require assistance, our team is always available to help.",
       "info2": "To proceed with the integration of the AI model into the bot on Docum.ai, please provide us with a bot username and token. Once we receive the necessary information, we will incorporate the AI model that is knowledgeable about your business.",
-      "info3": "After the integration is complete, I will engage with the chat bot you provided and ask questions specific to your business. I will carefully note down any questions it cannot answer and ensure that the uploaded document is updated accordingly."
+      "info3": "After the integration is complete, You can engage with the chat bot,  and ask questions specific to your business. AI will carefully note down any questions it cannot answer, we recommend to answer those questions and update it again"
     },
     "aboutPart": {
       "title1": "Docum.ai is a platform to create customer service AI",
@@ -37,7 +38,7 @@
 
       "title3": "You can upload any type of file",
 
-      "text3": "You have the flexibility to upload any type of file for training your AI model. Whether it's text documents, spreadsheets, images, or other formats, you can utilize your data to train the AI model. It's important to note that the quality of the data directly impacts the performance of the AI. Therefore, ensuring the data is of good quality will enable the AI to do a better job in serving your specific needs."
+      "text3": "You have the flexibility to upload any type of file for training your AI model. Whether it's text documents, spreadsheets, or other formats, you can utilize your data to train the AI model. It's important to note that the quality of the data directly impacts the performance of the AI. Therefore, ensuring the data is of good quality will enable the AI to do a better job in serving your specific needs.."
     },
     "pricingPart": {
       "type1": "Basic",
@@ -128,16 +129,16 @@
     "chat": "Chat",
     "label1": "Bot username*",
     "name1": "Bot username*",
-    "message1": "Please input bot username",
+    "message1": "Please write bot username*",
     "label2": "Bot token*",
     "name2": "botToken",
-    "message2": "Please input bot bot token",
+    "message2": "Please write bot  token*",
     "label3": "Chatbot name*",
     "name3": "displayName",
-    "message3": "Please input chatbot name*",
+    "message3": "Please write chatbot name*",
     "create": "Create new bot",
     "create1": "Create your chat bot",
-    "text": "We automatically bill on the 1st of each month.",
+    "text": "You can create a Telegram bot on @BotFather",
     "guide": "Video guide",
     "next": "Next",
     "save": "Save",
@@ -162,5 +163,11 @@
     "useTranslation": "Use translation",
     "hovertranslation": "Use this for non-English documents to translate and train to obtain the best results",
     "selection": "Select a user to see messaging"
+  },
+
+  "sign": {
+    "sign": "Sign in",
+    "signUp": "Sign up",
+    "text": "Integrating AI into your business unlocks a world of possibilities"
   }
 }

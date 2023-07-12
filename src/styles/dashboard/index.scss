@@ -37,17 +37,19 @@
 
       &-menu {
         @extend .scroll;
-        a,
-        p {
+        a {
           @extend .text;
           line-height: 100%;
           display: flex;
           align-items: center;
           gap: 8px;
           cursor: pointer;
-        }
-        a {
-          margin-bottom: 25px;
+
+          &:first-child{
+            margin-bottom: 25px;
+          }
+ 
+
         }
         .profile-content-menu {
           padding: 0;

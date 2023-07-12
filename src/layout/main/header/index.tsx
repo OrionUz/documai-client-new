@@ -7,8 +7,8 @@ import { PricingSlider } from "src/pages/home";
 import CustomButton from "src/components/common/button";
 import CustomModal from "src/components/common/modal";
 import Language from "../language";
-import Logo from "./Logo";
 import { useTranslation } from "react-i18next";
+import Logo from "./logo";
 
 function Header() {
   const dispatch = useDispatch();
@@ -41,7 +41,7 @@ function Header() {
   return (
     <div className="header">
       <div className="header-content container">
-        <Logo />
+       <Logo/>
 
         <div className="header-menu">{menu}</div>
 

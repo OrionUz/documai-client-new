@@ -9,7 +9,7 @@ import CustomButton from "src/components/common/button";
 import CustomDrawer from "src/components/common/drawer";
 import RadioButton from "src/components/common/radio/RadioButton";
 import { isMobile } from "src/static/const";
-import Logo from "../main/header/Logo";
+import Logo from "../main/header/logo";
 import Language from "../main/language";
 import ActivatedBots from "./components/ActivatedBots";
 import AddProject from "./components/AddProject";
@@ -42,9 +42,11 @@ function DashboardLayout() {
       <Link to="/">
         <HomeSvg /> <span>{t("dashboard.home")}</span>
       </Link>
-      <p>
-        <QuestionSvg /> <span>{t("dashboard.help")}</span>
-      </p>
+      <a href="https://t.me/documai_support">
+        <QuestionSvg />
+        <span>{t("dashboard.help")}</span>
+      </a>
+
       {isMobile && <Logout />}
     </div>
   );

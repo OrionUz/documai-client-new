@@ -38,7 +38,7 @@ function HomePage() {
           <div className="home-top-right">
             <ReactPlayer
               width={640}
-              url="https://www.youtube.com/watch?v=F4o2Zs0pjwU"
+              url= {t("home.video")}
               playing={false}
               controls={true}
             />
