@@ -8,7 +8,7 @@ import CustomButton from "src/components/common/button";
 import CustomModal from "src/components/common/modal";
 import Language from "../language";
 import { useTranslation } from "react-i18next";
-import Logo from "./logo";
+import Logo from "./Logo";
 
 function Header() {
   const dispatch = useDispatch();
