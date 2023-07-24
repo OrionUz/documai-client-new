@@ -9,7 +9,7 @@ import CustomButton from "src/components/common/button";
 import CustomDrawer from "src/components/common/drawer";
 import RadioButton from "src/components/common/radio/RadioButton";
 import { isMobile } from "src/static/const";
-import Logo from "../main/header/logo";
+import Logo from "../main/header/Logo";
 import Language from "../main/language";
 import ActivatedBots from "./components/ActivatedBots";
 import AddProject from "./components/AddProject";
