@@ -9,7 +9,7 @@ import CustomModal from "src/components/common/modal";
 import Language from "../language";
 import { useTranslation } from "react-i18next";
 //import Logo  from "src/assets/img/logo.png";
-import Logo from "./logo";
+import Logo from "./documLogo";
 
 function Header() {
   const dispatch = useDispatch();
