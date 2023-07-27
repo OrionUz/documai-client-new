@@ -1,5 +1,5 @@
 export const LANGUAGE = "DOCUM_AI_LANGUAGE";
-export const language = localStorage.getItem(LANGUAGE) || "uz";
+export const language = localStorage.getItem(LANGUAGE) || "en";
 
 export const languageOptions = [
   { value: "en", label: "Eng" },
