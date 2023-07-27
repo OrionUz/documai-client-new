@@ -1,3 +1,5 @@
+import { type } from "os";
+
 //Project types
 export interface IProjectRes {
   message: string;
@@ -88,3 +90,5 @@ export interface IProjectUserMessage {
   createdAt: string;
   updatedAt?: string;
 }
+
+

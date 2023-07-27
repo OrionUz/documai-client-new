@@ -31,3 +31,7 @@ export const addProjectFormItems = [
     message: "dashboard.message3",
   },
 ];
+
+export const paymentItems = [
+  {}
+]

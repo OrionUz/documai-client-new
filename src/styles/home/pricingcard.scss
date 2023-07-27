@@ -91,6 +91,79 @@
   }
 }
 
+.modal{
+  padding: 30px 32px;
+  &-title{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #717493;
+
+    h3{
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  &-main{
+    align-items: center;
+    
+    &-left{
+      border-bottom: 1px solid #717493;
+      &-btn{
+        display: flex;
+        align-items: center ;
+        gap: 16px;
+        padding-top: 20px;
+      }
+      
+      &-input{
+        margin-right: 40px;
+
+        &-card{
+          margin-top: 31px;
+          h3{
+            margin-bottom: 4px;
+          }
+        }
+
+        &-date{
+          margin-top: 36px;
+          h3{
+            margin-bottom: 4px;
+          }
+        }
+      }
+    }
+
+    &-leftClose{
+      display: none;
+    }
+
+    &-btn{
+      margin: 40px 0 20px;
+      margin-left: auto;
+    }
+
+    &-btns{
+      margin-left: auto;
+    }
+
+    &-text{
+      margin-top: 20px;
+    }
+  }
+}
+
+.smsBox{
+  display: block;
+  &-close{
+    display: none;
+  }
+}
+
 //MEDIA QUERY
 
 @media screen and (max-width: 450px) {
