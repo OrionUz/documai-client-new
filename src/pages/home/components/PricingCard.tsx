@@ -20,8 +20,8 @@ function PricingCard({ item }: PricingCardProps) {
   // const [openSms, setSms] = useState(true);
   // const openingSms = () => setSms(false);
   
-  const [visible, setVisible] = useState(false);
-  const openModal = () => setVisible(true);
+  // const [visible, setVisible] = useState(false);
+  // const openModal = () => setVisible(true);
   // const closeModal = () => {
   //   setVisible(false);
   // };
@@ -64,7 +64,7 @@ function PricingCard({ item }: PricingCardProps) {
           <CustomButton
             style={{ width: "100%" }}
             color="light"
-            onClick={openModal}
+            // onClick={openModal}
           >
             Upgrade
           </CustomButton>{" "}
