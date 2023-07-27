@@ -14,6 +14,7 @@ import languageRu from "./static/language/ru.json";
 import languageUz from "./static/language/uz.json";
 import languageEn from "./static/language/en.json";
 import { language } from "./layout/main/language/const";
+import { Suspense } from "react";
 
 function App() {
   i18n.use(initReactI18next).init({
@@ -27,25 +28,27 @@ function App() {
   });
 
   return (
-    <Provider store={store}>
-      <Router>
-        <ConfigProvider
-          theme={{
-            token: {
-              colorPrimary: "#fff",
-              colorText: "#fff",
-              colorBgBase: "#212A37",
-              colorBorder: "#717493",
-              borderRadius: 6,
-            },
-          }}
-        >
-          <GoogleOAuthProvider clientId="499657436082-g9oggi0d2s3ss49jjl6cv1520117pmnd.apps.googleusercontent.com">
-            <RoutElements />
-          </GoogleOAuthProvider>
-        </ConfigProvider>
-      </Router>
-    </Provider>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Provider store={store}>
+        <Router>
+          <ConfigProvider
+            theme={{
+              token: {
+                colorPrimary: "#fff",
+                colorText: "#fff",
+                colorBgBase: "#212A37",
+                colorBorder: "#717493",
+                borderRadius: 6,
+              },
+            }}
+          >
+            <GoogleOAuthProvider clientId="499657436082-g9oggi0d2s3ss49jjl6cv1520117pmnd.apps.googleusercontent.com">
+              <RoutElements />
+            </GoogleOAuthProvider>
+          </ConfigProvider>
+        </Router>
+      </Provider>
+    </Suspense>
   );
 }
 
