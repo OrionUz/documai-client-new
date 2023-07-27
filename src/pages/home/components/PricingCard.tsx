@@ -1,30 +1,30 @@
 "use client"
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Form } from "antd";
 import { CorrectActiveSvg, CorrectInActiveSvg } from "src/assets/svg";
-import { LockIcon } from "src/assets/svg/freepik/modal";
 import CustomButton from "src/components/common/button";
-import CustomModal from "src/components/common/modal";
 import { PricingCardProps } from "../type";
-import { MaskedInput } from "antd-mask-input";
+// import CustomModal from "src/components/common/modal";
+// import { MaskedInput } from "antd-mask-input";
+// import { LockIcon } from "src/assets/svg/freepik/modal";
+// import { Form } from "antd";
 
 function PricingCard({ item }: PricingCardProps) {
   const { t } = useTranslation();
 
-  //GETTING CARD NUMBER
-  const [closingCard, setInvisiable] = useState(false);
-  const closeList = () => setInvisiable(true);
+  // //GETTING CARD NUMBER
+  // const [closingCard, setInvisiable] = useState(false);
+  // const closeList = () => setInvisiable(true);
   
   //SMS CODE
-  const [openSms, setSms] = useState(true);
-  const openingSms = () => setSms(false);
+  // const [openSms, setSms] = useState(true);
+  // const openingSms = () => setSms(false);
   
   const [visible, setVisible] = useState(false);
   const openModal = () => setVisible(true);
-  const closeModal = () => {
-    setVisible(false);
-  };
+  // const closeModal = () => {
+  //   setVisible(false);
+  // };
   
   return (
     <div className={`pricingcard ${item.main && "pricingcard-main"}`}>

@@ -10,14 +10,16 @@ import CustomDrawer from "src/components/common/drawer";
 import RadioButton from "src/components/common/radio/RadioButton";
 import { isMobile } from "src/static/const";
 //import Logo from "../main/header/Logo";
-import Logo from "../main/header/logo";
-import Language from "../main/language";
-import ActivatedBots from "./components/ActivatedBots";
-import AddProject from "./components/AddProject";
-import ProjectUsers from "./components/ProjectUsers";
-import UserProfile, { ProfileInfo } from "./components/UserProfile";
-import { dashboardHeaderButtons } from "./const";
-import Logout from "./components/Logout";
+import Logo from "src/layout/main/header/logo";
+import Language from "src/layout/main/language";
+import ActivatedBots from "src/layout/dashboard/components/ActivatedBots";
+import AddProject from "src/layout/dashboard/components/AddProject";
+import ProjectUsers from "src/layout/dashboard/components/ProjectUsers";
+import UserProfile, {
+  ProfileInfo,
+} from "src/layout/dashboard/components/UserProfile";
+import { dashboardHeaderButtons } from "src/layout/dashboard/const";
+import Logout from "src/layout/dashboard/components/Logout";
 import { useTranslation } from "react-i18next";
 
 function DashboardLayout() {
