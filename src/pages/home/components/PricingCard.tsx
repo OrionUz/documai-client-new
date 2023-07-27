@@ -1,9 +1,9 @@
 "use client"
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { CorrectActiveSvg, CorrectInActiveSvg } from "src/assets/svg";
 import CustomButton from "src/components/common/button";
 import { PricingCardProps } from "../type";
+// import { useState } from "react";
 // import CustomModal from "src/components/common/modal";
 // import { MaskedInput } from "antd-mask-input";
 // import { LockIcon } from "src/assets/svg/freepik/modal";
