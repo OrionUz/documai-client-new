@@ -1,5 +1,3 @@
-import { type } from "os";
-
 // Cards
 export interface ICardsRes {
   message: string;

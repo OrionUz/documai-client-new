@@ -1,5 +1,3 @@
-import { type } from "os";
-
 //Project types
 export interface IProjectRes {
   message: string;

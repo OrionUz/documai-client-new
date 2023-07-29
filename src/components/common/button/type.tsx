@@ -1,5 +1,5 @@
 type ButtonColorAttribute = "light" | "dark" | "white";
-type ButtonSizeTypeAttribute = "xs" | "sm" | "md" | "l" | "xl";
+// type ButtonSizeTypeAttribute = "xs" | "sm" | "md" | "l" | "xl";
 
 export type CustomButtonProps = {
   children?: string | JSX.Element | null;
