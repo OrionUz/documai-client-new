@@ -3,7 +3,7 @@
     "about": "Biz haqimizda",
     "home": "Bosh sahifa",
     "pricing": "Narxlar",
-    "try_docum": "Docum.ia dan foydalanish"
+    "try_docum": "Boshlash"
   },
 
   "home": {
@@ -148,8 +148,8 @@
     "name4": "Bot nomi:",
     "user": "Foydalanuvchilar",
     "activation": "Faollashtirilgan botlar",
-    "balance": "Hisob: 000",
-    "balance1": "Hisob: 25, 000",
+    "balance": "Hisob:",
+    "balance1": "Hisob:",
     "bot": "Botlar",
     "users": "Foydalanuvchilar",
     "yourBots": "Sizning botlaringiz",

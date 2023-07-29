@@ -3,7 +3,7 @@
     "about": "About us",
     "home": "Homepage",
     "pricing": "Pricing",
-    "try_docum": "Try Docum.ia"
+    "try_docum": "Try Docum AI"
   },
   "home": {
     "header": "Create your AI customer service assistant",
@@ -147,8 +147,8 @@
     "name4": "Bot username:",
     "user": "Users",
     "activation": "Activated bots",
-    "balance": "Balance: 000",
-    "balance1": "Balance: 25, 000",
+    "balance": "Balance:",
+    "balance1": "Balance:",
     "bot": "Bots",
     "users": "Users",
     "yourBots": "Your bots",

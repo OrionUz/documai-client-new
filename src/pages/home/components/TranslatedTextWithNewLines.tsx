@@ -9,7 +9,7 @@ interface IProps {
 const TranslatedComponents = (props: IProps) => {
   const { t } = useTranslation();
 
-  const texts = t(props.text).split('\n');
+  const texts: string[] = t(props.text).split('\n');
   return (
     <div>
       {texts?.map((text) => (

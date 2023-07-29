@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { useGetProjectsQuery } from "src/app/services/projects";
 import { saveProjects } from "src/app/slices/projectSlice";
-import { useAppDispatch } from "src/app/store";
+import { useAppDispatch, useTypedSelector } from "src/app/store";
 import { ArrowRightSvg, CloseSvg, HamburgerSvg, HomeSvg, QuestionSvg } from "src/assets/svg";
 import CustomButton from "src/components/common/button";
 import CustomDrawer from "src/components/common/drawer";
@@ -25,6 +25,7 @@ import { useTranslation } from "react-i18next";
 function DashboardLayout() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const profile  = useTypedSelector(state => state.auth.profile)
   const {t} = useTranslation();
 
   //Use search params
@@ -117,7 +118,7 @@ function DashboardLayout() {
           <HeaderMenu size="large" />
           <Language />
           <CustomButton color="dark" bordered className="dashboard-header-payment">
-            {t("dashboard.balance")}
+            {t("dashboard.balance")+' '+ profile?.wallet?.totalAmount+ ' UZS'}
           </CustomButton>
           <UserProfile />
           <HamburgerSvg onClick={changeMenuVisible} />
@@ -190,7 +191,7 @@ function DashboardLayout() {
             <SidebarMenu />
           </div>
           <CustomButton color="dark" bordered>
-            {t("dashboard.balance1")}
+            {t("dashboard.balance1")+' '+ profile?.wallet?.totalAmount+ ' UZS'} 
           </CustomButton>
         </div>
       </CustomDrawer>
