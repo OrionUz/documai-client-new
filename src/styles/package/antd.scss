@@ -15,6 +15,11 @@
   box-shadow: none !important;
 }
 
+:where(.css-dev-only-do-not-override-lh5u98).ant-select-dropdown
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #363e49 !important;
+}
+
 //Pagination
 .ant-pagination-item-active {
   background-color: none !important;

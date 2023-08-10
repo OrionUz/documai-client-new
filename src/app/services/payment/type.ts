@@ -20,11 +20,11 @@ export type PaymentMethodType = "click" | "payme";
 export interface ICreateClickToken {
   orgId: number;
   cardNumber: string;
-  expireDate: string; 
+  expireDate: string;
 }
 
 export interface ICreateClickTokenRes {
-    cardToken: string;
+  cardToken: string;
 }
 
 export interface IVerifyClickToken {

@@ -1,3 +1,4 @@
+import { getRootState } from "src/app/store";
 import { api } from "../api";
 import { ICardsRes, ICreateClickToken, ICreateClickTokenRes, IVerifyClickToken } from "./type";
 
@@ -19,9 +20,9 @@ export const billingCardsApi = api.injectEndpoints({
 
     createClickToken: build.mutation<ICreateClickTokenRes, ICreateClickToken>({
       query: (body) => ({
-        url: "v2/cards/click/token",
+        url: "cards/click/token",
         method: "POST",
-        body,
+        body: { ...body, orgId: getRootState().auth.profile?.organizationId },
       }),
     }),
 
@@ -29,15 +30,11 @@ export const billingCardsApi = api.injectEndpoints({
       query: (body) => ({
         url: "v2/cards/click/token/verify",
         method: "POST",
-        body,
+        body: { ...body, orgId: getRootState().auth.profile?.organizationId },
       }),
       invalidatesTags: [{ type: "Cards", id: "LIST" }],
     }),
   }),
 });
 
-export const {
-    useCreateClickTokenMutation,
-    useGetCardsQuery,
-    useVerifyClickTokenMutation,
-} = billingCardsApi;
+export const { useCreateClickTokenMutation, useGetCardsQuery, useVerifyClickTokenMutation } = billingCardsApi;

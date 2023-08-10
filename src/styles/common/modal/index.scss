@@ -6,6 +6,10 @@
     h2,
     p {
       margin-bottom: 8px;
+
+      span {
+        color: $white;
+      }
     }
 
     h2 {

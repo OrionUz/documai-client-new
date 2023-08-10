@@ -1,14 +1,13 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { changeNavigation } from "src/app/slices/headerSlice";
 import { getRootState, useTypedSelector } from "src/app/store";
-import { PricingSlider } from "src/pages/home";
 import CustomButton from "src/components/common/button";
 import CustomModal from "src/components/common/modal";
+import { PricingSlider } from "src/pages/home";
 import Language from "../language";
-import { useTranslation } from "react-i18next";
-//import Logo  from "src/assets/img/logo.png";
 import Logo from "./documLogo";
 
 function Header() {
@@ -29,10 +28,7 @@ function Header() {
       <Link to="/" className={location.pathname === "/" ? "active" : ""}>
         {t("header.home")}
       </Link>
-      <Link
-        to="/about"
-        className={location.pathname === "/about" ? "active" : ""}
-      >
+      <Link to="/about" className={location.pathname === "/about" ? "active" : ""}>
         {t("header.about")}
       </Link>
       {/* <Link to="/news">Blog-News</Link> */}
@@ -42,7 +38,7 @@ function Header() {
   return (
     <div className="header">
       <div className="header-content container">
-       <Logo/>
+        <Logo />
 
         <div className="header-menu">{menu}</div>
 
@@ -68,7 +64,7 @@ function Header() {
           <Language />
           <Link to={isAuthenticated ? "/dashboard/document" : "/auth/signin"}>
             <CustomButton color="dark" bordered>
-              { t("header.try_docum")}
+              {t("header.try_docum")}
             </CustomButton>
           </Link>
         </div>

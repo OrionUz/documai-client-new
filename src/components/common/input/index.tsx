@@ -9,7 +9,7 @@ function CustomInput({ ...rest }: CustomInputProps) {
           Input: {
             fontSize: 16,
             colorTextPlaceholder: "#ffffff50",
-            colorBgContainer: "#353e4b",
+            colorBgContainer: "#313A47",
             borderRadius: 16,
           },
         },

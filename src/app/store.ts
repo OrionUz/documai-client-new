@@ -4,7 +4,7 @@ import { api } from "./services/api";
 import { rtkQueryErrorLogger } from "./services/api/middlewares";
 import auth from "src/app/slices/authSlice";
 import project from "src/app/slices/projectSlice";
-import card from "src/app/slices/billingcardSlice";
+import billing from "src/app/slices/billingcardSlice";
 import header from "src/app/slices/headerSlice";
 
 export const createStore = (options?: ConfigureStoreOptions["preloadedState"] | undefined) =>
@@ -14,7 +14,7 @@ export const createStore = (options?: ConfigureStoreOptions["preloadedState"] | 
       auth,
       project,
       header,
-      card,
+      billing,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware, rtkQueryErrorLogger),
     ...options,

@@ -1,0 +1,74 @@
+@import "src/styles/variables.scss";
+
+.pricing {
+  .ant-input {
+    padding: 11px !important;
+    &::placeholder {
+      color: #fff;
+    }
+  }
+  :where(.css-dev-only-do-not-override-12h17gh).ant-form-item
+    .ant-form-item-label
+    > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+    display: none !important;
+  }
+
+  .pricingcard-price {
+    font-size: 32px;
+    line-height: 100%;
+    span {
+      line-height: 100%;
+    }
+  }
+
+  .custom-modal-buttons {
+    margin-top: 40px;
+  }
+
+  &-modal {
+    &-header {
+      display: flex;
+      align-items: center;
+      column-gap: 4px;
+    }
+  }
+
+  &-form {
+    margin-top: 32px;
+  }
+
+  &-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &-sms {
+    .custom-modal-header {
+      border-bottom: none;
+      p {
+        width: 270px;
+
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+
+    &-box {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+
+      .ant-input {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.smsBox {
+  display: block;
+  &-close {
+    display: none;
+  }
+}

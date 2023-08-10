@@ -11,6 +11,7 @@ import CustomButton from "src/components/common/button";
 import CustomSlider from "src/components/common/slider";
 import { companies } from "./const";
 import { useTranslation } from "react-i18next";
+import { isDocum } from "src/static/const";
 
 function Footer() {
   const { t } = useTranslation();
@@ -24,10 +25,7 @@ function Footer() {
             {companies.map((item) => {
               return (
                 <div className="footer-companies-image" key={item}>
-                  <img
-                    src={require(`src/assets/img/companies/${item}.png`)}
-                    alt={item}
-                  />
+                  <img src={require(`src/assets/img/companies/${item}.png`)} alt={item} />
                 </div>
               );
             })}
@@ -43,9 +41,7 @@ function Footer() {
               <CustomButton color="white" icon={<PlaySvg />} left_icon>
                 {t("home.footer.demo")}
               </CustomButton>
-              <CustomButton color="light">
-                {t("home.footer.start")}
-              </CustomButton>
+              <CustomButton color="light">{t("home.footer.start")}</CustomButton>
             </div>
           </div>
 
@@ -84,7 +80,7 @@ function Footer() {
 
           <div className="footer-content-personal">
             <p>
-              <CopyRightSvg /> 2023 Docum.ai, All right reserved.
+              <CopyRightSvg /> 2023 {isDocum ? "Docum.ai" : "BlueJourney.pro"}, All right reserved.
             </p>
             <div>
               <p>Terms of use</p>

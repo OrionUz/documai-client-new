@@ -1,12 +1,11 @@
-
-import CustomModal from 'src/components/common/modal'
+import CustomModal from "src/components/common/modal";
 
 function payment() {
   return (
     <div>
-        <CustomModal>dbsja</CustomModal>
+      <CustomModal>dbsja</CustomModal>
     </div>
-  )
+  );
 }
 
-export default payment
+export default payment;

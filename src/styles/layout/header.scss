@@ -5,6 +5,10 @@
   left: 0;
   z-index: 100;
 
+  .logo {
+    height: 57px;
+  }
+
   &-content {
     display: flex;
     align-items: center;
@@ -38,6 +42,14 @@
     display: flex;
     align-items: center;
     gap: 20px;
+
+    button {
+      padding: 10.5px 24px;
+    }
+
+    .ant-select-arrow svg {
+      color: $white;
+    }
   }
 
   &-navigation {
@@ -171,6 +183,8 @@
   }
 }
 
+
+
 //MEDIA QUERY
 @media screen and (max-width: 900px) {
   .header {
@@ -228,7 +242,7 @@
     top: 18px;
 
     .logo {
-      width: 148px;
+      height: 33px;
     }
 
     &-right {
