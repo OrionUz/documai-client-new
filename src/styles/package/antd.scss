@@ -17,7 +17,19 @@
 
 :where(.css-dev-only-do-not-override-lh5u98).ant-select-dropdown
   .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
-  background-color: #363e49 !important;
+  background-color: $white_05 !important;
+}
+
+:where(.css-lh5u98).ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: $white_05 !important;
+}
+
+.ant-select-item-option-selected {
+  background-color: $white_05 !important;
+}
+
+.ant-select-dropdown .ant-select-item-option-selected {
+  background-color: $white_05 !important;
 }
 
 //Pagination
