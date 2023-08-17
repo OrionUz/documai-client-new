@@ -42,7 +42,7 @@ function App() {
               },
             }}
           >
-            <GoogleOAuthProvider clientId="1001681287554-st0gnhbp6r2o31p773g2p0t2hngb40ja.apps.googleusercontent.com">
+            <GoogleOAuthProvider clientId="499657436082-g9oggi0d2s3ss49jjl6cv1520117pmnd.apps.googleusercontent.com">
               <RoutElements />
             </GoogleOAuthProvider>
           </ConfigProvider>
