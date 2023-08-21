@@ -190,6 +190,9 @@ export const languageEn = {
     useTranslation: "Use translation",
     hovertranslation: "Use this for non-English documents to translate and train to obtain the best results",
     selection: "Select a user to see messaging",
+    keywords: "Keywords",
+    newKeyword: 'New',
+    keywordHelp: "*** Please add only one keyword in English for each file ***",
   },
 
   sign: {
