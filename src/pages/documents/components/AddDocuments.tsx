@@ -8,6 +8,7 @@ import CustomButton from "src/components/common/button";
 import CustomModal from "src/components/common/modal";
 import CustomSwitch from "src/components/common/switch";
 import CustomUpload from "src/components/common/upload";
+import DocumentTags from "./DocumentTags";
 
 function AddDocuments() {
   const [searchParams] = useSearchParams();
@@ -24,6 +25,7 @@ function AddDocuments() {
   const closeDocumentModal = () => setVisible(false);
 
   const [newFileList, setNewFileList] = useState<UploadProps["fileList"]>();
+  const [tags, setTags] = useState<(string)[]>([])
 
   const [trainProject, { isLoading }] = useTrainProjectMutation();
   const {t} = useTranslation();
@@ -34,11 +36,18 @@ function AddDocuments() {
         item.originFileObj && formData.append("files", item.originFileObj);
       });
       formData.append("skipTranslation", String(!switched));
+      formData.append("tags", JSON.stringify(tags))
       trainProject({ id: +projectId, formData: formData }).then(() => {
         closeDocumentModal();
       });
     }
   };
+
+  const onChangeFileList = (value: UploadProps["fileList"]) => {
+    setTags(value?.map(file => file.name.split('.')?.[0] ?? '') ?? [])
+    setNewFileList(value)
+  }
+
   return (
     <>
       <CustomButton color="light" onClick={openDocumentModal}>
@@ -57,8 +66,9 @@ function AddDocuments() {
             fileList={newFileList}
             maxSize={20}
             disabled={isLoading}
-            onChange={(info) => setNewFileList(info.fileList)}
+            onChange={(info) => onChangeFileList(info.fileList)}
           />
+          <DocumentTags tags={tags} setTags={setTags}/>
           {newFileList ? (
             <div className="documents-add-footer">
               <div>

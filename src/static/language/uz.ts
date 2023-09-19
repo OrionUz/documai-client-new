@@ -194,6 +194,9 @@ export const languageUz = {
     hovertranslation:
       "Ingliz tilidan tashqari hujjatlarni tarjima qilish va eng yaxshi natijalarga erishish uchun mashq qilish uchun undan foydalaning",
     selection: "Xabarlarni ko'rish uchun foydalanuvchini tanlang",
+    keywords: "Kalit so'zlar",
+    newKeyword: 'Yangi',
+    keywordHelp: "*** Iltimos, har bir fayl uchun ingliz tilida faqat bitta kalit so'z kiriting ***",
   },
 
   sign: {
