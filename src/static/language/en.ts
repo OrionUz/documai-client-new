@@ -9,7 +9,7 @@ export const languageEn = {
   },
   home: {
     header: "Create your AI customer service assistant",
-    video: "https://youtu.be/F4o2Zs0pjwU",
+    video: "https://youtu.be/mtWxYUG8qjA",
     text: "We leverage artificial intelligence to provide customized, efficient, and round-the-clock customer service solutions. Our AI agents can be tailored to your business, learning and adapting to provide precise, speedy responses. Automate repetitive tasks, enhance customer satisfaction, and increase profitability with our intelligent and scalable AI customer service platform. Join us to redefine customer service for the better.",
     "btn-text": "Book a demo version",
     work: "How it works",

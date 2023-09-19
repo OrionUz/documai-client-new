@@ -10,7 +10,7 @@ export const languageUz = {
 
   home: {
     header: "Mijozlarga xizmat ko'rsata oladigan su'niy intellekt yordamchisini yarating",
-    video: "https://youtu.be/y7JcFCj9k1I",
+    video: "https://youtu.be/JEdmI7oivhI",
     text: "Siz unga xohlagan narsani o'rgatishingiz mumkin va u mijozlarning savollariga javob bera oladi. Siz taqdim etgan ma'lumotlarga asoslanib javob bera oladigan Sun'iy intellekt yaratishingizga yordam beramiz.",
     "btn-text": "Demo versiya ko'rish",
     work: "Qanday ishlaydi",
