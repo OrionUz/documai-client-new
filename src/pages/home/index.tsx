@@ -6,6 +6,8 @@ import PricingCard from "./components/PricingCard";
 import CustomSlider from "src/components/common/slider";
 import ReactPlayer from "react-player";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { getRootState } from "src/app/store";
 
 export function PricingSlider() {
   return (
@@ -19,6 +21,8 @@ export function PricingSlider() {
 
 function HomePage() {
   const { t } = useTranslation();
+  const { isAuthenticated } = getRootState().auth;
+
   return (
     <div className="home">
       <div className="blur_purple" />
@@ -31,9 +35,11 @@ function HomePage() {
             <p>
               {t("home.text")}
             </p>
+            <Link to={isAuthenticated ? "/dashboard/document" : "/auth/signin"}>
             <CustomButton color="light" bordered>
               {t("home.btn-text")}
             </CustomButton>
+            </Link>
           </div>
           <div className="home-top-right">
             <ReactPlayer
