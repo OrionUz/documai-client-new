@@ -1,15 +1,20 @@
 .introcard {
   flex-grow: 1;
   min-height: 271px;
-  padding: 21px 32px;
+  border-top: 1px solid #664DFF;
+  border-bottom: 1px solid #664DFF;
+  //padding: 21px 32px;
 
-  border: 1px solid #fce4ef40;
-  background-color: rgba(0, 0, 0, 0.24);
+  //border: 1px solid #fce4ef40;
+  background-color: #242B35;
   border-radius: 16px;
   position: relative;
+  box-shadow: 0px 4px 20px 0px rgba(102, 77, 255, 0.20);
 
   &-content {
-    width: 248px;
+    //width: 360;
+    margin-top: 36px;
+    margin-left: 24px;
     h2 {
       @extend .title;
       line-height: 140%;
@@ -18,26 +23,60 @@
     p {
       @extend .text;
       line-height: 140%;
+      margin-bottom: 28px;
+      color: #c1c2c8
     }
   }
 
   &-icon {
-    position: absolute;
-    top: 101px;
-    right: -14px;
+    display: flex;
+    margin-left: 23px;
+    width: 86px;
+    height: 86px;
+    border: 1px solid #fce4ef40;
+    border-radius: 100px;
 
-    transform: translatey(0px);
-    animation: movement_in_air 6s ease-in-out infinite;
-  }
-  &:nth-child(2) {
-    .introcard-icon {
-      top: 120px;
+    &-inside{
+      margin: 10px;
+      position: absolute;
+      border: 1px solid #fce4ef40;
+      border-radius: 100px;
+      width: 66px;
+      height: 66px;
+
+      &-svg{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
-  &:nth-child(3) {
-    .introcard-icon {
-      top: 108px;
-    }
+  // &:nth-child(2) {
+  //   .introcard-icon {
+  //     top: 120px;
+  //   }
+  // }
+  // &:nth-child(3) {
+  //   .introcard-icon {
+  //     top: 108px;
+  //   }
+  // }
+}
+
+.line{
+  border-bottom: 1px solid #fce4ef40;
+  transform: translateY(-43px);
+  margin-left: 110px;
+  &-top{
+    border-left: 1px solid #fce4ef40;
+    height: 24px;
+    margin-left: 66px;
+  }
+  &-left{
+    border-bottom: 1px solid #fce4ef40;
+    width: 24px;
+    transform: translateY(43px);
   }
 }
 

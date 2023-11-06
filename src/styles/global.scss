@@ -40,7 +40,7 @@ a {
 
 .root {
   min-height: 100vh;
-  background-color: $bg_main;
+  background-color: #0B151F;
   overflow-x: hidden;
   position: relative;
 }
@@ -80,5 +80,6 @@ a {
 @import "./auth/";
 @import "./about/";
 @import "./news/";
+@import "./pricing/";
 
 @import "./package/";

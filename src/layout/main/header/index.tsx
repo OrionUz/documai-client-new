@@ -20,7 +20,9 @@ function Header() {
   const { isAuthenticated } = getRootState().auth;
 
   const [visible, setVisible] = useState(false);
-  const openModal = () => setVisible(true);
+  {
+    /*const openModal = () => setVisible(true);*/
+  }
   const closeModal = () => setVisible(false);
 
   const menu = (
@@ -28,11 +30,20 @@ function Header() {
       <Link to="/" className={location.pathname === "/" ? "active" : ""}>
         {t("header.home")}
       </Link>
-      <Link to="/about" className={location.pathname === "/about" ? "active" : ""}>
+      <Link
+        to="/about"
+        className={location.pathname === "/about" ? "active" : ""}
+      >
         {t("header.about")}
       </Link>
       {/* <Link to="/news">Blog-News</Link> */}
-      <p onClick={openModal}>{t("header.pricing")}</p>
+      {/*<Link
+        to="/pricing"
+        className={location.pathname === "/pricing" ? "active" : ""}
+      >
+        {t("header.pricing")}
+  </Link>*/}
+      <p>{t("header.pricing")}</p>
     </>
   );
   return (
@@ -43,17 +54,33 @@ function Header() {
         <div className="header-menu">{menu}</div>
 
         <div className="header-navigation">
-          <label htmlFor="navi-label" onClick={changeNavigationBar} className="header-navigation-label">
-            <span className={`header-navigation-icon ${navigation ? "header-navigation-icon-active" : ""}`}>
+          <label
+            htmlFor="navi-label"
+            onClick={changeNavigationBar}
+            className="header-navigation-label"
+          >
+            <span
+              className={`header-navigation-icon ${
+                navigation ? "header-navigation-icon-active" : ""
+              }`}
+            >
               &nbsp;
             </span>
           </label>
-          <div className={`header-navigation-background ${navigation ? "header-navigation-background-active" : ""}`}>
+          <div
+            className={`header-navigation-background ${
+              navigation ? "header-navigation-background-active" : ""
+            }`}
+          >
             &nbsp;
           </div>
         </div>
 
-        <nav className={`header-navigation-nav ${navigation ? "header-navigation-nav-active" : ""}`}>
+        <nav
+          className={`header-navigation-nav ${
+            navigation ? "header-navigation-nav-active" : ""
+          }`}
+        >
           <Language />
           <ul className="header-navigation-list" onClick={changeNavigationBar}>
             {menu}

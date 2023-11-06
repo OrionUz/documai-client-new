@@ -14,9 +14,9 @@ function AboutPage() {
   const { t } = useTranslation();
   return (
     <div className="about">
-      <div className="blur_red_top" />
+      {/*<div className="blur_red_top" />
       <div className="blur_purple" />
-      <div className="blur_blue" />
+      <div className="blur_blue" />*/}
       <div className="container">
         <div className="about-top">
           <div className="about-top-left">

@@ -9,9 +9,9 @@ export const languageUz = {
   },
 
   home: {
-    header: "Mijozlarga xizmat ko'rsata oladigan su'niy intellekt yordamchisini yarating",
+    header: "Mijozlarga xizmat ko'rsata oladigan su'niy intellekt",
     video: "https://youtu.be/JEdmI7oivhI",
-    text: "Siz unga xohlagan narsani o'rgatishingiz mumkin va u mijozlarning savollariga javob bera oladi. Siz taqdim etgan ma'lumotlarga asoslanib javob bera oladigan Sun'iy intellekt yaratishingizga yordam beramiz.",
+    text: "Siz taqdim etgan ma'lumotlarga asoslanib javob bera oladigan Sun'iy intellekt yaratishingizga yordam beramiz.",
     "btn-text": "Demo versiya ko'rish",
     work: "Qanday ishlaydi",
     about: "Haqida",
@@ -100,9 +100,7 @@ export const languageUz = {
       docum: `${isDocum ? "Docum.ai" : "BlueJourney.pro"}`,
       "text-down": `${
         isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } - bu sizning biznesingiz uchun avtomatlashtirish yechimlarini taklif qiluvchi platforma. Sun'iy intellekt kuchidan foydalangan holda, ${
-        isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } sizga turli jarayonlarni soddalashtirish va avtomatlashtirish, tashkilotingizdagi samaradorlikni  oshirish imkonini beradi.`,
+      } - biznesingizni avtomatlashtiradigan sun'iy intellektdir.`,
       overview: "Umumiy koʻrinish",
       features: "Xususiyatlari",
       "pricing-down": "Narxlar",

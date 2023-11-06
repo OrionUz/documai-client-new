@@ -10,7 +10,7 @@ function AboutCard({ item }: AboutCardProps) {
       <div className="aboutcard-left">
         <h2>{t(item.title)}</h2>
         {item.description.map((p) => {
-          return <TranslatedComponents text={p} key={p}/>;
+          return <TranslatedComponents text={p} key={p} />;
         })}
 
         {item.button ? (

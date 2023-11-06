@@ -7,9 +7,12 @@
   padding: 28px 24px;
   max-width: 100%;
 
-  background-color: $bg_dark;
-  border: 1px solid #666471;
+  background-color: #242B35;
+  border-top: 3px solid #664DFF;
+  border-bottom: 1px solid #664DFF;
+  box-shadow: 0px 4px 20px 0px rgba(102, 77, 255, 0.20);
   border-radius: 12px;
+  
 
   &-type {
     font-weight: 500;
@@ -67,25 +70,33 @@
   }
 
   &-main {
-    background-color: $white;
+    background-color: #242B35;
+    background: //linear-gradient(95deg, rgba(#664DFF, .5), rgba(rgb(144, 153, 236), 0) 25%),
+                linear-gradient(210deg, rgba(#664DFF, .5), rgba(white, 0) 20%),;
 
     .pricingcard {
       &-type {
-        color: $black;
+        color: $white;
         margin-bottom: 15px;
       }
       &-price {
-        color: $black;
+        color: $white;
         span {
           color: $text2;
         }
       }
       &-requirement {
-        color: rgba(0, 0, 0, 0.8);
+        color: rgba(255, 255, 255, 0.8);
         margin-bottom: 71px;
       }
       &-include {
-        color: $black;
+        color: $white;
+      }
+    }
+    &-svg{
+      svg{
+        position: absolute;
+        transform: translateX(-24px);
       }
     }
   }

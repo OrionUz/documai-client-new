@@ -1,4 +1,9 @@
-import { aboutcardData, introcardData, pricingCardData, usagecardData } from "./const";
+import {
+  aboutcardData,
+  introcardData,
+  pricingCardData,
+  usagecardData,
+} from "./const";
 import CustomButton from "src/components/common/button";
 import IntroCard from "./components/IntroCard";
 import AboutCard from "./components/AboutCard";
@@ -25,30 +30,45 @@ function HomePage() {
 
   return (
     <div className="home">
-      <div className="blur_purple" />
-      <div className="blur_blue" />
+      {/*<div className="blur_purple" />*/}
+      {/*<div className="blur_blue" />*/}
       <div className="container">
         {/* Home top */}
         <div className="home-top">
           <div className="home-top-left">
             <h1>{t("home.header")}</h1>
-            <p>
-              {t("home.text")}
-            </p>
+            <p>{t("home.text")}</p>
             <Link to={isAuthenticated ? "/dashboard/document" : "/auth/signin"}>
-            <CustomButton color="light" bordered>
-              {t("home.btn-text")}
-            </CustomButton>
+              <CustomButton color="light" bordered>
+                {t("home.btn-text")}
+              </CustomButton>
             </Link>
           </div>
           <div className="home-top-right">
-            <ReactPlayer
+            {/* <ReactPlayer
               width={640}
-              url= {t("home.video")}
-              playing={false}
+              url={require("src/assets/video/IntroVideoPlay.mp4")}
+              playing={true}
               controls={true}
-            />
+            /> */}
+            <video
+              className="home-top-video"
+              loop
+              autoPlay
+              muted
+              style={{ width: 510, background: "#0E1621", height: 514 }}
+              src={require("src/assets/video/IntroVideoPlay.mp4")}
+            ></video>
           </div>
+        </div>
+        <div className="home-video">
+          <ReactPlayer
+            width={1130}
+            height={570}
+            url={t("home.video")}
+            playing={false}
+            controls={true}
+          />
         </div>
 
         {/* Infocards */}

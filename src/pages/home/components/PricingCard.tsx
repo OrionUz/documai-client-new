@@ -1,6 +1,13 @@
 import { useTranslation } from "react-i18next";
-import { saveBillingCardInfo, setBillingModal } from "src/app/slices/billingcardSlice";
-import { CorrectActiveSvg, CorrectInActiveSvg } from "src/assets/svg";
+import {
+  saveBillingCardInfo,
+  setBillingModal,
+} from "src/app/slices/billingcardSlice";
+import {
+  CorrectActiveSvg,
+  CorrectInActiveSvg,
+  PricingMiddleColorSvg,
+} from "src/assets/svg";
 import PricingModal from "src/components/cards/pricing/PricingModal";
 import CustomButton from "src/components/common/button";
 import { PricingCardProps } from "../type";
@@ -24,13 +31,24 @@ function PricingCard({ item }: PricingCardProps) {
 
   return (
     <div className={`pricingcard ${item.main && "pricingcard-main"}`}>
+      {item.main ? (
+        <div className="pricingcard-main-svg">
+          <PricingMiddleColorSvg />
+        </div>
+      ) : (
+        ""
+      )}
       <div className="pricingcard-content">
         <div className="pricingcard-type">{t(item.type)}</div>
         <div className="pricingcard-price">
           {t(item.price ?? "")}
           {item.price_duration ? <span>{t(item.price_duration)}</span> : ""}
         </div>
-        {item.description ? <div className="pricingcard-description">{t(item.description)}</div> : ""}
+        {item.description ? (
+          <div className="pricingcard-description">{t(item.description)}</div>
+        ) : (
+          ""
+        )}
         {item.requirement ? (
           <div className="pricingcard-requirement">
             {t(item.requirement)} <span>Learn more</span>
@@ -41,7 +59,8 @@ function PricingCard({ item }: PricingCardProps) {
         {item.includes.map((include, index) => {
           return (
             <div className="pricingcard-include" key={include + index}>
-              {item.main ? <CorrectActiveSvg /> : <CorrectInActiveSvg />} {t(include)}
+              {item.main ? <CorrectActiveSvg /> : <CorrectInActiveSvg />}{" "}
+              {t(include)}
             </div>
           );
         })}
@@ -52,14 +71,42 @@ function PricingCard({ item }: PricingCardProps) {
         </CustomButton>
       ) : item.main ? (
         <div>
-          <CustomButton style={{ width: "100%" }} color="light" onClick={openModal}>
+          {/*<Link to={isAuthenticated ? "pricing" : "/auth/signin"}>
+            <CustomButton
+              style={{ width: "100%" }}
+              color="light"
+              onClick={openModal}
+            >
+              Upgrade
+            </CustomButton>
+      </Link>*/}
+          <CustomButton
+            style={{ width: "100%" }}
+            color="light"
+            onClick={openModal}
+          >
             Upgrade
           </CustomButton>
         </div>
       ) : (
-        <CustomButton color="dark" onClick={openModal}>
-          Upgrade
-        </CustomButton>
+        <div>
+          {/*<Link to={isAuthenticated ? "pricing" : "/auth/signin"}>
+            <CustomButton
+              style={{ width: "100%" }}
+              color="dark"
+              onClick={openModal}
+            >
+              Upgrade
+            </CustomButton>
+      </Link>*/}
+          <CustomButton
+            style={{ width: "100%" }}
+            color="dark"
+            onClick={openModal}
+          >
+            Upgrade
+          </CustomButton>
+        </div>
       )}
       <PricingModal />
     </div>

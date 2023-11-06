@@ -1,1 +1,7 @@
-export const companies = ["express24", "chinwakil", "mytaxi", "impuls", "workly"];
+export const companies = [
+  "express242",
+  "chinwakil1",
+  "mytaxi",
+  "impuls",
+  "workly1",
+];

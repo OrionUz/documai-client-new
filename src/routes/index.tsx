@@ -16,6 +16,7 @@ import NewsPage from "src/pages/news";
 import NewsIdPage from "src/pages/news/[id]";
 import DocumentsTrainPage from "src/pages/documents/train";
 import DashboardLayout from "src/layout/dashboard";
+import PricingPage from "src/pages/pricing";
 
 function RoutElements() {
   const { pathname } = useLocation();
@@ -24,13 +25,17 @@ function RoutElements() {
   return (
     <div className="root">
       <Routes>
-        <Route path="/" element={!acceptMainLayout.includes(path) ? <MainLayout /> : null}>
+        <Route
+          path="/"
+          element={!acceptMainLayout.includes(path) ? <MainLayout /> : null}
+        >
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="auth" element={<AuthPage />}>
             <Route path="signin" element={<AuthSignin />} />
             <Route path="signup" element={<AuthSignUp />} />
           </Route>
+          <Route path="pricing" element={<PricingPage />} />
           {/** news page */}
           <Route path="news">
             <Route index element={<NewsPage />} />

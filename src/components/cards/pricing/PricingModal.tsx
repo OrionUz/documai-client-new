@@ -6,7 +6,9 @@ import PricingSms from "./PricingSms";
 import PricingInfo from "./PricingInfo";
 
 function PricingModal() {
-  const { billingVisible, billingInfo } = useTypedSelector((state) => state.billing);
+  const { billingVisible, billingInfo } = useTypedSelector(
+    (state) => state.billing
+  );
   const dispatch = useAppDispatch();
   const closeModal = () => {
     dispatch(setBillingModal(false));

@@ -36,6 +36,7 @@ function PricingSms() {
   const number2 = useRef<InputRef>(null);
   const number3 = useRef<InputRef>(null);
   const number4 = useRef<InputRef>(null);
+  const number5 = useRef<InputRef>(null);
   // const [verifyClickToken, { data, isSuccess, isLoading }] = useVerifyClickTokenMutation();
 
   const onFinish = (values: any) => {
@@ -116,11 +117,28 @@ function PricingSms() {
                   ref={number4}
                   onChange={({ target }) => {
                     if (target.value) {
-                      number4.current?.focus();
+                      number5.current?.focus();
                       form.setFieldValue("number4", target.value);
                     } else {
                       number3.current?.focus();
                       form.setFieldValue("number4", "");
+                    }
+                  }}
+                />
+              </CustomConfigProvider>
+            </Form.Item>
+            <Form.Item name="number5" rules={[{ required: true, message: "" }]}>
+              <CustomConfigProvider>
+                <Input
+                  maxLength={1}
+                  ref={number5}
+                  onChange={({ target }) => {
+                    if (target.value) {
+                      number5.current?.focus();
+                      form.setFieldValue("number5", target.value);
+                    } else {
+                      number4.current?.focus();
+                      form.setFieldValue("number5", "");
                     }
                   }}
                 />
