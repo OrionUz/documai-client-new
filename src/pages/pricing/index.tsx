@@ -1,34 +1,4 @@
 function PricingInfo() {
-  {
-    /*const { t } = useTranslation();
-  const { cardInfo } = useTypedSelector((state) => state.billing);
-  const [createClickToken] = useCreateClickTokenMutation();
-
-  const [form] = Form.useForm();
-  const handleSubmit = (val: ICreateClickToken) => {
-    val.cardNumber = removeMask(val.cardNumber);
-    val.expireDate = removeMask(val.expireDate).replace("/", "");
-
-    createClickToken(val);
-  };*/
-  }
-
-  {
-    /*const navigate = useNavigate();
-  const dispatch = useAppDispatch();
-  const { isAuthenticated } = useTypedSelector((state) => state.auth);*}
-
-  {
-    /*const openModal = () => {
-    if (true) {
-      if (isAuthenticated) {
-        dispatch(setBillingModal(true));
-        dispatch(saveBillingCardInfo(item));
-      } else navigate("/auth");
-    }
-  };*/
-  }
-
   return <div>salom</div>;
   /*<div className="custom-modal">
       <div className="custom-modal-header pricing-modal-header">

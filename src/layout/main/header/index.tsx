@@ -20,9 +20,7 @@ function Header() {
   const { isAuthenticated } = getRootState().auth;
 
   const [visible, setVisible] = useState(false);
-  {
-    /*const openModal = () => setVisible(true);*/
-  }
+
   const closeModal = () => setVisible(false);
 
   const menu = (
