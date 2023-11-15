@@ -2,7 +2,7 @@ import type { InputRef } from "antd";
 import { ConfigProvider, Form, Input } from "antd";
 import { useForm } from "antd/es/form/Form";
 import { useRef } from "react";
-import { useVerifyClickTokenMutation } from "src/app/services/payment"; 
+// import { useVerifyClickTokenMutation } from "src/app/services/payment"; 
 import CustomButton from "src/components/common/button";
 
 interface ProviderProps {
@@ -37,14 +37,7 @@ function PricingSms() {
   const number3 = useRef<InputRef>(null);
   const number4 = useRef<InputRef>(null);
   const number5 = useRef<InputRef>(null);
-  const [verifyClickToken, { data, isSuccess, isLoading }] = useVerifyClickTokenMutation();
-
-  const onFinish =  (values: any) => {
-    if(isSuccess){
-      console.log('Data saved successfully' + `${data}`);
-    }
-    verifyClickToken(values)
-  };
+  // const [verifyClickToken, { data, isSuccess, isLoading }] = useVerifyClickTokenMutation();
 
 
   return (
@@ -55,7 +48,7 @@ function PricingSms() {
         </p>
       </div>
       <div className="custom-modal-content">
-        <Form  form={form} layout="vertical" onFinish={onFinish}>
+        <Form  form={form} layout="vertical" >
           <div className="pricing-sms-box">
             <Form.Item name="number1" rules={[{ required: true, message: "" }]}>
               <CustomConfigProvider>
@@ -145,7 +138,7 @@ function PricingSms() {
           </div>
 
           <div className="custom-modal-buttons">
-            <CustomButton color="light" type="submit" loading={isLoading}>
+            <CustomButton color="light" type="submit">
               Confirm
             </CustomButton>
           </div>
