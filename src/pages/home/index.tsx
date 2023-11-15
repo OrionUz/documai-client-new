@@ -57,7 +57,7 @@ function HomePage() {
               autoPlay
               muted
               style={{ width: 510, background: "#0E1621", height: 514 }}
-              src={require("src/assets/video/IntroVideoPlay.mp4")}
+              src={require("src/assets/video/introVideoLast.mp4")}
             ></video>
           </div>
         </div>

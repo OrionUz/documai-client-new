@@ -1,67 +1,70 @@
+import { CardAddingSvg } from "src/assets/svg/pricing";
+import Card from "./components/card";
+import Plan from "./components/plan";
+import { pricingCardData, pricingPlanData } from "./const";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useTypedSelector } from "src/app/store";
+import {
+  saveBillingCardInfo,
+  setBillingModal,
+} from "src/app/slices/billingcardSlice";
+import PricingModal from "src/pages/pricing/components/PricingModal";
+import CustomButton from "src/components/common/button";
+
 function PricingInfo() {
-  return <div>salom</div>;
-  /*<div className="custom-modal">
-      <div className="custom-modal-header pricing-modal-header">
-        <h2>Payment info</h2>
-        <LockIcon />
-      </div>
-      <div className="custom-modal-content">
-        <div className="pricing">
-          <div className="pricing-info">
-            <CustomButton
-              color="light"
-              style={{ height: "50px", width: "140px" }}
-            >
-              {t(cardInfo?.type)}
-            </CustomButton>
-            <div className="pricingcard-price">
-              {t(cardInfo?.price)}
-              {!!cardInfo?.price_duration && (
-                <span>{t(cardInfo.price_duration)}</span>
-              )}
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { isAuthenticated } = useTypedSelector((state) => state.auth);
+
+  const openModal = () => {
+    if (true) {
+      if (isAuthenticated) {
+        dispatch(setBillingModal(true));
+        dispatch(saveBillingCardInfo());
+      } else navigate("/auth");
+    }
+  };
+
+  return (
+    <div className="pricing">
+      <div className="container">
+        <div className="pricing-head">
+          <h2 className="pricing-head-text">Choose Your Plan</h2>
+          <div className="pricing-head-plan">
+            {pricingPlanData.map((item) => {
+              return <Plan item={item} key={item.price} />;
+            })}
+          </div>
+        </div>
+        <div className="pricing-main">
+          <h2 className="pricing-main-text">Choose Card To Pay</h2>
+          <div className="pricing-main-cardList">
+            {pricingCardData.map((item) => {
+              return <Card item={item} />;
+            })}
+            <div className="pricing-main-add">
+              <div className="pricing-main-add-middle">
+                <button onClick={openModal}>
+                  <CardAddingSvg />
+                </button>
+                <h2 className="pricing-main-card-cash">Add Card</h2>
+              </div>
+              <PricingModal />
             </div>
           </div>
-
-          <Form
-            layout="vertical"
-            form={form}
-            className="pricing-form"
-            onFinish={handleSubmit}
-          >
-            <Form.Item
-              name="cardNumber"
-              label="Card*"
-              rules={[{ required: true, message: "Enter card number" }]}
+          <div className="pricing-main-buttons">
+            <CustomButton
+              className="button button-light undefined undefined undefined"
+              type="submit"
             >
-              <MaskedInput
-                style={{ backgroundColor: "#313A47", color: "white" }}
-                mask={"0000 0000 0000 0000"}
-                color="white"
-              />
-            </Form.Item>
-
-            <Form.Item
-              name="expireDate"
-              label="Expiration date*"
-              rules={[{ required: true, message: "Enter expiration date" }]}
-            >
-              <MaskedInput
-                style={{ backgroundColor: "#313A47", color: "white" }}
-                mask={"00 / 00"}
-                color="white"
-              />
-            </Form.Item>
-
-            <div className="custom-modal-buttons">
-              <CustomButton color="light" type="submit">
-                Next
-              </CustomButton>
-            </div>
-          </Form>
+              Payment
+            </CustomButton>
+            <CustomButton>Delete</CustomButton>
+          </div>
         </div>
       </div>
-      <PricingModal />
-              </div>*/
+    </div>
+  );
 }
 
 export default PricingInfo;

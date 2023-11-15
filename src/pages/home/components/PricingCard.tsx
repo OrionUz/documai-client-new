@@ -8,7 +8,7 @@ import {
   CorrectInActiveSvg,
   PricingMiddleColorSvg,
 } from "src/assets/svg";
-import PricingModal from "src/components/cards/pricing/PricingModal";
+import PricingModal from "src/pages/pricing/components/PricingModal";
 import CustomButton from "src/components/common/button";
 import { PricingCardProps } from "../type";
 import { useAppDispatch, useTypedSelector } from "src/app/store";

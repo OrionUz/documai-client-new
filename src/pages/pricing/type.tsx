@@ -1,15 +1,23 @@
-{
-  /*export interface PricingProps {
+export interface PricingPlanProps {
   item: {
-    type: string;
-    current?: boolean;
-    main?: boolean;
-    description?: string;
-    price?: string;
-    price_duration?: string;
-    requirement?: string;
-    includes: string[];
+    icon: JSX.Element;
+    price: string;
+    month: string;
   };
 }
-*/
+
+export interface PricingCardsProps {
+  item: {
+    // id: number;
+    icon: JSX.Element;
+    balance: string;
+    cash: string;
+    card_number: string;
+    card_holder: string;
+    date: string;
+    date_month: string;
+    date_year: string;
+    cvc: string;
+    cvc_number: string;
+  };
 }

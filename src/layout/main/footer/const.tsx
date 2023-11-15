@@ -1,7 +1,7 @@
 export const companies = [
-  "express242",
-  "chinwakil1",
+  "express24",
+  "chinwakil",
   "mytaxi",
   "impuls",
-  "workly1",
+  "workly",
 ];
