@@ -10,8 +10,8 @@ export const languageEn = {
   home: {
     header: "Create your AI customer service assistant",
     video: "https://youtu.be/mtWxYUG8qjA",
-    text: "We leverage artificial intelligence to provide customized, efficient, and round-the-clock customer service solutions. Our AI agents can be tailored to your business, learning and adapting to provide precise, speedy responses. Automate repetitive tasks, enhance customer satisfaction, and increase profitability with our intelligent and scalable AI customer service platform. Join us to redefine customer service for the better.",
-    "btn-text": "Book a demo version",
+    text: "We will help you create AI customer service employee which has custom knowledge.",
+    "btn-text": "START CREATING",
     work: "How it works",
     about: "About",
     pricing: "Pricing",
@@ -97,9 +97,7 @@ export const languageEn = {
       docum: `${isDocum ? "Docum.ai" : "BlueJourney.pro"}`,
       "text-down": `${
         isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } is an artificial intelligence platform that offers automation solutions for your business. By harnessing the power of AI, ${
-        isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } enables you to streamline and automate various processes, increasing efficiency and productivity within your organization.`,
+      } - is an artificial intelligence that automates your business.`,
       overview: "Overview",
       features: "Features",
       "pricing-down": "Pricing",
@@ -163,7 +161,7 @@ export const languageEn = {
     label3: "Chatbot name*",
     name3: "displayName",
     message3: "Please write chatbot name*",
-    create: "Create new bot",
+    create: "New Bot",
     create1: "Create your chat bot",
     text: "You can create a Telegram bot on @BotFather",
     guide: "Video guide",

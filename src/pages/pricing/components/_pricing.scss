@@ -1,0 +1,123 @@
+@import "src/styles/variables.scss";
+
+.pricingcardFirst {
+  .ant-select-selector{
+    height: 50px;
+  }
+  .ant-input {
+    padding: 11px !important;
+    &::placeholder {
+      color: #fff;
+    }
+  }
+  :where(.css-dev-only-do-not-override-12h17gh).ant-form-item
+    .ant-form-item-label
+    > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+    display: none !important;
+  }
+
+  :where(.css-dev-only-do-not-override-1h99krt).ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    width: 100%;
+    height: 48px;
+    padding: 0 11px;
+    background: #313A47;
+}
+
+:where(.css-dev-only-do-not-override-1h99krt).ant-select-single .ant-select-selector .ant-select-selection-item {
+  display: flex;
+  align-items: center;
+}
+
+:where(.css-dev-only-do-not-override-1h99krt).ant-select .ant-select-arrow{
+  color: white;
+}
+
+:where(.css-dev-only-do-not-override-1h99krt).ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder{
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+  .pricingcard-price {
+    font-size: 32px;
+    line-height: 100%;
+    span {
+      line-height: 100%;
+    }
+  }
+
+  .custom-modal-buttons {
+    margin-top: 40px;
+  }
+
+  &-modal {
+    &-header {
+      display: flex;
+      align-items: center;
+      column-gap: 4px;
+    }
+  }
+
+  &-form {
+    margin-top: 32px;
+  }
+
+  &-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &-sms {
+    .custom-modal-header {
+      border-bottom: none;
+      p {
+        width: 270px;
+
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+
+    &-box {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+
+      .ant-input {
+        text-align: center;
+      }
+    }
+  }
+
+  &-select{
+    font-size: 16px;
+  }
+
+
+  &-cardInfo{
+    display: flex;
+    gap: 15px;
+  }
+
+  &-off{
+    display: none;
+  }
+}
+
+.smsBox {
+  display: block;
+  &-close {
+    display: none;
+  }
+}
+
+.ant-select-arrow{
+  color: white;
+}
+
+.ant-select-selection-placeholder{
+  color: white;
+}
+
+

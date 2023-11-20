@@ -25,16 +25,18 @@
     display: flex;
     align-items: center;
     gap: 32px;
+    
 
     a,
     p {
       @extend .text;
       cursor: pointer;
+      color: #c1c2c8;
     }
 
     transition: $transition;
     .active {
-      color: #409ed3;
+      color: white;
     }
   }
 

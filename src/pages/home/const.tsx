@@ -1,21 +1,26 @@
+import { Affordable, CustomAI, QuickAnswer } from "src/assets/svg";
 import { AboutCardSvg1, AboutCardSvg2 } from "src/assets/svg/freepik/about";
-import { UsageCardSvg1, UsageCardSvg2, UsageCardSvg3 } from "src/assets/svg/freepik/usage";
+import {
+  UsageCardSvg1,
+  UsageCardSvg2,
+  UsageCardSvg3,
+} from "src/assets/svg/freepik/usage";
 
 export const introcardData = [
   {
     title: "home.intro.title1",
     description: "home.intro.text1",
-    img: require("src/assets/img/home/introcard1.png"),
+    icon: <QuickAnswer />,
   },
   {
     title: "home.intro.title2",
     description: "home.intro.text2",
-    img: require("src/assets/img/home/introcard2.png"),
+    icon: <CustomAI />,
   },
   {
     title: "home.intro.title3",
     description: "home.intro.text3",
-    img: require("src/assets/img/home/introcard3.png"),
+    icon: <Affordable />,
   },
 ];
 
@@ -71,7 +76,7 @@ export const pricingCardData = [
   {
     main: true,
     type: "home.pricingPart.type2",
-    price: "19$",
+    price: "29$",
     price_duration: "home.pricingPart.price_duration2",
     requirement: "home.pricingPart.text2",
     includes: [
@@ -106,7 +111,8 @@ export const newscardData = [
   {
     date: "May 23, 2023",
     title: "The U.S. is a country of 50",
-    description: "DC. Midwestern metropolis Chicago is known for and on the west coast, Los Angeles'",
+    description:
+      "DC. Midwestern metropolis Chicago is known for and on the west coast, Los Angeles'",
     img: require("src/assets/img/home/newscard2.png"),
   },
   {
