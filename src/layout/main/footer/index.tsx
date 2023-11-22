@@ -9,6 +9,7 @@ import CustomSlider from "src/components/common/slider";
 import { companies } from "./const";
 import { useTranslation } from "react-i18next";
 import { isDocum } from "src/static/const";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const { t } = useTranslation();
@@ -65,7 +66,9 @@ function Footer() {
                 <div className="footer-icon">
                   <TwoCircleSvg />
                 </div>
-                <MessageSendSvg />
+                <Link to="#">
+                  <MessageSendSvg />
+                </Link>
               </div>
               <div>
                 <div className="footer-icon">

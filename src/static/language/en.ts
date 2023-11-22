@@ -10,7 +10,7 @@ export const languageEn = {
   home: {
     header: "Create your AI customer service assistant",
     video: "https://youtu.be/mtWxYUG8qjA",
-    text: "We will help you create AI customer service employee which has custom knowledge.",
+    text: "We will help you develop a custom-knowledge AI for customer service.",
     "btn-text": "START CREATING",
     work: "How it works",
     about: "About",
@@ -20,7 +20,7 @@ export const languageEn = {
       text1: `${
         isDocum ? "Docum.ai" : "BlueJourney.pro"
       } can provide immediate responses to an unlimited number of customers when they contact your custom bot.`,
-      title2: "Custom AI",
+      title2: "Control",
       text2: `${
         isDocum ? "Docum.ai" : "BlueJourney.pro"
       } offers 24/7 service and can handle unlimited customers with custom knowledge.`,
@@ -31,19 +31,17 @@ export const languageEn = {
     },
     usage: {
       info1:
-        "It is important for your business to collect data regarding customer inquiries and corresponding answers. This information should be consolidated into a single file. If you require assistance, our team is always available to help.",
-      info2: `To proceed with the integration of the AI model into the bot on ${
+        "Our team is available to help you compile customer inquiries and responses into one comprehensive file, essential for improving your business.",
+      info2: `Please provide a bot username and token to integrate the AI model into your ${
         isDocum ? "Docum.ai" : "BlueJourney.pro"
-      }, please provide us with a bot username and token. Once we receive the necessary information, we will incorporate the AI model that is knowledgeable about your business.`,
+      } bot. Once received, we'll equip the bot with AI tailored to your business knowledge.`,
       info3:
         "After the integration is complete, You can engage with the chat bot,  and ask questions specific to your business. AI will carefully note down any questions it cannot answer, we recommend to answer those questions and update it again",
     },
     aboutPart: {
       title1: `${isDocum ? "Docum.ai" : "BlueJourney.pro"} is a platform to create customer service AI`,
 
-      text1: `${
-        isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } is a platform designed to help you create AI-powered customer service solutions. Whether you're an entrepreneur, a customer support professional, or a content creator, our platform empowers you to leverage AI and provide outstanding user experiences. \n Instead of relying on human customer service employees who cost $12 per day to serve 100 customers, each with approximately 10 questions, you can create a bot on our platform to handle this workload for just $3!`,
+      text1: `After uploading a document to your Telegram bot, you can enhance its interaction quality. If the bot's responses are unsatisfactory, simply edit the uploaded document for better accuracy. Alternatively, you can delete it or add more documents to improve the bot's performance.`,
       btn: "Get started",
 
       title2: "You can test your data real time and edit it",
@@ -55,7 +53,7 @@ export const languageEn = {
       title3: "You can upload any type of file",
 
       text3:
-        "You have the flexibility to upload any type of file for training your AI model. Whether it's text documents, spreadsheets, or other formats, you can utilize your data to train the AI model. It's important to note that the quality of the data directly impacts the performance of the AI. Therefore, ensuring the data is of good quality will enable the AI to do a better job in serving your specific needs..",
+        "You can train your AI model using a variety of file types, from text documents to spreadsheets. Remember, the data's quality significantly influences the AI's performance, so high-quality data ensures more effective AI outcomes for your needs.",
     },
     pricingPart: {
       type1: "Basic",
@@ -97,7 +95,7 @@ export const languageEn = {
       docum: `${isDocum ? "Docum.ai" : "BlueJourney.pro"}`,
       "text-down": `${
         isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } - is an artificial intelligence that automates your business.`,
+      } - a new era of Customer Service with AI.`,
       overview: "Overview",
       features: "Features",
       "pricing-down": "Pricing",
