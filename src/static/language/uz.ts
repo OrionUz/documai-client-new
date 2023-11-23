@@ -22,9 +22,7 @@ export const languageUz = {
         isDocum ? "Docum.ai" : "BlueJourney.pro"
       } istalgancha mijozga bir vaqtning o'zida javob bera oladi, hech kim kutib qolishi shart emas.`,
       title2: "Boshqaruv!",
-      text2: `${
-        isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } 24/7 xizmat ko'rsatuvchi yordamchingiz bo'la oladi. Siz bergan ma'lumotdan tashqariga chiqib ketmaydi`,
+      text2: `Siz sifatni to'liq nazorat qila olasiz. Siz mijozlar va botlar o'rtasidagi suhbatlarni ko'rishingiz mumkin.`,
       title3: "Hamyonbop!",
       text3: `${
         isDocum ? "Docum.ai" : "BlueJourney.pro"

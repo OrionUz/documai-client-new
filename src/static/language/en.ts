@@ -21,9 +21,7 @@ export const languageEn = {
         isDocum ? "Docum.ai" : "BlueJourney.pro"
       } can provide immediate responses to an unlimited number of customers when they contact your custom bot.`,
       title2: "Control!",
-      text2: `${
-        isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } offers 24/7 service and can handle unlimited customers with custom knowledge.`,
+      text2: `You will have full control over quality. You can see chats between customers and bots.`,
       title3: "Affordable!",
       text3: `${
         isDocum ? "Docum.ai" : "BlueJourney.pro"

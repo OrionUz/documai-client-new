@@ -23,7 +23,7 @@ function App() {
       ru: { translation: languageRu },
       en: { translation: languageEn },
     },
-    fallbackLng: language || "uz",
+    fallbackLng: language || "en",
     interpolation: { escapeValue: false },
   });
 
