@@ -42,10 +42,10 @@ function PricingInfo() {
               color="light"
               style={{ height: "50px", width: "140px" }}
             >
-              {t(cardInfo?.type)}
+              {t(cardInfo?.type || "")}
             </CustomButton>
             <div className="pricingcard-price">
-              {t(cardInfo?.price)}
+              {t(cardInfo?.price || "")}
               {!!cardInfo?.price_duration && (
                 <span>{t(cardInfo.price_duration)}</span>
               )}

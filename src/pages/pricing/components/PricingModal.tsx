@@ -3,7 +3,7 @@ import { useAppDispatch, useTypedSelector } from "src/app/store";
 import CustomModal from "src/components/common/modal";
 import "./_pricing.scss";
 import PricingSms from "./PricingSms";
-import PricingInfo from "./PricingInfo";
+import PricingInfo from "..";
 
 function PricingModal() {
   const { billingVisible, billingInfo } = useTypedSelector(
