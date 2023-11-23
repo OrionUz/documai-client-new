@@ -49,7 +49,7 @@ export const aboutcardData = [
   },
   {
     title: "home.aboutPart.title2",
-    description: ["home.aboutPart.text1"],
+    description: ["home.aboutPart.text2"],
     img: require("src/assets/img/home/aboutcard2.png"),
     width: "half",
   },
