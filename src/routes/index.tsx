@@ -16,6 +16,8 @@ import NewsPage from "src/pages/news";
 import NewsIdPage from "src/pages/news/[id]";
 import DocumentsTrainPage from "src/pages/documents/train";
 import DashboardLayout from "src/layout/dashboard";
+import ChatWidget from "src/pages/widget";
+import ChatWidgetId from "src/pages/widget/[id]";
 
 function RoutElements() {
   const { pathname } = useLocation();
@@ -27,6 +29,10 @@ function RoutElements() {
         <Route path="/" element={!acceptMainLayout.includes(path) ? <MainLayout /> : null}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
+          <Route path="widget">
+            <Route path="chat" index element={<ChatWidget />} />
+            <Route path="chat/:projectId" element={<ChatWidgetId />} />
+          </Route>
           <Route path="auth" element={<AuthPage />}>
             <Route path="signin" element={<AuthSignin />} />
             <Route path="signup" element={<AuthSignUp />} />
@@ -49,6 +55,7 @@ function RoutElements() {
             <Route path="chat" element={<ChatPage />} />
             <Route path="bot/:botId" element={<DocumentsPage />} />
           </Route>
+          
         </Route>
 
         <Route path="*" element={<Custom404 />} />
