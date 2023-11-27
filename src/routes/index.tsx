@@ -29,7 +29,7 @@ function RoutElements() {
         <Route path="/" element={!acceptMainLayout.includes(path) ? <MainLayout /> : null}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
-          <Route path="widget">
+          <Route path="embed">
             <Route path="chat" index element={<ChatWidget />} />
             <Route path="chat/:projectId" element={<ChatWidgetId />} />
           </Route>

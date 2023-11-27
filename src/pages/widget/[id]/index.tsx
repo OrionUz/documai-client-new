@@ -34,6 +34,9 @@ const ChatBox = () => {
   };
 
   const switchChatWindow = () => {
+    if(!open && !messages.length) {
+      setMessages([...messages, { text: "Hello, how can I help you?", sender: 'assistant' }]);
+    }
     emitEvent('showChat', { isOpen: !open, })
     setOpen(val => !val)
   }
@@ -45,7 +48,7 @@ const ChatBox = () => {
 
   const sendApiQuestion = async (message: string) => {
     try {
-      const response = await fetch("http://localhost:7002/api/chat/widget", { method: 'POST', body: JSON.stringify({
+      const response = await fetch("https://docum.ai/api/chat/widget", { method: 'POST', body: JSON.stringify({
         projectId: params?.projectId,
         question: message
       })})
@@ -55,7 +58,7 @@ const ChatBox = () => {
     }
   }
   
-  console.log('params?.projectId', params?.projectId)
+  // console.log('params?.projectId', params?.projectId)
   return (
     <div style={{
       display: 'flex',
