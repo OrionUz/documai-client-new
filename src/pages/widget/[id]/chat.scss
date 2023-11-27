@@ -1,0 +1,278 @@
+@import "src/styles/variables.scss";
+
+.chat {
+  display: none;
+  position: absolute;
+  right: 2.4rem;
+  bottom: 10.4rem;
+  width: 40rem;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: #878a99 0px 5px 15px 0px;
+  background-color: #f2f2f7;
+
+  &-opened {
+    display: flex;
+  }
+
+  &-float {
+    box-shadow: #878a99 0px 5px 15px 0px;
+  }
+
+  &-header {
+    text-align: end;
+    padding: 0.6rem;
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      cursor: pointer;
+
+      path {
+        stroke: #495057;
+      }
+    }
+  }
+
+  &-content {
+    height: 50vh;
+    padding: 16px 0;
+    overflow-y: auto;
+    @extend .scroll;
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  }
+
+  &-message {
+    width: calc(100% - 3.2rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    &-row {
+      display: flex;
+      align-items: flex-end;
+      column-gap: 8px;
+      margin: 8px 0;
+    }
+    &-box {
+      white-space: pre-wrap;
+      max-width: 500px;
+      border-radius: 8px;
+      padding: 6px 12px;
+      border: none;
+      color: #495057;
+      background-color: #f3f6f9;
+      font-size: 14px;
+      line-height: 24px;
+      min-height: 36px;
+      box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+
+      .ant-table-thead {
+        display: none;
+      }
+      .ant-table-cell {
+        padding: 8px !important;
+
+        svg path {
+          fill: white;
+        }
+      }
+    }
+    &-user {
+      background-color: #45cb85;
+      color: #fff;
+      margin-left: auto;
+    }
+    &-loading {
+      min-width: 60px;
+    }
+    &-ref {
+      transform: rotatex(90deg) !important;
+      height: 1px !important;
+      width: 1px !important;
+    }
+    &-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+      @include flex-center;
+      flex-shrink: 0;
+
+      svg {
+        width: 20px;
+        height: 20px;
+
+        path {
+          fill: #c7c4d5;
+        }
+      }
+    }
+
+    &-ai {
+      padding-left: 16px;
+    }
+  }
+
+  &-nodata {
+    p {
+      display: inline-block;
+      padding: 12px 16px;
+      border-radius: 16px;
+
+      font-weight: 500;
+      font-size: 18px;
+      color: #fff;
+    }
+  }
+
+  &-input {
+    width: 100%;
+    padding: 1.6rem;
+    background-color: #fff;
+
+    border-radius: 0 0 8px 8px;
+
+    @include flex-center;
+    column-gap: 8px;
+
+    .ant-input {
+      height: 3.7rem;
+      border: none;
+      background-color: #f3f6f9;
+      font-size: 1.3rem;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .ant-btn {
+      width: 5rem;
+      height: 3.7rem;
+      background-color: #45cb85 !important;
+      border: none;
+      @include flex-center;
+
+      &-primary:disabled {
+        background-color: #f3f6f9 !important;
+      }
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  &-doctor {
+    @include flex;
+    column-gap: 24px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 16px;
+
+    &-loading {
+      width: 100%;
+      height: 100%;
+
+      @include flex-center;
+      column-gap: 8px;
+    }
+
+    &-info {
+      h2 {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19;
+        color: #495057;
+      }
+      p {
+        font-size: 13px;
+        line-height: 20px;
+        color: #878a99;
+      }
+    }
+
+    a {
+      @include flex;
+      column-gap: 4px;
+
+      font-size: 13px;
+      line-height: 20px;
+      color: #878a99;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+/**
+   * ==============================================
+   * Dot Flashing
+   * ==============================================
+   */
+
+$dark_bold: #ced4da;
+.dot-flashing {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  top: 6px;
+  left: 12px;
+  border-radius: 5px;
+  background-color: $dark_bold;
+  color: $dark_bold;
+  animation: dot-flashing 1s infinite linear alternate;
+  animation-delay: 0.5s;
+}
+.dot-flashing::before,
+.dot-flashing::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+.dot-flashing::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: $dark_bold;
+  color: $dark_bold;
+  animation: dot-flashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+.dot-flashing::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: $dark_bold;
+  color: $dark_bold;
+  animation: dot-flashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dot-flashing {
+  0% {
+    background-color: $dark_bold;
+  }
+  50%,
+  100% {
+    background-color: #45cb85;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .chat {
+    width: 30rem;
+  }
+}

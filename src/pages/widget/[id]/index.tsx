@@ -1,72 +1,79 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import ChatWindow from '../components/ChatWindow';
-import ChatIcon from '../components/ChatIcon';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import ChatWindow from "../components/ChatWindow";
+import ChatIcon from "../components/ChatIcon";
+import { useSendChatWidgetMutation } from "src/app/services/chat";
+import "./chat.scss";
 
 export interface IWidgetMessage {
   text: string;
-  sender: 'user' | 'assistant'
+  sender: "user" | "assistant";
 }
 
-export type EventType = 'showChat'
+export type EventType = "showChat";
 
 const ChatBox = () => {
-  const params = useParams()
+  const params = useParams();
   const [messages, setMessages] = useState<IWidgetMessage[]>([]);
-  const [open, setOpen] = useState(false)
-  const [inputValue, setInputValue] = useState('');
+  const [open, setOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
-    window.addEventListener('message', (e) => {
-    })
+    window.addEventListener("message", (e) => {});
 
-    return () => window.removeEventListener('message', (e) => {
-      console.log('removed', e)
-    })
-  }, [])
-
-  const sendMessage = async () => {
-    if (inputValue.trim() !== '') {
-      const response = await sendApiQuestion(inputValue)
-      setMessages([...messages, { text: inputValue, sender: 'user' }, { text: response, sender: 'assistant' }]);
-      setInputValue('');
-    }
-  };
+    return () =>
+      window.removeEventListener("message", (e) => {
+        console.log("removed", e);
+      });
+  }, []);
 
   const switchChatWindow = () => {
-    if(!open && !messages.length) {
-      setMessages([...messages, { text: "Hello, how can I help you?", sender: 'assistant' }]);
+    if (!open && !messages.length) {
+      setMessages([...messages, { text: "Hello, how can I help you?", sender: "assistant" }]);
     }
-    emitEvent('showChat', { isOpen: !open, })
-    setOpen(val => !val)
-  }
+    emitEvent("showChat", { isOpen: !open });
+    setOpen((val) => !val);
+  };
 
   const emitEvent = (type: EventType, payload: any) => {
     const message = JSON.stringify({ type, payload });
-    window.parent?.postMessage(message, '*'); // '*' can be replaced with a specific target origin for security
+    window.parent?.postMessage(message, "*"); // '*' can be replaced with a specific target origin for security
   };
 
-  const sendApiQuestion = async (message: string) => {
-    try {
-      const response = await fetch("https://docum.ai/api/chat/widget", { method: 'POST', body: JSON.stringify({
-        projectId: params?.projectId,
-        question: message
-      })})
-      return (await response.json())?.message
-    } catch (error) {
-      return "Internal server occured"
+  const [sendQuestion, { isLoading, data }] = useSendChatWidgetMutation();
+  const sendApiQuestion = async () => {
+    if (params?.projectId && inputValue.trim() !== "") {
+      sendQuestion({ projectId: params?.projectId, question: inputValue });
     }
-  }
-  
+  };
+
+  useEffect(() => {
+    if (data) {
+      setMessages([...messages, { text: data?.message, sender: "assistant" }]);
+      setInputValue("");
+    }
+  }, [data]);
+
   // console.log('params?.projectId', params?.projectId)
   return (
-    <div style={{
-      display: 'flex',
-    }}>
-      {!open && <ChatIcon onClick={switchChatWindow}/>}
-      {open && (<ChatWindow inputValue={inputValue} messages={messages} onChange={setInputValue} sendMessage={sendMessage}/>)}
+    <div
+      style={{
+        display: "flex",
+      }}
+    >
+      {!open && <ChatIcon onClick={switchChatWindow} />}
+      {open && (
+        <ChatWindow
+          inputValue={inputValue}
+          messages={messages}
+          onChange={setInputValue}
+          sendMessage={sendApiQuestion}
+          switchChatWindow={switchChatWindow}
+          isLoading={isLoading}
+        />
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default ChatBox
+export default ChatBox;

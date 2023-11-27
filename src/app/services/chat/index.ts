@@ -39,6 +39,16 @@ export const chatApi = api.injectEndpoints({
       invalidatesTags: [{ type: "Chat", id: "MESSAGE" }],
     }),
 
+    //Public chat query endpoint
+    sendChatWidget: build.mutation<IChatQueryRes, IChatQuery>({
+      query: (body) => ({
+        url: "chat/widget",
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: [{ type: "Chat", id: "MESSAGE" }],
+    }),
+
     //Delete chat endpoint
     deleteChat: build.mutation<IDeleteRes, number>({
       query(id) {
@@ -57,6 +67,7 @@ export const {
   useLazyGetChatQuery,
   useSendChatQueryMutation,
   useSendPublicChatQueryMutation,
+  useSendChatWidgetMutation,
   useDeleteChatMutation,
 } = chatApi;
 

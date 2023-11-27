@@ -1,16 +1,15 @@
-import React from 'react';
+import { WechatOutlined } from "@ant-design/icons";
+import { FloatButton } from "antd";
 
-const ChatIcon = ({ onClick }: {onClick: () => void}) => {
+const ChatIcon = ({ onClick }: { onClick: () => void }) => {
   return (
-    <div onClick={onClick} style={{
-      width: 50,
-      height: 50,
-      backgroundColor: 'white',
-      borderRadius: 100,
-      position: 'absolute',
-      bottom: 0,
-      right: 0
-    }}/>
+    <FloatButton
+      icon={<WechatOutlined onClick={onClick} style={{ fontSize: 24, color: "blueviolet" }} />}
+      shape="square"
+      type="primary"
+      style={{ right: 24 }}
+      className="chat-float"
+    />
   );
 };
 

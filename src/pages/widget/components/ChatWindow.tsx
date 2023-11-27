@@ -1,52 +1,75 @@
-import React from 'react'
-import { Layout, Avatar, Typography, Input, Button } from 'antd';
-import { IWidgetMessage } from '../[id]';
-const { Header, Footer, Content } = Layout;
-const { Title } = Typography;
+import { Input } from "antd";
+import { useRef } from "react";
+import { CloseIcon, MessageSendSvg } from "src/assets/svg";
+import CustomButton from "src/components/common/button";
+import { IWidgetMessage } from "../[id]";
+import ChatMessage from "./ChatMessage";
 
 interface IProps {
-  messages: IWidgetMessage[]
+  messages: IWidgetMessage[];
   inputValue: string;
   onChange: (text: string) => void;
   sendMessage: () => void;
+  switchChatWindow: () => void;
+  isLoading: boolean;
 }
-const ChatWindow = (props: IProps) => {
-  const { messages } = props
+const ChatWindow = ({ messages, inputValue, onChange, sendMessage, switchChatWindow, isLoading }: IProps) => {
+  //Declaring ref and force focus to end of chat
+  const endingRef = useRef<HTMLInputElement>(null);
+  const forceFocusEnding = () => {
+    endingRef && endingRef?.current?.focus();
+  };
+
+  const handleKeypress = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter") {
+      sendMessage();
+      forceFocusEnding();
+    }
+  };
+
   return (
-    <Layout style={{ position: 'absolute', bottom: 0, right: 0, height: 680, width: 384 }}>
-    <Header className='flex flex-row items-center justify-between bg-[color] p-4'>
-      <Title level={4} className="m-0 text-white">Brian AI</Title>
-      <Avatar size="large" src="path_to_avatar_image" className="mr-2"  />
-    </Header>
-    <Content style={{ padding: '0 24px', overflow: 'auto',  }}>
-    <div className="flex flex-col">
-      {messages.map((message, index) => (
-      <div
-        key={index}
-        style={{
-          backgroundColor: message.sender === 'user' ? 'green': 'blue',
-          margin: 10,
-          marginLeft: message.sender === 'user' ? 'auto': 0,
-          padding: 3,
-          width: '60%'
-        }}
-      >
-        <div style={{ fontSize: 50}}>{message.text}</div>
+    <div className={`chat`}>
+      <div className="chat-header">
+        <CloseIcon onClick={switchChatWindow} />
       </div>
-    ))}
+      <div className="chat-content">
+        {messages?.map((item, index) => {
+          return (
+            <div key={index + "message"} className="chat-message">
+              {item.sender === "user" && <ChatMessage text={item.text} isUser />}
+              {item.sender === "assistant" && <ChatMessage response={item.text} />}
+            </div>
+          );
+        })}
+        {isLoading && (
+          <div className="chat-message">
+            <ChatMessage loading />
+          </div>
+        )}
+        <input ref={endingRef} className="chat-message-ref" />
       </div>
-    </Content>
 
-    <Footer>
-      <Input
-        value={props.inputValue}
-        onChange={e => props.onChange(e.target.value)}
-        onPressEnter={props.sendMessage}
-      />
-      <Button onClick={props.sendMessage}>Send</Button>
-    </Footer>
-  </Layout>
-  )
-}
+      <div className="chat-input">
+        <Input
+          value={inputValue}
+          onChange={(e) => onChange(e.target.value)}
+          onKeyUpCapture={handleKeypress}
+          placeholder="O'zingizni qiziqtirgan savolni yozing"
+          size="large"
+          disabled={isLoading}
+        />
+        <CustomButton
+          onClick={() => {
+            sendMessage();
+            forceFocusEnding();
+          }}
+          icon={<MessageSendSvg />}
+          disabled={!inputValue}
+          loading={isLoading}
+        />
+      </div>
+    </div>
+  );
+};
 
-export default ChatWindow
+export default ChatWindow;
