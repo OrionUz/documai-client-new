@@ -1,160 +1,161 @@
-.pricing{
-    width: 100%;
-    min-height: 100vh;
-    padding-top: 160px;
+.pricing {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 160px;
 
-    &-head{
-      &-text{
-        color: #c1c2c8;
-        font-size: 16px;
-        font-weight: 500;
-      }
-
-      &-plan{
-        display: flex;
-        gap: 20px;
-      }
-      
-
-      &-plans{
-        margin-top: 16px;
-        //background-color: #664DFF;
-        width: 210px;
-
-        &-right{
-          display: flex;
-          align-items: baseline;
-        }
-        
-        &-btn{
-          display: flex;
-          gap: 8px;
-          align-items: center;
-        }
-        &-price{
-          font-size: 24px;
-          color: white;
-        }
-
-        &-text{
-          color: #c1c2c8;
-          
-        }
-        button{
-          background-color: #212934;
-          padding: 6px 26px;
-          border-top: 3px solid #664DFF;
-          border-bottom: 1.5px solid #664DFF;
-          border-left: #c1c2c8;
-          border-right: #c1c2c8;
-          border-radius: 12px;
-
-          &:active,
-          &:focus{
-            background-color: #664DFF;
-          }
-        }
-      }
+  &-head {
+    &-text {
+      color: #c1c2c8;
+      font-size: 16px;
+      font-weight: 500;
     }
 
-    &-main{
-      margin-top: 40px;
+    &-plan {
+      display: flex;
+      gap: 20px;
+    }
 
-      &-cardList{
+    &-plans {
+      margin-top: 16px;
+      //background-color: #664DFF;
+      width: 210px;
+
+      &-right {
         display: flex;
-        gap: 24px;
+        align-items: baseline;
       }
 
-      &-text{
-        font-size: 16px;
-        font-weight: 500;
+      &-btn {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      &-price {
+        font-size: 24px;
+        color: white;
+      }
+
+      &-text {
         color: #c1c2c8;
       }
-      &-cardInfo{
-        margin-top: 18px;
+      button {
         background-color: #212934;
-        padding: 16px 16px;
-        border-radius: 24px;
-        // border-top: 4px solid #664DFF;
-        // border-bottom: 2px solid #664DFF;
-        width: 360px;
-        background: linear-gradient(140deg, rgba(#664DFF, .5), rgba(white, 0) 20%),
-        linear-gradient(220deg, rgba(#664DFF, .4), rgba(white, 0) 30%),
-        #212934;
-        // box-shadow: 0px 4px 20px 0px rgba(102, 77, 255, 0.20);
+        padding: 6px 26px;
+        border-top: 3px solid #664dff;
+        border-bottom: 1.5px solid #664dff;
+        border-left: #c1c2c8;
+        border-right: #c1c2c8;
+        border-radius: 12px;
 
         &:active,
-        &:focus{
-          border-top: 4px solid #664DFF;
-          border-bottom: 2px solid #664DFF;
+        &:focus {
+          background-color: #664dff;
         }
-      }
-      &-info{
-        margin-top: 65px;
-      }
-      &-card{
-        margin-top: 18px;
-
-        &-details{
-          display: flex;  
-          justify-content: space-between;
-          margin-top: 16px;
-        }
-
-        &-cash{
-          font-size: 24px;
-          color: #fff;
-        }
-        &-date{
-          display: flex;
-          justify-content: space-around;
-          gap: 16px;
-        }
-
-        &-number{
-          font-size: 16px;
-          color: #fff;
-        }
-
-        &-holder{
-          font-size: 12px;
-          color:  #898A90;
-          text-transform: uppercase;
-          margin-top: 4px;
-        }
-      }
-
-      &-add{
-        margin-top: 18px;
-        background-color: #212934;
-        padding: 16px 16px;
-        border-radius: 24px;
-        border-top: 4px solid #565C64;
-        border-bottom: 2px solid #565C64;
-        width: 360px;
-        background: #212934;
-        position: relative;
-
-        &-middle{
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-
-        button{
-          background: none;
-          border-radius: 100%;
-          border: #212934;
-        }
-      }
-
-      &-buttons{
-        display: flex;
-        gap: 12px;
-        margin-top: 32px;
       }
     }
+  }
+
+  &-main {
+    margin-top: 40px;
+
+    &-cardList {
+      display: flex;
+      gap: 24px;
+    }
+
+    &-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: #c1c2c8;
+    }
+    &-cardInfo {
+      margin-top: 18px;
+      background-color: #212934;
+      padding: 16px 16px;
+      border-radius: 24px;
+      // border-top: 4px solid #664DFF;
+      // border-bottom: 2px solid #664DFF;
+      width: 360px;
+      background: linear-gradient(140deg, rgba(#664dff, 0.5), rgba(white, 0) 20%),
+        linear-gradient(220deg, rgba(#664dff, 0.4), rgba(white, 0) 30%), #212934;
+      // box-shadow: 0px 4px 20px 0px rgba(102, 77, 255, 0.20);
+
+      &:active,
+      &:focus {
+        border-top: 4px solid #664dff;
+        border-bottom: 2px solid #664dff;
+      }
+    }
+    &-info {
+      margin-top: 65px;
+    }
+    &-card {
+      margin-top: 18px;
+
+      &-details {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+      }
+
+      &-cash {
+        font-size: 24px;
+        color: #fff;
+        text-align: center;
+      }
+      &-date {
+        display: flex;
+        justify-content: space-around;
+        gap: 16px;
+      }
+
+      &-number {
+        font-size: 16px;
+        color: #fff;
+      }
+
+      &-holder {
+        font-size: 12px;
+        color: #898a90;
+        text-transform: uppercase;
+        margin-top: 4px;
+      }
+    }
+
+    &-add {
+      margin-top: 18px;
+      background-color: #212934;
+      padding: 16px 16px;
+      border-radius: 24px;
+      border-top: 4px solid #565c64;
+      border-bottom: 2px solid #565c64;
+      width: 360px;
+      background: #212934;
+      position: relative;
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-middle {
+        text-align: center;
+      }
+
+      button {
+        background: none;
+        border-radius: 100%;
+        border: #212934;
+        cursor: pointer;
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+  }
 
   .container {
     position: relative;

@@ -123,12 +123,14 @@ export const languageRu = {
       who1: "CEO",
       name2: "Shohruxmirzo. T.",
       who2: "CTO",
-      name3: "Asror. N",
+      name3: "Asror. N.",
       who3: "Programmer",
-      name4: "Mirsaid. B",
+      name4: "Mirsaid. B.",
       who4: "UX/UI",
-      name5: "Vosilxo'ja. N",
+      name5: "Vosilxo'ja. N.",
       who5: "SMM manager",
+      name6: "Avazbek. S.",
+      who6: "SWE",
     },
 
     projects: "Наши проекты",
@@ -186,9 +188,8 @@ export const languageRu = {
       "Используйте это для неанглоязычных документов для перевода и обучения, чтобы получить наилучшие результаты.",
     selection: "Выберите пользователя для просмотра сообщений",
     keywords: "Ключевые слова",
-    newKeyword: 'Новый',
+    newKeyword: "Новый",
     keywordHelp: "*** Пожалуйста, добавляйте только одно ключевое слово на английском языке для каждого файла. ***",
-
   },
 
   sign: {

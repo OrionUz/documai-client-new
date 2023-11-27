@@ -1,13 +1,18 @@
 import { GoogleLogin } from "@react-oauth/google";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useLoginMutation } from "src/app/services/auth";
 import { isMobile } from "src/static/const";
 
 function AuthSignin() {
   const navigate = useNavigate();
   const [login, { isSuccess }] = useLoginMutation();
+  const [searchParams] = useSearchParams();
+  const redirect = searchParams.get("redirect");
 
-  if (isSuccess) navigate("/dashboard/document");
+  if (isSuccess) {
+    if (redirect) navigate(redirect);
+    else navigate("/dashboard/document");
+  }
 
   return (
     <div className="auth-form">

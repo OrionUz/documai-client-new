@@ -91,9 +91,7 @@ export const languageEn = {
       demo: "View demo",
       start: "Get started",
       docum: `${isDocum ? "Docum.ai" : "BlueJourney.pro"}`,
-      "text-down": `${
-        isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } - a new era of Customer Service with AI.`,
+      "text-down": `${isDocum ? "Docum.ai" : "BlueJourney.pro"} - a new era of Customer Service with AI.`,
       overview: "Overview",
       features: "Features",
       "pricing-down": "Pricing",
@@ -123,12 +121,14 @@ export const languageEn = {
       who1: "CEO",
       name2: "Shohruxmirzo. T.",
       who2: "CTO",
-      name3: "Asror. N",
+      name3: "Asror. N.",
       who3: "Programmer",
-      name4: "Mirsaid. B",
+      name4: "Mirsaid. B.",
       who4: "UX/UI",
-      name5: "Vosilxo'ja. N",
+      name5: "Vosilxo'ja. N.",
       who5: "SMM manager",
+      name6: "Avazbek. S.",
+      who6: "SWE",
     },
 
     projects: "Our projects",
@@ -185,7 +185,7 @@ export const languageEn = {
     hovertranslation: "Use this for non-English documents to translate and train to obtain the best results",
     selection: "Select a user to see messaging",
     keywords: "Keywords",
-    newKeyword: 'New',
+    newKeyword: "New",
     keywordHelp: "*** Please add only one keyword in English for each file ***",
   },
 

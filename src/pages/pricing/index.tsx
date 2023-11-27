@@ -4,10 +4,7 @@ import Plan from "./components/plan";
 import { pricingCardData, pricingPlanData } from "./const";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useTypedSelector } from "src/app/store";
-import {
-  saveBillingCardInfo,
-  setBillingModal,
-} from "src/app/slices/billingcardSlice";
+import { saveBillingCardInfo, setBillingModal } from "src/app/slices/billingcardSlice";
 import PricingModal from "src/pages/pricing/components/PricingModal";
 import CustomButton from "src/components/common/button";
 
@@ -21,7 +18,7 @@ function PricingInfo() {
       if (isAuthenticated) {
         dispatch(setBillingModal(true));
         dispatch(saveBillingCardInfo());
-      } else navigate("/auth");
+      } else navigate("/auth/signin?redirect=/pricing");
     }
   };
 
@@ -53,10 +50,7 @@ function PricingInfo() {
             </div>
           </div>
           <div className="pricing-main-buttons">
-            <CustomButton
-              className="button button-light undefined undefined undefined"
-              type="submit"
-            >
+            <CustomButton className="button button-light undefined undefined undefined" type="submit">
               Payment
             </CustomButton>
             <CustomButton>Delete</CustomButton>
