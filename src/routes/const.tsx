@@ -1,1 +1,1 @@
-export const acceptMainLayout = ["dashboard", "auth"];
+export const acceptMainLayout = ["dashboard", "auth", "embed"];
