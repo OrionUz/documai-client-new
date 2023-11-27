@@ -2,7 +2,7 @@ export interface IntroCardProps {
   item: {
     title: string;
     description: string;
-    img: string;
+    icon: JSX.Element;
   };
 }
 

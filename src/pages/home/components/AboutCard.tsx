@@ -1,16 +1,16 @@
-import CustomButton from "src/components/common/button";
 import { AboutCardProps } from "../type";
 import { useTranslation } from "react-i18next";
 import TranslatedComponents from "./TranslatedTextWithNewLines";
+import CustomButton from "src/components/common/button";
 
 function AboutCard({ item }: AboutCardProps) {
   const { t } = useTranslation();
   return (
     <div className={`aboutcard aboutcard-${item.width}`}>
       <div className="aboutcard-left">
-        <h2>{t(item.title)}</h2>
+        {<h2>{t(item.title)}</h2>}
         {item.description.map((p) => {
-          return <TranslatedComponents text={p} key={p}/>;
+          return <TranslatedComponents text={p} key={p} />;
         })}
 
         {item.button ? (

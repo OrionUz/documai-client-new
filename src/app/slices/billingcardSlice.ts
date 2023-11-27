@@ -1,12 +1,12 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IBillingCard } from "../services/payment/type";
+import { IBillingCard, IVerifyClickToken } from "../services/payment/type";
 import { PricingCardProps } from "src/pages/home/type";
 import { billingCardsApi } from "../services/payment";
 
 export interface IBillingState {
   cards?: IBillingCard[];
   cardInfo?: PricingCardProps["item"];
-  billingInfo?: Partial<IBillingCard>;
+  billingInfo?: Partial<IVerifyClickToken>;
   billingVisible: boolean;
 }
 

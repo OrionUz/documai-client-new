@@ -10,7 +10,7 @@ export const languageEn = {
   home: {
     header: "Create your AI customer service assistant",
     video: "https://youtu.be/mtWxYUG8qjA",
-    text: "We leverage artificial intelligence to provide customized, efficient, and round-the-clock customer service solutions. Our AI agents can be tailored to your business, learning and adapting to provide precise, speedy responses. Automate repetitive tasks, enhance customer satisfaction, and increase profitability with our intelligent and scalable AI customer service platform. Join us to redefine customer service for the better.",
+    text: "We will help you develop a custom-knowledge AI for customer service.",
     "btn-text": "START CREATING",
     work: "How it works",
     about: "About",
@@ -20,21 +20,19 @@ export const languageEn = {
       text1: `${
         isDocum ? "Docum.ai" : "BlueJourney.pro"
       } can provide immediate responses to an unlimited number of customers when they contact your custom bot.`,
-      title2: "Custom AI",
-      text2: `${
-        isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } offers 24/7 service and can handle unlimited customers with custom knowledge.`,
-      title3: "Affordable",
+      title2: "Control!",
+      text2: `You'll maintain complete quality control, with access to view all customer and bot interactions.`,
+      title3: "Affordable!",
       text3: `${
         isDocum ? "Docum.ai" : "BlueJourney.pro"
       } costs four times less than hiring a human customer service employee.`,
     },
     usage: {
       info1:
-        "It is important for your business to collect data regarding customer inquiries and corresponding answers. This information should be consolidated into a single file. If you require assistance, our team is always available to help.",
-      info2: `To proceed with the integration of the AI model into the bot on ${
+        "Our team is available to help you compile customer inquiries and responses into one comprehensive file, essential for improving your business.",
+      info2: `Please provide a bot username and token to integrate the AI model into your ${
         isDocum ? "Docum.ai" : "BlueJourney.pro"
-      }, please provide us with a bot username and token. Once we receive the necessary information, we will incorporate the AI model that is knowledgeable about your business.`,
+      } bot. Once received, we'll equip the bot with AI tailored to your business knowledge.`,
       info3:
         "After the integration is complete, You can engage with the chat bot,  and ask questions specific to your business. AI will carefully note down any questions it cannot answer, we recommend to answer those questions and update it again",
     },
@@ -48,14 +46,12 @@ export const languageEn = {
 
       title2: "You can test your data real time and edit it",
 
-      text2: `With ${
-        isDocum ? "Docum.ai" : "BlueJourney.pro"
-      }, you have the ability to test and edit your data in real time. After uploading your document, you can connect it to a Telegram bot. If you're unsatisfied with the bot's answers, you can easily make edits to the uploaded document, delete it, or add more documents as needed. This flexibility allows you to refine and improve the performance of your AI-powered customer service bot.`,
+      text2: `After uploading a document to your Telegram bot, you can enhance its interaction quality. If the bot's responses are unsatisfactory, simply edit the uploaded document for better accuracy. Alternatively, you can delete it or add more documents to improve the bot's performance.`,
 
       title3: "You can upload any type of file",
 
       text3:
-        "You have the flexibility to upload any type of file for training your AI model. Whether it's text documents, spreadsheets, or other formats, you can utilize your data to train the AI model. It's important to note that the quality of the data directly impacts the performance of the AI. Therefore, ensuring the data is of good quality will enable the AI to do a better job in serving your specific needs..",
+        "You can train your AI model using a variety of file types, from text documents to spreadsheets. Remember, the data's quality significantly influences the AI's performance, so high-quality data ensures more effective AI outcomes for your needs.",
     },
     pricingPart: {
       type1: "Basic",
@@ -97,9 +93,7 @@ export const languageEn = {
       docum: `${isDocum ? "Docum.ai" : "BlueJourney.pro"}`,
       "text-down": `${
         isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } is an artificial intelligence platform that offers automation solutions for your business. By harnessing the power of AI, ${
-        isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } enables you to streamline and automate various processes, increasing efficiency and productivity within your organization.`,
+      } - a new era of Customer Service with AI.`,
       overview: "Overview",
       features: "Features",
       "pricing-down": "Pricing",

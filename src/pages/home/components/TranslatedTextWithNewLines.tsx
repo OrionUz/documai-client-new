@@ -1,5 +1,5 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   text: string;
@@ -9,7 +9,7 @@ interface IProps {
 const TranslatedComponents = (props: IProps) => {
   const { t } = useTranslation();
 
-  const texts: string[] = t(props.text).split('\n');
+  const texts: string[] = t(props.text).split("\n");
   return (
     <div>
       {texts?.map((text) => (
@@ -24,4 +24,4 @@ const TranslatedComponents = (props: IProps) => {
   );
 };
 
-export default TranslatedComponents
+export default TranslatedComponents;

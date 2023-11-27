@@ -1,17 +1,15 @@
 import {
   CopyRightSvg,
-  DiscordSvg,
   FacebookSvg,
   InstagramSvg,
   MessageSendSvg,
-  PlaySvg,
-  TwitterSvg,
+  TwoCircleSvg,
 } from "src/assets/svg";
-import CustomButton from "src/components/common/button";
 import CustomSlider from "src/components/common/slider";
 import { companies } from "./const";
 import { useTranslation } from "react-i18next";
 import { isDocum } from "src/static/const";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const { t } = useTranslation();
@@ -24,8 +22,14 @@ function Footer() {
           <CustomSlider counts={5} arrows={false} autoplay dots>
             {companies.map((item) => {
               return (
-                <div className="footer-companies-image" key={item}>
-                  <img src={require(`src/assets/img/companies/${item}.png`)} alt={item} />
+                <div
+                  className={`footer-companies-image footer-companies-image-${item}`}
+                  key={item}
+                >
+                  <img
+                    src={require(`src/assets/img/companies/${item}.png`)}
+                    alt={item}
+                  />
                 </div>
               );
             })}
@@ -34,21 +38,19 @@ function Footer() {
 
         {/* Main content */}
         <div className="footer-content">
-          <div className="footer-content-header">
+          {/*<div className="footer-content-header">
             <h2>{t("home.footer.description")}</h2>
-            <p>{t("home.footer.text")}</p>
-            <div className="footer-content-buttons">
-              <CustomButton color="white" icon={<PlaySvg />} left_icon>
-                {t("home.footer.demo")}
-              </CustomButton>
-              <CustomButton color="light">{t("home.footer.start")}</CustomButton>
+            <div className="footer-content-pics">
+              <img src={require("src/assets/img/home/git.png")} alt="" />
             </div>
-          </div>
+          </div>*/}
 
           <div className="footer-content-main">
             <div className="footer-content-left">
-              <h1>{t("home.footer.docum")}</h1>
-              <p>{t("home.footer.text-down")}</p>
+              <div>
+                <h1>{t("home.footer.docum")}</h1>
+                <p>{t("home.footer.text-down")}</p>
+              </div>
               <ul>
                 <li>{t("home.footer.overview")}</li>
                 <li>{t("home.footer.features")}</li>
@@ -61,26 +63,32 @@ function Footer() {
 
             <div className="footer-content-right">
               <div>
-                <MessageSendSvg />
+                <div className="footer-icon">
+                  <TwoCircleSvg />
+                </div>
+                <Link to="#">
+                  <MessageSendSvg />
+                </Link>
               </div>
               <div>
-                <DiscordSvg />
-              </div>
-              <div>
+                <div className="footer-icon">
+                  <TwoCircleSvg />
+                </div>
                 <InstagramSvg />
               </div>
               <div>
+                <div className="footer-icon">
+                  <TwoCircleSvg />
+                </div>
                 <FacebookSvg />
-              </div>
-              <div>
-                <TwitterSvg />
               </div>
             </div>
           </div>
 
           <div className="footer-content-personal">
             <p>
-              <CopyRightSvg /> 2023 {isDocum ? "Docum.ai" : "BlueJourney.pro"}, All right reserved.
+              <CopyRightSvg /> 2023 {isDocum ? "Docum.ai" : "BlueJourney.pro"},
+              All right reserved.
             </p>
             <div>
               <p>Terms of use</p>

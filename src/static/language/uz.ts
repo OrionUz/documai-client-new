@@ -9,9 +9,9 @@ export const languageUz = {
   },
 
   home: {
-    header: "Mijozlarga xizmat ko'rsata oladigan su'niy intellekt yordamchisini yarating",
+    header: "Mijozlarga xizmat ko'rsata oladigan sun'iy intellekt",
     video: "https://youtu.be/JEdmI7oivhI",
-    text: "Siz unga xohlagan narsani o'rgatishingiz mumkin va u mijozlarning savollariga javob bera oladi. Siz taqdim etgan ma'lumotlarga asoslanib javob bera oladigan Sun'iy intellekt yaratishingizga yordam beramiz.",
+    text: "Siz taqdim etgan ma'lumotlarga asoslanib javob bera oladigan Sun'iy intellekt yaratishingizga yordam beramiz.",
     "btn-text": "Demo versiya ko'rish",
     work: "Qanday ishlaydi",
     about: "Haqida",
@@ -21,10 +21,8 @@ export const languageUz = {
       text1: `${
         isDocum ? "Docum.ai" : "BlueJourney.pro"
       } istalgancha mijozga bir vaqtning o'zida javob bera oladi, hech kim kutib qolishi shart emas.`,
-      title2: "Maxsus AI!",
-      text2: `${
-        isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } 24/7 xizmat ko'rsatuvchi yordamchingiz bo'la oladi. Siz bergan ma'lumotdan tashqariga chiqib ketmaydi`,
+      title2: "Boshqaruv!",
+      text2: `Siz sifatni to'liq nazorat qila olasiz. Siz mijozlar va botlar o'rtasidagi suhbatlarni ko'rishingiz mumkin.`,
       title3: "Hamyonbop!",
       text3: `${
         isDocum ? "Docum.ai" : "BlueJourney.pro"
@@ -51,14 +49,12 @@ export const languageUz = {
 
       title2: "Maʼlumotlaringizni real vaqtda sinab koʻrishingiz va tahrirlashingiz mumkin",
 
-      text2: `${
-        isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } yordamida siz real vaqtda ma'lumotlaringizni sinab ko'rish va tahrirlash imkoniyatiga egasiz. Hujjatingizni yuklaganingizdan so'ng uni Telegram botiga ulashingiz mumkin. Agar siz botning javoblaridan qoniqmasangiz, yuklangan hujjatga osongina tahrir qilishingiz, uni o‘chirishingiz yoki kerak bo‘lganda boshqa hujjatlarni qo‘shishingiz mumkin. Ushbu moslashuvchanlik sizga sun'iy intellektga asoslangan mijozlarga xizmat ko'rsatish botini yaxshilash va ish faoliyatini yaxshilash imkonini beradi.`,
+      text2: `Hujjatni Telegram botingizga yuklaganingizdan so'ng uning o'zaro aloqa sifatini oshirishingiz mumkin. Agar botning javoblari qoniqarsiz bo'lsa, aniqroq bo'lishi uchun yuklangan hujjatni tahrirlang. Shu bilan bir qatorda, botning ishlashini yaxshilash uchun uni o'chirishingiz yoki boshqa hujjatlarni qo'shishingiz mumkin.`,
 
       title3: "Siz har qanday turdagi faylni yuklashingiz mumkin",
 
       text3:
-        "AI modelingizni o'rgatish uchun istalgan turdagi faylni yuklash imkoniyati mavjud. Matnli hujjatlar, elektron jadvallar, tasvirlar yoki boshqa formatlar boʻladimi, siz oʻz maʼlumotlaringizdan AI modelini oʻrgatish uchun foydalanishingiz mumkin. Shuni ta'kidlash kerakki, ma'lumotlarning sifati AI ishlashiga bevosita ta'sir qiladi. Shu sababli, ma'lumotlarning sifatli bo'lishini ta'minlash AIga sizning maxsus ehtiyojlaringizni qondirishda yaxshiroq ish qilish imkonini beradi.",
+        "Siz AI modelingizni matnli hujjatlardan elektron jadvallargacha bo'lgan turli xil fayl turlaridan foydalanib o'rgatishingiz mumkin. Esda tutingki, maʼlumotlar sifati sunʼiy intellektning ishlashiga sezilarli darajada taʼsir qiladi, shuning uchun yuqori sifatli maʼlumotlar sizning ehtiyojlaringiz uchun yanada samarali AI natijalarini taʼminlaydi.",
     },
     pricingPart: {
       type1: "Boshlang'ich",
@@ -100,9 +96,7 @@ export const languageUz = {
       docum: `${isDocum ? "Docum.ai" : "BlueJourney.pro"}`,
       "text-down": `${
         isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } - bu sizning biznesingiz uchun avtomatlashtirish yechimlarini taklif qiluvchi platforma. Sun'iy intellekt kuchidan foydalangan holda, ${
-        isDocum ? "Docum.ai" : "BlueJourney.pro"
-      } sizga turli jarayonlarni soddalashtirish va avtomatlashtirish, tashkilotingizdagi samaradorlikni  oshirish imkonini beradi.`,
+      } - biznesingizni avtomatlashtiradigan sun'iy intellektdir.`,
       overview: "Umumiy koʻrinish",
       features: "Xususiyatlari",
       "pricing-down": "Narxlar",

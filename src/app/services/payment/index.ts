@@ -4,8 +4,8 @@ import { ICardsRes, ICreateClickToken, ICreateClickTokenRes, IVerifyClickToken }
 
 export const billingCardsApi = api.injectEndpoints({
   endpoints: (build) => ({
-    getCards: build.query<ICardsRes, number>({
-      query: (orgId) => ({ url: `cards/${orgId}` }),
+    getCards: build.query<ICardsRes, void>({
+      query: () => ({ url: `cards/${ getRootState().auth.profile?.organizationId}` }),
       providesTags: (result) =>
         result
           ? [
