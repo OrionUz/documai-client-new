@@ -1,31 +1,46 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ChatWindow from "../components/ChatWindow";
-import ChatIcon from "../components/ChatIcon";
 import { useSendChatWidgetMutation } from "src/app/services/chat";
-import "./chat.scss";
+import ChatIcon from "../components/ChatIcon";
+import ChatWindow from "../components/ChatWindow";
+import "../widget.scss";
 
 export interface IWidgetMessage {
   text: string;
   sender: "user" | "assistant";
 }
 
-export type EventType = "showChat";
+export const WIDGET_MESSAGES = "DOCUM_AI_WIDGET_MESSAGES";
+export const defaultMessages = localStorage.getItem(WIDGET_MESSAGES);
+
+export type EventType = "showChat" | "chatHistory";
 
 const ChatBox = () => {
   const params = useParams();
-  const [messages, setMessages] = useState<IWidgetMessage[]>([]);
-  const [open, setOpen] = useState(false);
+  const [messages, setMessages] = useState<IWidgetMessage[]>(defaultMessages ? JSON.parse(defaultMessages) : []);
+  const [open, setOpen] = useState(true);
   const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
-    window.addEventListener("message", (e) => {});
+    window.addEventListener("message", (e) => {
+      // const { type, payload } = JSON.parse(e.data);
+      // if (type === "chatbotLoaded") {
+      //   console.log("chatbotLoaded", payload);
+      //   setMessages(payload.chatHistory);
+      // }
+    });
 
     return () =>
       window.removeEventListener("message", (e) => {
         console.log("removed", e);
       });
   }, []);
+
+  useEffect(() => {
+    if (params?.projectId) {
+      emitEvent("chatHistory", { chatHistory: messages });
+    }
+  }, [messages]);
 
   const switchChatWindow = () => {
     if (!open && !messages.length) {
@@ -44,24 +59,29 @@ const ChatBox = () => {
   const sendApiQuestion = async () => {
     if (params?.projectId && inputValue.trim() !== "") {
       sendQuestion({ projectId: params?.projectId, question: inputValue });
+      setMessages([...messages, { text: inputValue, sender: "user" }]);
     }
   };
 
   useEffect(() => {
     if (data) {
       setMessages([...messages, { text: data?.message, sender: "assistant" }]);
+      localStorage.setItem(
+        WIDGET_MESSAGES,
+        JSON.stringify([...messages, { text: data?.message, sender: "assistant" }])
+      );
       setInputValue("");
     }
   }, [data]);
 
-  // console.log('params?.projectId', params?.projectId)
   return (
     <div
       style={{
-        display: "flex",
+        height: "100vh",
+        width: "100vw",
       }}
     >
-      {!open && <ChatIcon onClick={switchChatWindow} />}
+      <ChatIcon onClick={switchChatWindow} />
       {open && (
         <ChatWindow
           inputValue={inputValue}
