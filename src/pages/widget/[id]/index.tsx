@@ -34,12 +34,14 @@ const ChatBox = () => {
       window.removeEventListener("message", (e) => {
         console.log("removed", e);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (params?.projectId) {
       emitEvent("chatHistory", { chatHistory: messages });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [messages]);
 
   const switchChatWindow = () => {
@@ -72,6 +74,7 @@ const ChatBox = () => {
       );
       setInputValue("");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   return (
