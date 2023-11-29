@@ -152,7 +152,7 @@ export const languageEn = {
     name1: "Bot username*",
     message1: "Please write bot username*",
     label2: "Bot token*",
-    name2: "botToken",
+    name2: "Bot token",
     message2: "Please write bot  token*",
     label3: "Chatbot name*",
     name3: "displayName",
@@ -187,6 +187,7 @@ export const languageEn = {
     keywords: "Keywords",
     newKeyword: "New",
     keywordHelp: "*** Please add only one keyword in English for each file ***",
+    scriptCodeLabel: "Embed code",
   },
 
   sign: {

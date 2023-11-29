@@ -157,7 +157,7 @@ export const languageUz = {
     name1: "Bot nomi*",
     message1: "Iltimos, bot nomini kiriting*",
     label2: "Bot token*",
-    name2: "botToken",
+    name2: "Bot token",
     message2: "Iltimos, bot token ini kiriting*",
     label3: "Chatbot nomi*",
     name3: "Nom",
@@ -193,6 +193,7 @@ export const languageUz = {
     keywords: "Kalit so'zlar",
     newKeyword: "Yangi",
     keywordHelp: "*** Iltimos, har bir fayl uchun ingliz tilida faqat bitta kalit so'z kiriting ***",
+    scriptCodeLabel: "Kod",
   },
 
   sign: {

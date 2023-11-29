@@ -190,6 +190,7 @@ export const languageRu = {
     keywords: "Ключевые слова",
     newKeyword: "Новый",
     keywordHelp: "*** Пожалуйста, добавляйте только одно ключевое слово на английском языке для каждого файла. ***",
+    scriptCodeLabel: "Код",
   },
 
   sign: {
