@@ -28,6 +28,7 @@ const ChatWindow = ({ messages, inputValue, onChange, sendMessage, switchChatWin
 
   useEffect(() => {
     onMessageChange()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [messages])
 
   const handleKeypress = (e: React.KeyboardEvent<HTMLDivElement>) => {
