@@ -10,44 +10,68 @@ export interface IWidgetMessage {
   sender: "user" | "assistant";
 }
 
-export const WIDGET_MESSAGES = "DOCUM_AI_WIDGET_MESSAGES";
-export const defaultMessages = localStorage.getItem(WIDGET_MESSAGES);
-
 export type EventType = "showChat" | "chatHistory";
 
 const ChatBox = () => {
   const params = useParams();
-  const [messages, setMessages] = useState<IWidgetMessage[]>(defaultMessages ? JSON.parse(defaultMessages) : []);
-  const [open, setOpen] = useState(true);
+  const [messages, setMessages] = useState<IWidgetMessage[]>([]);
+  const [open, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const [sendQuestion, { isLoading, data }] = useSendChatWidgetMutation();
+  const [extraLoading, setExtraLoading] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("message", (e) => {
-      // const { type, payload } = JSON.parse(e.data);
-      // if (type === "chatbotLoaded") {
-      //   console.log("chatbotLoaded", payload);
-      //   setMessages(payload.chatHistory);
-      // }
-    });
+    initApp();
+    // window.addEventListener("message", (e) => {
+    //   handleEvent(e)
+    // });
 
-    return () =>
-      window.removeEventListener("message", (e) => {
-        console.log("removed", e);
-      });
+    // return () =>
+    //   window.removeEventListener("message", (e) => {
+    //     console.log("removed", e);
+    //   });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    if (params?.projectId) {
-      emitEvent("chatHistory", { chatHistory: messages });
+    if (params?.projectId && messages.length) {
+      const payload = { chatHistory: messages }
+      emitEvent("chatHistory", payload);
+    }
+  }, [messages, params?.projectId]);
+
+  useEffect(() => {
+    if (data) {
+      setMessages([...messages, { text: data?.message, sender: "assistant" }]);
+      setInputValue("");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [messages]);
+  }, [data]);
+
+  const initApp = () => {
+    const messages = window.parent?.localStorage.getItem("chatHistory_" + params?.projectId);
+    if (messages) {
+      const parsedMessages = JSON.parse(messages);
+      if (parsedMessages.length) {
+        setMessages(parsedMessages);
+      }
+    }
+
+  }
+
+  const sendInitialMessage = () => {
+    setExtraLoading(true)
+    setTimeout(() => {
+      setMessages([...messages, { text: "Hello, how can I help you?", sender: "assistant" }]);
+      setExtraLoading(false)
+    }, 400);
+  }
 
   const switchChatWindow = () => {
     if (!open && !messages.length) {
-      setMessages([...messages, { text: "Hello, how can I help you?", sender: "assistant" }]);
+      sendInitialMessage();
     }
+
     emitEvent("showChat", { isOpen: !open });
     setOpen((val) => !val);
   };
@@ -57,7 +81,6 @@ const ChatBox = () => {
     window.parent?.postMessage(message, "*"); // '*' can be replaced with a specific target origin for security
   };
 
-  const [sendQuestion, { isLoading, data }] = useSendChatWidgetMutation();
   const sendApiQuestion = async () => {
     if (params?.projectId && inputValue.trim() !== "") {
       sendQuestion({ projectId: params?.projectId, question: inputValue });
@@ -65,26 +88,15 @@ const ChatBox = () => {
     }
   };
 
-  useEffect(() => {
-    if (data) {
-      setMessages([...messages, { text: data?.message, sender: "assistant" }]);
-      localStorage.setItem(
-        WIDGET_MESSAGES,
-        JSON.stringify([...messages, { text: data?.message, sender: "assistant" }])
-      );
-      setInputValue("");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data]);
-
   return (
     <div
       style={{
         height: "100vh",
         width: "100vw",
+        backgroundColor: "transparent",
       }}
     >
-      <ChatIcon onClick={switchChatWindow} />
+      {!open && <ChatIcon onClick={switchChatWindow} />}
       {open && (
         <ChatWindow
           inputValue={inputValue}
@@ -92,7 +104,7 @@ const ChatBox = () => {
           onChange={setInputValue}
           sendMessage={sendApiQuestion}
           switchChatWindow={switchChatWindow}
-          isLoading={isLoading}
+          isLoading={isLoading || extraLoading}
         />
       )}
     </div>

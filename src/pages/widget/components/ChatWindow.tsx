@@ -1,9 +1,10 @@
 import { Input } from "antd";
-import { useRef } from "react";
+import { useEffect } from "react";
 import { CloseIcon, MessageSendSvg } from "src/assets/svg";
 import CustomButton from "src/components/common/button";
 import { IWidgetMessage } from "../[id]";
 import ChatMessage from "./ChatMessage";
+import { defaultTheme, useProvider } from "./useProvider";
 import DarkModeSwitch from "./DarkModeSwitch";
 
 interface IProps {
@@ -16,16 +17,22 @@ interface IProps {
 }
 
 const ChatWindow = ({ messages, inputValue, onChange, sendMessage, switchChatWindow, isLoading }: IProps) => {
-  //Declaring ref and force focus to end of chat
-  const endingRef = useRef<HTMLInputElement>(null);
-  const forceFocusEnding = () => {
-    endingRef && endingRef?.current?.focus();
-  };
+  const {
+    endingRef, inputRef, darkMode, onMessageChange, changeWidgetTheme,
+  } = useProvider()
+  
+  useEffect(() => {
+    changeWidgetTheme(defaultTheme);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    onMessageChange()
+  }, [messages])
 
   const handleKeypress = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "Enter") {
       sendMessage();
-      forceFocusEnding();
     }
   };
 
@@ -40,11 +47,10 @@ const ChatWindow = ({ messages, inputValue, onChange, sendMessage, switchChatWin
           />
           <div className="widget-header-user-info">
             <div className="widget-header-user-name">Docum AI</div>
-            <div className="widget-header-user-status">Online</div>
           </div>
         </div>
         <div className="widget-header-right">
-          <DarkModeSwitch />
+          <DarkModeSwitch darkMode={darkMode} changeWidgetTheme={changeWidgetTheme}/>
           <CloseIcon onClick={switchChatWindow} />
         </div>
       </div>
@@ -61,24 +67,23 @@ const ChatWindow = ({ messages, inputValue, onChange, sendMessage, switchChatWin
             <ChatMessage loading />
           </div>
         )}
-        <input ref={endingRef} className="widget-message-ref" />
+        <div style={{ float:"left", clear: "both", background:'red' }} ref={endingRef}>
+        </div>
       </div>
 
       <div className="widget-input">
         <Input
+          ref={inputRef}
           value={inputValue}
           onChange={(e) => onChange(e.target.value)}
           onKeyUpCapture={handleKeypress}
-          placeholder="O'zingizni qiziqtirgan savolni yozing"
+          placeholder="Type your message here..."
           size="large"
           disabled={isLoading}
         />
         <CustomButton
-          onClick={() => {
-            sendMessage();
-            forceFocusEnding();
-          }}
-          icon={<MessageSendSvg />}
+          onClick={sendMessage}
+          icon={<MessageSendSvg color={darkMode ? 'white': 'black'} />}
           loading={isLoading}
           className={`widget-input-button ${inputValue.trim() === "" ? "widget-input-button-disabled" : ""}`}
         />
