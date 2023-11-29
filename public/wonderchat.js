@@ -30,7 +30,7 @@ documChatWrapper.style.bottom = "20px";
 documChatWrapper.style.right = "20px";
 documChatWrapper.style.width = "60px";
 documChatWrapper.style.height = "60px";
-documChatWrapper.style.borderRadius = "8px";
+documChatWrapper.style.borderRadius = "50px";
 
 let widgetOpen = true;
 
@@ -232,10 +232,12 @@ waitForElm("#documChat").then((elm) => {
             if (window.matchMedia("(min-width: 800px)").matches) {
               iframe.parentNode.style.height = `min(100%, ${VALID_WIDGET_SIZES[widgetSize].height})`;
               iframe.parentNode.style.width = `min(100%, ${VALID_WIDGET_SIZES[widgetSize].width})`;
+              iframe.parentNode.style.borderRadius = "8px";
               document.body.style.overflow = "auto";
             } else {
               iframe.parentNode.style.height = "100%";
               iframe.parentNode.style.width = "100%";
+              iframe.parentNode.style.borderRadius = "8px";
               document.body.style.setProperty(
                 "overflow",
                 "hidden",
@@ -245,9 +247,10 @@ waitForElm("#documChat").then((elm) => {
             widgetOpen = true;
           } else {
             iframe.parentNode.style.height =
-              widgetButtonSize === "large" ? "90px" : "80px";
+              widgetButtonSize === "large" ? "60px" : "60px";
             iframe.parentNode.style.width =
-              widgetButtonSize === "large" ? "90px" : "80px";
+              widgetButtonSize === "large" ? "60px" : "60px";
+            iframe.parentNode.style.borderRadius = "50px";
             document.body.style.overflow = "auto";
             widgetOpen = false;
           }
