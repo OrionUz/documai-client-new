@@ -1,5 +1,5 @@
-import Markdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import CustomMarkdown from 'src/components/common/markdown';
+import * as codeStyles from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface Props {
   text?: string;
@@ -9,17 +9,6 @@ interface Props {
 }
 
 function ChatMessage({ text, isUser, loading, darkMode }: Props) {
-  const renderers = {
-    a: (props: any) => {
-      // eslint-disable-next-line jsx-a11y/anchor-has-content
-      return <a {...props} target="_blank" rel="noopener noreferrer" style={{ color: darkMode ? "#fff": isUser ? "#fff":"blue", textDecoration: 'underline', fontWeight: 'bold'}} />;
-    },
-    p: (props: any) => {
-      return <p {...props} style={{ fontSize: 15, letterSpacing: 1.1 }} />;
-    },
-  };
-
-
   return (
     <div className="widget-message-row">
       <div
@@ -28,8 +17,10 @@ function ChatMessage({ text, isUser, loading, darkMode }: Props) {
         {loading ? (
           <div className="dot-flashing"></div>
         ) : text ? (
-          <Markdown remarkPlugins={[remarkGfm]} components={renderers}>{text}</Markdown>
-          // <div dangerouslySetInnerHTML={{ __html: markdown.trim() }} />
+          <CustomMarkdown text={text} 
+            aStyle={{ color: darkMode ? "#fff": isUser ? "#fff":"blue", textDecoration: 'underline', fontWeight: 'bold'}}
+            codeStyle={darkMode ? codeStyles.coldarkDark : codeStyles?.prism}
+          />
         ) : (
           <div></div>
         )}
