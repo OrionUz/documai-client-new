@@ -57,7 +57,7 @@ function ProjectInfo({ projectInfo, infoVisible, setInfoVisible }: ProjectInfoPr
             <div className="projectinfo-informs">
               <h3>{t("dashboard.name2")}</h3>
               <div>
-                <p>{projectInfo?.botToken}</p>
+                <p>{projectInfo?.botToken?.slice(0,5) + " * * * * * " + projectInfo?.botToken?.slice(projectInfo?.botToken?.length - 20)}</p>
                 <ClipboardSvg onClick={() => handleCopy(projectInfo.botToken, "Bot tokken")} />
               </div>
             </div>

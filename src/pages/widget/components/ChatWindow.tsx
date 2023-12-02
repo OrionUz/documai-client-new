@@ -59,7 +59,7 @@ const ChatWindow = ({ messages, inputValue, onChange, sendMessage, switchChatWin
         {messages?.map((item, index) => {
           return (
             <div key={index + "message"} className="widget-message">
-              <ChatMessage text={item.text} isUser={item.sender === "user"} />
+              <ChatMessage text={item.text} isUser={item.sender === "user"} darkMode={darkMode}/>
             </div>
           );
         })}

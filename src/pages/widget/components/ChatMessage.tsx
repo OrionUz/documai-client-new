@@ -1,10 +1,24 @@
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+
 interface Props {
   text?: string;
   isUser?: boolean;
   loading?: boolean;
+  darkMode?: boolean;
 }
 
-function ChatMessage({ text, isUser, loading }: Props) {
+function ChatMessage({ text, isUser, loading, darkMode }: Props) {
+  const renderers = {
+    a: (props: any) => {
+      return <a {...props} target="_blank" rel="noopener noreferrer" style={{ color: darkMode ? "#fff": isUser ? "#fff":"blue", textDecoration: 'underline', fontWeight: 'bold'}} />;
+    },
+    p: (props: any) => {
+      return <p {...props} style={{ fontSize: 15, letterSpacing: 1.1 }} />;
+    },
+  };
+
+
   return (
     <div className="widget-message-row">
       <div
@@ -13,7 +27,8 @@ function ChatMessage({ text, isUser, loading }: Props) {
         {loading ? (
           <div className="dot-flashing"></div>
         ) : text ? (
-          <div dangerouslySetInnerHTML={{ __html: text.trim() }} />
+          <Markdown remarkPlugins={[remarkGfm]} components={renderers}>{text}</Markdown>
+          // <div dangerouslySetInnerHTML={{ __html: markdown.trim() }} />
         ) : (
           <div></div>
         )}
