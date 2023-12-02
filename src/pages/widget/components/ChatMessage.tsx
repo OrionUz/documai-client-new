@@ -11,6 +11,7 @@ interface Props {
 function ChatMessage({ text, isUser, loading, darkMode }: Props) {
   const renderers = {
     a: (props: any) => {
+      // eslint-disable-next-line jsx-a11y/anchor-has-content
       return <a {...props} target="_blank" rel="noopener noreferrer" style={{ color: darkMode ? "#fff": isUser ? "#fff":"blue", textDecoration: 'underline', fontWeight: 'bold'}} />;
     },
     p: (props: any) => {

@@ -11,6 +11,7 @@ interface MarkdownProps {
 const CustomMarkdown: React.FC<MarkdownProps> = ({ text, aStyle, pStyle }) => {
   const renderers = {
     a: (props: any) => {
+      // eslint-disable-next-line jsx-a11y/anchor-has-content
       return <a {...props} target="_blank" rel="noopener noreferrer" style={aStyle ?? {textDecoration: 'underline', fontWeight: 'bold'}} />;
     },
     p: (props: any) => {
