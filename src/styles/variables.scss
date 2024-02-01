@@ -38,6 +38,17 @@ $border_radius: 12px;
 //Transition
 $transition: 0.3s;
 
+// home blur top
+.home_blur {
+  width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 250px;
+    top: 300px;
+    background: linear-gradient(-1deg, #282e7b -42%, #5e43d6 -13%, #5e43d6 -72%);
+    filter: blur(180px);
+}
+
 //Blur
 .blur_purple {
   width: 670px;
@@ -216,6 +227,12 @@ $transition: 0.3s;
 }
 
 //MEDIA QUIRY
+
+@media screen and (max-width: 1350px) {
+  .home_blur {
+    display: none;
+  }
+}
 @media screen and (max-width: 680px) {
   .title_l {
     font-size: 30px;

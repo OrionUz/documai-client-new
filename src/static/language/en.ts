@@ -8,7 +8,8 @@ export const languageEn = {
     try_docum: "Start",
   },
   home: {
-    header: "Create your AI customer service assistant",
+    header: "Automatic Customer Service With AI",
+    header_con: 'With AI',
     video: "https://youtu.be/mtWxYUG8qjA",
     text: "We will help you develop a custom-knowledge AI for customer service.",
     "btn-text": "START CREATING",

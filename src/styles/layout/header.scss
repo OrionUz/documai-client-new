@@ -4,6 +4,8 @@
   top: 40px;
   left: 0;
   z-index: 100;
+  border-bottom: 1px solid #565C64;
+  font-family: 'Inter,sans-serif' !important;
 
   .logo {
     height: 57px;
@@ -25,8 +27,8 @@
     display: flex;
     align-items: center;
     gap: 32px;
+    font-family: 'Inter,sans-serif' !important;
     
-
     a,
     p {
       @extend .text;

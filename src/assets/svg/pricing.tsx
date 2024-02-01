@@ -72,3 +72,37 @@ export const PricingLowSvg = () => (
     />
   </svg>
 );
+
+export const HomeGridSvg = () => (
+  <svg width="1425" height="880" viewBox="0 0 1425 880" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1579_3313" maskUnits="userSpaceOnUse" x="-15" y="0" width="1440" height="880">
+<line x1="-15" y1="79.5" x2="1425" y2="79.5" stroke="white"/>
+<line x1="-15" y1="279.5" x2="1425" y2="279.5" stroke="white"/>
+<line x1="-15" y1="479.5" x2="1425" y2="479.5" stroke="white"/>
+<line x1="-15" y1="779.5" x2="1425" y2="779.5" stroke="white"/>
+<line x1="-15" y1="179.5" x2="1425" y2="179.5" stroke="white"/>
+<line x1="-15" y1="379.5" x2="1425" y2="379.5" stroke="white"/>
+<line x1="-15" y1="679.5" x2="1425" y2="679.5" stroke="white"/>
+<line x1="-15" y1="579.5" x2="1425" y2="579.5" stroke="white"/>
+<line x1="-15" y1="879.5" x2="1425" y2="879.5" stroke="white"/>
+<line x1="785.5" y1="2.16073e-08" x2="785.5" y2="722" stroke="white"/>
+<line x1="585.5" y1="2.16073e-08" x2="585.5" y2="722" stroke="white"/>
+<line x1="385.5" y1="2.16073e-08" x2="385.5" y2="722" stroke="white"/>
+<line x1="85.5" y1="2.16073e-08" x2="85.5" y2="722" stroke="white"/>
+<line x1="685.5" y1="2.16073e-08" x2="685.5" y2="722" stroke="white"/>
+<line x1="485.5" y1="2.16073e-08" x2="485.5" y2="722" stroke="white"/>
+<line x1="185.5" y1="2.16073e-08" x2="185.5" y2="722" stroke="white"/>
+<line x1="285.5" y1="2.16073e-08" x2="285.5" y2="722" stroke="white"/>
+</mask>
+<g mask="url(#mask0_1579_3313)">
+<path opacity="0.3" d="M-180 -282H1068.72L1235 647L-180 621.941V-282Z" fill="url(#paint0_radial_1579_3313)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_1579_3313" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(444.36 282.963) rotate(88.3648) scale(384.746 531.289)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
+
+)

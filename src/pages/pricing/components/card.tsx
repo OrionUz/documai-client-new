@@ -36,12 +36,12 @@ function Card({ item }: PricingCardsProps) {
                   {item.date_month}/{item.date_year}
                 </span>
               </div>
-              <div className="pricing-main-card-cvc">
+              {/* <div className="pricing-main-card-cvc">
                 <h2 className="pricing-main-card-holder">{item.cvc}</h2>
                 <span className="pricing-main-card-number">
                   {item.cvc_number}
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

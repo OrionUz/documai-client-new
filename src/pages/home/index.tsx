@@ -13,6 +13,7 @@ import ReactPlayer from "react-player";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { getRootState } from "src/app/store";
+import { HomeGridSvg } from "src/assets/svg/pricing";
 
 export function PricingSlider() {
   return (
@@ -30,16 +31,23 @@ function HomePage() {
 
   return (
     <div className="home">
-      {/*<div className="blur_purple" />*/}
-      {/*<div className="blur_blue" />*/}
+      <div className="home_blur" />
+      {/* <div className="blur_blue" /> */}
+      <div className="home-svg">
+        <HomeGridSvg />
+      </div>
+
       <div className="container">
         {/* Home top */}
         <div className="home-top">
           <div className="home-top-left">
-            <h1>{t("home.header")}</h1>
+            <div className="home-top-left-title">
+              <h1>{t("home.header")} </h1>
+              {/* <h1>{t("home.header")} <p>{t("home.header_con")}</p> </h1>  */}
+            </div>
             <p>{t("home.text")}</p>
             <Link to={isAuthenticated ? "/dashboard/document" : "/auth/signin"}>
-              <CustomButton color="light" bordered>
+              <CustomButton className="home-button" color="light" bordered>
                 {t("home.btn-text")}
               </CustomButton>
             </Link>

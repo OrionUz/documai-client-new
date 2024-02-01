@@ -35,10 +35,7 @@ function Header() {
         {t("header.about")}
       </Link>
       {/* <Link to="/news">Blog-News</Link> */}
-      <Link
-        to="#"
-        className={location.pathname === "/pricing" ? "active" : ""}
-      >
+      <Link to="/" className={location.pathname === "/pricing" ? "active" : ""}>
         {t("header.pricing")}
       </Link>
       {/*<p>{t("header.pricing")}</p>*/}

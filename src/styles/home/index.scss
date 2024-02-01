@@ -1,7 +1,21 @@
 .home {
+  // position: absolute;
   width: 100%;
   min-height: 100vh;
   padding-top: 160px;
+  font-family: 'Inter,sans-serif' !important;
+
+  &-svg{
+    position: absolute;
+    top: 120px;
+    left: 100px;
+    opacity: 0.3;
+    background: radial-gradient(50% 0% at 44.12% 60.81%, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+  }
+
+  &-button{
+    margin-top: 60px;
+  }
 
   .container {
     position: relative;
@@ -19,9 +33,12 @@
     gap: 100px;
     &-left {
       flex-grow: 1;
+      
       h1 {
-        @extend #{".title_xl", ".gradient_text"};
-        display: block;
+        @extend #{".title_xl"};
+        // @extend #{".title_xl", ".gradient_text"};
+        // display: block;
+        display: flex;
         line-height: 120%;
         margin-bottom: 20px;
       }
@@ -32,6 +49,19 @@
         margin-bottom: 42px;
         color: #c1c2c8;
       }
+      &-title{
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+
+      p {
+        @extend #{".title_xl"};
+        // display: block;
+        // line-height: 120%;
+        margin-bottom: 20px;
+        color: rgba(255, 255, 255, 0.50);
+      }
+      }
+      
     }
   }
 
@@ -101,6 +131,13 @@
       gap: 60px;
     }
   }
+}
+
+@media screen and (max-width: 1350px) {
+  .home-top-right{
+    display: none;
+  }
+  
 }
 
 @media screen and (max-width: 1200px) {
@@ -251,8 +288,5 @@
       gap: 60px;
     }
 
-    &-pricing{
-      
-    }
   }
 }
