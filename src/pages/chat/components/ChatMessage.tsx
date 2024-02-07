@@ -1,10 +1,10 @@
-import Typist from "react-typist";
+import CustomMarkdown from "src/components/common/markdown";
 import { ChatMessageProps } from "../type";
 
 function ChatMessage({ text, isUser, typist, loading }: ChatMessageProps) {
   return (
     <>
-      {typist ? (
+      {/* {typist ? (
         <Typist
           stdTypingDelay={0}
           avgTypingDelay={18}
@@ -18,11 +18,11 @@ function ChatMessage({ text, isUser, typist, loading }: ChatMessageProps) {
         >
           <div className={`chat-message-box ${isUser && "chat-message-user"}`}>{text.trim()}</div>
         </Typist>
-      ) : (
+      ) : ( */}
         <div className={`chat-message-box ${isUser && "chat-message-user"}`}>
-          {loading ? <div className="dot-flashing"></div> : text.trim()}
+          {loading ? <div className="dot-flashing"></div> : <CustomMarkdown text={text.trim()} aStyle={{ color: 'white', textDecoration: 'underline'}}/>}
         </div>
-      )}
+      {/* )} */}
     </>
   );
 }

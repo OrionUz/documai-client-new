@@ -143,6 +143,15 @@ $transition: 0.3s;
   justify-content: center;
   align-items: center;
 }
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 //Text decoration
 .line_clamp1 {
@@ -227,10 +236,9 @@ $transition: 0.3s;
 }
 
 //MEDIA QUIRY
-
 @media screen and (max-width: 1350px) {
   .home_blur {
-    display: none;
+    // display: none;
   }
 }
 @media screen and (max-width: 680px) {

@@ -10,6 +10,11 @@ export const memberpicData = [
     img: require("src/assets/img/about/Shohruxmirzo.png"),
   },
   {
+    title: "about.names.name6",
+    description: "about.names.who6",
+    img: require("src/assets/img/about/Avazbek.png"),
+  },
+  {
     title: "about.names.name3",
     description: "about.names.who3",
     img: require("src/assets/img/about/Asror.png"),
