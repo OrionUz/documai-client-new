@@ -9,11 +9,11 @@ import IntroCard from "./components/IntroCard";
 import AboutCard from "./components/AboutCard";
 import PricingCard from "./components/PricingCard";
 import CustomSlider from "src/components/common/slider";
-import ReactPlayer from "react-player";
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import ReactPlayer from "react-player";
 import { getRootState } from "src/app/store";
 import { HomeGridSvg } from "src/assets/svg/pricing";
+import { useTranslation } from "react-i18next";
 
 export function PricingSlider() {
   return (
@@ -69,6 +69,8 @@ function HomePage() {
             ></video>
           </div>
         </div>
+
+
         <div className="home-video">
           <ReactPlayer
             width={1130}
@@ -136,3 +138,4 @@ function HomePage() {
 }
 
 export default HomePage;
+

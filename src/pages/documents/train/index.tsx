@@ -104,7 +104,7 @@ function DocumentsTrainPage() {
           onKeyUpCapture={handleKeypress}
           placeholder="Write the something"
           size="large"
-          suffix={<MessageSendSvg />}
+          suffix={<MessageSendSvg onClick={handleSend} color={value ? "#fff" : "#000"}/>}
         />
       </div>
     </div>
