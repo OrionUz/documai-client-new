@@ -43,6 +43,12 @@ export interface IAddProjec {
   displayName: string;
 }
 
+//Edit project types
+export interface IEditProject {
+  botId: number;
+  name: string;
+}
+
 //Train project types
 export interface ITrainProject {
   id: number;
@@ -82,3 +88,5 @@ export interface IProjectUserMessage {
   createdAt: string;
   updatedAt?: string;
 }
+
+

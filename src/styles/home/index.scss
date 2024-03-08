@@ -1,7 +1,21 @@
 .home {
+  // position: absolute;
   width: 100%;
   min-height: 100vh;
   padding-top: 160px;
+  font-family: 'Inter,sans-serif' !important;
+
+  &-svg{
+    position: absolute;
+    top: 120px;
+    left: 100px;
+    opacity: 0.3;
+    background: radial-gradient(50% 0% at 44.12% 60.81%, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+  }
+
+  &-button{
+    margin-top: 60px;
+  }
 
   .container {
     position: relative;
@@ -16,11 +30,15 @@
   &-top {
     display: flex;
     justify-content: space-between;
+    gap: 100px;
     &-left {
-      width: 678px;
+      flex-grow: 1;
+      
       h1 {
-        @extend #{".title_xl", ".gradient_text"};
-        display: block;
+        @extend #{".title_xl"};
+        // @extend #{".title_xl", ".gradient_text"};
+        // display: block;
+        display: flex;
         line-height: 120%;
         margin-bottom: 20px;
       }
@@ -28,9 +46,29 @@
         @extend .text_l;
         width: 523px;
         line-height: 130%;
-        margin-bottom: 68px;
+        margin-bottom: 42px;
+        color: #c1c2c8;
       }
+      &-title{
+      font-weight: 700;
+      // font-family: 'Inter', sans-serif;
+
+      p {
+        @extend #{".title_xl"};
+        // display: block;
+        // line-height: 120%;
+        margin-bottom: 20px;
+        color: rgba(255, 255, 255, 0.50);
+      }
+      }
+      
     }
+  }
+
+  &-video{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around  ;
   }
   &-introcards {
     display: flex;
@@ -49,7 +87,7 @@
         font-weight: 400;
         font-size: 20px;
         line-height: 130%;
-        color: $white;
+        color: #b7b8bc;
       }
     }
   }
@@ -61,10 +99,7 @@
     justify-content: center;
   }
   &-pricing {
-    display: flex;
-    gap: 36px;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
   }
 }
 
@@ -74,12 +109,57 @@
 @import "newscard.scss";
 
 //MEDIA QUERY
-
 @media screen and (max-width: 1450px) {
   .home {
     &-top {
-      &-left h1 {
-        width: 550px;
+      gap: 70px;
+      &-left p {
+        width: 100%;
+      }
+      &-right {
+        & > div {
+          width: 530px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .home {
+    &-usage {
+      gap: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .home-top-right{
+    display: none;
+  }
+  
+}
+
+@media screen and (max-width: 1200px) {
+  .home {
+    &-top {
+      flex-direction: column;
+      gap: 44px;
+      align-items: center;
+      &-video{
+        align-items: center;
+      }
+    }
+    &-usage {
+      gap: 60px;
+      overflow-x: scroll;
+      justify-content: flex-start;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+      &-card {
+        width: 365px;
+        flex-shrink: 0;
       }
     }
   }
@@ -87,6 +167,11 @@
 
 @media screen and (max-width: 1100px) {
   .home {
+    &-video{
+      div{
+        height: 450px !important;
+      }
+    }
     &-top {
       flex-direction: column;
       gap: 44px;
@@ -96,13 +181,10 @@
       flex-direction: column;
     }
 
-    &-usage {
-      flex-direction: column;
-      &-card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    &-video{
+      & > div{
+        height: 530px;
+
       }
     }
   }
@@ -110,42 +192,105 @@
 
 @media screen and (max-width: 680px) {
   .home {
+    padding-top: 83px;
     &-top {
-      &-right {
-        margin: 0;
-        width: 410px;
-        height: 280px;
-      }
       &-left {
         h1 {
-          width: 420px;
+          margin-bottom: 16px;
         }
-
         p {
-          width: 420px;
+          margin-bottom: 38px;
         }
       }
+      &-right {
+        video {
+          //width: 100% !important;
+          height: 300px !important;
+        }
+      }
+      // &-video{
+      //    div{
+      //     width: 90% !important;
+      //     height: 300px !important;
+      //   }
+      // }
+    }
+
+    &-introcards {
+      margin-top: 80px;
+      gap: 60px;
+    }
+
+    &-video{
+      div{
+        //width: 90% !important;
+        height: 300px !important;
+      }
+    }
+
+    &-svg{
+      left: 0;
     }
   }
 }
 
+@media screen and (max-width: 550px) {
+  .home{
+    &-video{
+      div{
+        height: 250px !important;
+      }
+    }
+  }
+  
+}
+
 @media screen and (max-width: 450px) {
   .home {
+    &-video{
+      div{
+        height: 220px !important;
+      }
+    }
     &-top {
-      &-right {
-        margin: 0;
-        width: 335px;
-        height: 192px;
+      &-video{
+        width: 200px;
       }
       &-left {
         h1 {
-          width: 320px;
+          font-size: 40px;
         }
-
         p {
-          width: 320px;
+          font-size: 16px;
+        }
+      }
+      &-right {
+        & > div {
+          height: 200px !important;
         }
       }
     }
+    &-subtitle {
+      margin: 90px 0 40px;
+    }
+    &-usage {
+      gap: 24px;
+      align-items: flex-start;
+      &-card {
+        width: 270px;
+        svg {
+          height: 220px;
+          width: 270px;
+        }
+        p {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+    &-about {
+      gap: 60px;
+    }
+
   }
 }

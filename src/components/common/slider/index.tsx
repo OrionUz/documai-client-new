@@ -5,39 +5,46 @@ import { CustomSliderProps } from "./type";
 function CustomSlider({
   counts = 3,
   arrows = true,
+  dots = false,
   autoplay = false,
-
+  initialSlide = 0,
   children,
 }: CustomSliderProps) {
+
   const settings = {
     speed: 500,
     arrows: arrows,
+    dots: dots,
     infinite: true,
     autoplay: autoplay,
     slidesToShow: counts,
-    initialSlide: 0,
+    initialSlide: initialSlide,
+    // slidesToScroll: 1,
     centerPadding: "0",
 
     responsive: [
       {
+        breakpoint: 1750,
+        settings: {
+          slidesToShow: counts === 5 ? 4 : counts,
+        },
+      },
+      {
         breakpoint: 1400,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
         },
       },
       {
         breakpoint: 1080,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 720,
+        breakpoint: 650,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
           centerMode: true,
         },
       },

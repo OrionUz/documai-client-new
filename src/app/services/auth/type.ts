@@ -8,6 +8,10 @@ export interface ILogin {
 }
 
 export type UserRoleTypeAttribute = "client" | "admin";
+export interface Wallet {
+  totalAmount?: number;
+  totalUsedTokens?: number;
+}
 
 export interface IProfile {
   createdAt: string;
@@ -18,4 +22,5 @@ export interface IProfile {
   phoneNumber: null;
   role: UserRoleTypeAttribute;
   updatedAt: string;
+  wallet?: Wallet;
 }

@@ -1,0 +1,54 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+
+        with:
+          node-version: ${{ matrix.node_version }}
+          cache: "yarn"
+          cache-dependency-path: |
+            yarn.lock
+
+      - run: yarn install
+      - run: yarn build
+
+      - name: create env file
+        run: |
+          touch .env
+          echo REACT_APP_BASE_URL="https://docum.ai/" >> .env
+          echo GENERATE_SOURCEMAP=false >> .env
+          echo STAGE=prod >> .env
+
+
+          echo "cat .env"
+          cat .env
+
+          echo "ls -la ."
+          ls -la .
+
+      - name: rsync deployments
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rltgoDzvO --delete"
+          REMOTE_HOST: ${{ secrets.SSH_IP_ADDRESS }}
+          REMOTE_USER: root
+          TARGET: /root/documai-client

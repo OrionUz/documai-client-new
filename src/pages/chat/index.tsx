@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { useLazyGetProjetUserMessagesQuery } from "src/app/services/projects";
 import ChatMessage from "./components/ChatMessage";
 import { useTypedSelector } from "src/app/store";
+import { useTranslation } from "react-i18next";
 
 function ChatPage() {
   const [searchParams] = useSearchParams();
@@ -11,19 +12,25 @@ function ChatPage() {
 
   const endingRef = useRef<HTMLInputElement>(null);
 
-  const [trigger, result, lastPromise] = useLazyGetProjetUserMessagesQuery();
+  const [trigger, result] = useLazyGetProjetUserMessagesQuery();
 
   const { data } = result;
 
   const projects = useTypedSelector((state) => state.project.projects);
-  const botId = projects.find((el) => String(el.id) === projectId)?.chatbotId;
+  const botId = projects?.find((el) => String(el.id) === projectId)?.chatbotId;
 
   useEffect(() => {
     userId && botId && trigger({ userId, botId }, false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
+  const {t} = useTranslation();
+
   return (
-    <div className={`chat ${!userId ? "display_center" : ""}`} style={!userId ? { justifyContent: "center" } : {}}>
+    <div
+      className={`chat ${!userId ? "display_center" : ""}`}
+      style={!userId ? { justifyContent: "center" } : {}}
+    >
       {userId ? (
         <>
           <div className="chat-content">
@@ -31,7 +38,9 @@ function ChatPage() {
               return (
                 <div key={index + "message"} className="chat-message">
                   {item.question && <ChatMessage text={item.question} isUser />}
-                  {item.response && <ChatMessage text={item.response} isUser={false} />}
+                  {item.response && (
+                    <ChatMessage text={item.response} isUser={false} />
+                  )}
                 </div>
               );
             })}
@@ -40,7 +49,7 @@ function ChatPage() {
         </>
       ) : (
         <div className="chat-nodata">
-          <p>Select a user to see messaging</p>
+          <p>{t("dashboard.selection")}</p>
         </div>
       )}
     </div>

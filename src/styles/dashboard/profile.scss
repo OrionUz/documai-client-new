@@ -1,0 +1,72 @@
+.profile {
+  &-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img{
+      width: 24px;
+    }
+  }
+  &-content {
+    min-width: 300px;
+    &-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid $stroke;
+      padding-bottom: 16px;
+
+      &-img {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background-color: $white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        img {
+          width: 40px;
+          object-fit: cover;
+        }
+      }
+
+      h3 {
+        @extend .text;
+        margin-bottom: 4px;
+      }
+
+      p {
+        @extend .text_xs;
+        opacity: 0.5;
+      }
+    }
+    &-menu {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 7px;
+      padding: 5px 25px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        background-color: $white_05;
+      }
+
+      h2 {
+        @extend .text_s;
+      }
+    }
+  }
+}

@@ -1,7 +1,10 @@
 import { ConfigProvider, Radio } from "antd";
 import { RadioButtonProps } from "./type";
+import { useTranslation } from "react-i18next";
 
-function RadioButton({ defaultValue, onChange, buttons }: RadioButtonProps) {
+function RadioButton({ defaultValue, onChange, buttons, size }: RadioButtonProps) {
+
+  const {t} = useTranslation();
   return (
     <div className="radio-button">
       <ConfigProvider
@@ -17,11 +20,16 @@ function RadioButton({ defaultValue, onChange, buttons }: RadioButtonProps) {
           },
         }}
       >
-        <Radio.Group size="large" defaultValue={defaultValue}>
+        <Radio.Group defaultValue={defaultValue} size={size}>
           {buttons.map((item) => {
             return (
-              <Radio.Button value={item.value} disabled={item.disabled} onClick={() => onChange?.(item.value)}>
-                {item.title}
+              <Radio.Button
+                key={item.value}
+                value={item.value}
+                disabled={item.disabled}
+                onClick={() => onChange?.(item.value)}
+              >
+                {t(item.title)}
               </Radio.Button>
             );
           })}

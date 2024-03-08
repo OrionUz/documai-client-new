@@ -13,8 +13,8 @@ function NewsPage() {
         <section className="webinar">
           <div className="webinar-box">
             <CustomSlider counts={2}>
-              {[...webinarData, ...webinarData].map((item) => {
-                return <WebinarPart item={item}></WebinarPart>;
+              {[...webinarData, ...webinarData].map((item, index) => {
+                return <WebinarPart item={item} key={item.text + index}></WebinarPart>;
               })}
             </CustomSlider>
           </div>
@@ -22,8 +22,8 @@ function NewsPage() {
         <section className="docum">
           <div className="home-subtitle">News about Docum.ai</div>
           <div className="docum-box">
-            {documData.map((item) => {
-              return <DocumPart item={item}></DocumPart>;
+            {documData.map((item, index) => {
+              return <DocumPart item={item} key={item.text + index}></DocumPart>;
             })}
           </div>
         </section>

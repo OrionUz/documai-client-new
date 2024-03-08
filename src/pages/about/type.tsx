@@ -19,10 +19,6 @@ export interface AboutProProps {
     title: string;
     text: string;
     img: string;
-    stat?: {
-      count: string;
-      title: string;
-    }[];
   };
 
   index: number;
@@ -30,6 +26,7 @@ export interface AboutProProps {
 
 export interface ProjectsPartProps {
   item: {
+    link: string;
     title: string;
     text: string;
     img: string;

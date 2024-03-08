@@ -1,7 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { acceptMainLayout } from "./const";
 
-import DashboardLayout from "src/layout/dashboard";
 import MainLayout from "src/layout/main";
 import Custom404 from "src/pages/404";
 import AboutPage from "src/pages/about";
@@ -16,6 +15,10 @@ import AuthSignUp from "src/pages/auth/signup";
 import NewsPage from "src/pages/news";
 import NewsIdPage from "src/pages/news/[id]";
 import DocumentsTrainPage from "src/pages/documents/train";
+import DashboardLayout from "src/layout/dashboard";
+import ChatWidget from "src/pages/widget";
+import ChatWidgetId from "src/pages/widget/[id]";
+import PricingPage from "src/pages/pricing";
 
 function RoutElements() {
   const { pathname } = useLocation();
@@ -24,14 +27,22 @@ function RoutElements() {
   return (
     <div className="root">
       <Routes>
-        <Route path="/" element={!acceptMainLayout.includes(path) ? <MainLayout /> : null}>
+        <Route
+          path="/"
+          element={!acceptMainLayout.includes(path) ? <MainLayout /> : null}
+        >
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
+          <Route path="embed">
+            <Route path="chat" index element={<ChatWidget />} />
+            <Route path="chat/:projectId" element={<ChatWidgetId />} />
+          </Route>
           <Route path="auth" element={<AuthPage />}>
             <Route path="signin" element={<AuthSignin />} />
             <Route path="signup" element={<AuthSignUp />} />
           </Route>
-          /** news page */
+          <Route path="pricing" element={<PricingPage />} />
+          {/** news page */}
           <Route path="news">
             <Route index element={<NewsPage />} />
             <Route path=":newsId" element={<NewsIdPage />} />
@@ -49,6 +60,7 @@ function RoutElements() {
             <Route path="chat" element={<ChatPage />} />
             <Route path="bot/:botId" element={<DocumentsPage />} />
           </Route>
+          
         </Route>
 
         <Route path="*" element={<Custom404 />} />

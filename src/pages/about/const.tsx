@@ -1,77 +1,60 @@
-import { AboutTopSvg, AboutUpSvg } from "src/assets/svg/freepik/about";
-
 export const memberpicData = [
   {
-    title: "Samandar. T.",
-    description: "CEO",
+    title: "about.names.name1",
+    description: "about.names.who1",
     img: require("src/assets/img/about/Samandar.png"),
   },
   {
-    title: "Shohruxmirzo. T.",
-    description: "CTO'",
+    title: "about.names.name2",
+    description: "about.names.who2",
     img: require("src/assets/img/about/Shohruxmirzo.png"),
   },
   {
-    title: "Asror. N",
-    description: "HR",
+    title: "about.names.name6",
+    description: "about.names.who6",
+    img: require("src/assets/img/about/Avazbek.png"),
+  },
+  {
+    title: "about.names.name3",
+    description: "about.names.who3",
     img: require("src/assets/img/about/Asror.png"),
   },
   {
-    title: "Mirsaid. B",
-    description: "UX/UI",
+    title: "about.names.name4",
+    description: "about.names.who4",
     img: require("src/assets/img/about/Mirsaid.png"),
   },
   {
-    title: "Vosilxo'ja. N",
-    description: "SMM manager",
+    title: "about.names.name5",
+    description: "about.names.who5",
     img: require("src/assets/img/about/Vosilxoja.png"),
   },
 ];
 
 export const aboutProData = [
   {
-    title: "The Mission of Docum.ai",
-    text: "Beyond the individual level, who we are extends to our shared humanity. We are social beings, interconnected and interdependent. Our collective identity emerges from the bonds we create, the communities we belong to, and the values we hold in common. It encompasses our roles as family members, friends, citizens, and members of various social, cultural.",
-    img: require("src/assets/img/about/aboutPerson.png"),
+    title: "about.aboutPart.title1",
+    text: "about.aboutPart.text1",
+    img: require("src/assets/img/about/projectMission.jpg"),
   },
   {
-    title: "The Mission of Docum.ai",
-    text: "Beyond the individual level, who we are extends to our shared humanity. We are social beings, interconnected and interdependent. Our collective identity emerges from the bonds we create, the communities we belong to, and the values we hold in common. It encompasses our roles as family members, friends, citizens, and members of various social, cultural.",
-    img: require("src/assets/img/about/aboutPerson.png"),
-    stat: [
-      {
-        count: "150mln+",
-        title: "Users for 2 years",
-      },
-      {
-        count: "400+",
-        title: "More than employees",
-      },
-      {
-        count: "200+",
-        title: "More than Partner",
-      },
-    ],
-  },
-];
-
-export const IntroPartData = [
-  {
-    title: "We built AI which make people life easier",
-    text: "To be the company our customers want us to be, it takes an electric group of passionate operators. Get to know the people leading the way at Docum.",
-    icon1: <AboutTopSvg />,
+    title: "about.aboutPart.title2",
+    text: "about.aboutPart.text2",
+    img: require("src/assets/img/about/projectFact.jpg"),
   },
 ];
 
 export const ProjectsPartData = [
   {
-    title: "Docum.ai is an AI that makes your life.",
-    text: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document",
+    link: "https://simyogoch.uz/",
+    title: "about.project.title1",
+    text: "about.project.text1",
     img: require("src/assets/img/about/simyogoch.png"),
   },
   {
-    title: "Docum.ai is an AI that makes your life.",
-    text: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document",
+    link: "https://qunduzbobo.uz/login",
+    title: "about.project.title2",
+    text: "about.project.text2",
     img: require("src/assets/img/about/qunduzbobo.png"),
   },
 ];

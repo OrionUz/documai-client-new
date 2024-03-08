@@ -1,33 +1,66 @@
-import { PricingCardProps } from "../type";
-import { CorrectActiveSvg, CorrectInActiveSvg } from "src/assets/svg";
+import { useTranslation } from "react-i18next";
+import {
+  saveBillingCardInfo,
+  setBillingModal,
+} from "src/app/slices/billingcardSlice";
+import {
+  CorrectActiveSvg,
+  CorrectInActiveSvg,
+  PricingMiddleColorSvg,
+} from "src/assets/svg";
+import PricingModal from "src/pages/pricing/components/PricingModal";
 import CustomButton from "src/components/common/button";
+import { PricingCardProps } from "../type";
+import { useAppDispatch, useTypedSelector } from "src/app/store";
+import { useNavigate } from "react-router-dom";
 
 function PricingCard({ item }: PricingCardProps) {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+  const { isAuthenticated } = useTypedSelector((state) => state.auth);
+
+  const openModal = () => {
+    if (false) {
+      if (isAuthenticated) {
+        dispatch(setBillingModal(true));
+        dispatch(saveBillingCardInfo(item));
+      } else navigate("/auth");
+    }
+  };
+
   return (
     <div className={`pricingcard ${item.main && "pricingcard-main"}`}>
+      {item.main ? (
+        <div className="pricingcard-main-svg">
+          <PricingMiddleColorSvg />
+        </div>
+      ) : (
+        ""
+      )}
       <div className="pricingcard-content">
-        <div className="pricingcard-type">{item.type}</div>
+        <div className="pricingcard-type">{t(item.type)}</div>
         <div className="pricingcard-price">
-          {item.price}
-          {item.price_duration ? <span>{item.price_duration}</span> : ""}
+          {t(item.price ?? "")}
+          {item.price_duration ? <span>{t(item.price_duration)}</span> : ""}
         </div>
         {item.description ? (
-          <div className="pricingcard-description">{item.description}</div>
+          <div className="pricingcard-description">{t(item.description)}</div>
         ) : (
           ""
         )}
         {item.requirement ? (
           <div className="pricingcard-requirement">
-            {item.requirement} <span>Learn more</span>
+            {t(item.requirement)} <span>Learn more</span>
           </div>
         ) : (
           ""
         )}
-        {item.includes.map((include) => {
+        {item.includes.map((include, index) => {
           return (
-            <div className="pricingcard-include">
+            <div className="pricingcard-include" key={include + index}>
               {item.main ? <CorrectActiveSvg /> : <CorrectInActiveSvg />}{" "}
-              {include}
+              {t(include)}
             </div>
           );
         })}
@@ -37,10 +70,45 @@ function PricingCard({ item }: PricingCardProps) {
           Current plan
         </CustomButton>
       ) : item.main ? (
-        <CustomButton color="light">Upgrade</CustomButton>
+        <div>
+          {/*<Link to={isAuthenticated ? "pricing" : "/auth/signin"}>
+            <CustomButton
+              style={{ width: "100%" }}
+              color="light"
+              onClick={openModal}
+            >
+              Upgrade
+            </CustomButton>
+      </Link>*/}
+          <CustomButton
+            style={{ width: "100%" }}
+            color="light"
+            onClick={openModal}
+          >
+            Upgrade
+          </CustomButton>
+        </div>
       ) : (
-        <CustomButton color="dark">Upgrade</CustomButton>
+        <div>
+          {/*<Link to={isAuthenticated ? "pricing" : "/auth/signin"}>
+            <CustomButton
+              style={{ width: "100%" }}
+              color="dark"
+              onClick={openModal}
+            >
+              Upgrade
+            </CustomButton>
+      </Link>*/}
+          <CustomButton
+            style={{ width: "100%" }}
+            color="dark"
+            onClick={openModal}
+          >
+            Upgrade
+          </CustomButton>
+        </div>
       )}
+      <PricingModal />
     </div>
   );
 }

@@ -1,8 +1,12 @@
+import { useDeleteDocumentMutation } from "src/app/services/projects";
 import { DeleteSvg, FileSvg } from "src/assets/svg";
 import { DocumCardProps } from "../type";
+import CustomPopconfirm from "src/components/common/popconfirm";
 
 function DocumCard({ data }: DocumCardProps) {
   const size = ((+data.size ?? 0) / 1024 / 1024).toFixed();
+
+  const [deleteDocument] = useDeleteDocumentMutation();
 
   return (
     <div className="documcard">
@@ -21,7 +25,15 @@ function DocumCard({ data }: DocumCardProps) {
           )}
         </div>
         <div className="documcard-content-delete">
-          <DeleteSvg />
+          <CustomPopconfirm
+            title="Are you sure to delete this document?"
+            placement="top"
+            okText="Yes"
+            cancelText="No"
+            onConfirm={() => deleteDocument(data.id)}
+          >
+            <DeleteSvg />
+          </CustomPopconfirm>
         </div>
       </div>
 

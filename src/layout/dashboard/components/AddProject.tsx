@@ -2,18 +2,21 @@ import { Form } from "antd";
 import { useEffect, useState } from "react";
 import { useAddProjectMutation } from "src/app/services/projects";
 import { IAddProjec } from "src/app/services/projects/type";
+import { useTypedSelector } from "src/app/store";
 import { PlaySvg } from "src/assets/svg";
 import { addProjectFormItems } from "../const";
 import CustomButton from "src/components/common/button";
 import CustomInput from "src/components/common/input";
 import CustomModal from "src/components/common/modal";
+import { useTranslation } from "react-i18next";
 
 function AddProject() {
-  const [addProject, { isSuccess }] = useAddProjectMutation();
-
   const [form] = Form.useForm();
+  const [addProject, { isLoading }] = useAddProjectMutation();
+  const projects = useTypedSelector((state) => state.project.projects);
 
   const [visible, setVisible] = useState(false);
+  const { t } = useTranslation();
   const openModal = () => setVisible(true);
   const closeModal = () => {
     setVisible(false);
@@ -21,27 +24,42 @@ function AddProject() {
   };
 
   useEffect(() => {
-    isSuccess && closeModal();
-  }, [isSuccess]);
+    if (projects && projects.length === 0) openModal();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [projects]);
 
   return (
     <>
-      <CustomButton color="dark" bordered onClick={openModal}>
-        Create new bot
+      <CustomButton className="add-bot" color="dark" bordered onClick={openModal}>
+        {t("dashboard.create")}
       </CustomButton>
-      <CustomModal open={visible} width={650} onCancel={closeModal}>
+      <CustomModal
+        open={visible}
+        width={650}
+        onCancel={() => (projects && projects.length !== 0 ? closeModal() : null)}
+      >
         <div className="custom-modal">
           <div className="custom-modal-header">
-            <h2>Create your chat bot</h2>
-            <p>We automatically bill on the 1st of each month.</p>
+            <h2>{t("dashboard.create1")}</h2>
+            <p>{t("dashboard.text")}</p>
           </div>
           <div className="custom-modal-content">
-            <Form form={form} name="add_project" layout="vertical" onFinish={(data: IAddProjec) => addProject(data)}>
+            <Form
+              form={form}
+              name="add_project"
+              layout="vertical"
+              onFinish={(data: IAddProjec) => addProject(data).then(() => closeModal())}
+            >
               <div className="custom-modal-form-project">
                 {addProjectFormItems.map((item) => {
                   return (
-                    <Form.Item label={item.label} name={item.name} rules={[{ required: true, message: item.message }]}>
-                      <CustomInput size="large" placeholder={item.message} />
+                    <Form.Item
+                      name={item.name}
+                      key={t(item.name)}
+                      label={t(item.label)}
+                      rules={[{ required: true, message: t(item.message) }]}
+                    >
+                      <CustomInput size="large" placeholder={t(item.message)} />
                     </Form.Item>
                   );
                 })}
@@ -49,10 +67,10 @@ function AddProject() {
 
               <div className="custom-modal-buttons">
                 <CustomButton icon={<PlaySvg />} left_icon>
-                  Video guide
+                  {t("dashboard.guide")}
                 </CustomButton>
-                <CustomButton color="light" bordered type="submit">
-                  Next
+                <CustomButton color="light" bordered type="submit" loading={isLoading}>
+                  {t("dashboard.next")}
                 </CustomButton>
               </div>
             </Form>

@@ -2,13 +2,13 @@ import { Link, useSearchParams } from "react-router-dom";
 import { UserSvg } from "src/assets/svg";
 import { UserCardProps } from "../type";
 
-function UserCard({ data, active }: UserCardProps) {
+function UserCard({ data, active, onClick }: UserCardProps) {
   const [searchParams] = useSearchParams();
   const projectId = searchParams.get("projectId");
 
   return (
     <Link to={`/dashboard/chat?projectId=${projectId}&userId=${data.id}`}>
-      <div className={`usercard ${active ? "usercard-active" : ""}`}>
+      <div onClick={onClick} className={`usercard ${active ? "usercard-active" : ""}`}>
         <div>
           <UserSvg />
         </div>

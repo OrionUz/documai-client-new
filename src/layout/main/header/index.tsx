@@ -1,65 +1,95 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { getRootState } from "src/app/store";
-import { pricingCardData } from "src/pages/home/const";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
+import { changeNavigation } from "src/app/slices/headerSlice";
+import { getRootState, useTypedSelector } from "src/app/store";
 import CustomButton from "src/components/common/button";
 import CustomModal from "src/components/common/modal";
-import PricingCard from "src/pages/home/components/PricingCard";
+import { PricingSlider } from "src/pages/home";
+import Language from "../language";
+import Logo from "./documLogo";
 
 function Header() {
-  const [navigation, setNavigation] = useState(false);
-  const changeNavigationBar = () => setNavigation(!navigation);
+  const dispatch = useDispatch();
+  const navigation = useTypedSelector((state) => state.header.navigation);
+  const location = useLocation();
+  const changeNavigationBar = () => dispatch(changeNavigation());
+  const { t } = useTranslation();
 
   const { isAuthenticated } = getRootState().auth;
 
   const [visible, setVisible] = useState(false);
-  const openModal = () => setVisible(true);
+
   const closeModal = () => setVisible(false);
 
   const menu = (
     <>
-      <Link to="/">Homepage</Link>
-      <Link to="/about">About us</Link>
-      <Link to="/news">Blog-News</Link>
-      <p onClick={openModal}>Pricing</p>
+      <Link to="/" className={location.pathname === "/" ? "active" : ""}>
+        {t("header.home")}
+      </Link>
+      <Link
+        to="/about"
+        className={location.pathname === "/about" ? "active" : ""}
+      >
+        {t("header.about")}
+      </Link>
+      {/* <Link to="/news">Blog-News</Link> */}
+      <Link
+        to="/#"
+        className={location.pathname === "/pricing" ? "active" : ""}
+      >
+        {t("header.pricing")}
+      </Link>
+      {/* <p>{t("header.pricing")}</p> */}
     </>
   );
   return (
     <div className="header">
       <div className="header-content container">
-        <div className="header-logo">
-          <Link to="/">Docum.ai</Link>
-        </div>
+        <Logo />
+
         <div className="header-menu">{menu}</div>
 
         <div className="header-navigation">
-          <label htmlFor="navi-label" onClick={changeNavigationBar} className="header-navigation-label">
-            <span className={`header-navigation-icon ${navigation ? "header-navigation-icon-active" : ""}`}>
+          <label
+            htmlFor="navi-label"
+            onClick={changeNavigationBar}
+            className="header-navigation-label"
+          >
+            <span
+              className={`header-navigation-icon ${
+                navigation ? "header-navigation-icon-active" : ""
+              }`}
+            >
               &nbsp;
             </span>
           </label>
-          <div className={`header-navigation-background ${navigation ? "header-navigation-background-active" : ""}`}>
+          <div
+            className={`header-navigation-background ${
+              navigation ? "header-navigation-background-active" : ""
+            }`}
+          >
             &nbsp;
           </div>
         </div>
 
-        <nav className={`header-navigation-nav ${navigation ? "header-navigation-nav-active" : ""}`}>
+        <nav
+          className={`header-navigation-nav ${
+            navigation ? "header-navigation-nav-active" : ""
+          }`}
+        >
+          <Language />
           <ul className="header-navigation-list" onClick={changeNavigationBar}>
             {menu}
           </ul>
         </nav>
 
         <div className="header-right">
-          {/* <Select
-            defaultValue="en"
-            style={{ width: 120 }}
-            size="large"
-            //   onChange={handleChange}
-            options={languageOptions}
-          /> */}
+          <Language />
           <Link to={isAuthenticated ? "/dashboard/document" : "/auth/signin"}>
             <CustomButton color="dark" bordered>
-              Try Docum.ai
+              {t("header.try_docum")}
             </CustomButton>
           </Link>
         </div>
@@ -67,14 +97,12 @@ function Header() {
 
       <CustomModal open={visible} onCancel={closeModal} width={1480}>
         {/* Pricing */}
-        <section id="pricing" style={{ padding: 50 }}>
+        <section id="pricing" className="header-pricing-modal">
           <div className="title_sm" style={{ marginBottom: 24 }}>
             Сhoose a tariff for yourself or companies!
           </div>
           <div className="home-pricing">
-            {pricingCardData.map((item) => {
-              return <PricingCard item={item} />;
-            })}
+            <PricingSlider />
           </div>
         </section>
       </CustomModal>

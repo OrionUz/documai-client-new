@@ -1,33 +1,37 @@
 export const dashboardHeaderButtons = [
   {
-    title: "Document",
+    title: "dashboard.document",
     value: "document",
   },
   {
-    title: "Quality",
+    title: "dashboard.quality",
     value: "quality",
     disabled: true,
   },
   {
-    title: "Chat",
+    title: "dashboard.chat",
     value: "chat",
   },
 ];
 
 export const addProjectFormItems = [
   {
-    label: "Bot username*",
+    label: "dashboard.label1",
     name: "username",
-    message: "Please input bot username",
+    message: "dashboard.message1",
   },
   {
-    label: "Bot token*",
+    label: "dashboard.label2",
     name: "botToken",
-    message: "Please input bot bot token",
+    message: "dashboard.message2",
   },
   {
-    label: "Chatbot name*",
+    label: "dashboard.label3",
     name: "displayName",
-    message: "Please input chatbot name*",
+    message: "dashboard.message3",
   },
 ];
+
+export const paymentItems = [
+  {}
+]

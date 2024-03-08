@@ -4,6 +4,7 @@ import { IDeleteRes } from "../api/type";
 import {
   IAddProjec,
   IAddProjectRes,
+  IEditProject,
   IProjectRes,
   IProjectUserMessagesRes,
   IProjectUserRes,
@@ -52,6 +53,16 @@ export const projectsApi = api.injectEndpoints({
       invalidatesTags: [{ type: "Projects", id: "LIST" }],
     }),
 
+    //Add project endpoint
+    editProject: build.mutation<IAddProjectRes, IEditProject>({
+      query: (body) => ({
+        url: "chatbot",
+        method: "PUT",
+        body,
+      }),
+      invalidatesTags: [{ type: "Projects", id: "LIST" }],
+    }),
+
     //Train project endpoint
     trainProject: build.mutation<any, ITrainProject>({
       query(data) {
@@ -74,6 +85,17 @@ export const projectsApi = api.injectEndpoints({
       query(id) {
         return {
           url: `v2/projects/${id}`,
+          method: "DELETE",
+        };
+      },
+      invalidatesTags: (post) => [{ type: "Projects", id: post?.id }],
+    }),
+
+    //Delete project endpoint
+    deleteDocument: build.mutation<IDeleteRes, number>({
+      query(id) {
+        return {
+          url: `v2/documents/${id}`,
           method: "DELETE",
         };
       },
@@ -117,8 +139,10 @@ export const {
   useGetProjectsQuery,
   useGetPublicProjectsQuery,
   useAddProjectMutation,
+  useEditProjectMutation,
   useTrainProjectMutation,
   useDeleteProjectMutation,
+  useDeleteDocumentMutation,
   useGetProjetUsersQuery,
   useLazyGetProjetUsersQuery,
   useGetProjetUserMessagesQuery,
@@ -126,5 +150,5 @@ export const {
 } = projectsApi;
 
 export const {
-  endpoints: { deleteProject, getProjects },
+  endpoints: { deleteDocument, getProjects },
 } = projectsApi;

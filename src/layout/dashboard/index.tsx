@@ -1,32 +1,38 @@
-import { useEffect } from "react";
+import { SizeType } from "antd/es/config-provider/SizeContext";
+import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { useGetProjectsQuery } from "src/app/services/projects";
 import { saveProjects } from "src/app/slices/projectSlice";
-import { useAppDispatch } from "src/app/store";
-import { BotSvg, HomeSvg, QuestionSvg } from "src/assets/svg";
-import { dashboardHeaderButtons } from "./const";
+import { useAppDispatch, useTypedSelector } from "src/app/store";
+import { ArrowRightSvg, CloseSvg, HamburgerSvg, HomeSvg, QuestionSvg } from "src/assets/svg";
 import CustomButton from "src/components/common/button";
+import CustomDrawer from "src/components/common/drawer";
 import RadioButton from "src/components/common/radio/RadioButton";
-import AddProject from "./components/AddProject";
-import ProjectUsers from "./components/ProjectUsers";
+import { isMobile } from "src/static/const";
+//import Logo from "../main/header/Logo";
+import Logo from "src/layout/main/header/documLogo";
+import Language from "src/layout/main/language";
+import ActivatedBots from "src/layout/dashboard/components/ActivatedBots";
+import AddProject from "src/layout/dashboard/components/AddProject";
+import ProjectUsers from "src/layout/dashboard/components/ProjectUsers";
+import UserProfile, {
+  ProfileInfo,
+} from "src/layout/dashboard/components/UserProfile";
+import { dashboardHeaderButtons } from "src/layout/dashboard/const";
+import Logout from "src/layout/dashboard/components/Logout";
+import { useTranslation } from "react-i18next";
 
 function DashboardLayout() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const profile  = useTypedSelector(state => state.auth.profile)
+  const {t} = useTranslation();
 
   //Use search params
-  const [searchParams, setSearchParams] = useSearchParams();
-  const handleMakeParams = (key: string, value: string) => {
-    if (value) {
-      if (searchParams.has(key)) searchParams.set(key, value);
-      else searchParams.append(key, value);
-    } else searchParams.delete(key);
-    setSearchParams(searchParams);
-  };
+  const [searchParams] = useSearchParams();
 
   //Menu
   const projectId = searchParams.get("projectId");
-  const activeProject = projectId ? +projectId : 1;
 
   const location = useLocation();
   const type = location.pathname.split("/")[2];
@@ -35,89 +41,162 @@ function DashboardLayout() {
     navigate(`/dashboard/${val}?projectId=${projectId}`);
   };
 
+  const SidebarMenu = () => (
+    <div className="dashboard-sidebar-top-menu">
+      <Link to="/">
+        <HomeSvg /> <span>{t("dashboard.home")}</span>
+      </Link>
+      <a href="https://t.me/documai_support">
+        <QuestionSvg />
+        <span>{t("dashboard.help")}</span>
+      </a>
+
+      {isMobile && <Logout />}
+    </div>
+  );
+
+  const HeaderMenu = ({ size }: { size: SizeType }) => (
+    <div className="dashboard-header-menu">
+      <RadioButton
+        onChange={handleChangeHeader}
+        defaultValue={type || "document"}
+        buttons={dashboardHeaderButtons}
+        size={size}
+      />
+    </div>
+  );
+
   //Get projects
   const { data } = useGetProjectsQuery();
   useEffect(() => {
     if (data) dispatch(saveProjects(data.projects));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
-  if (data)
-    return (
-      <div className="dashboard">
-        <div className={"dashboard-sidebar"}>
-          <div>
-            {/* Sidebar top */}
-            <div className="dashboard-sidebar-top">
-              <div className="dashboard-sidebar-top-title">
-                <Link to="/"> Docum.ai</Link>
-              </div>
+  //Drawer settings
+  const [botsVisible, setBotsVisible] = useState(false);
+  const [usersVisible, setUsersVisible] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
 
-              <div className="dashboard-sidebar-top-menu">
-                <Link to="/">
-                  <HomeSvg /> <span>Home</span>
-                </Link>
-                <p>
-                  <QuestionSvg /> <span>Help</span>
-                </p>
-              </div>
-            </div>
+  const changeBotsVisible = () => setBotsVisible(!botsVisible);
+  const changeUsersVisible = () => setUsersVisible(!usersVisible);
+  const changeMenuVisible = () => setMenuVisible(!menuVisible);
 
-            {/* List of bots */}
-            <div className="dashboard-sidebar-content">
-              <h3>Activated bots</h3>
-
-              <div className="dashboard-sidebar-menu">
-                {data?.projects?.map((item) => {
-                  return (
-                    <div
-                      onClick={() => {
-                        handleMakeParams("projectId", String(item.id));
-                        handleMakeParams("userId", "");
-                      }}
-                      className={`dashboard-sidebar-bot ${activeProject === item.id && "dashboard-sidebar-bot-active"}`}
-                      key={item.id}
-                    >
-                      <BotSvg /> {item.displayName || `Bot-${item.id}`}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+  return (
+    <div className="dashboard">
+      <div className={"dashboard-sidebar"}>
+        <div className="dashboard-sidebar-wrap">
+          {/* Sidebar top */}
+          <div className="dashboard-sidebar-top">
+            <Logo />
+            <SidebarMenu />
           </div>
 
-          {/* Button for create new bot */}
-          <div className="dashboard-sidebar-footer">
-            <AddProject />
+          {/* List of bots */}
+          <div className="dashboard-sidebar-content">
+            <h3>{t("dashboard.activation")}</h3>
+            <ActivatedBots />
           </div>
         </div>
 
-        {/* List of users */}
-        {type === "chat" && <ProjectUsers />}
-
-        {/* Right section of dashboard */}
-        <div className="dashboard-right">
-          {/* Header of dashboard */}
-          <div className="dashboard-header">
-            <div className="dashboard-header-menu">
-              <RadioButton
-                onChange={handleChangeHeader}
-                defaultValue={type || "document"}
-                buttons={dashboardHeaderButtons}
-              />
-            </div>
-            <CustomButton color="dark" bordered>
-              Balance: 25, 000
-            </CustomButton>
-            <img src={require("src/assets/img/user.png")} alt="user" />
-          </div>
-
-          {/* Content of dashboard */}
-          <div className="dashboard-content">
-            <Outlet />
-          </div>
+        {/* Add Project */}
+        <div className="dashboard-sidebar-footer">
+          <AddProject />
         </div>
       </div>
-    );
+
+      {/* List of users */}
+      {type === "chat" && <ProjectUsers />}
+
+      {/* Right section of dashboard */}
+      <div className="dashboard-right">
+        {/* Header of dashboard */}
+        <div className="dashboard-header">
+          <div className="dashboard-header-logo">
+            <Logo />
+          </div>
+          <HeaderMenu size="large" />
+          <Language />
+          <CustomButton color="dark" bordered className="dashboard-header-payment">
+            {t("dashboard.balance")+' '+ profile?.wallet?.totalAmount+ ' UZS'}
+          </CustomButton>
+          <UserProfile />
+          <HamburgerSvg onClick={changeMenuVisible} />
+        </div>
+        <div className="dashboard-header-mobile">
+          <HeaderMenu size="middle" />
+          <div className="dashboard-header-mobile-right">
+            <CustomButton onClick={changeBotsVisible} color="dark" icon={<ArrowRightSvg />}>
+              {t("dashboard.bot")}
+            </CustomButton>
+            <CustomButton onClick={changeUsersVisible} color="dark" icon={<ArrowRightSvg />}>
+              {t("dashboard.users")}
+            </CustomButton>
+          </div>
+        </div>
+
+        {/* Content of dashboard */}
+        <div className="dashboard-content">
+          <Outlet />
+        </div>
+      </div>
+
+      {/* Bots drawer */}
+      <CustomDrawer
+        open={botsVisible}
+        width={300}
+        placement="left"
+        title={null}
+        onClose={changeBotsVisible}
+        className="dashboard-drawer"
+      >
+        <div className="dashboard-drawer-header">
+          <CloseSvg onClick={changeBotsVisible} />
+        </div>
+        <div className="dashboard-drawer-title">{t("dashboard.yourBots")}</div>
+        <ActivatedBots onChangeMenu={changeBotsVisible} />
+        <AddProject />
+      </CustomDrawer>
+
+      {/* Users drawer */}
+      <CustomDrawer
+        open={usersVisible}
+        width={300}
+        placement="left"
+        title={null}
+        onClose={changeUsersVisible}
+        className="dashboard-drawer"
+      >
+        <div className="dashboard-drawer-header">
+          <CloseSvg onClick={changeUsersVisible} />
+        </div>
+        <ProjectUsers onChangeUser={changeUsersVisible} />
+      </CustomDrawer>
+
+      {/* Menu drawer */}
+      <CustomDrawer
+        open={menuVisible}
+        width={360}
+        placement="right"
+        title={null}
+        onClose={changeMenuVisible}
+        className="dashboard-drawer"
+      >
+        <div className="dashboard-drawer-menu">
+          <div>
+            <div className="dashboard-drawer-menu-header">
+              <ProfileInfo />
+              <CloseSvg onClick={changeMenuVisible} />
+            </div>
+            <SidebarMenu />
+          </div>
+          <CustomButton color="dark" bordered>
+            {t("dashboard.balance1")+' '+ profile?.wallet?.totalAmount+ ' UZS'} 
+          </CustomButton>
+        </div>
+      </CustomDrawer>
+    </div>
+  );
 }
 
 export default DashboardLayout;

@@ -1,6 +1,9 @@
 .aboutcard {
   background: $bg_dark;
-  border: 1px solid #6e6b7a;
+  //border: 1px solid #6e6b7a;
+  border-top: 3px solid #664DFF;
+  border-bottom: 3px solid #664DFF;
+  box-shadow: 0px 4px 20px 0px rgba(102, 77, 255, 0.20);
   border-radius: 24px;
   padding: 40px 32px;
 
@@ -8,16 +11,26 @@
   gap: 97px;
 
   &-left {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
     p {
+      
       font-weight: 500;
       font-size: 16px;
       line-height: 150%;
       color: $text2;
+
+      &:nth-child(3) {
+        margin-top: 30px;
+      }
     }
     img {
+      width: 400px;
       margin: 19px 0 -53px -62px;
     }
     button {
+      
       margin-top: 101px;
     }
     svg {
@@ -28,26 +41,37 @@
   &-full {
     display: flex;
     padding: 40px 72px 36px 32px;
+    //background: linear-gradient(312deg, #664DFF 1.94%, rgba(102, 77, 255, 0.00) 62.08%);
+    background: linear-gradient(-40deg, rgba(#664DFF, .5), rgba(rgb(144, 153, 236), 0) 15%),
+                linear-gradient(130deg, rgba(#664DFF, .5), rgba(white, 0) 10%),;
+    background-color: #242B35;
+    box-shadow: 0px 4px 20px 0px rgba(102, 77, 255, 0.20);
     .aboutcard {
       &-left {
-        width: 693px;
+        flex-grow: 1;
         h2 {
           @extend .title_l;
-          //width: 650px;
           line-height: 130%;
           margin-bottom: 16px;
         }
       }
       &-right {
+        //position: absolute;
         svg {
           margin: -59px 0 -76px 0;
+          
         }
+        
       }
     }
   }
 
   &-half {
     width: calc(50% - 18px);
+    border-top: 3px solid #664DFF;
+    border-bottom: 2px solid #664DFF;
+    background: #242B35;
+    box-shadow: 0px 4px 20px 0px rgba(102, 77, 255, 0.20);
     .aboutcard {
       &-left {
         h2 {
@@ -63,12 +87,18 @@
   }
 }
 
+.color{
+  transform: translateY(-34px);
+  svg{
+    border-radius: 24px;
+  }
+}
+
 //MEDIA QUERY
 
 @media screen and (max-width: 1450px) {
   .aboutcard {
     &-full {
-      width: 90%;
       .aboutcard {
         &-left {
           h2 {
@@ -119,24 +149,44 @@
 
 @media screen and (max-width: 450px) {
   .aboutcard {
+    padding: 20px 16px 25px;
+    &-left {
+      img {
+        width: 100%;
+        margin: 23px 0 -30px;
+      }
+    }
     &-full {
       .aboutcard {
         &-left {
           h2 {
             font-size: 24px;
+            margin-bottom: 11px;
           }
           p {
             font-size: 16px;
+            &:nth-child(3) {
+              margin-top: 15px;
+            }
+          }
+          button {
+            margin-top: 32px;
           }
         }
       }
     }
-
     &-half {
       .aboutcard {
         &-left {
-          img {
-            width: 330px;
+          h2 {
+            font-size: 20px;
+            margin-bottom: 11px;
+          }
+          p {
+            font-size: 16px;
+          }
+          svg {
+            margin-top: 32px;
           }
         }
       }

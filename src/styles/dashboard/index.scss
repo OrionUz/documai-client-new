@@ -1,7 +1,14 @@
 @import "usercard.scss";
+@import "projectinfo.scss";
+@import "./profile.scss";
 
 .dashboard {
   display: flex;
+
+  //Logo
+  .logo {
+    width: 173px;
+  }
 
   //Sidebar section
   &-sidebar {
@@ -16,46 +23,59 @@
     flex-direction: column;
     justify-content: space-between;
 
+    &-wrap {
+      flex-grow: 1;
+    }
+
     &-top {
       padding: 31px 30px 40px 39px;
       border-bottom: 1px solid $stroke;
-      &-title {
-        a {
-          @extend .title;
-          font-weight: 700;
-          font-style: italic;
-        }
+
+      .logo {
         margin-bottom: 67px;
       }
+
       &-menu {
-        a,
-        p {
+        @extend .scroll;
+        a {
           @extend .text;
           line-height: 100%;
           display: flex;
           align-items: center;
           gap: 8px;
           cursor: pointer;
+
+          &:first-child{
+            margin-bottom: 25px;
+          }
+ 
+
         }
-        a {
-          margin-bottom: 25px;
+        .profile-content-menu {
+          padding: 0;
+          margin-top: 25px;
+          &:hover {
+            background-color: transparent;
+          }
         }
       }
     }
 
     &-content {
+      height: calc(100% - 257px);
       padding: 12px 40px;
-
+      @extend .scroll;
       h3 {
         @extend .text_s;
         color: #a6aaae;
-        margin-bottom: 20px;
+        margin-bottom: 32px;
       }
     }
 
     &-bot {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 8px;
       transition: $transition;
       cursor: pointer;
@@ -80,10 +100,11 @@
     &-menu {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 28px;
     }
 
     &-footer {
+      flex-grow: 0;
       padding: 0 26px;
       button {
         width: 100%;
@@ -132,13 +153,38 @@
     border-bottom: 1px solid $stroke;
     padding: 0 40px;
 
-    img {
-      width: 50px;
-      object-fit: cover;
+    &-menu,
+    &-logo {
+      flex-grow: 1;
     }
 
-    &-menu {
-      flex-grow: 1;
+    &-logo {
+      display: none;
+    }
+
+    &-mobile {
+      display: none;
+      padding: 0 40px;
+      background-color: #17212b60;
+      border-bottom: 1px solid $stroke;
+      &-right {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        .button {
+          width: 160px;
+          justify-content: space-between;
+          font-size: 16px;
+          &-dark {
+            padding: 10px 12px;
+          }
+        }
+      }
+    }
+
+    .hamburger {
+      display: none;
     }
   }
 
@@ -152,5 +198,160 @@
       min-height: 100%;
     }
   }
+
+  &-drawer {
+    &-header {
+      text-align: end;
+      padding-bottom: 48px;
+    }
+    &-title {
+      @extend .title_sm;
+      line-height: 100%;
+      margin-bottom: 64px;
+    }
+    .ant-drawer-header {
+      display: none;
+    }
+  }
 }
-@import "headermenu.scss";
+
+@media screen and (max-width: 1250px) {
+  .dashboard {
+    &-sidebar,
+    &-users {
+      display: none;
+    }
+    &-sidebar-menu {
+      height: calc(100% - 211px);
+    }
+    &-header {
+      border-bottom: none;
+      height: 100px;
+      &-logo {
+        display: inline;
+      }
+      &-mobile {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 12px;
+        column-gap: 30px;
+        padding-bottom: 20px;
+      }
+      .dashboard-header-menu {
+        display: none;
+      }
+    }
+    &-drawer {
+      .dashboard-users {
+        display: block;
+        border: none;
+        background-color: transparent;
+        &-header {
+          height: auto;
+          padding: 0;
+
+          h2 {
+            margin-bottom: 24px;
+          }
+        }
+        &-content {
+          padding: 0;
+          height: calc(100vh - 168px);
+          .usercard-active {
+            background-color: $bg_form;
+          }
+        }
+      }
+    }
+    &-content {
+      height: calc(100vh - 161px);
+    }
+  }
+  .add-bot {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .dashboard {
+    &-content {
+      height: auto;
+      & > div {
+        min-height: calc(100vh - 270px);
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .dashboard {
+    .logo {
+      width: 138px;
+    }
+    &-header {
+      height: auto;
+      padding: 24px 16px 34px;
+      background-color: transparent;
+      &-mobile {
+        background-color: transparent;
+        border-bottom: none;
+        padding: 0 16px 4px 16px;
+
+        &-right {
+          gap: 20px;
+        }
+
+        .button {
+          width: 150px;
+        }
+      }
+      &-payment {
+        display: none;
+      }
+      .hamburger {
+        display: inline;
+      }
+      .profile-button {
+        display: none;
+      }
+      .language
+        :where(.css-dev-only-do-not-override-1qvbt7g).ant-select-single.ant-select-lg:not(.ant-select-customize-input)
+        .ant-select-selector {
+        height: auto;
+        padding: 0px 11px;
+        font-size: 14px;
+      }
+    }
+    &-content {
+      padding: 32px 16px 43px;
+    }
+    &-drawer {
+      &-menu {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-header {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .profile-content-header {
+          border-bottom: none;
+          margin-bottom: 60px;
+          &-img {
+            width: 60px;
+            height: 60px;
+            img {
+              width: 30px;
+              height: 30px;
+            }
+          }
+          svg {
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+  }
+}

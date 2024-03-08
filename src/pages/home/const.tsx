@@ -1,3 +1,4 @@
+import { Affordable, CustomAI, QuickAnswer } from "src/assets/svg";
 import { AboutCardSvg1, AboutCardSvg2 } from "src/assets/svg/freepik/about";
 import {
   UsageCardSvg1,
@@ -7,60 +8,54 @@ import {
 
 export const introcardData = [
   {
-    title: "Quick answer!",
-    description:
-      "Docum.ai can answer your customers immediately  when they contact your custom bot.",
-    img: require("src/assets/img/home/introcard1.png"),
+    title: "home.intro.title1",
+    description: "home.intro.text1",
+    icon: <QuickAnswer />,
   },
   {
-    title: "Custom AI",
-    description:
-      "Docum.ai can serve 24/7 and talk to unlimited customers with custom knowledge",
-    img: require("src/assets/img/home/introcard2.png"),
+    title: "home.intro.title2",
+    description: "home.intro.text2",
+    icon: <CustomAI />,
   },
   {
-    title: "Cheaper price!",
-    description:
-      "Docum.ai cost you 5 times cheaper than human customer service employee ",
-    img: require("src/assets/img/home/introcard3.png"),
+    title: "home.intro.title3",
+    description: "home.intro.text3",
+    icon: <Affordable />,
   },
 ];
 
 export const usagecardData = [
   {
     icon: <UsageCardSvg1 />,
-    info: "You should collect data about your business. Think about what customers ask  and what answers should be given. You should write all of them into one file. If you need help, you can always contact our team",
+    info: "home.usage.info1",
   },
   {
     icon: <UsageCardSvg2 />,
-    info: "Upload it to Docum.ai. We will ask you to give us a bot username and token. After that we will integrate ai model which knows about your business into the bot.",
+    info: "home.usage.info2",
   },
   {
     icon: <UsageCardSvg3 />,
-    info: "You should enter the chat bot which you provided and ask questions about your business. You should take notes which question it could not answer and update the document you uploaded",
+    info: "home.usage.info3",
   },
 ];
 
 export const aboutcardData = [
   {
-    title: "Docum.ai is a platform to create customer service AI",
-    description:
-      "Whether you're an entrepreneur, a customer support professional, or a content creator, our platform enables you to harness the power of AI and deliver exceptional user experiences. Empower your business with an intelligent assistant that is available 24/7, capable of handling multiple queries simultaneously, and always ready to provide accurate information.",
-    button: true,
+    title: "home.aboutPart.title1",
+    description: ["home.aboutPart.text1"],
+    button: "home.aboutPart.btn",
     icon: <AboutCardSvg1 />,
     width: "full",
   },
   {
-    title: "You can test your data real time and edit it",
-    description:
-      "Once you upload document, you can connect it to Telegram bot. If you do not like the bot answers, you can edit the document you uploaded or delete it or add more document.",
+    title: "home.aboutPart.title2",
+    description: ["home.aboutPart.text2"],
     img: require("src/assets/img/home/aboutcard2.png"),
     width: "half",
   },
   {
-    title: "You can upload any type of file",
-    description:
-      "We can train AI model with your data. You can upload any type of file. Be sure that data quality is up to you. As long as data is good, Ai can do better job",
+    title: "home.aboutPart.title3",
+    description: ["home.aboutPart.text3"],
     icon: <AboutCardSvg2 />,
     width: "half",
   },
@@ -69,40 +64,39 @@ export const aboutcardData = [
 export const pricingCardData = [
   {
     current: true,
-    type: "Basic",
-    price: "Free",
-    description: "You could test the AI model with your custom data",
+    type: "home.pricingPart.type1",
+    price: "home.pricingPart.price1",
+    description: "home.pricingPart.text1",
     includes: [
-      "Upload one document (2 mb max)",
-      "Chat with AI  custom knowledge based",
-      "20 questions",
+      "home.pricingPart.includes1.line1",
+      "home.pricingPart.includes1.line2",
+      "home.pricingPart.includes1.line3",
     ],
   },
   {
     main: true,
-    type: "Enterprise",
-    price: "30$",
-    price_duration: "/ month",
-    requirement: "+ Also you have to pay AI Fee.",
+    type: "home.pricingPart.type2",
+    price: "29$",
+    price_duration: "home.pricingPart.price_duration2",
+    requirement: "home.pricingPart.text2",
     includes: [
-      "Upload 10 documents (10 mb max )",
-      "Edit document",
-      "One Telegram bot integrated",
-      "Customer support",
-      "Real time checking the data",
+      "home.pricingPart.includes2.line1",
+      "home.pricingPart.includes2.line2",
+      "home.pricingPart.includes2.line3",
+      "home.pricingPart.includes2.line4",
+      "home.pricingPart.includes2.line5",
     ],
   },
   {
-    type: "Enterprise",
-    price: "100$",
-    price_duration: "/ month",
-    requirement: "+ Also you have to pay AI Fee.",
+    type: "home.pricingPart.type3",
+    price: "299$",
+    price_duration: "home.pricingPart.price_duration3",
+    requirement: "home.pricingPart.text3",
     includes: [
-      "Unlimited document",
-      "10 Telegram bots",
-      "Permium-level support",
-      "Real time checking the data",
-      "Edit documents",
+      "home.pricingPart.includes3.line1",
+      "home.pricingPart.includes3.line2",
+      "home.pricingPart.includes3.line3",
+      "home.pricingPart.includes3.line4",
     ],
   },
 ];

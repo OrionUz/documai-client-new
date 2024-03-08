@@ -1,94 +1,94 @@
-import { useState } from "react";
 import {
   CopyRightSvg,
-  DiscordSvg,
   FacebookSvg,
   InstagramSvg,
   MessageSendSvg,
-  PlaySvg,
-  TwitterSvg,
+  TwoCircleSvg,
 } from "src/assets/svg";
-import CustomButton from "src/components/common/button";
 import CustomSlider from "src/components/common/slider";
+import { companies } from "./const";
+import { useTranslation } from "react-i18next";
+import { isDocum } from "src/static/const";
+import { Link } from "react-router-dom";
 
 function Footer() {
+  const { t } = useTranslation();
   return (
     <div className="footer">
       <div className="footer-container">
         {/* Companies */}
         <div className="footer-companies">
-          <h3>We are trusted by 1000+ of companies</h3>
-          <CustomSlider counts={4} arrows={false} autoplay>
-            <div>
-              <img src={require("src/assets/img/company.png")} alt="company" />
-            </div>
-            <div>
-              <img src={require("src/assets/img/company.png")} alt="company" />
-            </div>
-            <div>
-              <img src={require("src/assets/img/company.png")} alt="company" />
-            </div>
-            <div>
-              <img src={require("src/assets/img/company.png")} alt="company" />
-            </div>
-            <div>
-              <img src={require("src/assets/img/company.png")} alt="company" />
-            </div>
+          <h3>{t("home.footer.title")}</h3>
+          <CustomSlider counts={5} arrows={false} autoplay dots>
+            {companies.map((item) => {
+              return (
+                <div
+                  className={`footer-companies-image footer-companies-image-${item}`}
+                  key={item}
+                >
+                  <img
+                    src={require(`src/assets/img/companies/${item}.png`)}
+                    alt={item}
+                  />
+                </div>
+              );
+            })}
           </CustomSlider>
         </div>
 
         {/* Main content */}
         <div className="footer-content">
-          <div className="footer-content-header">
-            <h2>No long-term contracts. No catches. Simple.</h2>
-            <p>Start your 30-day free trial. Cancel anytime</p>
-            <div className="footer-content-buttons">
-              <CustomButton color="white" icon={<PlaySvg />} left_icon>
-                View demo
-              </CustomButton>
-              <CustomButton color="light">Get started</CustomButton>
+          {/*<div className="footer-content-header">
+            <h2>{t("home.footer.description")}</h2>
+            <div className="footer-content-pics">
+              <img src={require("src/assets/img/home/git.png")} alt="" />
             </div>
-          </div>
+          </div>*/}
 
           <div className="footer-content-main">
             <div className="footer-content-left">
-              <h1>Docum.ai</h1>
-              <p>
-                Docum.ai - is an artificial intelligence that automates your
-                business
-              </p>
+              <div>
+                <h1>{t("home.footer.docum")}</h1>
+                <p>{t("home.footer.text-down")}</p>
+              </div>
               <ul>
-                <li>Overview</li>
-                <li>Features</li>
-                <li>Pricing</li>
-                <li>Blog & News</li>
-                <li>Help</li>
-                <li>Demo</li>
+                <li>{t("home.footer.overview")}</li>
+                <li>{t("home.footer.features")}</li>
+                <li>{t("home.footer.pricing-down")}</li>
+                {/* <li>Blog & News</li> */}
+                <li>{t("home.footer.help")}</li>
+                <li>{t("home.footer.demo-down")}</li>
               </ul>
             </div>
 
             <div className="footer-content-right">
               <div>
-                <MessageSendSvg />
+                <div className="footer-icon">
+                  <TwoCircleSvg />
+                </div>
+                <Link to="#">
+                  <MessageSendSvg />
+                </Link>
               </div>
               <div>
-                <DiscordSvg />
-              </div>
-              <div>
+                <div className="footer-icon">
+                  <TwoCircleSvg />
+                </div>
                 <InstagramSvg />
               </div>
               <div>
+                <div className="footer-icon">
+                  <TwoCircleSvg />
+                </div>
                 <FacebookSvg />
-              </div>
-              <div>
-                <TwitterSvg />
               </div>
             </div>
           </div>
 
           <div className="footer-content-personal">
             <p>
-              <CopyRightSvg /> 2023 Docum.ai, All right reserved.
+              <CopyRightSvg /> 2023 {isDocum ? "Docum.ai" : "BlueJourney.pro"},
+              All right reserved.
             </p>
             <div>
               <p>Terms of use</p>

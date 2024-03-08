@@ -3,17 +3,19 @@
   position: absolute;
   top: 40px;
   left: 0;
+  z-index: 100;
+  border-bottom: 1px solid #565C64;
+  font-family: "Poppins", sans-serif !important;
+
+  .logo {
+    height: 57px;
+  }
 
   &-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 6px 0;
-  }
-
-  &-logo a {
-    @extend .title;
-    line-height: 38px;
   }
 
   &-photo {
@@ -25,11 +27,18 @@
     display: flex;
     align-items: center;
     gap: 32px;
-
+    font-family: "Poppins", sans-serif !important;
+    
     a,
     p {
       @extend .text;
       cursor: pointer;
+      color: #c1c2c8;
+    }
+
+    transition: $transition;
+    .active {
+      color: white;
     }
   }
 
@@ -37,19 +46,236 @@
     display: flex;
     align-items: center;
     gap: 20px;
+
+    button {
+      padding: 10.5px 24px;
+    }
+
+    .ant-select-arrow svg {
+      color: $white;
+    }
+  }
+
+  &-navigation {
+    &-label {
+      height: 24px;
+      width: 24px;
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      text-align: center;
+      background-color: transparent;
+      cursor: pointer;
+      z-index: 1200;
+      opacity: 0;
+      padding-top: 10px;
+    }
+
+    &-background {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      position: fixed;
+      top: 6px;
+      right: 6px;
+      background-color: transparent;
+      transition: transform 0.6s;
+      z-index: -11;
+
+      &-active {
+        transform: scale(80);
+        z-index: 1000;
+        background-color: $bg_main;
+      }
+    }
+
+    &-nav {
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -10;
+      opacity: 0;
+      pointer-events: none;
+
+      &-active {
+        z-index: 1100;
+        transition: all 0.6s;
+        opacity: 0;
+      }
+
+      .language {
+        position: absolute;
+        top: 54px;
+        left: 16px;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+
+      a,
+      p {
+        padding: 20px 10px;
+        font-size: 28px;
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        opacity: 0;
+        transition: 0.5s;
+      }
+    }
+
+    &-icon {
+      position: relative;
+      cursor: pointer;
+
+      &,
+      &::before,
+      &::after {
+        width: 18px;
+        height: 1.5px;
+        border-radius: 50px;
+        background-color: white;
+        display: inline-block;
+        transition: all 0.2s;
+        cursor: pointer;
+      }
+
+      &-active {
+        background-color: transparent;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+      }
+
+      &::before {
+        top: -6px;
+      }
+
+      &::after {
+        top: 6px;
+        width: 12.5px;
+      }
+
+      &-active::before {
+        top: 0;
+        transform: rotate(135deg);
+      }
+
+      &-active::after {
+        top: 0;
+        width: 18px;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  &-pricing-modal {
+    padding: 50px;
   }
 }
 
-//MEDIA QUERY
 
+
+//MEDIA QUERY
 @media screen and (max-width: 900px) {
   .header {
     &-menu {
       display: none;
     }
+    &-right {
+      padding-right: 40px;
+
+      .language {
+        display: none;
+      }
+    }
+    &-navigation {
+      &-label {
+        opacity: 1;
+        top: 28px;
+      }
+      &-nav {
+        &-active {
+          opacity: 1;
+          pointer-events: initial;
+
+          a {
+            &:nth-child(1) {
+              opacity: 1;
+              transition-delay: 0.3s;
+            }
+            &:nth-child(2) {
+              opacity: 1;
+              transition-delay: 0.6s;
+            }
+            &:nth-child(3) {
+              opacity: 1;
+              transition-delay: 0.9s;
+            }
+          }
+
+          p {
+            opacity: 1;
+            transition-delay: 0.9s;
+          }
+        }
+      }
+
+      &-background {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .header {
+    top: 18px;
+
+    .logo {
+      height: 33px;
+    }
 
     &-right {
-      display: none;
+      padding-right: 35px;
+      button {
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+    }
+    &-navigation {
+      &-label {
+        top: 14px;
+      }
+      &-nav {
+        .language {
+          top: 30px;
+        }
+      }
+    }
+    &-pricing-modal {
+      padding: 30px 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header {
+    &-content {
+      padding: 6px 16px;
     }
   }
 }

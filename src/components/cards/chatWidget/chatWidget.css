@@ -1,0 +1,8 @@
+.chat-widget {
+  display: none;
+  /* Add your styles here */
+}
+
+.chat-widget.open {
+  display: block;
+}
