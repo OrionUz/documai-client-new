@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 .auth {
   height: 100vh;
   padding-top: 150px;
@@ -10,6 +12,20 @@
     left: 0;
     z-index: 10;
     gap: 80px;
+
+    &-modal{
+      display: flex;
+      .ant-modal{
+        padding: 64px;
+        &-content{
+          padding: 64px;
+        }
+
+        &-header{
+          padding: 64px 0;
+        }
+      }
+    }
   }
 
   &-left {
@@ -92,6 +108,18 @@
       }
     }
   }
+}
+
+.modal{
+  padding: 32px;
+}
+
+.customform{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 32px;
+
 }
 
 @media screen and (max-width: 1100px) {
