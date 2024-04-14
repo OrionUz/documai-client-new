@@ -5,7 +5,7 @@ function Logo() {
   return (
     <Link to="/">
       <img
-        className={`logo${isDocum ? "" : "-blue"}`}
+        className={`logo`}
         src={require(`../../../assets/img/logo${isDocum ? "" : "2"}.png`)}
         alt="logo img error"
       />
