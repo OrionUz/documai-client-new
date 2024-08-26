@@ -5,7 +5,7 @@ export const languageEn = {
     about: "About us",
     home: "Homepage",
     pricing: "Pricing",
-    try_docum: "Start",
+    try_docum: "Book a demo",
   },
   home: {
     header: "Automatic Customer Service With AI",

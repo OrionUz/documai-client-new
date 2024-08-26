@@ -1,7 +1,7 @@
 import { Button, Form, Input } from "antd";
 import { MaskedInput } from "antd-mask-input";
 import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import CustomInput from "src/components/common/input";
 import CustomModal from "src/components/common/modal";
 import Header from "src/layout/main/header";
@@ -17,7 +17,7 @@ function AuthPage(props: IAddProps) {
   // const showModal = () => setVisible(true);
   // const closeModal = () => setVisible(false);
 
-  const { form, visible, isLoading, onFinish, showModal, closeModal } =
+  const { form, visible, isLoading, onFinish, closeModal } =
     useNewClient(props);
 
   return (
@@ -119,13 +119,13 @@ function AuthPage(props: IAddProps) {
           </CustomModal>
         </div>
         <div className="auth-left">
-          {/* <div className="auth-left-content">
+          <div className="auth-left-content">
             <Outlet />
-          </div> */}
-
-          <div>
-            <Button onClick={showModal}>Fill the form</Button>
           </div>
+
+          {/* <div>
+            <Button onClick={showModal}>Fill the form</Button>
+          </div> */}
         </div>
         <div className="auth-right">
           <div className="auth-right-header">
