@@ -14,6 +14,7 @@ import ReactPlayer from "react-player";
 import { getRootState } from "src/app/store";
 import { HomeGridSvg } from "src/assets/svg/pricing";
 import { useTranslation } from "react-i18next";
+import Spline from '@splinetool/react-spline';
 
 export function PricingSlider() {
   return (
@@ -53,20 +54,15 @@ function HomePage() {
             </Link>
           </div>
           <div className="home-top-right">
-            {/* <ReactPlayer
-              width={640}
-              url={require("src/assets/video/IntroVideoPlay.mp4")}
-              playing={true}
-              controls={true}
-            /> */}
-            <video
-              className="home-top-video"
-              loop
-              autoPlay
-              muted
-              style={{ width: 510, height: 514 }}
-              src={require("src/assets/video/introVideoLast.mp4")}
-            ></video>
+            <div style={{
+              width: 600,
+              height: 600,
+              marginTop: -80
+            }}>
+            <Spline scene="https://prod.spline.design/qUf2gCoORS7E6VKX/scene.splinecode" />
+            {/* <Spline scene="https://prod.spline.design/LofZdHmyKOD0Snr0/scene.splinecode" /> */}
+            </div>
+            
           </div>
         </div>
 
