@@ -9,6 +9,7 @@ import CustomButton from "src/components/common/button";
 import CustomInput from "src/components/common/input";
 import CustomModal from "src/components/common/modal";
 import { useTranslation } from "react-i18next";
+import CustomTextArea from "src/components/common/input/Textarea";
 
 function EditProject({ projectInfo, setInfoVisible }: EditProjectProps) {
   const [editProject] = useEditProjectMutation();
@@ -35,7 +36,7 @@ function EditProject({ projectInfo, setInfoVisible }: EditProjectProps) {
   const {t} = useTranslation();
 
   useEffect(() => {
-    form.setFieldsValue({ name: projectInfo.displayName });
+    form.setFieldsValue({ name: projectInfo.displayName, prompt: projectInfo.prompt });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -51,11 +52,19 @@ function EditProject({ projectInfo, setInfoVisible }: EditProjectProps) {
           <div className="custom-modal-content">
             <Form form={form} name="add_project" layout="vertical" onFinish={handleSubmit}>
               <Form.Item
-                label="Bot name"
+                label="Chatbot name"
                 name="name"
                 rules={[{ required: true, message: addProjectFormItems[2].message }]}
               >
                 <CustomInput size="large" placeholder={addProjectFormItems[2].message} />
+              </Form.Item>
+              <Form.Item
+                label="Chatbot prompt"
+                name="prompt"
+                rules={[{ required: false }]}
+              >
+                <CustomTextArea size="large" value={""} autoSize={{ minRows: 3, maxRows: 8}}/>
+                {/* <CustomInput size="large" placeholder={addProjectFormItems[2].message} /> */}
               </Form.Item>
 
               <div className="custom-modal-buttons">
