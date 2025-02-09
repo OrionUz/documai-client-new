@@ -13,7 +13,6 @@ import CustomTextArea from "src/components/common/input/Textarea";
 
 function EditProject({ projectInfo, setInfoVisible }: EditProjectProps) {
   const [editProject] = useEditProjectMutation();
-
   const [form] = Form.useForm();
 
   const [visible, setVisible] = useState(false);
@@ -38,7 +37,7 @@ function EditProject({ projectInfo, setInfoVisible }: EditProjectProps) {
   useEffect(() => {
     form.setFieldsValue({ name: projectInfo.displayName, prompt: projectInfo.prompt });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [projectInfo]);
 
 
   return (
