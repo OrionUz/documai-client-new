@@ -33,7 +33,7 @@ jobs:
       - name: create env file
         run: |
           touch .env
-          echo REACT_APP_BASE_URL="https://docum.ai/" >> .env
+          echo REACT_APP_BASE_URL="https://shokhrukhmirzo.uz/" >> .env
           echo GENERATE_SOURCEMAP=false >> .env
           echo STAGE=prod >> .env
 

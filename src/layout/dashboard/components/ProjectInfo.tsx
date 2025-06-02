@@ -22,9 +22,9 @@ function ProjectInfo({ projectInfo, infoVisible, setInfoVisible }: ProjectInfoPr
     if (!projectInfo) return "";
     const content = `
     <script
-      src="https://docum.ai/widget/chat.js"
+      src="https://shokhrukhmirzo.uz/widget/chat.js"
       data-name="docum-ai-chatbot"
-      data-address="https://docum.ai/embed/chat"
+      data-address="https://shokhrukhmirzo.uz/embed/chat"
       data-id="${encodeProjectId(projectInfo?.id)}"
       data-ignore-paths=""
       defer
