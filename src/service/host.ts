@@ -3,7 +3,7 @@ import axios from "axios";
 import { token } from "./const";
 import { handleLogoutFunc } from "./help";
 
-export let host = "https://shokhrukhmirzo.uz/api/";
+export let host = "https://docum.uz/api/";
 // export let host = "http://192.168.1.107:7002/api/";
 
 export let headers = {
