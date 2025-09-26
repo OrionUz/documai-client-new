@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { changeNavigation } from "src/app/slices/headerSlice";
-import { getRootState, useTypedSelector } from "src/app/store";
+import { useTypedSelector } from "src/app/store";
 import CustomButton from "src/components/common/button";
 import CustomModal from "src/components/common/modal";
 import { PricingSlider } from "src/pages/home";
@@ -17,7 +17,6 @@ function Header() {
   const changeNavigationBar = () => dispatch(changeNavigation());
   const { t } = useTranslation();
 
-  const { isAuthenticated } = getRootState().auth;
 
   const [visible, setVisible] = useState(false);
 
@@ -87,9 +86,9 @@ function Header() {
 
         <div className="header-right">
           <Language />
-          <Link to={isAuthenticated ? "/dashboard/document" : "/auth/signin"}>
+          <Link to="https://t.me/samandar_th" target="_blank" rel="noopener noreferrer">
             <CustomButton color="dark" bordered>
-              {t("header.try_docum")}
+              Contact
             </CustomButton>
           </Link>
         </div>

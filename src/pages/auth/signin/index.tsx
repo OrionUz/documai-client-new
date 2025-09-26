@@ -1,18 +1,5 @@
-import { GoogleLogin } from "@react-oauth/google";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { useLoginMutation } from "src/app/services/auth";
-import { isMobile } from "src/static/const";
 
 function AuthSignin() {
-  const navigate = useNavigate();
-  const [login, { isSuccess }] = useLoginMutation();
-  const [searchParams] = useSearchParams();
-  const redirect = searchParams.get("redirect");
-
-  if (isSuccess) {
-    if (redirect) navigate(redirect);
-    else navigate("/dashboard/document");
-  }
 
   return (
     <div className="auth-form">
@@ -35,18 +22,13 @@ function AuthSignin() {
             Sign in with Google
           </p>
         </CustomButton> */}
-        <GoogleLogin
-          onSuccess={(credentialResponse: any) => {
-            login({ token: credentialResponse.credential });
-          }}
-          onError={() => {
-            console.log("Login Failed");
-          }}
-          size="large"
-          width={isMobile ? "300px" : "429px"}
-          locale="en"
-          auto_select={false}
-        />
+        <div style={{ textAlign: 'center', padding: '20px' }}>
+          <p>Authentication is currently disabled. Please contact us via Telegram.</p>
+          <a href="https://t.me/samandar_th" target="_blank" rel="noopener noreferrer" 
+             style={{ color: '#1890ff', textDecoration: 'none' }}>
+            Contact @samandar_th
+          </a>
+        </div>
         {/* <CustomButton icon={<AppleSvg />} style={{ width: "100%" }} left_icon>
           Sign up with Google
         </CustomButton> */}
