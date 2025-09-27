@@ -1,4 +1,3 @@
-import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import { BrowserRouter as Router } from "react-router-dom";
 import RoutElements from "./routes";
@@ -42,9 +41,7 @@ function App() {
               },
             }}
           >
-            <GoogleOAuthProvider clientId="499657436082-g9oggi0d2s3ss49jjl6cv1520117pmnd.apps.googleusercontent.com">
-              <RoutElements />
-            </GoogleOAuthProvider>
+            <RoutElements />
           </ConfigProvider>
         </Router>
       </Provider>

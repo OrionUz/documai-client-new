@@ -5,7 +5,7 @@ export const languageUz = {
     about: "Biz haqimizda",
     home: "Bosh sahifa",
     pricing: "Narxlar",
-    try_docum: "Boshlash",
+    try_docum: "Demoga yozilish",
   },
 
   home: {

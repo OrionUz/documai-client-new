@@ -5,7 +5,7 @@ export const languageRu = {
     about: "О нас",
     home: "Главная",
     pricing: "План",
-    try_docum: "Начинать",
+    try_docum: "Демо",
   },
   home: {
     header: "Создайте помощника по обслуживанию клиентов с ",

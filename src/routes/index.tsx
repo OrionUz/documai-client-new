@@ -37,7 +37,16 @@ function RoutElements() {
             <Route path="chat" index element={<ChatWidget />} />
             <Route path="chat/:projectId" element={<ChatWidgetId />} />
           </Route>
-          <Route path="auth" element={<AuthPage />}>
+          <Route
+            path="auth"
+            element={
+              <AuthPage
+              // handleGet={function (): void {
+              //   throw new Error("Function not implemented.");
+              // }}
+              />
+            }
+          >
             <Route path="signin" element={<AuthSignin />} />
             <Route path="signup" element={<AuthSignUp />} />
           </Route>
@@ -60,7 +69,6 @@ function RoutElements() {
             <Route path="chat" element={<ChatPage />} />
             <Route path="bot/:botId" element={<DocumentsPage />} />
           </Route>
-          
         </Route>
 
         <Route path="*" element={<Custom404 />} />

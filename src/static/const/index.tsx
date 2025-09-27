@@ -10,4 +10,4 @@ export const isMobile = window.innerWidth < 600;
 
 export const hostname = window.location.hostname;
 
-export const isDocum = hostname === "docum.ai";
+export const isDocum = hostname === "docum.uz";

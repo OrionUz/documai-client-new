@@ -9,11 +9,10 @@ import IntroCard from "./components/IntroCard";
 import AboutCard from "./components/AboutCard";
 import PricingCard from "./components/PricingCard";
 import CustomSlider from "src/components/common/slider";
-import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
-import { getRootState } from "src/app/store";
 import { HomeGridSvg } from "src/assets/svg/pricing";
 import { useTranslation } from "react-i18next";
+import Spline from '@splinetool/react-spline';
 
 export function PricingSlider() {
   return (
@@ -27,7 +26,6 @@ export function PricingSlider() {
 
 function HomePage() {
   const { t } = useTranslation();
-  const { isAuthenticated } = getRootState().auth;
 
   return (
     <div className="home">
@@ -46,27 +44,22 @@ function HomePage() {
               {/* <h1>{t("home.header")} <p>{t("home.header_con")}</p> </h1>  */}
             </div>
             <p>{t("home.text")}</p>
-            <Link to={isAuthenticated ? "/dashboard/document" : "/auth/signin"}>
+            <a href="https://t.me/samandar_th" target="_blank" rel="noopener noreferrer">
               <CustomButton className="home-button" color="light" bordered>
-                {t("home.btn-text")}
+                Contact
               </CustomButton>
-            </Link>
+            </a>
           </div>
           <div className="home-top-right">
-            {/* <ReactPlayer
-              width={640}
-              url={require("src/assets/video/IntroVideoPlay.mp4")}
-              playing={true}
-              controls={true}
-            /> */}
-            <video
-              className="home-top-video"
-              loop
-              autoPlay
-              muted
-              style={{ width: 510, height: 514 }}
-              src={require("src/assets/video/introVideoLast.mp4")}
-            ></video>
+            <div style={{
+              width: 600,
+              height: 600,
+              marginTop: -80
+            }}>
+            <Spline scene="https://prod.spline.design/qUf2gCoORS7E6VKX/scene.splinecode" />
+            {/* <Spline scene="https://prod.spline.design/LofZdHmyKOD0Snr0/scene.splinecode" /> */}
+            </div>
+            
           </div>
         </div>
 

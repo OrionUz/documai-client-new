@@ -1,5 +1,5 @@
+import type { Middleware, MiddlewareAPI } from "@reduxjs/toolkit";
 import { isRejectedWithValue } from "@reduxjs/toolkit";
-import type { MiddlewareAPI, Middleware } from "@reduxjs/toolkit";
 import { message } from "antd";
 import { logout } from "src/app/slices/authSlice";
 /**

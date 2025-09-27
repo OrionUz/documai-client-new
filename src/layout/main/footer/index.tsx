@@ -67,7 +67,7 @@ function Footer() {
                   <TwoCircleSvg />
                 </div>
                 <Link to="#">
-                  <MessageSendSvg />
+                  <MessageSendSvg color="white" />
                 </Link>
               </div>
               <div>

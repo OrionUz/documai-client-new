@@ -1,5 +1,5 @@
 import { api } from "../api";
-import { ILogin, ILoginRes } from "./type";
+import { ILogin, ILoginRes, INewClient, INewClientRes } from "./type";
 
 export const authApi = api.injectEndpoints({
   endpoints: (build) => ({
@@ -11,7 +11,21 @@ export const authApi = api.injectEndpoints({
         body,
       }),
     }),
+
+     //Get new client
+     getNewClient: build.mutation<INewClientRes, void>({
+      query: () => ({ url: 'new-client' }),
+    }),
+
+    //Add new client
+    addNewClient: build.mutation<INewClientRes, INewClient>({
+      query: (body) => ({
+        url: 'new-client',
+        method: 'POST',
+        body,
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation } = authApi;
+export const { useLoginMutation, useGetNewClientMutation, useAddNewClientMutation } = authApi;

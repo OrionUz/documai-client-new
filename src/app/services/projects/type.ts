@@ -13,6 +13,7 @@ export interface IProject {
   chatbotId: number;
   defaultLanguage: string;
   trained: boolean;
+  prompt?:string;
   documents?: IDocument[];
   createdAt: string;
   updatedAt?: string;
@@ -47,6 +48,7 @@ export interface IAddProjec {
 export interface IEditProject {
   botId: number;
   name: string;
+  prompt?: string;
 }
 
 //Train project types

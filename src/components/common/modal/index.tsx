@@ -9,7 +9,7 @@ function CustomModal({ children, ...rest }: CustomModalProps) {
           Modal: {
             borderRadius: 24,
             colorTextBase: "#fff",
-            padding: 0,
+            padding: 64,
           },
         },
       }}

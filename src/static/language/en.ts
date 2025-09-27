@@ -5,10 +5,10 @@ export const languageEn = {
     about: "About us",
     home: "Homepage",
     pricing: "Pricing",
-    try_docum: "Start",
+    try_docum: "Book a demo",
   },
   home: {
-    header: "Automatic Customer Service With AI",
+    header: "AI Powered Customer Service",
     header_con: 'With AI',
     video: "https://youtu.be/mtWxYUG8qjA",
     text: "We will help you develop a custom-knowledge AI for customer service.",
